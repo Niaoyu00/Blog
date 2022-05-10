@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="ZHY">
+    
+    <title>
+        
+            git指令 |
+        
+        Niaoyu
+    </title>
+    
+<link rel="stylesheet" href="/Blog/css/style.css">
+
+    <link rel="shortcut icon" href="/Blog/images/Bird.png">
+    
+<link rel="stylesheet" href="/Blog/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"niaoyu00.github.io","root":"/Blog/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/Bird.png","favicon":"/images/Bird.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/Blog/images/genshin2.png","description":null},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/Blog/images/Bird.png">
+                </a>
+            
+            <a class="logo-title" href="/">
+                Niaoyu
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/Blog/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/Blog/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/Blog/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/Blog/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/Blog/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/Blog/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/Blog/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/Blog/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/Blog/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/Blog/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">git指令</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/Blog/images/Bird.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">ZHY</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-03-01 09:16:27</span>
+        <span class="mobile">2022-03-01 09:16</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/Blog/tags/git/">git</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.配置提交人姓名: git config --global user.name提交人姓名</span><br><span class="line">2.配置提交人姓名: git config --global user.email提交人邮箱</span><br><span class="line">3.查看git配置信息: git config --list</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init          	  |初始化git仓库</span><br><span class="line">git status        	  |查看文件状态</span><br><span class="line">git add 文件列表    	|提交到暂存区</span><br><span class="line">git commit -m 提交信息  |向仓库提交代码</span><br></pre></td></tr></table></figure>
+
+<p><strong>用&#x3D;&#x3D;暂存区&#x3D;&#x3D;中的文件覆盖&#x3D;&#x3D;电脑工作目录&#x3D;&#x3D;的文件：<code>git checkout 文件名</code></strong></p>
+<p><strong>将文件从暂存区里删除: <code>git rm --cached 文件</code></strong></p>
+<p><strong>将git仓库中置顶的更新&#x3D;&#x3D;记录恢复&#x3D;&#x3D;出来，并且覆盖&#x3D;&#x3D;暂存区和工作目录&#x3D;&#x3D;:</strong></p>
+<p><strong><code>git reset --hard commitID</code></strong></p>
+<h4 id="分支命令"><a href="#分支命令" class="headerlink" title="分支命令"></a>分支命令</h4><p><strong>功能分支 -&gt; 开发分支 -&gt; 主分支</strong></p>
+<p><strong><code>git branch</code> 查看分支</strong></p>
+<p><strong><code>git branch 分支名称</code> 创建分支</strong></p>
+<p><strong><code>git checkout 分支名称</code> 切换分支</strong></p>
+<p><strong><code>git merge 来源分支</code> &#x3D;&#x3D;合并分支&#x3D;&#x3D;</strong></p>
+<p><strong><code>git branch -d 分支名称</code> 删除分支（分支被合并后才允许删除）（-D 强制删除）</strong></p>
+<h3 id="暂时保存更改"><a href="#暂时保存更改" class="headerlink" title="暂时保存更改"></a>暂时保存更改</h3><p><strong>在git中，可以暂时提取分支上所有的改动并存储，让开发人员得到一个干净的工作副本，临时转向其他工作。</strong></p>
+<p><strong>使用场景：分支临时切换</strong></p>
+<ul>
+<li><strong>存储临时改动：<code>git stash</code></strong><!--暂时保存--></li>
+<li><strong>恢复改动：<code>git stash pop</code></strong></li>
+</ul>
+<h3 id="本地仓库推送到远程仓库"><a href="#本地仓库推送到远程仓库" class="headerlink" title="本地仓库推送到远程仓库"></a>本地仓库推送到远程仓库</h3><ol>
+<li><p><strong>git push 远程仓库地址 分支名称</strong></p>
+</li>
+<li><p><strong>git remote add 远程仓库&#x3D;&#x3D;地址别名&#x3D;&#x3D; 远程仓库地址</strong></p>
+</li>
+<li><p><strong>git push 远程仓库&#x3D;&#x3D;地址别名&#x3D;&#x3D; 分支名称</strong></p>
+</li>
+<li><p><strong>git push &#x3D;&#x3D;-u&#x3D;&#x3D; 远程仓库地址别名 分支名称</strong></p>
+<p><strong>-u 记住推送地址及分支，&#x3D;&#x3D;下次推送&#x3D;&#x3D;只需要输入&#x3D;&#x3D;git push&#x3D;&#x3D;即可</strong></p>
+</li>
+</ol>
+<h3 id="拉取操作"><a href="#拉取操作" class="headerlink" title="拉取操作"></a>拉取操作</h3><h3 id="克隆仓库"><a href="#克隆仓库" class="headerlink" title="克隆仓库"></a>克隆仓库</h3><p><strong>克隆远端数据仓库到本地：<code>git clone 仓库地址</code></strong></p>
+<p><strong>拉取远程仓库中最新的版本：<code>git pull 远程仓库地址 分支名称</code></strong></p>
+<h3 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h3><p><strong>在多人同时开发一个项目时，如果两个人修改了同一个文件的同一个地方，就会发生冲突。冲突需要人为解决。</strong></p>
+<h3 id="跨团队协作"><a href="#跨团队协作" class="headerlink" title="跨团队协作"></a>跨团队协作</h3><ol>
+<li>程序员 C fork仓库</li>
+<li>程序员 C 将仓库克隆在本地进行修改</li>
+<li>程序员 C 将仓库推送到远程</li>
+<li>程序员 C 发起pull reqest</li>
+<li>原仓库作者审核</li>
+<li>原仓库作者合并代码</li>
+</ol>
+<h3 id="ssh免登陆"><a href="#ssh免登陆" class="headerlink" title="ssh免登陆"></a>ssh免登陆</h3><p>生成秘钥：<code>ssh-keygen</code></p>
+<p>秘钥存储目录：C:\Users\用户\.ssh</p>
+<p>公钥名称：id_rsa.pub</p>
+<p>私钥名称：id_rsa</p>
+<p>公钥放在github</p>
+<p>私钥放在本地</p>
+<h3 id="GIT忽略清单"><a href="#GIT忽略清单" class="headerlink" title="GIT忽略清单"></a>GIT忽略清单</h3><p>将不需要被git管理的文件名字添加到此文件中，在执行git命令的时候，git就会忽略这些文件。</p>
+<p>git忽略清单文件名称：**.gitignore**</p>
+<p>将工作目录中的文件全部添加到暂存区：<code>git add .</code></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：git指令</li>
+        <li>本文作者：ZHY</li>
+        <li>创建时间：2022-03-01 09:16:27</li>
+        <li>
+            本文链接：https://niaoyu00.github.io/Blog/2022/03/01/git指令/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/Blog/tags/git/">#git</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/Blog/2022/03/03/%E5%8D%8F%E7%A8%8B/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">协调程序</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/Blog/2022/02/27/unity%E7%9A%84Axis%E8%AE%BE%E7%BD%AE/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">unity的Axis设置</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">ZHY</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E5%91%BD%E4%BB%A4"><span class="nav-text">分支命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9A%82%E6%97%B6%E4%BF%9D%E5%AD%98%E6%9B%B4%E6%94%B9"><span class="nav-text">暂时保存更改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-text">本地仓库推送到远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%89%E5%8F%96%E6%93%8D%E4%BD%9C"><span class="nav-text">拉取操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93"><span class="nav-text">克隆仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81"><span class="nav-text">解决冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%A8%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C"><span class="nav-text">跨团队协作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh%E5%85%8D%E7%99%BB%E9%99%86"><span class="nav-text">ssh免登陆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GIT%E5%BF%BD%E7%95%A5%E6%B8%85%E5%8D%95"><span class="nav-text">GIT忽略清单</span></a>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/Blog/js/utils.js"></script>
+
+<script src="/Blog/js/main.js"></script>
+
+<script src="/Blog/js/header-shrink.js"></script>
+
+<script src="/Blog/js/back2top.js"></script>
+
+<script src="/Blog/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/Blog/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/Blog/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/Blog/js/left-side-toggle.js"></script>
+
+<script src="/Blog/js/libs/anime.min.js"></script>
+
+<script src="/Blog/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/Blog/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

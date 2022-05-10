@@ -1,29 +1,323 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/Blog/2022/05/09/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment<i class="fas fa-external-link-alt"></i></a></p>
+    <title>ue4decal贴花</title>
+    <url>/Blog/2021/10/27/decal/</url>
+    <content><![CDATA[<h1 id="decal贴花"><a href="#decal贴花" class="headerlink" title="decal贴花"></a>decal贴花</h1><p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211026144819865.png" alt="image-20211026144819865"></p>
+<h3 id="材质"><a href="#材质" class="headerlink" title="材质"></a>材质</h3><ul>
+<li>Tiling：平铺</li>
+<li>Crop X：横向移动</li>
+<li>Crop Y：纵向移动</li>
+</ul>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211026174136186.png" alt="image-20211026174136186"></p>
+<h2 id="08-Parallax"><a href="#08-Parallax" class="headerlink" title="08 - Parallax"></a>08 - Parallax</h2><p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211026174352870.png" alt="image-20211026174352870"></p>
+<p>POM：侧面看也能看出高低差</p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211026174550156.png" alt="image-20211026174550156"></p>
+<p>Height Ratio：凸起部分的高度</p>
+<p>Reference Plane：使用UsePOM会导致正常视角看贴花有显示bug，通过这个参数调整。</p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211026174838836.png" alt="image-20211026174838836"></p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211026175110165.png" alt="image-20211026175110165"></p>
+<h3 id="抖动，使颜色混合"><a href="#抖动，使颜色混合" class="headerlink" title="抖动，使颜色混合"></a>抖动，使颜色混合</h3><p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211027160917882.png" alt="image-20211027160917882"></p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211027161015716.png" alt="image-20211027161015716"></p>
 ]]></content>
+      <tags>
+        <tag>ue4材质</tag>
+      </tags>
   </entry>
   <entry>
-    <title>Hello</title>
-    <url>/Blog/2022/05/10/hello/</url>
-    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p>第二篇</p>
-<p>第三次发送</p>
+    <title>git指令</title>
+    <url>/Blog/2022/03/01/git%E6%8C%87%E4%BB%A4/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.配置提交人姓名: git config --global user.name提交人姓名</span><br><span class="line">2.配置提交人姓名: git config --global user.email提交人邮箱</span><br><span class="line">3.查看git配置信息: git config --list</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init          	  |初始化git仓库</span><br><span class="line">git status        	  |查看文件状态</span><br><span class="line">git add 文件列表    	|提交到暂存区</span><br><span class="line">git commit -m 提交信息  |向仓库提交代码</span><br></pre></td></tr></table></figure>
+
+<p><strong>用&#x3D;&#x3D;暂存区&#x3D;&#x3D;中的文件覆盖&#x3D;&#x3D;电脑工作目录&#x3D;&#x3D;的文件：<code>git checkout 文件名</code></strong></p>
+<p><strong>将文件从暂存区里删除: <code>git rm --cached 文件</code></strong></p>
+<p><strong>将git仓库中置顶的更新&#x3D;&#x3D;记录恢复&#x3D;&#x3D;出来，并且覆盖&#x3D;&#x3D;暂存区和工作目录&#x3D;&#x3D;:</strong></p>
+<p><strong><code>git reset --hard commitID</code></strong></p>
+<h4 id="分支命令"><a href="#分支命令" class="headerlink" title="分支命令"></a>分支命令</h4><p><strong>功能分支 -&gt; 开发分支 -&gt; 主分支</strong></p>
+<p><strong><code>git branch</code> 查看分支</strong></p>
+<p><strong><code>git branch 分支名称</code> 创建分支</strong></p>
+<p><strong><code>git checkout 分支名称</code> 切换分支</strong></p>
+<p><strong><code>git merge 来源分支</code> &#x3D;&#x3D;合并分支&#x3D;&#x3D;</strong></p>
+<p><strong><code>git branch -d 分支名称</code> 删除分支（分支被合并后才允许删除）（-D 强制删除）</strong></p>
+<h3 id="暂时保存更改"><a href="#暂时保存更改" class="headerlink" title="暂时保存更改"></a>暂时保存更改</h3><p><strong>在git中，可以暂时提取分支上所有的改动并存储，让开发人员得到一个干净的工作副本，临时转向其他工作。</strong></p>
+<p><strong>使用场景：分支临时切换</strong></p>
+<ul>
+<li><strong>存储临时改动：<code>git stash</code></strong><!--暂时保存--></li>
+<li><strong>恢复改动：<code>git stash pop</code></strong></li>
+</ul>
+<h3 id="本地仓库推送到远程仓库"><a href="#本地仓库推送到远程仓库" class="headerlink" title="本地仓库推送到远程仓库"></a>本地仓库推送到远程仓库</h3><ol>
+<li><p><strong>git push 远程仓库地址 分支名称</strong></p>
+</li>
+<li><p><strong>git remote add 远程仓库&#x3D;&#x3D;地址别名&#x3D;&#x3D; 远程仓库地址</strong></p>
+</li>
+<li><p><strong>git push 远程仓库&#x3D;&#x3D;地址别名&#x3D;&#x3D; 分支名称</strong></p>
+</li>
+<li><p><strong>git push &#x3D;&#x3D;-u&#x3D;&#x3D; 远程仓库地址别名 分支名称</strong></p>
+<p><strong>-u 记住推送地址及分支，&#x3D;&#x3D;下次推送&#x3D;&#x3D;只需要输入&#x3D;&#x3D;git push&#x3D;&#x3D;即可</strong></p>
+</li>
+</ol>
+<h3 id="拉取操作"><a href="#拉取操作" class="headerlink" title="拉取操作"></a>拉取操作</h3><h3 id="克隆仓库"><a href="#克隆仓库" class="headerlink" title="克隆仓库"></a>克隆仓库</h3><p><strong>克隆远端数据仓库到本地：<code>git clone 仓库地址</code></strong></p>
+<p><strong>拉取远程仓库中最新的版本：<code>git pull 远程仓库地址 分支名称</code></strong></p>
+<h3 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h3><p><strong>在多人同时开发一个项目时，如果两个人修改了同一个文件的同一个地方，就会发生冲突。冲突需要人为解决。</strong></p>
+<h3 id="跨团队协作"><a href="#跨团队协作" class="headerlink" title="跨团队协作"></a>跨团队协作</h3><ol>
+<li>程序员 C fork仓库</li>
+<li>程序员 C 将仓库克隆在本地进行修改</li>
+<li>程序员 C 将仓库推送到远程</li>
+<li>程序员 C 发起pull reqest</li>
+<li>原仓库作者审核</li>
+<li>原仓库作者合并代码</li>
+</ol>
+<h3 id="ssh免登陆"><a href="#ssh免登陆" class="headerlink" title="ssh免登陆"></a>ssh免登陆</h3><p>生成秘钥：<code>ssh-keygen</code></p>
+<p>秘钥存储目录：C:\Users\用户\.ssh</p>
+<p>公钥名称：id_rsa.pub</p>
+<p>私钥名称：id_rsa</p>
+<p>公钥放在github</p>
+<p>私钥放在本地</p>
+<h3 id="GIT忽略清单"><a href="#GIT忽略清单" class="headerlink" title="GIT忽略清单"></a>GIT忽略清单</h3><p>将不需要被git管理的文件名字添加到此文件中，在执行git命令的时候，git就会忽略这些文件。</p>
+<p>git忽略清单文件名称：**.gitignore**</p>
+<p>将工作目录中的文件全部添加到暂存区：<code>git add .</code></p>
 ]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>unity的Axis设置</title>
+    <url>/Blog/2022/02/27/unity%E7%9A%84Axis%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="unity的Axis设置"><a href="#unity的Axis设置" class="headerlink" title="unity的Axis设置"></a>unity的Axis设置</h1><p>unity的Axis设置，路径为Edit-&gt;Project setting-&gt;Input:</p>
+<p>属性如下：</p>
+<p><strong>Name</strong>：&#x3D;&#x3D;按键名&#x3D;&#x3D;该键的名称，可以在脚本编程中直接引用他。比如：Input.GetButtonDown(“Jump”);</p>
+<p><strong>Descriptive Name</strong>:&#x3D;&#x3D;【描述名】&#x3D;&#x3D;在游戏的独立机构中的配置对话框中，当控制值为正时候所显示的名称。默认空白。</p>
+<p><strong>Negative Descriptive Name</strong>：&#x3D;&#x3D;【负描述】&#x3D;&#x3D;在游戏的独立机构中的配置对话框中，当控制值为负的时候所显示的名称。</p>
+<p><strong>Nagative Button</strong>：&#x3D;&#x3D;【负向按钮】&#x3D;&#x3D;玩家按下这个按钮来让被控制物体向负方向运动。</p>
+<p><strong>Positive Button</strong>：&#x3D;&#x3D;【正向按钮】&#x3D;&#x3D;玩家按下这个按钮让被控制物体向正方向运动。</p>
+<p><strong>Alt Negative Button</strong>: 玩家可以使用的备选负向按钮，比如方向键和WASD</p>
+<p><strong>Alt Positive Button</strong>：玩家可以使用的备选争相按钮。</p>
+<p><strong>Gravity</strong>：&#x3D;&#x3D;【重力】&#x3D;&#x3D;如果玩家停止输入，该轴将恢复到空挡或0速度，其单位为单位每秒。</p>
+<p><strong>Dead</strong>：&#x3D;&#x3D;【盲区】&#x3D;&#x3D;可以用在模拟控制。在模拟控制器上，在这个范围内的任何值都会映射到空档不会提供任何输入。</p>
+<p><strong>Sensitivity</strong>：&#x3D;&#x3D;【灵敏度】&#x3D;&#x3D;可以用于数字控制，他是该轴向给定得值移动的速度。正负都可，单位为单位每秒。</p>
+<p><strong>Snap</strong>：&#x3D;&#x3D;【对齐】&#x3D;&#x3D;如果选中，可以确保在同时按下正向和负向按钮时候该轴的值为空挡。</p>
+<p><strong>Invert</strong>：&#x3D;&#x3D;【反转】&#x3D;&#x3D;迅速交换正向和负向控制键。</p>
+<p><strong>Type</strong>：&#x3D;&#x3D;【类型】&#x3D;&#x3D;该键对应的输入设备类型。可以为Key，MouseButton，MouseMove，JoystickAxis，或Window Movement。</p>
+<p><strong>Axis</strong>：&#x3D;&#x3D;【轴】&#x3D;&#x3D;这个控制方式有该输入设备的哪条轴指挥。这可受不同游戏手柄影响。</p>
+<p><strong>JoyNum</strong>：&#x3D;&#x3D;【操作杆编号】&#x3D;&#x3D;多个操作杆在机器上市后，决定哪个哪个操作杆控制给定的轴。可以选择从所有的操作杆接受输入，或是为其制定一个特定的。</p>
+]]></content>
+      <tags>
+        <tag>unity</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ue4材质笔记</title>
+    <url>/Blog/2021/10/15/ue4%E6%9D%90%E8%B4%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p><strong>简明PBR2：介绍了菲尼尔，以及两个网站可以查折射率</strong></p>
+<h3 id="材质基础"><a href="#材质基础" class="headerlink" title="材质基础"></a>材质基础</h3><p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211015150409107.png" alt="image-20211015150409107"></p>
+<p><strong>常量Constant：不能在材质实例中调整</strong></p>
+<p><strong>变量Variable：可以在材质中调整</strong></p>
+<p><strong>右键可以转换常量或变量</strong></p>
+<p><strong>矢量Vector：表示颜色、坐标信息</strong></p>
+<p><strong>标量Scalar：常用参数调整手段</strong></p>
+<h3 id="用作展示颜色节点"><a href="#用作展示颜色节点" class="headerlink" title="用作展示颜色节点"></a>用作展示颜色节点</h3><p><strong>Variable3Vector节点</strong> </p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211015144638843.png" alt="image-20211015144638843"></p>
+<h3 id="可调整参数"><a href="#可调整参数" class="headerlink" title="可调整参数"></a>可调整参数</h3><p><strong>ScalarParameter节点</strong></p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211015181754278.png" alt="image-20211015181754278"></p>
+<h3 id="调用贴图"><a href="#调用贴图" class="headerlink" title="调用贴图"></a>调用贴图</h3><p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211015182038850.png" alt="image-20211015182038850"></p>
+<p><strong>TextureCoordinate</strong></p>
+<p><strong>控制纹理平铺</strong></p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211015190750115.png" alt="image-20211015190750115"></p>
+<p><strong>lerp线性插值</strong></p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211015224727978.png" alt="image-20211015224727978"></p>
+<p><strong>lerp可以混合两种颜色，加上一个标量来控制</strong></p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211015232030467.png" alt="image-20211015232030467"></p>
+<p><strong>也可以混合法线贴图，前台控制法线程度</strong></p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211015231343367.png" alt="image-20211015231343367"></p>
+<h3 id="2022年5月10日编辑-ue4材质内容基本忘光了-留着文章就当记录了"><a href="#2022年5月10日编辑-ue4材质内容基本忘光了-留着文章就当记录了" class="headerlink" title="2022年5月10日编辑:ue4材质内容基本忘光了,留着文章就当记录了."></a>2022年5月10日编辑:ue4材质内容基本忘光了,留着文章就当记录了.</h3>]]></content>
+      <tags>
+        <tag>ue4材质</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>协调程序</title>
+    <url>/Blog/2022/03/03/%E5%8D%8F%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="协程：协同程序"><a href="#协程：协同程序" class="headerlink" title="协程：协同程序"></a>协程：协同程序</h1><p><strong>协程的使用前提</strong>：直接或间接的继承MonoBehavior才可以使用。</p>
+<p><strong>不足</strong>：会产生外的开销。</p>
+<h3 id="协程方法与普通方法的区别："><a href="#协程方法与普通方法的区别：" class="headerlink" title="协程方法与普通方法的区别："></a>协程方法与普通方法的区别：</h3><p><strong>被调用时</strong>：普通方法被调用时，原来执行的部分保留现场，停止执行，然后去执行要调用的方法，并且，被调用的方法执行完之后才能返回到调用前的状态接着往下执行。。。协同方法的执行是不用等协同方法执行完再执行调用之前原来方法的代码。而是两者&#x3D;&#x3D;异步执行&#x3D;&#x3D;。</p>
+<p>类似js的异步</p>
+]]></content>
+      <tags>
+        <tag>unity</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ue4材质快捷键（转载）</title>
+    <url>/Blog/2022/02/18/%E6%9D%90%E8%B4%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[<h1 id="UE4材质的快捷键（转载）"><a href="#UE4材质的快捷键（转载）" class="headerlink" title="UE4材质的快捷键（转载）"></a>UE4材质的快捷键（转载）</h1><h3 id="虚幻材质里面的快捷键"><a href="#虚幻材质里面的快捷键" class="headerlink" title="虚幻材质里面的快捷键"></a>虚幻材质里面的快捷键</h3><p>注：以下快捷键都需要结合鼠标左键来创建</p>
+<p>首先是数字键1234分别对应的是1234维的常数节点，然后这里有个主意的地方就是1维常数的参数快捷键是S，三维常数的参数快捷键是V。</p>
+<p><img src="https://i0.hdslb.com/bfs/article/dad1288f3aef5afc85013d7192ae060e62b43d4c.png@942w_347h_progressive.webp" alt="img"></p>
+<p>然后是ABCD ，A是Add加法节点， B是bumpoffset凹凸偏移，C是注释，D是Divide除法节点，当然还有我们的M,multiply乘法节点</p>
+<p><img src="https://i0.hdslb.com/bfs/article/99e91e47133515fe1ecb9d3a1d1a9ebabc13dc0e.png@942w_251h_progressive.webp" alt="img"><img src="https://i0.hdslb.com/bfs/article/57c903623de786ff35fdaa58729e7b9046ecac33.png@474w_405h_progressive.webp" alt="img"></p>
+<p>E就是我们的power节点了，F这个节点目前还不是很熟悉是一个UNspecified function什么类型的函数，欢迎补充。</p>
+<p><img src="https://i0.hdslb.com/bfs/article/ad3cdde7b3cf74e5b6f75f14f31cbb81de6b4099.png@914w_453h_progressive.webp" alt="img"></p>
+<p>L就是线性插值这个节点了。非常重要的！</p>
+<p><img src="https://i0.hdslb.com/bfs/article/6809a744e8356e32eae663901ada2268c8655f88.png@408w_414h_progressive.webp" alt="img"></p>
+<p>I是一个IF函数节点</p>
+<p><img src="https://i0.hdslb.com/bfs/article/ba708c622154f137d0b16aaf679f05833849e99d.png@467w_563h_progressive.webp" alt="img"></p>
+<p>N是我们的normalize</p>
+<p><img src="https://i0.hdslb.com/bfs/article/aeb94cde1b72f9cd04848950d7813d188ce578f5.png@435w_372h_progressive.webp" alt="img"></p>
+<p>O就是我们的1-x函数了one minus 反转~~</p>
+<p><img src="https://i0.hdslb.com/bfs/article/48881efedc143f5c8b367b89f9ad6346b347815f.png@509w_422h_progressive.webp" alt="img"></p>
+<p>P是panner平移节点</p>
+<p><img src="https://i0.hdslb.com/bfs/article/261bbb5ba6bb37e7a1db758f78e69541b2ef7e9f.png@411w_401h_progressive.webp" alt="img"></p>
+<p>R是refelction vector 反射向量</p>
+<p><img src="https://i0.hdslb.com/bfs/article/264a0c2ae884e7d88dfd137b49886e541d2091e9.png@536w_411h_progressive.webp" alt="img"></p>
+<p>T是Texture sample贴图节点，经常会用到。</p>
+<p><img src="https://i0.hdslb.com/bfs/article/be7df26b1dcfebc98ca5badb142c94e1351395fa.png@483w_510h_progressive.webp" alt="img"></p>
+<p>最后是U，UV贴图平铺的一个节点，也很重要</p>
+<p><img src="https://i0.hdslb.com/bfs/article/c46d779470bfe2e14bb9dbd4f279b279067b2fcc.png@495w_396h_progressive.webp" alt="img"></p>
+<p>作者：墨一良丶 <a class="link"   href="https://www.bilibili.com/read/cv7905584?spm_id_from=333.999.0.0" >https://www.bilibili.com/read/cv7905584?spm_id_from=333.999.0.0<i class="fas fa-external-link-alt"></i></a> 出处：bilibili</p>
+]]></content>
+      <tags>
+        <tag>ue4材质</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ue4材质边界混合</title>
+    <url>/Blog/2021/10/30/%E8%BE%B9%E7%95%8C%E6%B7%B7%E5%90%88/</url>
+    <content><![CDATA[<h1 id="边界混合"><a href="#边界混合" class="headerlink" title="边界混合"></a>边界混合</h1><p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211027163016705.png" alt="image-20211027163016705"></p>
+<p>世界坐标纹理对齐，实现效果大概是：在地面添加物体，任意改变形状位置，材质纹理会自动对齐。</p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211027164714177.png" alt="image-20211027164714177"></p>
+<h1 id="边界混合2"><a href="#边界混合2" class="headerlink" title="边界混合2"></a>边界混合2</h1><p>解决PDO抖动显示问题</p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211028230755743.png" alt="image-20211028230755743"></p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211028232839086.png" alt="image-20211028232839086"></p>
+]]></content>
+      <tags>
+        <tag>ue4材质</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ue4顶点绘制</title>
+    <url>/Blog/2021/10/25/%E9%A1%B6%E7%82%B9%E7%BB%98%E5%88%B6/</url>
+    <content><![CDATA[<h2 id="网格体绘制（顶点绘制）"><a href="#网格体绘制（顶点绘制）" class="headerlink" title="网格体绘制（顶点绘制）"></a>网格体绘制（顶点绘制）</h2><p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211025090537562.png" alt="image-20211025090537562"></p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><h4 id="混合材质"><a href="#混合材质" class="headerlink" title="混合材质"></a>混合材质</h4><ul>
+<li>打开这个，依顺序从<code>底层-&gt;中间层-&gt;顶层</code>进行选择。<img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211025091700720.png" alt="image-20211025091700720"></li>
+<li>截图里红色框命名，蓝色框确认，创建后就是混合后的材质。<img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211025091835096.png" alt="image-20211025091835096"></li>
+<li>然后将混合后材质拖进平面，调整平铺比例（视频里材质UV是4x4，而box盒子是一米见方，因此需要调整混合后材质的uv，将材质<code>02-Base Layer</code>参数平铺x平铺y改成四分之一）<img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211025092434448.png" alt="image-20211025092434448"></li>
+</ul>
+<h4 id="绘制"><a href="#绘制" class="headerlink" title="绘制"></a>绘制</h4><ul>
+<li><p>模式&#x3D;&gt;网格体绘制</p>
+</li>
+<li><p>选择平面</p>
+</li>
+<li><p>选绘制，切换成黑色</p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211025091243499.png" alt="image-20211025091243499"></p>
+</li>
+</ul>
+<h3 id="通道选择："><a href="#通道选择：" class="headerlink" title="通道选择："></a>通道选择：</h3><p><strong>红：中间层</strong></p>
+<p><strong>绿：顶层</strong></p>
+<p><strong>蓝：水坑层（默认需要激活）</strong><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211025092917515.png" alt="image-20211025092917515"></p>
+<h4 id="擦除：按住shift再画"><a href="#擦除：按住shift再画" class="headerlink" title="擦除：按住shift再画"></a>擦除：按住shift再画</h4><h3 id="高度混合方法"><a href="#高度混合方法" class="headerlink" title="高度混合方法"></a>高度混合方法</h3><p>在混合材质界面，给底层BaseLayer添加，基础层<strong>置换贴图-</strong><code>displacement map</code><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211025093330500.png" alt="image-20211025093330500"></p>
+<p>之后在这里微调效果<img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211025093552241.png" alt="image-20211025093552241"></p>
+<p>大致效果：</p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211025093643300.png" alt="image-20211025093643300"></p>
+<p>顶层也可以这么操作。</p>
+<h4 id="Global"><a href="#Global" class="headerlink" title="Global"></a>Global</h4><p>可调节饱和度，亮度、对比度<img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211025094422165.png" alt="image-20211025094422165"></p>
+<h4 id="粗糙度调节"><a href="#粗糙度调节" class="headerlink" title="粗糙度调节"></a>粗糙度调节</h4><p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211025101110034.png" alt="image-20211025101110034"></p>
+<h4 id="使用独立的置换调整值"><a href="#使用独立的置换调整值" class="headerlink" title="使用独立的置换调整值"></a>使用独立的置换调整值</h4><p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211025110451854.png" alt="image-20211025110451854"></p>
+<p>右边的勾勾，勾选之后<code>06-displacement</code>会增加选项</p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211025110635737.png" alt="image-20211025110635737"></p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211025110944929.png" alt="image-20211025110944929"></p>
+<p>选中哪个层调数值，相当于把那个层移高，或者下降</p>
+<h5 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h5><ul>
+<li>细看有瑕疵</li>
+<li>性能消耗（需要去材质蓝图关闭）。</li>
+</ul>
+<h3 id="调整水材质"><a href="#调整水材质" class="headerlink" title="调整水材质"></a>调整水材质</h3><p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211025122901794.png" alt="image-20211025122901794"></p>
+<p>Liquid Color：水颜色</p>
+<p>Liquid Opacity：透明度 （水的深&#x2F;浅）</p>
+<p>Liquid Falloff Roughness：边缘过渡的粗糙度（数值越小边缘越湿润）</p>
+<p>Albedo Darkening Color：液体调白色&#x3D;&gt;模拟物体防水表面。液体调暗&#x3D;&gt;模拟物体表面渗入性</p>
+<p>Liquid Wave Controls：波浪调整</p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20211025123319520.png" alt="image-20211025123319520"></p>
+<ul>
+<li>浪花大小（数值越小浪花越大）</li>
+<li>浪花速度</li>
+<li>上方水面 法线贴图的强度</li>
+<li>无</li>
+</ul>
+<p>2和3一般一起调整。</p>
+]]></content>
+      <tags>
+        <tag>ue4材质</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>unity塔防demo记录</title>
+    <url>/Blog/2022/03/09/unity%E5%A1%94%E9%98%B2demo%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="塔防demo"><a href="#塔防demo" class="headerlink" title="塔防demo"></a>塔防demo</h1><h3 id="参考项目-https-www-bilibili-com-video-BV15W411976h"><a href="#参考项目-https-www-bilibili-com-video-BV15W411976h" class="headerlink" title="参考项目:https://www.bilibili.com/video/BV15W411976h"></a>参考项目:<a class="link"   href="https://www.bilibili.com/video/BV15W411976h" >https://www.bilibili.com/video/BV15W411976h<i class="fas fa-external-link-alt"></i></a></h3><h3 id="新加的功能"><a href="#新加的功能" class="headerlink" title="新加的功能"></a>新加的功能</h3><p>1.怪物球自转</p>
+<p>2.不同炮台只可在特定颜色，区域内建造。</p>
+<p>3.未选中炮台不可建造</p>
+<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><p>炮弹打中敌人之后发现后方的一个怪会持续扣血直到死亡。初步猜测是碰撞触发了多次，后来暂停看的时候发现，子弹爆炸特效(在子弹销毁时触发) 在敌人死亡的时候会一下子刷出特别多。因此我判断是子弹打入敌人之后没有实时销毁。运行一测，果然是。最后在子弹脚本中，释放子弹爆炸特效的前方增加了销毁自身的代码。修复了bug。</p>
+<h3 id="待续"><a href="#待续" class="headerlink" title="待续.."></a>待续..</h3>]]></content>
+      <tags>
+        <tag>unity</tag>
+        <tag>塔防demo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算器</title>
+    <url>/Blog/2022/02/23/Csharp%E8%AE%A1%E7%AE%97%E5%99%A8/</url>
+    <content><![CDATA[<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Calculator</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">string</span> inputStr = Console.ReadLine(); CalcOnline(inputStr);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">static</span> CalcInfo[] configs = <span class="keyword">new</span> CalcInfo[]</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;+&quot;</span>,(a,b)=&gt;a+b),</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;-&quot;</span>,(a,b)=&gt;a-b),</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;*&quot;</span>,(a,b)=&gt;a*b),</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;/&quot;</span>,(a,b)=&gt;a/b),</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">CalcOnline</span>(<span class="params"><span class="built_in">string</span> inputStr</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span> index = <span class="number">-1</span>;</span><br><span class="line">            Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func = <span class="literal">null</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; configs.Length; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">var</span> item = configs[i];</span><br><span class="line">                index = inputStr.IndexOf(item.tag);<span class="comment">//找到符号，返回所在下标，未找到返回-1</span></span><br><span class="line">                <span class="keyword">if</span> (index != <span class="number">-1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    func = item.func;<span class="comment">//如果找到的是+，那么index为1，+的func函数内容是a+b</span></span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (index == <span class="number">-1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;只支持+-*/&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            CalcResult(inputStr, func, index);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">CalcResult</span>(<span class="params"><span class="built_in">string</span> inputStr, Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func, <span class="built_in">int</span> index</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> num1Str = inputStr.Substring(<span class="number">0</span>, index);<span class="comment">//0~index之间的内容(不包括后面的)赋值给num1Str，若输入1+2则获得1</span></span><br><span class="line">            <span class="built_in">int</span> strLen = inputStr.Count();</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;strLen:<span class="subst">&#123;strLen&#125;</span>,index:<span class="subst">&#123;index&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="built_in">string</span> num2Str = inputStr.Substring(index+<span class="number">1</span>,strLen-index<span class="number">-1</span>);<span class="comment">//若输入1+2则获得2</span></span><br><span class="line">            <span class="built_in">float</span> num1 = <span class="built_in">float</span>.Parse(num1Str);</span><br><span class="line">            <span class="built_in">float</span> num2 = <span class="built_in">float</span>.Parse(num2Str);</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;num1:<span class="subst">&#123;num1&#125;</span>, num2:<span class="subst">&#123;num2&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="built_in">float</span> result = func(num1, num2);</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;<span class="subst">&#123;inputStr&#125;</span>的计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CalcInfo</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> tag;</span><br><span class="line">        <span class="keyword">public</span> Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">CalcInfo</span>(<span class="params"><span class="built_in">string</span> tag, Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>.tag = tag;</span><br><span class="line">            <span class="keyword">this</span>.func = func;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//5+6</span></span><br><span class="line"><span class="comment">//strLen:3,index:1</span></span><br><span class="line"><span class="comment">//num1:5, num2:6</span></span><br><span class="line"><span class="comment">//5+6的计算结果：11</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Csharp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Csharpclass与struct的关系</title>
+    <url>/Blog/2022/02/21/CsharpClass%E4%B8%8EStruct%E7%9A%84%E5%85%B3%E7%B3%BB/</url>
+    <content><![CDATA[<h1 id="值与引用的关系"><a href="#值与引用的关系" class="headerlink" title="值与引用的关系"></a>值与引用的关系</h1><p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20220221193324778.png" alt="image-20220221193324778"></p>
+<p><strong>值类型</strong>在栈中存储</p>
+<p><strong>引用类型</strong>在堆中存储</p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20220221190214776.png" alt="image-20220221190214776"></p>
+<p>&#x3D;&#x3D;Class&#x3D;&#x3D;的<strong>值在堆里</strong>，<strong>地址在栈</strong>。(栈开一个空间存储地址，通过地址在堆里找到创建的值。)</p>
+<p>&#x3D;&#x3D;Struct&#x3D;&#x3D;直接在栈里开辟空间来存储值。</p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20220221190510185.png" alt="image-20220221190510185"></p>
+<p>此处为cVec的地址与sVec x,sVec Y，开辟了三个。</p>
+<p>再来看函数内部：</p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20220221191418690.png" alt="image-20220221191418690"></p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20220221191649642.png" alt="image-20220221191649642"></p>
+<p>更改了cvec与svec的x值，</p>
+<p>此时**cVec.print()**打印的值为</p>
+<p><code>1cVec(100,0)</code></p>
+<p>**sVec.print()**打印的值也为</p>
+<p><code>sVec(100,0)</code></p>
+<p>函数调用结束，目光回到上面初始开辟的空间。</p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20220221191451664.png" alt="image-20220221191451664"></p>
+<p>下方的**cVec.print()，sVec.print()**；</p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20220221191540799.png" alt="image-20220221191540799"></p>
+<p>打印结果为：</p>
+<p><code>cVec(100,0)</code></p>
+<p><code>sVec(0,0)</code></p>
+<p>因为sVec是函数内创建的值，在外面他没有更改。而cVec是通过地址找到堆里的值，在函数里已经将值更改。</p>
+<p>如果想要Struct的值跟class一样，需要再前面加ref</p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20220221192825331.png" alt="image-20220221192825331"></p>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20220221192734477.png" alt="image-20220221192734477"></p>
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220221192920676.png" alt="image-20220221192920676"></p>
+]]></content>
+      <tags>
+        <tag>Csharp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>委托</title>
+    <url>/Blog/2022/02/22/%E5%A7%94%E6%89%98/</url>
+    <content><![CDATA[<h1 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h1><h5 id="delegate：可以保存多个函数指针，试用-x3D-，-进行操作。"><a href="#delegate：可以保存多个函数指针，试用-x3D-，-进行操作。" class="headerlink" title="delegate：可以保存多个函数指针，试用&#x3D;+，-+进行操作。"></a>delegate：可以保存多个函数指针，试用&#x3D;+，-+进行操作。</h5><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//将函数赋值给delegate，delegate会储存下来。</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment">//Action无返回值</span></span><br><span class="line">            Action&lt;<span class="built_in">string</span>&gt; print = Print;</span><br><span class="line">            print(<span class="string">&quot;使用print打印&quot;</span>);</span><br><span class="line"></span><br><span class="line">            Func&lt;<span class="built_in">float</span>,<span class="built_in">float</span>,<span class="built_in">float</span>&gt; fc = Mul;<span class="comment">//打印：Func，第三个参数是返回值类型</span></span><br><span class="line">            <span class="keyword">var</span> f = fc(<span class="number">3</span>, <span class="number">4</span>).ToString(); <span class="comment">//打印：乘法3 * 4 = 12</span></span><br><span class="line">            Console.WriteLine(f);<span class="comment">//打印：12</span></span><br><span class="line"></span><br><span class="line">            CalFunc func = Add;</span><br><span class="line">            func(<span class="number">1.1f</span>, <span class="number">2</span>);<span class="comment">//打印：加法1.1+2=3.1</span></span><br><span class="line"></span><br><span class="line">            Console.WriteLine(<span class="string">&quot;加入Sub()&quot;</span>);</span><br><span class="line">            func += Sub;</span><br><span class="line">            func(<span class="number">1.1f</span>, <span class="number">2</span>);<span class="comment">//打印：减法1.1+2=3.1</span></span><br><span class="line">                          <span class="comment">//1.1-2=-0.9</span></span><br><span class="line"></span><br><span class="line">            Console.WriteLine(<span class="string">&quot;移除Add()&quot;</span>);</span><br><span class="line">            func -= Add;</span><br><span class="line">            func(<span class="number">1.1f</span>, <span class="number">2</span>);<span class="comment">//打印：减法1.1-2=-0.9</span></span><br><span class="line"></span><br><span class="line">            Console.WriteLine(<span class="string">&quot;-------------闭包↓----------------&quot;</span>);</span><br><span class="line">            <span class="built_in">int</span> intVal = <span class="number">10</span>;</span><br><span class="line">            <span class="comment">//匿名函数 执行后改变的值可作用到函数外。</span></span><br><span class="line">            Action aa = () =&gt;</span><br><span class="line">            &#123;</span><br><span class="line">                intVal += <span class="number">10</span>;</span><br><span class="line">            &#125;;</span><br><span class="line">            aa();<span class="comment">//调用</span></span><br><span class="line">            Console.WriteLine(intVal);<span class="comment">//打印：20</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//无返回值，封装了一个print代替writeline</span></span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Print</span>(<span class="params"><span class="built_in">string</span> info</span>)</span>  =&gt;Console.WriteLine(info);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义了delegate，可以存储函数指针</span></span><br><span class="line">        <span class="function"><span class="built_in">delegate</span> <span class="built_in">float</span> <span class="title">CalFunc</span>(<span class="params"><span class="built_in">float</span> f1, <span class="built_in">float</span> f2</span>)</span>;</span><br><span class="line">        <span class="comment">//下面是好几个函数，实现加减乘。</span></span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="built_in">float</span> <span class="title">Add</span>(<span class="params"><span class="built_in">float</span> arg1, <span class="built_in">float</span> arg2</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;加法<span class="subst">&#123;arg1&#125;</span>+<span class="subst">&#123;arg2&#125;</span>=<span class="subst">&#123;arg1 + arg2&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> arg1 + arg2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="built_in">float</span> <span class="title">Sub</span>(<span class="params"><span class="built_in">float</span> arg1, <span class="built_in">float</span> arg2</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;减法<span class="subst">&#123;arg1&#125;</span>-<span class="subst">&#123;arg2&#125;</span>=<span class="subst">&#123;arg1 - arg2&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> arg1 - arg2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="built_in">float</span> <span class="title">Mul</span>(<span class="params"><span class="built_in">float</span> arg1, <span class="built_in">float</span> arg2</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;乘法<span class="subst">&#123;arg1&#125;</span>*<span class="subst">&#123;arg2&#125;</span>=<span class="subst">&#123;arg1 * arg2&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> arg1 * arg2;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Csharp</tag>
+      </tags>
   </entry>
 </search>
