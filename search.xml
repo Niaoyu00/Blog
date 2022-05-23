@@ -320,4 +320,24 @@
         <tag>Csharp</tag>
       </tags>
   </entry>
+  <entry>
+    <title>github图床搭建</title>
+    <url>/Blog/2022/05/23/git%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h1 id="github图床搭建"><a href="#github图床搭建" class="headerlink" title="github图床搭建"></a>github图床搭建</h1><p>​	gitee的图床居然炸了？！难怪我之前看网站里图片都没了，一直没意识到是gitee的问题。因为本人前段时间重装电脑系统，导致今天整理笔记的时候要重新配置picgo的图床，刚配置完一看图片显示都是空的…我一直怀疑是因为我typora没升级付费版，所以他不给显示。网上查了半天，最后才发现是gitee加了防盗链，虽然说拿他白嫖做图床有点不厚道，但是你既然开放了这个功能，要停的话至少提前说一下嘛。算了，回到重点，下面是<strong>github图床搭建流程</strong>，在此记录下来以后忘了可以看看：</p>
+<h2 id="1、新建一个github仓库，clone到本地，然后将gitee旧图片文件夹拷进来再上传。"><a href="#1、新建一个github仓库，clone到本地，然后将gitee旧图片文件夹拷进来再上传。" class="headerlink" title="1、新建一个github仓库，clone到本地，然后将gitee旧图片文件夹拷进来再上传。"></a>1、新建一个github仓库，clone到本地，然后将gitee旧图片文件夹拷进来再上传。</h2><p>完成后大概是这样：</p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/pics/image-2022052319275.png" alt="image-2022052319275"></p>
+<h2 id="2、仓库搞完去获取个人令牌"><a href="#2、仓库搞完去获取个人令牌" class="headerlink" title="2、仓库搞完去获取个人令牌"></a>2、仓库搞完去获取个人令牌</h2><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220523192914167.png" alt="image-20220523192914167"></p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220523193134548.png" alt="image-20220523193134548"></p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220523193205679.png" alt="image-20220523193205679"></p>
+<h3 id="名字随便取，自己记得就好。日期选无限期。下方选repo"><a href="#名字随便取，自己记得就好。日期选无限期。下方选repo" class="headerlink" title="名字随便取，自己记得就好。日期选无限期。下方选repo"></a>名字随便取，自己记得就好。日期选无限期。下方选repo</h3><p><img src="D:\zhy\学习笔记\typoraPic\image-20220523193349159.png" alt="image-20220523193349159"></p>
+<h3 id="然后获取token，记得复制"><a href="#然后获取token，记得复制" class="headerlink" title="然后获取token，记得复制"></a>然后获取token，记得复制</h3><p><img src="D:\zhy\学习笔记\typoraPic\image-20220523193420375.png" alt="image-20220523193420375"></p>
+<h2 id="3、打开picgo输入相应数据"><a href="#3、打开picgo输入相应数据" class="headerlink" title="3、打开picgo输入相应数据"></a>3、打开picgo输入相应数据</h2><p>仓库名直接复制github的http链接，删一下前半部分<a class="link"   href="https://github.com/%E8%BF%98%E6%9C%89%E6%9C%80%E5%90%8E%E7%9A%84.git%E5%B0%B1%E8%A1%8C%E3%80%82" >https://github.com/还有最后的.git就行。<i class="fas fa-external-link-alt"></i></a></p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220523193616475.png" alt="image-20220523193616475"></p>
+<h2 id="4、打开typora中文件-gt-偏好设置-gt-图像"><a href="#4、打开typora中文件-gt-偏好设置-gt-图像" class="headerlink" title="4、打开typora中文件-&gt;偏好设置-&gt;图像"></a>4、打开typora中文件-&gt;偏好设置-&gt;图像</h2><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20220523193818256.png" alt="image-20220523193818256"></p>
+<h3 id="按图片中操作完测试下"><a href="#按图片中操作完测试下" class="headerlink" title="按图片中操作完测试下"></a>按图片中操作完测试下</h3><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/images/image-20220523193939032.png" alt="image-20220523193939032"></p>
+]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
 </search>
