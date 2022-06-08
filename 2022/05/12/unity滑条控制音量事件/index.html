@@ -9,7 +9,7 @@
     
     <title>
         
-            计算器 |
+            unity滑条控制音量事件 |
         
         Niaoyu
     </title>
@@ -174,7 +174,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">计算器</span>
+            <span class="title-hover-animation">unity滑条控制音量事件</span>
         </div>
 
         
@@ -193,8 +193,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-02-23 18:35:39</span>
-        <span class="mobile">2022-02-23 18:35</span>
+        <span class="pc">2022-05-12 02:36:12</span>
+        <span class="mobile">2022-05-12 02:36</span>
     </span>
     
     
@@ -203,7 +203,7 @@
             <ul>
                 
                     <li>
-                        <a href="/Blog/tags/Csharp/">Csharp</a>&nbsp;
+                        <a href="/Blog/tags/unity/">unity</a>&nbsp;
                     </li>
                 
             </ul>
@@ -226,20 +226,20 @@
         
 
         <div class="article-content markdown-body">
-            <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Calculator</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">string</span> inputStr = Console.ReadLine(); CalcOnline(inputStr);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">static</span> CalcInfo[] configs = <span class="keyword">new</span> CalcInfo[]</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;+&quot;</span>,(a,b)=&gt;a+b),</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;-&quot;</span>,(a,b)=&gt;a-b),</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;*&quot;</span>,(a,b)=&gt;a*b),</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;/&quot;</span>,(a,b)=&gt;a/b),</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">CalcOnline</span>(<span class="params"><span class="built_in">string</span> inputStr</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span> index = <span class="number">-1</span>;</span><br><span class="line">            Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func = <span class="literal">null</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; configs.Length; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">var</span> item = configs[i];</span><br><span class="line">                index = inputStr.IndexOf(item.tag);<span class="comment">//找到符号，返回所在下标，未找到返回-1</span></span><br><span class="line">                <span class="keyword">if</span> (index != <span class="number">-1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    func = item.func;<span class="comment">//如果找到的是+，那么index为1，+的func函数内容是a+b</span></span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (index == <span class="number">-1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;只支持+-*/&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            CalcResult(inputStr, func, index);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">CalcResult</span>(<span class="params"><span class="built_in">string</span> inputStr, Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func, <span class="built_in">int</span> index</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> num1Str = inputStr.Substring(<span class="number">0</span>, index);<span class="comment">//0~index之间的内容(不包括后面的)赋值给num1Str，若输入1+2则获得1</span></span><br><span class="line">            <span class="built_in">int</span> strLen = inputStr.Count();</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;strLen:<span class="subst">&#123;strLen&#125;</span>,index:<span class="subst">&#123;index&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="built_in">string</span> num2Str = inputStr.Substring(index+<span class="number">1</span>,strLen-index<span class="number">-1</span>);<span class="comment">//若输入1+2则获得2</span></span><br><span class="line">            <span class="built_in">float</span> num1 = <span class="built_in">float</span>.Parse(num1Str);</span><br><span class="line">            <span class="built_in">float</span> num2 = <span class="built_in">float</span>.Parse(num2Str);</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;num1:<span class="subst">&#123;num1&#125;</span>, num2:<span class="subst">&#123;num2&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="built_in">float</span> result = func(num1, num2);</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;<span class="subst">&#123;inputStr&#125;</span>的计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CalcInfo</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> tag;</span><br><span class="line">        <span class="keyword">public</span> Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">CalcInfo</span>(<span class="params"><span class="built_in">string</span> tag, Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>.tag = tag;</span><br><span class="line">            <span class="keyword">this</span>.func = func;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//5+6</span></span><br><span class="line"><span class="comment">//strLen:3,index:1</span></span><br><span class="line"><span class="comment">//num1:5, num2:6</span></span><br><span class="line"><span class="comment">//5+6的计算结果：11</span></span><br></pre></td></tr></table></figure>
+            <h1 id="unity滑条控制音量事件"><a href="#unity滑条控制音量事件" class="headerlink" title="unity滑条控制音量事件"></a>unity滑条控制音量事件</h1><h3 id="slider-onValueChanged-AddListener"><a href="#slider-onValueChanged-AddListener" class="headerlink" title="slider.onValueChanged.AddListener"></a>slider.onValueChanged.AddListener</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">slider.onValueChanged.AddListener((<span class="built_in">float</span> v) =&gt;</span><br><span class="line">        &#123;<span class="comment">//v等价于slider.value</span></span><br><span class="line">            AudioTuning.Instance.SetMasterVolume(v);</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
 
-
+<h4 id="AudioTuning"><a href="#AudioTuning" class="headerlink" title="AudioTuning:"></a>AudioTuning:</h4><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">AudioTuning</span> : <span class="title">SingLeton</span>&lt;<span class="title">AudioTuning</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">SerializeField</span>] AudioMixer audioMixer;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetMasterVolume</span>(<span class="params"><span class="built_in">float</span> volume</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        audioMixer.SetFloat(<span class="string">&quot;MasterVolume&quot;</span>, volume);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
 
         
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：计算器</li>
+        <li>本文标题：unity滑条控制音量事件</li>
         <li>本文作者：ZHY</li>
-        <li>创建时间：2022-02-23 18:35:39</li>
+        <li>创建时间：2022-05-12 02:36:12</li>
         <li>
-            本文链接：https://niaoyu00.github.io/Blog/2022/02/23/Csharp计算器/
+            本文链接：https://niaoyu00.github.io/Blog/2022/05/12/unity滑条控制音量事件/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -254,7 +254,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/Blog/tags/Csharp/">#Csharp</a>&nbsp;
+                        <a href="/Blog/tags/unity/">#unity</a>&nbsp;
                     </li>
                 
             </ul>
@@ -266,13 +266,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/Blog/2022/02/27/unity%E7%9A%84Axis%E8%AE%BE%E7%BD%AE/"
+                           href="/Blog/2022/05/23/git%E5%9B%BE%E5%BA%8A/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">unity的Axis设置</span>
+                                <span class="post-nav-title-item">github图床搭建</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -282,10 +282,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/Blog/2022/02/22/%E5%A7%94%E6%89%98/"
+                           href="/Blog/2022/05/12/unity%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BA%94%E7%A7%8D%E6%96%B9%E6%B3%95/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">委托</span>
+                                <span class="post-nav-title-item">unity中查找对象的五种方法</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -403,7 +403,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#unity%E6%BB%91%E6%9D%A1%E6%8E%A7%E5%88%B6%E9%9F%B3%E9%87%8F%E4%BA%8B%E4%BB%B6"><span class="nav-text">unity滑条控制音量事件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#slider-onValueChanged-AddListener"><span class="nav-text">slider.onValueChanged.AddListener</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AudioTuning"><span class="nav-text">AudioTuning:</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>

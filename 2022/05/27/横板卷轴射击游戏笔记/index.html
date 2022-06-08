@@ -9,7 +9,7 @@
     
     <title>
         
-            计算器 |
+            横板卷轴射击游戏笔记 |
         
         Niaoyu
     </title>
@@ -174,7 +174,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">计算器</span>
+            <span class="title-hover-animation">横板卷轴射击游戏笔记</span>
         </div>
 
         
@@ -193,8 +193,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-02-23 18:35:39</span>
-        <span class="mobile">2022-02-23 18:35</span>
+        <span class="pc">2022-05-27 18:18:20</span>
+        <span class="mobile">2022-05-27 18:18</span>
     </span>
     
     
@@ -203,7 +203,7 @@
             <ul>
                 
                     <li>
-                        <a href="/Blog/tags/Csharp/">Csharp</a>&nbsp;
+                        <a href="/Blog/tags/unity/">unity</a>&nbsp;
                     </li>
                 
             </ul>
@@ -226,8 +226,37 @@
         
 
         <div class="article-content markdown-body">
-            <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Calculator</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">string</span> inputStr = Console.ReadLine(); CalcOnline(inputStr);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">static</span> CalcInfo[] configs = <span class="keyword">new</span> CalcInfo[]</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;+&quot;</span>,(a,b)=&gt;a+b),</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;-&quot;</span>,(a,b)=&gt;a-b),</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;*&quot;</span>,(a,b)=&gt;a*b),</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;/&quot;</span>,(a,b)=&gt;a/b),</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">CalcOnline</span>(<span class="params"><span class="built_in">string</span> inputStr</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span> index = <span class="number">-1</span>;</span><br><span class="line">            Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func = <span class="literal">null</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; configs.Length; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">var</span> item = configs[i];</span><br><span class="line">                index = inputStr.IndexOf(item.tag);<span class="comment">//找到符号，返回所在下标，未找到返回-1</span></span><br><span class="line">                <span class="keyword">if</span> (index != <span class="number">-1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    func = item.func;<span class="comment">//如果找到的是+，那么index为1，+的func函数内容是a+b</span></span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (index == <span class="number">-1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;只支持+-*/&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            CalcResult(inputStr, func, index);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">CalcResult</span>(<span class="params"><span class="built_in">string</span> inputStr, Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func, <span class="built_in">int</span> index</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> num1Str = inputStr.Substring(<span class="number">0</span>, index);<span class="comment">//0~index之间的内容(不包括后面的)赋值给num1Str，若输入1+2则获得1</span></span><br><span class="line">            <span class="built_in">int</span> strLen = inputStr.Count();</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;strLen:<span class="subst">&#123;strLen&#125;</span>,index:<span class="subst">&#123;index&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="built_in">string</span> num2Str = inputStr.Substring(index+<span class="number">1</span>,strLen-index<span class="number">-1</span>);<span class="comment">//若输入1+2则获得2</span></span><br><span class="line">            <span class="built_in">float</span> num1 = <span class="built_in">float</span>.Parse(num1Str);</span><br><span class="line">            <span class="built_in">float</span> num2 = <span class="built_in">float</span>.Parse(num2Str);</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;num1:<span class="subst">&#123;num1&#125;</span>, num2:<span class="subst">&#123;num2&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="built_in">float</span> result = func(num1, num2);</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;<span class="subst">&#123;inputStr&#125;</span>的计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CalcInfo</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> tag;</span><br><span class="line">        <span class="keyword">public</span> Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">CalcInfo</span>(<span class="params"><span class="built_in">string</span> tag, Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>.tag = tag;</span><br><span class="line">            <span class="keyword">this</span>.func = func;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//5+6</span></span><br><span class="line"><span class="comment">//strLen:3,index:1</span></span><br><span class="line"><span class="comment">//num1:5, num2:6</span></span><br><span class="line"><span class="comment">//5+6的计算结果：11</span></span><br></pre></td></tr></table></figure>
+            <h1 id="横板卷轴射击游戏笔记"><a href="#横板卷轴射击游戏笔记" class="headerlink" title="横板卷轴射击游戏笔记"></a>横板卷轴射击游戏笔记</h1><h2 id="一、背景滚动实现方法"><a href="#一、背景滚动实现方法" class="headerlink" title="一、背景滚动实现方法"></a>一、背景滚动实现方法</h2><ul>
+<li><p>创建一个3d对象Quad,重命名为SimpleBackground,调整好大小(跟图片差不多大)</p>
+</li>
+<li><p>新建一个材质,设置shader为Unlit&#x2F;Textu</p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220525113508926.png" alt="image-20220525113508926"></p>
+</li>
+<li><p>将图片texture type设置为default，拖入材质。</p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220525114905000.png" alt="image-20220525114905000"></p>
+</li>
+<li><p>将材质拖进SimpleBackground，这样就做好了背景。</p>
+</li>
+<li><p>通过实时更改材质中offset偏移值，来实现滚动效果</p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220525115257651.png" alt="image-20220525115257651"></p>
+</li>
+<li><p>滚动代码如下：将Start()改为每帧刷新的协程(模拟Update())</p>
+</li>
+</ul>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Material material;</span><br><span class="line">   [<span class="meta">SerializeField</span>] Vector2 scrollVelocity;<span class="comment">//速度</span></span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">   &#123;</span><br><span class="line">       material = GetComponent&lt;Renderer&gt;().material;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">private</span> IEnumerator <span class="title">Start</span>()</span></span><br><span class="line">   &#123;</span><br><span class="line">       <span class="keyword">while</span> (GameManager.GameState != GameState.GameOver)</span><br><span class="line">           <span class="comment">//游戏状态不为gameover可运行场景滚动</span></span><br><span class="line">       &#123;</span><br><span class="line">           material.mainTextureOffset += scrollVelocity * Time.deltaTime;</span><br><span class="line">           <span class="keyword">yield</span> <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="二、Input-System动作输入系统"><a href="#二、Input-System动作输入系统" class="headerlink" title="二、Input System动作输入系统"></a>二、Input System动作输入系统</h2><p>Input System（安装包）实现了一个，可使用任何类型输入设备来控制unity内容的系统。它旨在替代unity旧的输入管理器（UnityEngine.Input类），并且更为强大，灵活易用。</p>
+<h3 id="安装输入系统"><a href="#安装输入系统" class="headerlink" title="安装输入系统"></a>安装输入系统</h3><p>Window-&gt;Pacjage Manager-&gt;UnityRegistry(搜索input)-&gt;安装</p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220525193119457.png" alt="image-20220525193119457"></p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220525193205846.png" alt="image-20220525193205846"></p>
+<h3 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h3><p>新建InputActions文件</p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220525193424028.png" alt="image-20220525193424028"></p>
+<p>打开InputActions，绑定输入信号。</p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220526133600652.png" alt="image-20220526133600652"></p>
+<p>创建c#文件,注意名字可自定，我取名为PlayerInputActions。</p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220527165032291.png" alt="image-20220527165032291"></p>
+<p>新建一个PlayInput类,继承于ScriptableObject,<code>//ScriptableObject:一个类，如果需要创建【无需附加到游戏对象】的对象时，可从该类派生。【】表示强调。</code>继承PlayerInputActions类中的几个接口，实现接口。</p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220527173825594.png" alt="image-20220527173825594"></p>
 
         </div>
 
@@ -235,11 +264,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：计算器</li>
+        <li>本文标题：横板卷轴射击游戏笔记</li>
         <li>本文作者：ZHY</li>
-        <li>创建时间：2022-02-23 18:35:39</li>
+        <li>创建时间：2022-05-27 18:18:20</li>
         <li>
-            本文链接：https://niaoyu00.github.io/Blog/2022/02/23/Csharp计算器/
+            本文链接：https://niaoyu00.github.io/Blog/2022/05/27/横板卷轴射击游戏笔记/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -254,7 +283,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/Blog/tags/Csharp/">#Csharp</a>&nbsp;
+                        <a href="/Blog/tags/unity/">#unity</a>&nbsp;
                     </li>
                 
             </ul>
@@ -266,13 +295,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/Blog/2022/02/27/unity%E7%9A%84Axis%E8%AE%BE%E7%BD%AE/"
+                           href="/Blog/2022/06/06/ScriptableObject/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">unity的Axis设置</span>
+                                <span class="post-nav-title-item">ScriptableObject简单使用</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -282,10 +311,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/Blog/2022/02/22/%E5%A7%94%E6%89%98/"
+                           href="/Blog/2022/05/23/git%E5%9B%BE%E5%BA%8A/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">委托</span>
+                                <span class="post-nav-title-item">github图床搭建</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -403,7 +432,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%AA%E6%9D%BF%E5%8D%B7%E8%BD%B4%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E7%AC%94%E8%AE%B0"><span class="nav-text">横板卷轴射击游戏笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%83%8C%E6%99%AF%E6%BB%9A%E5%8A%A8%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-text">一、背景滚动实现方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Input-System%E5%8A%A8%E4%BD%9C%E8%BE%93%E5%85%A5%E7%B3%BB%E7%BB%9F"><span class="nav-text">二、Input System动作输入系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%BE%93%E5%85%A5%E7%B3%BB%E7%BB%9F"><span class="nav-text">安装输入系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%8A%9F%E8%83%BD"><span class="nav-text">实现功能</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>

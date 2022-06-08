@@ -9,7 +9,7 @@
     
     <title>
         
-            ue4decal贴花 |
+            ScriptableObject简单使用 |
         
         Niaoyu
     </title>
@@ -174,7 +174,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">ue4decal贴花</span>
+            <span class="title-hover-animation">ScriptableObject简单使用</span>
         </div>
 
         
@@ -193,8 +193,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2021-10-27 16:29:31</span>
-        <span class="mobile">2021-10-27 16:29</span>
+        <span class="pc">2022-06-06 19:20:04</span>
+        <span class="mobile">2022-06-06 19:20</span>
     </span>
     
     
@@ -203,7 +203,11 @@
             <ul>
                 
                     <li>
-                        <a href="/Blog/tags/ue4%E6%9D%90%E8%B4%A8/">ue4材质</a>&nbsp;
+                        <a href="/Blog/tags/unity/">unity</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/Blog/tags/ScriptableObject/">ScriptableObject</a>&nbsp;
                     </li>
                 
             </ul>
@@ -226,22 +230,45 @@
         
 
         <div class="article-content markdown-body">
-            <h1 id="decal贴花"><a href="#decal贴花" class="headerlink" title="decal贴花"></a>decal贴花</h1><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211026144819865.png" alt="image-20211026144819865"></p>
-<h3 id="材质"><a href="#材质" class="headerlink" title="材质"></a>材质</h3><ul>
-<li>Tiling：平铺</li>
-<li>Crop X：横向移动</li>
-<li>Crop Y：纵向移动</li>
+            <h1 id="ScriptableObject"><a href="#ScriptableObject" class="headerlink" title="ScriptableObject"></a>ScriptableObject</h1><h2 id="平时开发存在的一些问题："><a href="#平时开发存在的一些问题：" class="headerlink" title="平时开发存在的一些问题："></a>平时开发存在的一些问题：</h2><ul>
+<li><p>一个场景内有多个相同组件使用相同数值的时候，这个组件也在内存中多了一份实例，浪费内存空间。</p>
+</li>
+<li><p>static或者[Serializable]修饰的变量，在程序退出后会还原。编辑器模式运行时，只能通过Copy Component Values来临时保存调整好的数值。</p>
+</li>
+<li><p>项目之间、场景之间数据很难共享。</p>
+</li>
+<li><p>在runtime下要改变某个GameObject上组件的数值，就一定要获取到这个GameObject实例，使项目耦合度成倍提高，最后变成蜘蛛网。</p>
+</li>
+<li><p>场景中总会有一些空的GameObject用来保存和共享数据，这个GameObject基本不会参与太多的游戏逻辑，但为了保存和共享场景内的数据就不得不碍眼的在场景中出现，逼死强迫症，也不利于模块抽象。</p>
+</li>
+<li><p>同样，要通过UGUI Button中的On Click事件调用一个GameObject上的方法，也只能获取到GameObject实例来调用，数量太多的话也变成了蜘蛛网。</p>
+</li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211026174136186.png" alt="image-20211026174136186"></p>
-<h2 id="08-Parallax"><a href="#08-Parallax" class="headerlink" title="08 - Parallax"></a>08 - Parallax</h2><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211026174352870.png" alt="image-20211026174352870"></p>
-<p>POM：侧面看也能看出高低差</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211026174550156.png" alt="image-20211026174550156"></p>
-<p>Height Ratio：凸起部分的高度</p>
-<p>Reference Plane：使用UsePOM会导致正常视角看贴花有显示bug，通过这个参数调整。</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211026174838836.png" alt="image-20211026174838836"></p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211026175110165.png" alt="image-20211026175110165"></p>
-<h3 id="抖动，使颜色混合"><a href="#抖动，使颜色混合" class="headerlink" title="抖动，使颜色混合"></a>抖动，使颜色混合</h3><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211027160917882.png" alt="image-20211027160917882"></p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211027161015716.png" alt="image-20211027161015716"></p>
+<h2 id="使用ScriptableObject如何解决"><a href="#使用ScriptableObject如何解决" class="headerlink" title="使用ScriptableObject如何解决"></a>使用ScriptableObject如何解决</h2><ul>
+<li>ScriptableObject是将数据存储在.asset文件中的，可以理解为类似material这样的文件，ScriptableObject中存储的数值在runtime中作出修改，在退出后也会被保存下来。</li>
+<li>同样，类似material文件，在多个地方需要用到同一个数据，只要把ScriptableObject生成的.asset文件拖入相应位置就可以，不必再指向某个单例或者实例。</li>
+<li>可以被任何场景引用，在项目之间、场景之间很容易的共享数据。</li>
+<li>不必为了保存数据在场景中放置一个空GameObject。让项目的复杂度和耦合度最大限度的降低，强迫症福音。</li>
+<li>ScriptableObject是自定义的数据类型，应用非常灵活。</li>
+<li>通过UGUI Button中的On Click事件只需要指向某一个ScriptableObject文件，而响应事件的GameObject也只需要获取到这个ScriptableObject文件即可触发，不必让按钮指向GameObject实例。大幅度减少了项目逻辑和结构的复杂程度。</li>
+</ul>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ol>
+<li>通过ScriptableObject获取一个GameObject的实例。</li>
+<li>不获取物体实例，通过ScriptableObject实现UnityEvent的执行。</li>
+</ol>
+<p>角色：player,enemy;</p>
+<p>场景内会在随机位置生成任意数量的敌人，敌人会追着player一直跑，player通过移动来躲避敌人，每次碰到敌人就会减少生命值。</p>
+<h2 id="开始实现"><a href="#开始实现" class="headerlink" title="开始实现"></a>开始实现</h2><h4 id="搭建场景和角色敌人"><a href="#搭建场景和角色敌人" class="headerlink" title="搭建场景和角色敌人:"></a>搭建场景和角色敌人:</h4><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220606180524764.png" alt="image-20220606180524764"></p>
+<h4 id="新建脚本FollowTransformSmooth，实现追踪功能，拖到enemy上面。"><a href="#新建脚本FollowTransformSmooth，实现追踪功能，拖到enemy上面。" class="headerlink" title="新建脚本FollowTransformSmooth，实现追踪功能，拖到enemy上面。"></a>新建脚本FollowTransformSmooth，实现追踪功能，拖到enemy上面。</h4><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">FollowTransformSmooth</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//[SerializeField] Transform target;</span></span><br><span class="line">    [<span class="meta">SerializeField</span>] TargetTransform target;</span><br><span class="line">    [<span class="meta">SerializeField</span>] Rigidbody selfRigidbody;</span><br><span class="line">    [<span class="meta">SerializeField, Range(0f, 100f)</span>] <span class="built_in">float</span> moveSpeed = <span class="number">10f</span>;</span><br><span class="line">    Vector3 _destination;<span class="comment">//目的地</span></span><br><span class="line">    Vector3 _direction;<span class="comment">//方向</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">LateUpdate</span>()</span></span><br><span class="line">    &#123;<span class="comment">//LateUpdate 在调用所有 Update 函数后调用。</span></span><br><span class="line">        <span class="comment">//_destination = target.position;//怪物追踪目的地</span></span><br><span class="line">        _destination = target.targetTrans.position;<span class="comment">//怪物追踪目的地</span></span><br><span class="line">        _direction = (_destination - transform.position).normalized;<span class="comment">//怪物前进方向</span></span><br><span class="line">        <span class="comment">//AddForce,向刚体添加力,(vector3方向,ForceMode力类型)</span></span><br><span class="line">        selfRigidbody.AddForce(_direction * moveSpeed, ForceMode.Acceleration);</span><br><span class="line">        <span class="comment">// ForceMode.Force	向此刚体添加连续力，使用其质量。</span></span><br><span class="line">        <span class="comment">// ForceMode.Acceleration 向此刚体添加连续加速度，忽略其质量。</span></span><br><span class="line">        <span class="comment">// ForceMode.Impulse	向此刚体添加瞬时力冲击，考虑其质量。</span></span><br><span class="line">        <span class="comment">// ForceMode.VelocityChange	向此刚体添加瞬时速度变化，忽略其质量。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="新建TargetTransform脚本，继承ScriptableObject，用来存储主角的位置信息"><a href="#新建TargetTransform脚本，继承ScriptableObject，用来存储主角的位置信息" class="headerlink" title="新建TargetTransform脚本，继承ScriptableObject，用来存储主角的位置信息"></a>新建TargetTransform脚本，继承ScriptableObject，用来存储主角的位置信息</h4><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">CreateAssetMenu(menuName = <span class="string">&quot;mySubMenu/TargetTransform &quot;</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">TargetTransform</span> : <span class="title">ScriptableObject</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> Transform targetTrans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>编译完在文件夹新建TargetTransform，命名为Player</strong></p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220606181512646.png" alt="image-20220606181512646"></p>
+<h4 id="新建SetTarget脚本，主角位置数据赋值给TargetTransform。拖到player上"><a href="#新建SetTarget脚本，主角位置数据赋值给TargetTransform。拖到player上" class="headerlink" title="新建SetTarget脚本，主角位置数据赋值给TargetTransform。拖到player上"></a>新建SetTarget脚本，主角位置数据赋值给TargetTransform。拖到player上</h4><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">SetTarget</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">SerializeField</span>] TargetTransform target;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        target.targetTrans = gameObject.transform;<span class="comment">//当前位置数据传递给TargetTransform</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="预制体上的配置："><a href="#预制体上的配置：" class="headerlink" title="预制体上的配置："></a>预制体上的配置：</h4><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220606181229495.png" alt="image-20220606181229495"></p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220606181237509.png" alt="image-20220606181237509"></p>
 
         </div>
 
@@ -249,11 +276,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：ue4decal贴花</li>
+        <li>本文标题：ScriptableObject简单使用</li>
         <li>本文作者：ZHY</li>
-        <li>创建时间：2021-10-27 16:29:31</li>
+        <li>创建时间：2022-06-06 19:20:04</li>
         <li>
-            本文链接：https://niaoyu00.github.io/Blog/2021/10/27/decal/
+            本文链接：https://niaoyu00.github.io/Blog/2022/06/06/ScriptableObject/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -268,7 +295,11 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/Blog/tags/ue4%E6%9D%90%E8%B4%A8/">#ue4材质</a>&nbsp;
+                        <a href="/Blog/tags/unity/">#unity</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/Blog/tags/ScriptableObject/">#ScriptableObject</a>&nbsp;
                     </li>
                 
             </ul>
@@ -280,13 +311,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/Blog/2021/10/30/%E8%BE%B9%E7%95%8C%E6%B7%B7%E5%90%88/"
+                           href="/Blog/2022/06/06/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Ue4材质边界混合</span>
+                                <span class="post-nav-title-item">正则表达式(搬运)</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -296,10 +327,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/Blog/2021/10/25/%E9%A1%B6%E7%82%B9%E7%BB%98%E5%88%B6/"
+                           href="/Blog/2022/05/27/%E6%A8%AA%E6%9D%BF%E5%8D%B7%E8%BD%B4%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E7%AC%94%E8%AE%B0/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">ue4顶点绘制</span>
+                                <span class="post-nav-title-item">横板卷轴射击游戏笔记</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -417,7 +448,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#decal%E8%B4%B4%E8%8A%B1"><span class="nav-text">decal贴花</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%90%E8%B4%A8"><span class="nav-text">材质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#08-Parallax"><span class="nav-text">08 - Parallax</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%96%E5%8A%A8%EF%BC%8C%E4%BD%BF%E9%A2%9C%E8%89%B2%E6%B7%B7%E5%90%88"><span class="nav-text">抖动，使颜色混合</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ScriptableObject"><span class="nav-text">ScriptableObject</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E6%97%B6%E5%BC%80%E5%8F%91%E5%AD%98%E5%9C%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-text">平时开发存在的一些问题：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8ScriptableObject%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3"><span class="nav-text">使用ScriptableObject如何解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82"><span class="nav-text">需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E5%AE%9E%E7%8E%B0"><span class="nav-text">开始实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E5%9C%BA%E6%99%AF%E5%92%8C%E8%A7%92%E8%89%B2%E6%95%8C%E4%BA%BA"><span class="nav-text">搭建场景和角色敌人:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E8%84%9A%E6%9C%ACFollowTransformSmooth%EF%BC%8C%E5%AE%9E%E7%8E%B0%E8%BF%BD%E8%B8%AA%E5%8A%9F%E8%83%BD%EF%BC%8C%E6%8B%96%E5%88%B0enemy%E4%B8%8A%E9%9D%A2%E3%80%82"><span class="nav-text">新建脚本FollowTransformSmooth，实现追踪功能，拖到enemy上面。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E5%BB%BATargetTransform%E8%84%9A%E6%9C%AC%EF%BC%8C%E7%BB%A7%E6%89%BFScriptableObject%EF%BC%8C%E7%94%A8%E6%9D%A5%E5%AD%98%E5%82%A8%E4%B8%BB%E8%A7%92%E7%9A%84%E4%BD%8D%E7%BD%AE%E4%BF%A1%E6%81%AF"><span class="nav-text">新建TargetTransform脚本，继承ScriptableObject，用来存储主角的位置信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E5%BB%BASetTarget%E8%84%9A%E6%9C%AC%EF%BC%8C%E4%B8%BB%E8%A7%92%E4%BD%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E8%B5%8B%E5%80%BC%E7%BB%99TargetTransform%E3%80%82%E6%8B%96%E5%88%B0player%E4%B8%8A"><span class="nav-text">新建SetTarget脚本，主角位置数据赋值给TargetTransform。拖到player上</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%84%E5%88%B6%E4%BD%93%E4%B8%8A%E7%9A%84%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="nav-text">预制体上的配置：</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
