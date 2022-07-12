@@ -912,4 +912,81 @@
         <tag>正则表达式</tag>
       </tags>
   </entry>
+  <entry>
+    <title>unity滑条控制音量事件</title>
+    <url>/Blog/2022/06/16/unity%E4%B8%ADInvoke%E7%94%A8%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="Unity中Invoke用法"><a href="#Unity中Invoke用法" class="headerlink" title="Unity中Invoke用法"></a>Unity中Invoke用法</h1><h4 id="Invoke方法是Unity3D-中的一种委托机制。"><a href="#Invoke方法是Unity3D-中的一种委托机制。" class="headerlink" title="Invoke方法是Unity3D 中的一种委托机制。"></a>Invoke方法是Unity3D 中的一种委托机制。</h4><p>现在看一下官网给出的API：</p>
+<blockquote>
+<p>public void Invoke(string methodName, float time);</p>
+<p>methodName 是方法名，time 是具体几秒</p>
+<p>Invokes the method <code>methodName</code> in time seconds.</p>
+</blockquote>
+<p>在具体事件以后调用这个方法</p>
+<p>　　也就是说，Invoke(“SendMessage”,5) ,表示的是在“5s”以后执行“SendMessage”方法。</p>
+<p>使用Invoke方法需要注意以下三点：</p>
+<p>1、它应该在<strong>Start,Update,FixUpdate,LateUpdate,还有OnGUI</strong>中被调用</p>
+<p>2、Invoke中传递的方法不能是含有参数的方法、</p>
+<p>3、当Time.ScaleTime &#x3D; 0时，Invoke()无效，调用不到Invoke方法</p>
+<p>当然，Invoke也支持重复调用:</p>
+<p>InvokeRepeating(“SendMessage”,2,3);</p>
+<p>表示在“2s”以后开始调用第一次，之后每隔“3s”重复调用一次。</p>
+]]></content>
+      <tags>
+        <tag>unity</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>unity平台跳跃笔记</title>
+    <url>/Blog/2022/07/08/unity%E5%B9%B3%E5%8F%B0%E8%B7%B3%E8%B7%83%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="unity平台跳跃游戏笔记"><a href="#unity平台跳跃游戏笔记" class="headerlink" title="unity平台跳跃游戏笔记"></a>unity平台跳跃游戏笔记</h1><h5 id="教程来自b站阿严-https-www-bilibili-com-video-BV1rL4y1W7KH"><a href="#教程来自b站阿严-https-www-bilibili-com-video-BV1rL4y1W7KH" class="headerlink" title="教程来自b站阿严:https://www.bilibili.com/video/BV1rL4y1W7KH"></a>教程来自b站阿严:<a class="link"   href="https://www.bilibili.com/video/BV1rL4y1W7KH" >https://www.bilibili.com/video/BV1rL4y1W7KH<i class="fas fa-external-link-alt"></i></a></h5><h2 id="首先管理插件"><a href="#首先管理插件" class="headerlink" title="首先管理插件"></a>首先管理插件</h2><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220708151216150.png" alt="image-20220708151216150"></p>
+<p>删除不需要的插件，安装需要的插件，删除后插件内容：</p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220708151839520.png" alt="image-20220708151839520"></p>
+<h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3><ul>
+<li>Cinemachine，虚拟相机插件。</li>
+<li>Post Processing，后处理插件。</li>
+<li>Input System，新的输入系统插件。</li>
+</ul>
+<h3 id="安装完成后图"><a href="#安装完成后图" class="headerlink" title="安装完成后图:"></a>安装完成后图:</h3><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220708152529919.png" alt="image-20220708152529919"></p>
+<h3 id="导入资源包"><a href="#导入资源包" class="headerlink" title="导入资源包"></a>导入资源包</h3><h2 id="创建状态机系统"><a href="#创建状态机系统" class="headerlink" title="创建状态机系统"></a>创建状态机系统</h2><p>创建接口文件和状态机类</p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220708172046551.png" alt="image-20220708172046551"></p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220708172412575.png" alt="image-20220708172412575"></p>
+<h3 id="Istate接口"><a href="#Istate接口" class="headerlink" title="Istate接口"></a>Istate接口</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">IState</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">Enter</span>()</span>;<span class="comment">//状态进入</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">Exit</span>()</span>;<span class="comment">//状态退出</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">LogicUpdate</span>()</span>;<span class="comment">//状态逻辑更新</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">PhysicUpdate</span>()</span>;<span class="comment">//状态物理更新</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="StateMachine类"><a href="#StateMachine类" class="headerlink" title="StateMachine类"></a>StateMachine类</h3><p>作用:</p>
+<ul>
+<li>持有所有状态,并且进行管理和切换;</li>
+<li>负责当前状态的更新.</li>
+</ul>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">StateMachine</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">//1、持有所有状态,并且进行管理和切换;2、负责当前状态的更新</span></span><br><span class="line">  IState currentState;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">//更新状态逻辑</span></span><br><span class="line">    currentState.LogicUpdate();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">FixedUpdate</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">//更新物理</span></span><br><span class="line">    currentState.PhysicUpdate();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">SwitchOn</span>(<span class="params">IState newState</span>)</span></span><br><span class="line">  &#123;<span class="comment">//状态开启</span></span><br><span class="line">   <span class="comment">//新状态赋值给当前状态,然后启动</span></span><br><span class="line">    currentState = newState;</span><br><span class="line">    currentState.Enter();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SwitchState</span>(<span class="params">IState newState</span>)</span></span><br><span class="line">  &#123;<span class="comment">//切换状态</span></span><br><span class="line">   <span class="comment">//先关闭状态,然后新状态赋值给当前状态,启动</span></span><br><span class="line">    currentState.Exit();</span><br><span class="line">    SwitchOn(newState);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="扩展状态机系统"><a href="#扩展状态机系统" class="headerlink" title="扩展状态机系统"></a>扩展状态机系统</h2><p><strong>创建PlayerStates(玩家状态)并初始化</strong></p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PlayerState</span> : <span class="title">ScriptableObject</span>, <span class="title">IState</span></span><br><span class="line">&#123;<span class="comment">//玩家状态类</span></span><br><span class="line">  Animator animator;<span class="comment">//动画器</span></span><br><span class="line">  PlayerStateMachine stateMachine;<span class="comment">//玩家状态机类</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Initialize</span>(<span class="params">Animator animator, PlayerStateMachine stateMachine</span>)</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">this</span>.animator = animator;</span><br><span class="line">    <span class="keyword">this</span>.stateMachine = stateMachine;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Enter</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Exit</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">LogicUpdate</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">PhysicUpdate</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>PlayerStatesMachine(玩家状态机)</strong></p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PlayerStateMachine</span> : <span class="title">StateMachine</span></span><br><span class="line">&#123;<span class="comment">//玩家状态机</span></span><br><span class="line">  Animator animator;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    animator = GetComponentInChildren&lt;Animator&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//可以在此初始化 玩家状态</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="状态机系统继承关系图"><a href="#状态机系统继承关系图" class="headerlink" title="状态机系统继承关系图"></a>状态机系统继承关系图</h3><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220708193345419.png" alt="image-20220708193345419"></p>
+]]></content>
+      <tags>
+        <tag>unity</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/Blog/2022/07/12/%E4%BD%BF%E7%94%A8vscode%E5%BC%80%E5%8F%91unity%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<h1 id="使用vscode开发unity项目"><a href="#使用vscode开发unity项目" class="headerlink" title="使用vscode开发unity项目"></a>使用vscode开发unity项目</h1><p><strong>仅做记录</strong></p>
+<h3 id="vscode需要的插件如下："><a href="#vscode需要的插件如下：" class="headerlink" title="vscode需要的插件如下："></a>vscode需要的插件如下：</h3><ul>
+<li>Auto-Using for C#，自动添加引用</li>
+<li>Unity Code Snippets，unity代码补全</li>
+<li>c#，必备</li>
+<li>C# XML Documentation Comments，三下&#x2F;&#x2F;&#x2F;实现xm注释l</li>
+<li>Code Runner，运行代码</li>
+<li>GitHub Theme；eppz! (C# theme for Unity)；Gruvbox Theme；（三款编辑器皮肤</li>
+</ul>
+<p>期间会提示安装.net framework，sdk包。</p>
+<h4 id="vscode字体设置"><a href="#vscode字体设置" class="headerlink" title="vscode字体设置:"></a>vscode字体设置:</h4><p>“editor.fontFamily”: “Fira Code Medium, ‘Courier New’, monospace”</p>
+<h3 id="unity中打开edit-gt-Preferences-gt-External-Tools-选中vscode，记得勾选下面前两行。"><a href="#unity中打开edit-gt-Preferences-gt-External-Tools-选中vscode，记得勾选下面前两行。" class="headerlink" title="unity中打开edit-&gt;Preferences-&gt;External Tools,选中vscode，记得勾选下面前两行。"></a>unity中打开edit-&gt;Preferences-&gt;External Tools,选中vscode，记得勾选下面前两行。</h3><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220712152947737.png" alt="image-20220712152947737"></p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220712153037736.png" alt="image-20220712153037736"></p>
+]]></content>
+  </entry>
 </search>
