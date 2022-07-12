@@ -972,7 +972,7 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>使用vscode开发unity项目</title>
     <url>/Blog/2022/07/12/%E4%BD%BF%E7%94%A8vscode%E5%BC%80%E5%8F%91unity%E9%A1%B9%E7%9B%AE/</url>
     <content><![CDATA[<h1 id="使用vscode开发unity项目"><a href="#使用vscode开发unity项目" class="headerlink" title="使用vscode开发unity项目"></a>使用vscode开发unity项目</h1><p><strong>仅做记录</strong></p>
 <h3 id="vscode需要的插件如下："><a href="#vscode需要的插件如下：" class="headerlink" title="vscode需要的插件如下："></a>vscode需要的插件如下：</h3><ul>
@@ -988,5 +988,9 @@
 <h3 id="unity中打开edit-gt-Preferences-gt-External-Tools-选中vscode，记得勾选下面前两行。"><a href="#unity中打开edit-gt-Preferences-gt-External-Tools-选中vscode，记得勾选下面前两行。" class="headerlink" title="unity中打开edit-&gt;Preferences-&gt;External Tools,选中vscode，记得勾选下面前两行。"></a>unity中打开edit-&gt;Preferences-&gt;External Tools,选中vscode，记得勾选下面前两行。</h3><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220712152947737.png" alt="image-20220712152947737"></p>
 <p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220712153037736.png" alt="image-20220712153037736"></p>
 ]]></content>
+      <tags>
+        <tag>unity</tag>
+        <tag>VsCode</tag>
+      </tags>
   </entry>
 </search>
