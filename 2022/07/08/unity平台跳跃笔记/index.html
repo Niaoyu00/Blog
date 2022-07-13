@@ -254,7 +254,7 @@
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PlayerStateMachine</span> : <span class="title">StateMachine</span></span><br><span class="line">&#123;<span class="comment">//玩家状态机</span></span><br><span class="line">  Animator animator;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    animator = GetComponentInChildren&lt;Animator&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//可以在此初始化 玩家状态</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="状态机系统继承关系图"><a href="#状态机系统继承关系图" class="headerlink" title="状态机系统继承关系图"></a>状态机系统继承关系图</h3><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220708193345419.png" alt="image-20220708193345419"></p>
-
+<h3 id="使用两种方法实现角色动画对比"><a href="#使用两种方法实现角色动画对比" class="headerlink" title="使用两种方法实现角色动画对比"></a>使用两种方法实现角色动画对比</h3><h4 id="常规方法-不使用状态机"><a href="#常规方法-不使用状态机" class="headerlink" title="常规方法(不使用状态机)"></a>常规方法(不使用状态机)</h4>
         </div>
 
         
@@ -334,35 +334,30 @@
         </div>
 
         <div class="page-main-content-bottom">
-            .footer {
-  font-size: 1rem;
-  color: var(--third-text-color);
-
-
-  a {
-    color: var(--third-text-color);
-
-
-    &:hover {
-      color: var(--primary-color);
-
-    }
-  }
-
-  .info-container {
-    padding-bottom: 10px;
-    text-align: center;
-  }
-
-  .info-item {
-    margin: 5px 0;
-  }
-
-  .icon-animate {
-    animation: icon-animate 1.2s ease-in-out infinite;
-  }
-
-}
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">ZHY</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
 
         </div>
     </div>
@@ -434,7 +429,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#unity%E5%B9%B3%E5%8F%B0%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F%E7%AC%94%E8%AE%B0"><span class="nav-text">unity平台跳跃游戏笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%99%E7%A8%8B%E6%9D%A5%E8%87%AAb%E7%AB%99%E9%98%BF%E4%B8%A5-https-www-bilibili-com-video-BV1rL4y1W7KH"><span class="nav-text">教程来自b站阿严:https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1rL4y1W7KH</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E7%AE%A1%E7%90%86%E6%8F%92%E4%BB%B6"><span class="nav-text">首先管理插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%EF%BC%9A"><span class="nav-text">安装：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E%E5%9B%BE"><span class="nav-text">安装完成后图:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E8%B5%84%E6%BA%90%E5%8C%85"><span class="nav-text">导入资源包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%8A%B6%E6%80%81%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="nav-text">创建状态机系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Istate%E6%8E%A5%E5%8F%A3"><span class="nav-text">Istate接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StateMachine%E7%B1%BB"><span class="nav-text">StateMachine类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E7%8A%B6%E6%80%81%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="nav-text">扩展状态机系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB%E5%9B%BE"><span class="nav-text">状态机系统继承关系图</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#unity%E5%B9%B3%E5%8F%B0%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F%E7%AC%94%E8%AE%B0"><span class="nav-text">unity平台跳跃游戏笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%99%E7%A8%8B%E6%9D%A5%E8%87%AAb%E7%AB%99%E9%98%BF%E4%B8%A5-https-www-bilibili-com-video-BV1rL4y1W7KH"><span class="nav-text">教程来自b站阿严:https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1rL4y1W7KH</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E7%AE%A1%E7%90%86%E6%8F%92%E4%BB%B6"><span class="nav-text">首先管理插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%EF%BC%9A"><span class="nav-text">安装：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E%E5%9B%BE"><span class="nav-text">安装完成后图:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E8%B5%84%E6%BA%90%E5%8C%85"><span class="nav-text">导入资源包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%8A%B6%E6%80%81%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="nav-text">创建状态机系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Istate%E6%8E%A5%E5%8F%A3"><span class="nav-text">Istate接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StateMachine%E7%B1%BB"><span class="nav-text">StateMachine类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E7%8A%B6%E6%80%81%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="nav-text">扩展状态机系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB%E5%9B%BE"><span class="nav-text">状态机系统继承关系图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0%E8%A7%92%E8%89%B2%E5%8A%A8%E7%94%BB%E5%AF%B9%E6%AF%94"><span class="nav-text">使用两种方法实现角色动画对比</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%84%E6%96%B9%E6%B3%95-%E4%B8%8D%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%80%81%E6%9C%BA"><span class="nav-text">常规方法(不使用状态机)</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>

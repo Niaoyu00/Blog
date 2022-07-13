@@ -966,7 +966,7 @@
 <figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PlayerStateMachine</span> : <span class="title">StateMachine</span></span><br><span class="line">&#123;<span class="comment">//玩家状态机</span></span><br><span class="line">  Animator animator;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    animator = GetComponentInChildren&lt;Animator&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//可以在此初始化 玩家状态</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="状态机系统继承关系图"><a href="#状态机系统继承关系图" class="headerlink" title="状态机系统继承关系图"></a>状态机系统继承关系图</h3><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220708193345419.png" alt="image-20220708193345419"></p>
-]]></content>
+<h3 id="使用两种方法实现角色动画对比"><a href="#使用两种方法实现角色动画对比" class="headerlink" title="使用两种方法实现角色动画对比"></a>使用两种方法实现角色动画对比</h3><h4 id="常规方法-不使用状态机"><a href="#常规方法-不使用状态机" class="headerlink" title="常规方法(不使用状态机)"></a>常规方法(不使用状态机)</h4>]]></content>
       <tags>
         <tag>unity</tag>
       </tags>
