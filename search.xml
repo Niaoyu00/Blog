@@ -913,7 +913,7 @@
       </tags>
   </entry>
   <entry>
-    <title>unity滑条控制音量事件</title>
+    <title>unity中Invoke用法</title>
     <url>/Blog/2022/06/16/unity%E4%B8%ADInvoke%E7%94%A8%E6%B3%95/</url>
     <content><![CDATA[<h1 id="Unity中Invoke用法"><a href="#Unity中Invoke用法" class="headerlink" title="Unity中Invoke用法"></a>Unity中Invoke用法</h1><h4 id="Invoke方法是Unity3D-中的一种委托机制。"><a href="#Invoke方法是Unity3D-中的一种委托机制。" class="headerlink" title="Invoke方法是Unity3D 中的一种委托机制。"></a>Invoke方法是Unity3D 中的一种委托机制。</h4><p>现在看一下官网给出的API：</p>
 <blockquote>
