@@ -170,182 +170,225 @@
             <div class="main-content">
 
                 
-                    <div class="fade-in-down-animation">
-    <div class="article-content-container">
+                    $avatarWidth = 46px;
+$arrow-icon-width = 16px;
+$post-nav-max-width = 220px;
+$article-title-font-size = 1.6rem;
 
-        <div class="article-title">
-            <span class="title-hover-animation">ue4顶点绘制</span>
-        </div>
+.article-content-container {
 
-        
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/Blog/images/Bird.png">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">ZHY</span>
-                        
-                            <span class="author-label">Lv3</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2021-10-25 12:36:18</span>
-        <span class="mobile">2021-10-25 12:36</span>
-    </span>
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/Blog/tags/ue4%E6%9D%90%E8%B4%A8/">ue4材质</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
+  keep-container(false, 0, 0, 30px, 30px);
 
-    
-    
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-</div>
+  .article-title {
+    color: var(--second-text-color);
+    font-weight: 600;
+    font-size: $article-title-font-size;
 
-                    </div>
-                </div>
-            </div>
-        
+    +keep-tablet() {
+      font-size: $article-title-font-size * 0.9;
+    }
 
-        <div class="article-content markdown-body">
-            <h2 id="网格体绘制（顶点绘制）"><a href="#网格体绘制（顶点绘制）" class="headerlink" title="网格体绘制（顶点绘制）"></a>网格体绘制（顶点绘制）</h2><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025090537562.png" alt="image-20211025090537562"></p>
-<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><h4 id="混合材质"><a href="#混合材质" class="headerlink" title="混合材质"></a>混合材质</h4><ul>
-<li>打开这个，依顺序从<code>底层-&gt;中间层-&gt;顶层</code>进行选择。<img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025091700720.png" alt="image-20211025091700720"></li>
-<li>截图里红色框命名，蓝色框确认，创建后就是混合后的材质。<img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025091835096.png" alt="image-20211025091835096"></li>
-<li>然后将混合后材质拖进平面，调整平铺比例（视频里材质UV是4x4，而box盒子是一米见方，因此需要调整混合后材质的uv，将材质<code>02-Base Layer</code>参数平铺x平铺y改成四分之一）<img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025092434448.png" alt="image-20211025092434448"></li>
-</ul>
-<h4 id="绘制"><a href="#绘制" class="headerlink" title="绘制"></a>绘制</h4><ul>
-<li><p>模式&#x3D;&gt;网格体绘制</p>
-</li>
-<li><p>选择平面</p>
-</li>
-<li><p>选绘制，切换成黑色</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025091243499.png" alt="image-20211025091243499"></p>
-</li>
-</ul>
-<h3 id="通道选择："><a href="#通道选择：" class="headerlink" title="通道选择："></a>通道选择：</h3><p><strong>红：中间层</strong></p>
-<p><strong>绿：顶层</strong></p>
-<p><strong>蓝：水坑层（默认需要激活）</strong><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025092917515.png" alt="image-20211025092917515"></p>
-<h4 id="擦除：按住shift再画"><a href="#擦除：按住shift再画" class="headerlink" title="擦除：按住shift再画"></a>擦除：按住shift再画</h4><h3 id="高度混合方法"><a href="#高度混合方法" class="headerlink" title="高度混合方法"></a>高度混合方法</h3><p>在混合材质界面，给底层BaseLayer添加，基础层<strong>置换贴图-</strong><code>displacement map</code><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025093330500.png" alt="image-20211025093330500"></p>
-<p>之后在这里微调效果<img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025093552241.png" alt="image-20211025093552241"></p>
-<p>大致效果：</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025093643300.png" alt="image-20211025093643300"></p>
-<p>顶层也可以这么操作。</p>
-<h4 id="Global"><a href="#Global" class="headerlink" title="Global"></a>Global</h4><p>可调节饱和度，亮度、对比度<img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025094422165.png" alt="image-20211025094422165"></p>
-<h4 id="粗糙度调节"><a href="#粗糙度调节" class="headerlink" title="粗糙度调节"></a>粗糙度调节</h4><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025101110034.png" alt="image-20211025101110034"></p>
-<h4 id="使用独立的置换调整值"><a href="#使用独立的置换调整值" class="headerlink" title="使用独立的置换调整值"></a>使用独立的置换调整值</h4><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025110451854.png" alt="image-20211025110451854"></p>
-<p>右边的勾勾，勾选之后<code>06-displacement</code>会增加选项</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025110635737.png" alt="image-20211025110635737"></p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025110944929.png" alt="image-20211025110944929"></p>
-<p>选中哪个层调数值，相当于把那个层移高，或者下降</p>
-<h5 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h5><ul>
-<li>细看有瑕疵</li>
-<li>性能消耗（需要去材质蓝图关闭）。</li>
-</ul>
-<h3 id="调整水材质"><a href="#调整水材质" class="headerlink" title="调整水材质"></a>调整水材质</h3><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025122901794.png" alt="image-20211025122901794"></p>
-<p>Liquid Color：水颜色</p>
-<p>Liquid Opacity：透明度 （水的深&#x2F;浅）</p>
-<p>Liquid Falloff Roughness：边缘过渡的粗糙度（数值越小边缘越湿润）</p>
-<p>Albedo Darkening Color：液体调白色&#x3D;&gt;模拟物体防水表面。液体调暗&#x3D;&gt;模拟物体表面渗入性</p>
-<p>Liquid Wave Controls：波浪调整</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025123319520.png" alt="image-20211025123319520"></p>
-<ul>
-<li>浪花大小（数值越小浪花越大）</li>
-<li>浪花速度</li>
-<li>上方水面 法线贴图的强度</li>
-<li>无</li>
-</ul>
-<p>2和3一般一起调整。</p>
+    +keep-mobile() {
+      font-size: $article-title-font-size * 0.8;
+    }
+  }
 
-        </div>
 
-        
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>本文标题：ue4顶点绘制</li>
-        <li>本文作者：ZHY</li>
-        <li>创建时间：2021-10-25 12:36:18</li>
-        <li>
-            本文链接：https://niaoyu00.github.io/Blog/2021/10/25/顶点绘制/
-        </li>
-        <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
-        </li>
-    </ul>
-</div>
+  .article-header {
+    position: relative;
+    padding-left: $avatarWidth;
+    width: 100%;
+    height: $avatarWidth;
+    box-sizing: border-box;
 
-            </div>
-        
+    .avatar {
+      position: absolute;
+      top: 0
+      left: 0;
+      width: $avatarWidth;
+      height: $avatarWidth;
+      padding: 1px;
+      box-sizing: border-box;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
 
-        
-            <ul class="post-tags-box">
-                
-                    <li class="tag-item">
-                        <a href="/Blog/tags/ue4%E6%9D%90%E8%B4%A8/">#ue4材质</a>&nbsp;
-                    </li>
-                
-            </ul>
-        
+      img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        background: var(--avatar-background-color);
+      }
 
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/Blog/2021/10/27/decal/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">ue4decal贴花</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/Blog/2021/10/15/ue4%E6%9D%90%E8%B4%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">ue4材质笔记</span>
-                                <span class="post-nav-item">下一篇</span>
-                            </span>
-                            <span class="right arrow-icon flex-center">
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
+    }
 
-        
-    </div>
-</div>
+
+    .info {
+      padding: 2px 0;
+      margin-left: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+
+      .author {
+        font-weight: 600;
+        font-size: 1.18rem;
+        display: flex;
+        align-items: center;
+
+        .name {
+          color: var(--default-text-color);
+        }
+
+        .author-label {
+          margin-left: 10px;
+          font-size: 0.8rem;
+          font-weight: 500;
+          padding: 0 5px;
+          border-radius: 5px;
+          color: #fff;
+          background: var(--selection-color);
+        }
+
+      }
+    }
+
+  }
+
+
+  .article-header, .article-header-meta-info {
+    margin-top: 16px;
+    +keep-tablet() {
+      transform: scale(0.9);
+      transform-origin: left top;
+    }
+  }
+
+
+  .article-content {
+    margin-top: $component-spacing-value;
+    padding-bottom: 10px;
+    word-wrap: break-word;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--default-text-color);
+  }
+
+
+  .post-tags-box {
+    display: none;
+    margin-top: 1.6rem;
+    justify-content: center;
+    font-size: 1.1rem;
+
+    +keep-tablet() {
+      display: flex;
+    }
+
+    +keep-mobile() {
+      margin-top: 1.2rem;
+      font-size: 1rem;
+    }
+
+
+    .tag-item {
+      margin: 0 0.25rem;
+    }
+  }
+
+  .post-copyright-info {
+    margin-top: $component-spacing-value;
+    width: 100%;
+
+    +keep-tablet() {
+      margin-top: $component-spacing-value * 0.8;
+    }
+  }
+
+
+  .article-nav {
+    height: 40px;
+    margin-top: $component-spacing-value;
+
+    .article-prev, .article-next {
+      max-width: $post-nav-max-width;
+      height: 100%;
+      box-sizing: border-box;
+
+      keep-container(true, 1.03, 1.03, 10px, 0);
+
+      a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        &.prev {
+          padding-left: $arrow-icon-width;
+        }
+
+        &.next {
+          padding-right: $arrow-icon-width;
+        }
+
+        .arrow-icon {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: $arrow-icon-width;
+
+          &.left {
+            left: 0;
+          }
+
+          &.right {
+            right: 0;
+          }
+        }
+
+        .title {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+    }
+
+    .article-prev {
+      float: left;
+    }
+
+    .article-next {
+      float: right;
+    }
+
+    .post-nav-item {
+      display: none;
+
+      +keep-tablet() {
+        display: inline-block;
+      }
+
+    }
+
+
+    .post-nav-title-item {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      +keep-tablet() {
+        display: none;
+      }
+    }
+
+  }
+
+
+}
+
 
 
                 

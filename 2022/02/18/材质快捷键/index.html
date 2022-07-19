@@ -170,158 +170,225 @@
             <div class="main-content">
 
                 
-                    <div class="fade-in-down-animation">
-    <div class="article-content-container">
+                    $avatarWidth = 46px;
+$arrow-icon-width = 16px;
+$post-nav-max-width = 220px;
+$article-title-font-size = 1.6rem;
 
-        <div class="article-title">
-            <span class="title-hover-animation">Ue4材质快捷键（转载）</span>
-        </div>
+.article-content-container {
 
-        
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/Blog/images/Bird.png">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">ZHY</span>
-                        
-                            <span class="author-label">Lv3</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-02-18 09:17:07</span>
-        <span class="mobile">2022-02-18 09:17</span>
-    </span>
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/Blog/tags/ue4%E6%9D%90%E8%B4%A8/">ue4材质</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
+  keep-container(false, 0, 0, 30px, 30px);
 
-    
-    
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-</div>
+  .article-title {
+    color: var(--second-text-color);
+    font-weight: 600;
+    font-size: $article-title-font-size;
 
-                    </div>
-                </div>
-            </div>
-        
+    +keep-tablet() {
+      font-size: $article-title-font-size * 0.9;
+    }
 
-        <div class="article-content markdown-body">
-            <h1 id="UE4材质的快捷键（转载）"><a href="#UE4材质的快捷键（转载）" class="headerlink" title="UE4材质的快捷键（转载）"></a>UE4材质的快捷键（转载）</h1><h3 id="虚幻材质里面的快捷键"><a href="#虚幻材质里面的快捷键" class="headerlink" title="虚幻材质里面的快捷键"></a>虚幻材质里面的快捷键</h3><p>注：以下快捷键都需要结合鼠标左键来创建</p>
-<p>首先是数字键1234分别对应的是1234维的常数节点，然后这里有个主意的地方就是1维常数的参数快捷键是S，三维常数的参数快捷键是V。</p>
-<p><img src="https://i0.hdslb.com/bfs/article/dad1288f3aef5afc85013d7192ae060e62b43d4c.png@942w_347h_progressive.webp" alt="img"></p>
-<p>然后是ABCD ，A是Add加法节点， B是bumpoffset凹凸偏移，C是注释，D是Divide除法节点，当然还有我们的M,multiply乘法节点</p>
-<p><img src="https://i0.hdslb.com/bfs/article/99e91e47133515fe1ecb9d3a1d1a9ebabc13dc0e.png@942w_251h_progressive.webp" alt="img"><img src="https://i0.hdslb.com/bfs/article/57c903623de786ff35fdaa58729e7b9046ecac33.png@474w_405h_progressive.webp" alt="img"></p>
-<p>E就是我们的power节点了，F这个节点目前还不是很熟悉是一个UNspecified function什么类型的函数，欢迎补充。</p>
-<p><img src="https://i0.hdslb.com/bfs/article/ad3cdde7b3cf74e5b6f75f14f31cbb81de6b4099.png@914w_453h_progressive.webp" alt="img"></p>
-<p>L就是线性插值这个节点了。非常重要的！</p>
-<p><img src="https://i0.hdslb.com/bfs/article/6809a744e8356e32eae663901ada2268c8655f88.png@408w_414h_progressive.webp" alt="img"></p>
-<p>I是一个IF函数节点</p>
-<p><img src="https://i0.hdslb.com/bfs/article/ba708c622154f137d0b16aaf679f05833849e99d.png@467w_563h_progressive.webp" alt="img"></p>
-<p>N是我们的normalize</p>
-<p><img src="https://i0.hdslb.com/bfs/article/aeb94cde1b72f9cd04848950d7813d188ce578f5.png@435w_372h_progressive.webp" alt="img"></p>
-<p>O就是我们的1-x函数了one minus 反转~~</p>
-<p><img src="https://i0.hdslb.com/bfs/article/48881efedc143f5c8b367b89f9ad6346b347815f.png@509w_422h_progressive.webp" alt="img"></p>
-<p>P是panner平移节点</p>
-<p><img src="https://i0.hdslb.com/bfs/article/261bbb5ba6bb37e7a1db758f78e69541b2ef7e9f.png@411w_401h_progressive.webp" alt="img"></p>
-<p>R是refelction vector 反射向量</p>
-<p><img src="https://i0.hdslb.com/bfs/article/264a0c2ae884e7d88dfd137b49886e541d2091e9.png@536w_411h_progressive.webp" alt="img"></p>
-<p>T是Texture sample贴图节点，经常会用到。</p>
-<p><img src="https://i0.hdslb.com/bfs/article/be7df26b1dcfebc98ca5badb142c94e1351395fa.png@483w_510h_progressive.webp" alt="img"></p>
-<p>最后是U，UV贴图平铺的一个节点，也很重要</p>
-<p><img src="https://i0.hdslb.com/bfs/article/c46d779470bfe2e14bb9dbd4f279b279067b2fcc.png@495w_396h_progressive.webp" alt="img"></p>
-<p>作者：墨一良丶 <a class="link"   target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv7905584?spm_id_from=333.999.0.0" >https://www.bilibili.com/read/cv7905584?spm_id_from=333.999.0.0<i class="fas fa-external-link-alt"></i></a> 出处：bilibili</p>
+    +keep-mobile() {
+      font-size: $article-title-font-size * 0.8;
+    }
+  }
 
-        </div>
 
-        
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>本文标题：Ue4材质快捷键（转载）</li>
-        <li>本文作者：ZHY</li>
-        <li>创建时间：2022-02-18 09:17:07</li>
-        <li>
-            本文链接：https://niaoyu00.github.io/Blog/2022/02/18/材质快捷键/
-        </li>
-        <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
-        </li>
-    </ul>
-</div>
+  .article-header {
+    position: relative;
+    padding-left: $avatarWidth;
+    width: 100%;
+    height: $avatarWidth;
+    box-sizing: border-box;
 
-            </div>
-        
+    .avatar {
+      position: absolute;
+      top: 0
+      left: 0;
+      width: $avatarWidth;
+      height: $avatarWidth;
+      padding: 1px;
+      box-sizing: border-box;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
 
-        
-            <ul class="post-tags-box">
-                
-                    <li class="tag-item">
-                        <a href="/Blog/tags/ue4%E6%9D%90%E8%B4%A8/">#ue4材质</a>&nbsp;
-                    </li>
-                
-            </ul>
-        
+      img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        background: var(--avatar-background-color);
+      }
 
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/Blog/2022/02/21/CsharpClass%E4%B8%8EStruct%E7%9A%84%E5%85%B3%E7%B3%BB/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">Csharpclass与struct的关系</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/Blog/2021/10/30/%E8%BE%B9%E7%95%8C%E6%B7%B7%E5%90%88/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">Ue4材质边界混合</span>
-                                <span class="post-nav-item">下一篇</span>
-                            </span>
-                            <span class="right arrow-icon flex-center">
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
+    }
 
-        
-    </div>
-</div>
+
+    .info {
+      padding: 2px 0;
+      margin-left: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+
+      .author {
+        font-weight: 600;
+        font-size: 1.18rem;
+        display: flex;
+        align-items: center;
+
+        .name {
+          color: var(--default-text-color);
+        }
+
+        .author-label {
+          margin-left: 10px;
+          font-size: 0.8rem;
+          font-weight: 500;
+          padding: 0 5px;
+          border-radius: 5px;
+          color: #fff;
+          background: var(--selection-color);
+        }
+
+      }
+    }
+
+  }
+
+
+  .article-header, .article-header-meta-info {
+    margin-top: 16px;
+    +keep-tablet() {
+      transform: scale(0.9);
+      transform-origin: left top;
+    }
+  }
+
+
+  .article-content {
+    margin-top: $component-spacing-value;
+    padding-bottom: 10px;
+    word-wrap: break-word;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--default-text-color);
+  }
+
+
+  .post-tags-box {
+    display: none;
+    margin-top: 1.6rem;
+    justify-content: center;
+    font-size: 1.1rem;
+
+    +keep-tablet() {
+      display: flex;
+    }
+
+    +keep-mobile() {
+      margin-top: 1.2rem;
+      font-size: 1rem;
+    }
+
+
+    .tag-item {
+      margin: 0 0.25rem;
+    }
+  }
+
+  .post-copyright-info {
+    margin-top: $component-spacing-value;
+    width: 100%;
+
+    +keep-tablet() {
+      margin-top: $component-spacing-value * 0.8;
+    }
+  }
+
+
+  .article-nav {
+    height: 40px;
+    margin-top: $component-spacing-value;
+
+    .article-prev, .article-next {
+      max-width: $post-nav-max-width;
+      height: 100%;
+      box-sizing: border-box;
+
+      keep-container(true, 1.03, 1.03, 10px, 0);
+
+      a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        &.prev {
+          padding-left: $arrow-icon-width;
+        }
+
+        &.next {
+          padding-right: $arrow-icon-width;
+        }
+
+        .arrow-icon {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: $arrow-icon-width;
+
+          &.left {
+            left: 0;
+          }
+
+          &.right {
+            right: 0;
+          }
+        }
+
+        .title {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+    }
+
+    .article-prev {
+      float: left;
+    }
+
+    .article-next {
+      float: right;
+    }
+
+    .post-nav-item {
+      display: none;
+
+      +keep-tablet() {
+        display: inline-block;
+      }
+
+    }
+
+
+    .post-nav-title-item {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      +keep-tablet() {
+        display: none;
+      }
+    }
+
+  }
+
+
+}
+
 
 
                 

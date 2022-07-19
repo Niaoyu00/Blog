@@ -9,7 +9,7 @@
     
     <title>
         
-            unity平台跳跃笔记 |
+            unity平台跳跃控制器 |
         
         Niaoyu
     </title>
@@ -170,162 +170,225 @@
             <div class="main-content">
 
                 
-                    <div class="fade-in-down-animation">
-    <div class="article-content-container">
+                    $avatarWidth = 46px;
+$arrow-icon-width = 16px;
+$post-nav-max-width = 220px;
+$article-title-font-size = 1.6rem;
 
-        <div class="article-title">
-            <span class="title-hover-animation">unity平台跳跃笔记</span>
-        </div>
+.article-content-container {
 
-        
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/Blog/images/Bird.png">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">ZHY</span>
-                        
-                            <span class="author-label">Lv3</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-07-08 15:00:20</span>
-        <span class="mobile">2022-07-08 15:00</span>
-    </span>
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/Blog/tags/unity/">unity</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
+  keep-container(false, 0, 0, 30px, 30px);
 
-    
-    
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-</div>
+  .article-title {
+    color: var(--second-text-color);
+    font-weight: 600;
+    font-size: $article-title-font-size;
 
-                    </div>
-                </div>
-            </div>
-        
+    +keep-tablet() {
+      font-size: $article-title-font-size * 0.9;
+    }
 
-        <div class="article-content markdown-body">
-            <h1 id="unity平台跳跃游戏笔记"><a href="#unity平台跳跃游戏笔记" class="headerlink" title="unity平台跳跃游戏笔记"></a>unity平台跳跃游戏笔记</h1><h5 id="教程来自b站阿严-https-www-bilibili-com-video-BV1rL4y1W7KH"><a href="#教程来自b站阿严-https-www-bilibili-com-video-BV1rL4y1W7KH" class="headerlink" title="教程来自b站阿严:https://www.bilibili.com/video/BV1rL4y1W7KH"></a>教程来自b站阿严:<a class="link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1rL4y1W7KH" >https://www.bilibili.com/video/BV1rL4y1W7KH<i class="fas fa-external-link-alt"></i></a></h5><h2 id="首先管理插件"><a href="#首先管理插件" class="headerlink" title="首先管理插件"></a>首先管理插件</h2><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220708151216150.png" alt="image-20220708151216150"></p>
-<p>删除不需要的插件，安装需要的插件，删除后插件内容：</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220708151839520.png" alt="image-20220708151839520"></p>
-<h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3><ul>
-<li>Cinemachine，虚拟相机插件。</li>
-<li>Post Processing，后处理插件。</li>
-<li>Input System，新的输入系统插件。</li>
-</ul>
-<h3 id="安装完成后图"><a href="#安装完成后图" class="headerlink" title="安装完成后图:"></a>安装完成后图:</h3><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220708152529919.png" alt="image-20220708152529919"></p>
-<h3 id="导入资源包"><a href="#导入资源包" class="headerlink" title="导入资源包"></a>导入资源包</h3><h2 id="创建状态机系统"><a href="#创建状态机系统" class="headerlink" title="创建状态机系统"></a>创建状态机系统</h2><p>创建接口文件和状态机类</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220708172046551.png" alt="image-20220708172046551"></p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220708172412575.png" alt="image-20220708172412575"></p>
-<h3 id="Istate接口"><a href="#Istate接口" class="headerlink" title="Istate接口"></a>Istate接口</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">IState</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">Enter</span>()</span>;<span class="comment">//状态进入</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">Exit</span>()</span>;<span class="comment">//状态退出</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">LogicUpdate</span>()</span>;<span class="comment">//状态逻辑更新</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">PhysicUpdate</span>()</span>;<span class="comment">//状态物理更新</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    +keep-mobile() {
+      font-size: $article-title-font-size * 0.8;
+    }
+  }
 
-<h3 id="StateMachine类"><a href="#StateMachine类" class="headerlink" title="StateMachine类"></a>StateMachine类</h3><p>作用:</p>
-<ul>
-<li>持有所有状态,并且进行管理和切换;</li>
-<li>负责当前状态的更新.</li>
-</ul>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">StateMachine</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">//1、持有所有状态,并且进行管理和切换;2、负责当前状态的更新</span></span><br><span class="line">  IState currentState;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">//更新状态逻辑</span></span><br><span class="line">    currentState.LogicUpdate();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">FixedUpdate</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">//更新物理</span></span><br><span class="line">    currentState.PhysicUpdate();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">SwitchOn</span>(<span class="params">IState newState</span>)</span></span><br><span class="line">  &#123;<span class="comment">//状态开启</span></span><br><span class="line">   <span class="comment">//新状态赋值给当前状态,然后启动</span></span><br><span class="line">    currentState = newState;</span><br><span class="line">    currentState.Enter();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SwitchState</span>(<span class="params">IState newState</span>)</span></span><br><span class="line">  &#123;<span class="comment">//切换状态</span></span><br><span class="line">   <span class="comment">//先关闭状态,然后新状态赋值给当前状态,启动</span></span><br><span class="line">    currentState.Exit();</span><br><span class="line">    SwitchOn(newState);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h2 id="扩展状态机系统"><a href="#扩展状态机系统" class="headerlink" title="扩展状态机系统"></a>扩展状态机系统</h2><p><strong>创建PlayerStates(玩家状态)并初始化</strong></p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PlayerState</span> : <span class="title">ScriptableObject</span>, <span class="title">IState</span></span><br><span class="line">&#123;<span class="comment">//玩家状态类</span></span><br><span class="line">  Animator animator;<span class="comment">//动画器</span></span><br><span class="line">  PlayerStateMachine stateMachine;<span class="comment">//玩家状态机类</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Initialize</span>(<span class="params">Animator animator, PlayerStateMachine stateMachine</span>)</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">this</span>.animator = animator;</span><br><span class="line">    <span class="keyword">this</span>.stateMachine = stateMachine;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Enter</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Exit</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">LogicUpdate</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">PhysicUpdate</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+  .article-header {
+    position: relative;
+    padding-left: $avatarWidth;
+    width: 100%;
+    height: $avatarWidth;
+    box-sizing: border-box;
 
-<p><strong>PlayerStatesMachine(玩家状态机)</strong></p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PlayerStateMachine</span> : <span class="title">StateMachine</span></span><br><span class="line">&#123;<span class="comment">//玩家状态机</span></span><br><span class="line">  Animator animator;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    animator = GetComponentInChildren&lt;Animator&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//可以在此初始化 玩家状态</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    .avatar {
+      position: absolute;
+      top: 0
+      left: 0;
+      width: $avatarWidth;
+      height: $avatarWidth;
+      padding: 1px;
+      box-sizing: border-box;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
 
-<h3 id="状态机系统继承关系图"><a href="#状态机系统继承关系图" class="headerlink" title="状态机系统继承关系图"></a>状态机系统继承关系图</h3><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220708193345419.png" alt="image-20220708193345419"></p>
-<h3 id="使用两种方法实现角色动画对比"><a href="#使用两种方法实现角色动画对比" class="headerlink" title="使用两种方法实现角色动画对比"></a>使用两种方法实现角色动画对比</h3><h4 id="常规方法-不使用状态机"><a href="#常规方法-不使用状态机" class="headerlink" title="常规方法(不使用状态机)"></a>常规方法(不使用状态机)</h4>
-        </div>
+      img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        background: var(--avatar-background-color);
+      }
 
-        
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>本文标题：unity平台跳跃笔记</li>
-        <li>本文作者：ZHY</li>
-        <li>创建时间：2022-07-08 15:00:20</li>
-        <li>
-            本文链接：https://niaoyu00.github.io/Blog/2022/07/08/unity平台跳跃笔记/
-        </li>
-        <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
-        </li>
-    </ul>
-</div>
+    }
 
-            </div>
-        
 
-        
-            <ul class="post-tags-box">
-                
-                    <li class="tag-item">
-                        <a href="/Blog/tags/unity/">#unity</a>&nbsp;
-                    </li>
-                
-            </ul>
-        
+    .info {
+      padding: 2px 0;
+      margin-left: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
 
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/Blog/2022/07/12/%E4%BD%BF%E7%94%A8vscode%E5%BC%80%E5%8F%91unity%E9%A1%B9%E7%9B%AE/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">使用vscode开发unity项目</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/Blog/2022/06/16/unity%E4%B8%ADInvoke%E7%94%A8%E6%B3%95/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">unity中Invoke用法</span>
-                                <span class="post-nav-item">下一篇</span>
-                            </span>
-                            <span class="right arrow-icon flex-center">
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
+      .author {
+        font-weight: 600;
+        font-size: 1.18rem;
+        display: flex;
+        align-items: center;
 
-        
-    </div>
-</div>
+        .name {
+          color: var(--default-text-color);
+        }
+
+        .author-label {
+          margin-left: 10px;
+          font-size: 0.8rem;
+          font-weight: 500;
+          padding: 0 5px;
+          border-radius: 5px;
+          color: #fff;
+          background: var(--selection-color);
+        }
+
+      }
+    }
+
+  }
+
+
+  .article-header, .article-header-meta-info {
+    margin-top: 16px;
+    +keep-tablet() {
+      transform: scale(0.9);
+      transform-origin: left top;
+    }
+  }
+
+
+  .article-content {
+    margin-top: $component-spacing-value;
+    padding-bottom: 10px;
+    word-wrap: break-word;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--default-text-color);
+  }
+
+
+  .post-tags-box {
+    display: none;
+    margin-top: 1.6rem;
+    justify-content: center;
+    font-size: 1.1rem;
+
+    +keep-tablet() {
+      display: flex;
+    }
+
+    +keep-mobile() {
+      margin-top: 1.2rem;
+      font-size: 1rem;
+    }
+
+
+    .tag-item {
+      margin: 0 0.25rem;
+    }
+  }
+
+  .post-copyright-info {
+    margin-top: $component-spacing-value;
+    width: 100%;
+
+    +keep-tablet() {
+      margin-top: $component-spacing-value * 0.8;
+    }
+  }
+
+
+  .article-nav {
+    height: 40px;
+    margin-top: $component-spacing-value;
+
+    .article-prev, .article-next {
+      max-width: $post-nav-max-width;
+      height: 100%;
+      box-sizing: border-box;
+
+      keep-container(true, 1.03, 1.03, 10px, 0);
+
+      a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        &.prev {
+          padding-left: $arrow-icon-width;
+        }
+
+        &.next {
+          padding-right: $arrow-icon-width;
+        }
+
+        .arrow-icon {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: $arrow-icon-width;
+
+          &.left {
+            left: 0;
+          }
+
+          &.right {
+            right: 0;
+          }
+        }
+
+        .title {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+    }
+
+    .article-prev {
+      float: left;
+    }
+
+    .article-next {
+      float: right;
+    }
+
+    .post-nav-item {
+      display: none;
+
+      +keep-tablet() {
+        display: inline-block;
+      }
+
+    }
+
+
+    .post-nav-title-item {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      +keep-tablet() {
+        display: none;
+      }
+    }
+
+  }
+
+
+}
+
 
 
                 
@@ -429,7 +492,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#unity%E5%B9%B3%E5%8F%B0%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F%E7%AC%94%E8%AE%B0"><span class="nav-text">unity平台跳跃游戏笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%99%E7%A8%8B%E6%9D%A5%E8%87%AAb%E7%AB%99%E9%98%BF%E4%B8%A5-https-www-bilibili-com-video-BV1rL4y1W7KH"><span class="nav-text">教程来自b站阿严:https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1rL4y1W7KH</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E7%AE%A1%E7%90%86%E6%8F%92%E4%BB%B6"><span class="nav-text">首先管理插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%EF%BC%9A"><span class="nav-text">安装：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E%E5%9B%BE"><span class="nav-text">安装完成后图:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E8%B5%84%E6%BA%90%E5%8C%85"><span class="nav-text">导入资源包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%8A%B6%E6%80%81%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="nav-text">创建状态机系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Istate%E6%8E%A5%E5%8F%A3"><span class="nav-text">Istate接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StateMachine%E7%B1%BB"><span class="nav-text">StateMachine类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E7%8A%B6%E6%80%81%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="nav-text">扩展状态机系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB%E5%9B%BE"><span class="nav-text">状态机系统继承关系图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0%E8%A7%92%E8%89%B2%E5%8A%A8%E7%94%BB%E5%AF%B9%E6%AF%94"><span class="nav-text">使用两种方法实现角色动画对比</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E8%A7%84%E6%96%B9%E6%B3%95-%E4%B8%8D%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%80%81%E6%9C%BA"><span class="nav-text">常规方法(不使用状态机)</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#unity%E5%B9%B3%E5%8F%B0%E8%B7%B3%E8%B7%83%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="nav-text">unity平台跳跃控制器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%99%E7%A8%8B%E6%9D%A5%E8%87%AAb%E7%AB%99%E9%98%BF%E4%B8%A5-https-www-bilibili-com-video-BV1rL4y1W7KH"><span class="nav-text">教程来自b站阿严:https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1rL4y1W7KH</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E7%AE%A1%E7%90%86%E6%8F%92%E4%BB%B6"><span class="nav-text">首先管理插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%EF%BC%9A"><span class="nav-text">安装：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E%E5%9B%BE"><span class="nav-text">安装完成后图:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E8%B5%84%E6%BA%90%E5%8C%85"><span class="nav-text">导入资源包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%8A%B6%E6%80%81%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="nav-text">创建状态机系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Istate%E6%8E%A5%E5%8F%A3"><span class="nav-text">Istate接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StateMachine%E7%B1%BB"><span class="nav-text">StateMachine类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E7%8A%B6%E6%80%81%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="nav-text">扩展状态机系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB%E5%9B%BE"><span class="nav-text">状态机系统继承关系图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0%E8%A7%92%E8%89%B2%E5%8A%A8%E7%94%BB"><span class="nav-text">使用两种方法实现角色动画</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%B8%B8%E8%A7%84%E6%96%B9%E6%B3%95-%E4%B8%8D%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%80%81%E6%9C%BA"><span class="nav-text">一、常规方法(不使用状态机)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E9%80%9A%E8%BF%87%E7%8A%B6%E6%80%81%E6%9C%BA%E5%AE%9E%E7%8E%B0%E5%8A%A8%E7%94%BB%E7%8A%B6%E6%80%81%E5%88%87%E6%8D%A2"><span class="nav-text">二、通过状态机实现动画状态切换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E6%9C%BA%E6%A8%A1%E5%BC%8F%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-text">状态机模式优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E7%BB%AD%E5%AE%8C%E5%96%84%E7%8A%B6%E6%80%81%E6%9C%BA%E5%8A%9F%E8%83%BD"><span class="nav-text">继续完善状态机功能</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>

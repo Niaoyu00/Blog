@@ -170,140 +170,225 @@
             <div class="main-content">
 
                 
-                    <div class="fade-in-down-animation">
-    <div class="article-content-container">
+                    $avatarWidth = 46px;
+$arrow-icon-width = 16px;
+$post-nav-max-width = 220px;
+$article-title-font-size = 1.6rem;
 
-        <div class="article-title">
-            <span class="title-hover-animation">ue4材质笔记</span>
-        </div>
+.article-content-container {
 
-        
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/Blog/images/Bird.png">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">ZHY</span>
-                        
-                            <span class="author-label">Lv3</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2021-10-15 23:20:31</span>
-        <span class="mobile">2021-10-15 23:20</span>
-    </span>
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/Blog/tags/ue4%E6%9D%90%E8%B4%A8/">ue4材质</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
+  keep-container(false, 0, 0, 30px, 30px);
 
-    
-    
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-</div>
+  .article-title {
+    color: var(--second-text-color);
+    font-weight: 600;
+    font-size: $article-title-font-size;
 
-                    </div>
-                </div>
-            </div>
-        
+    +keep-tablet() {
+      font-size: $article-title-font-size * 0.9;
+    }
 
-        <div class="article-content markdown-body">
-            <p><strong>简明PBR2：介绍了菲尼尔，以及两个网站可以查折射率</strong></p>
-<h3 id="材质基础"><a href="#材质基础" class="headerlink" title="材质基础"></a>材质基础</h3><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211015150409107.png" alt="image-20211015150409107"></p>
-<p><strong>常量Constant：不能在材质实例中调整</strong></p>
-<p><strong>变量Variable：可以在材质中调整</strong></p>
-<p><strong>右键可以转换常量或变量</strong></p>
-<p><strong>矢量Vector：表示颜色、坐标信息</strong></p>
-<p><strong>标量Scalar：常用参数调整手段</strong></p>
-<h3 id="用作展示颜色节点"><a href="#用作展示颜色节点" class="headerlink" title="用作展示颜色节点"></a>用作展示颜色节点</h3><p><strong>Variable3Vector节点</strong> </p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211015144638843.png" alt="image-20211015144638843"></p>
-<h3 id="可调整参数"><a href="#可调整参数" class="headerlink" title="可调整参数"></a>可调整参数</h3><p><strong>ScalarParameter节点</strong></p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211015181754278.png" alt="image-20211015181754278"></p>
-<h3 id="调用贴图"><a href="#调用贴图" class="headerlink" title="调用贴图"></a>调用贴图</h3><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211015182038850.png" alt="image-20211015182038850"></p>
-<p><strong>TextureCoordinate</strong></p>
-<p><strong>控制纹理平铺</strong></p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211015190750115.png" alt="image-20211015190750115"></p>
-<p><strong>lerp线性插值</strong></p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211015224727978.png" alt="image-20211015224727978"></p>
-<p><strong>lerp可以混合两种颜色，加上一个标量来控制</strong></p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211015232030467.png" alt="image-20211015232030467"></p>
-<p><strong>也可以混合法线贴图，前台控制法线程度</strong></p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211015231343367.png" alt="image-20211015231343367"></p>
-<h3 id="2022年5月10日编辑-ue4材质内容基本忘光了-留着文章就当记录了"><a href="#2022年5月10日编辑-ue4材质内容基本忘光了-留着文章就当记录了" class="headerlink" title="2022年5月10日编辑:ue4材质内容基本忘光了,留着文章就当记录了."></a>2022年5月10日编辑:ue4材质内容基本忘光了,留着文章就当记录了.</h3>
-        </div>
+    +keep-mobile() {
+      font-size: $article-title-font-size * 0.8;
+    }
+  }
 
-        
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>本文标题：ue4材质笔记</li>
-        <li>本文作者：ZHY</li>
-        <li>创建时间：2021-10-15 23:20:31</li>
-        <li>
-            本文链接：https://niaoyu00.github.io/Blog/2021/10/15/ue4材质学习笔记/
-        </li>
-        <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
-        </li>
-    </ul>
-</div>
 
-            </div>
-        
+  .article-header {
+    position: relative;
+    padding-left: $avatarWidth;
+    width: 100%;
+    height: $avatarWidth;
+    box-sizing: border-box;
 
-        
-            <ul class="post-tags-box">
-                
-                    <li class="tag-item">
-                        <a href="/Blog/tags/ue4%E6%9D%90%E8%B4%A8/">#ue4材质</a>&nbsp;
-                    </li>
-                
-            </ul>
-        
+    .avatar {
+      position: absolute;
+      top: 0
+      left: 0;
+      width: $avatarWidth;
+      height: $avatarWidth;
+      padding: 1px;
+      box-sizing: border-box;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
 
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/Blog/2021/10/25/%E9%A1%B6%E7%82%B9%E7%BB%98%E5%88%B6/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">ue4顶点绘制</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-            </div>
-        
+      img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        background: var(--avatar-background-color);
+      }
 
-        
-    </div>
-</div>
+    }
+
+
+    .info {
+      padding: 2px 0;
+      margin-left: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+
+      .author {
+        font-weight: 600;
+        font-size: 1.18rem;
+        display: flex;
+        align-items: center;
+
+        .name {
+          color: var(--default-text-color);
+        }
+
+        .author-label {
+          margin-left: 10px;
+          font-size: 0.8rem;
+          font-weight: 500;
+          padding: 0 5px;
+          border-radius: 5px;
+          color: #fff;
+          background: var(--selection-color);
+        }
+
+      }
+    }
+
+  }
+
+
+  .article-header, .article-header-meta-info {
+    margin-top: 16px;
+    +keep-tablet() {
+      transform: scale(0.9);
+      transform-origin: left top;
+    }
+  }
+
+
+  .article-content {
+    margin-top: $component-spacing-value;
+    padding-bottom: 10px;
+    word-wrap: break-word;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--default-text-color);
+  }
+
+
+  .post-tags-box {
+    display: none;
+    margin-top: 1.6rem;
+    justify-content: center;
+    font-size: 1.1rem;
+
+    +keep-tablet() {
+      display: flex;
+    }
+
+    +keep-mobile() {
+      margin-top: 1.2rem;
+      font-size: 1rem;
+    }
+
+
+    .tag-item {
+      margin: 0 0.25rem;
+    }
+  }
+
+  .post-copyright-info {
+    margin-top: $component-spacing-value;
+    width: 100%;
+
+    +keep-tablet() {
+      margin-top: $component-spacing-value * 0.8;
+    }
+  }
+
+
+  .article-nav {
+    height: 40px;
+    margin-top: $component-spacing-value;
+
+    .article-prev, .article-next {
+      max-width: $post-nav-max-width;
+      height: 100%;
+      box-sizing: border-box;
+
+      keep-container(true, 1.03, 1.03, 10px, 0);
+
+      a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        &.prev {
+          padding-left: $arrow-icon-width;
+        }
+
+        &.next {
+          padding-right: $arrow-icon-width;
+        }
+
+        .arrow-icon {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: $arrow-icon-width;
+
+          &.left {
+            left: 0;
+          }
+
+          &.right {
+            right: 0;
+          }
+        }
+
+        .title {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+    }
+
+    .article-prev {
+      float: left;
+    }
+
+    .article-next {
+      float: right;
+    }
+
+    .post-nav-item {
+      display: none;
+
+      +keep-tablet() {
+        display: inline-block;
+      }
+
+    }
+
+
+    .post-nav-title-item {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      +keep-tablet() {
+        display: none;
+      }
+    }
+
+  }
+
+
+}
+
 
 
                 

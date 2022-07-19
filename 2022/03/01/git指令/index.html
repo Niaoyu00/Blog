@@ -170,185 +170,225 @@
             <div class="main-content">
 
                 
-                    <div class="fade-in-down-animation">
-    <div class="article-content-container">
+                    $avatarWidth = 46px;
+$arrow-icon-width = 16px;
+$post-nav-max-width = 220px;
+$article-title-font-size = 1.6rem;
 
-        <div class="article-title">
-            <span class="title-hover-animation">git指令</span>
-        </div>
+.article-content-container {
 
-        
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/Blog/images/Bird.png">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">ZHY</span>
-                        
-                            <span class="author-label">Lv3</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-03-01 09:16:27</span>
-        <span class="mobile">2022-03-01 09:16</span>
-    </span>
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/Blog/tags/git/">git</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
+  keep-container(false, 0, 0, 30px, 30px);
 
-    
-    
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-</div>
+  .article-title {
+    color: var(--second-text-color);
+    font-weight: 600;
+    font-size: $article-title-font-size;
 
-                    </div>
-                </div>
-            </div>
-        
+    +keep-tablet() {
+      font-size: $article-title-font-size * 0.9;
+    }
 
-        <div class="article-content markdown-body">
-            <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.配置提交人姓名: git config --global user.name提交人姓名</span><br><span class="line">2.配置提交人姓名: git config --global user.email提交人邮箱</span><br><span class="line">3.查看git配置信息: git config --list</span><br></pre></td></tr></table></figure>
+    +keep-mobile() {
+      font-size: $article-title-font-size * 0.8;
+    }
+  }
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init          	  |初始化git仓库</span><br><span class="line">git status        	  |查看文件状态</span><br><span class="line">git add 文件列表    	|提交到暂存区</span><br><span class="line">git commit -m 提交信息  |向仓库提交代码</span><br></pre></td></tr></table></figure>
 
-<p><strong>用&#x3D;&#x3D;暂存区&#x3D;&#x3D;中的文件覆盖&#x3D;&#x3D;电脑工作目录&#x3D;&#x3D;的文件：<code>git checkout 文件名</code></strong></p>
-<p><strong>将文件从暂存区里删除: <code>git rm --cached 文件</code></strong></p>
-<p><strong>将git仓库中置顶的更新&#x3D;&#x3D;记录恢复&#x3D;&#x3D;出来，并且覆盖&#x3D;&#x3D;暂存区和工作目录&#x3D;&#x3D;:</strong></p>
-<p><strong><code>git reset --hard commitID</code></strong></p>
-<h4 id="分支命令"><a href="#分支命令" class="headerlink" title="分支命令"></a>分支命令</h4><p><strong>功能分支 -&gt; 开发分支 -&gt; 主分支</strong></p>
-<p><strong><code>git branch</code> 查看分支</strong></p>
-<p><strong><code>git branch 分支名称</code> 创建分支</strong></p>
-<p><strong><code>git checkout 分支名称</code> 切换分支</strong></p>
-<p><strong><code>git merge 来源分支</code> &#x3D;&#x3D;合并分支&#x3D;&#x3D;</strong></p>
-<p><strong><code>git branch -d 分支名称</code> 删除分支（分支被合并后才允许删除）（-D 强制删除）</strong></p>
-<h3 id="暂时保存更改"><a href="#暂时保存更改" class="headerlink" title="暂时保存更改"></a>暂时保存更改</h3><p><strong>在git中，可以暂时提取分支上所有的改动并存储，让开发人员得到一个干净的工作副本，临时转向其他工作。</strong></p>
-<p><strong>使用场景：分支临时切换</strong></p>
-<ul>
-<li><strong>存储临时改动：<code>git stash</code></strong><!--暂时保存--></li>
-<li><strong>恢复改动：<code>git stash pop</code></strong></li>
-</ul>
-<h3 id="本地仓库推送到远程仓库"><a href="#本地仓库推送到远程仓库" class="headerlink" title="本地仓库推送到远程仓库"></a>本地仓库推送到远程仓库</h3><ol>
-<li><p><strong>git push 远程仓库地址 分支名称</strong></p>
-</li>
-<li><p><strong>git remote add 远程仓库&#x3D;&#x3D;地址别名&#x3D;&#x3D; 远程仓库地址</strong></p>
-</li>
-<li><p><strong>git push 远程仓库&#x3D;&#x3D;地址别名&#x3D;&#x3D; 分支名称</strong></p>
-</li>
-<li><p><strong>git push &#x3D;&#x3D;-u&#x3D;&#x3D; 远程仓库地址别名 分支名称</strong></p>
-<p><strong>-u 记住推送地址及分支，&#x3D;&#x3D;下次推送&#x3D;&#x3D;只需要输入&#x3D;&#x3D;git push&#x3D;&#x3D;即可</strong></p>
-</li>
-</ol>
-<h3 id="拉取操作"><a href="#拉取操作" class="headerlink" title="拉取操作"></a>拉取操作</h3><h3 id="克隆仓库"><a href="#克隆仓库" class="headerlink" title="克隆仓库"></a>克隆仓库</h3><p><strong>克隆远端数据仓库到本地：<code>git clone 仓库地址</code></strong></p>
-<p><strong>拉取远程仓库中最新的版本：<code>git pull 远程仓库地址 分支名称</code></strong></p>
-<h3 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h3><p><strong>在多人同时开发一个项目时，如果两个人修改了同一个文件的同一个地方，就会发生冲突。冲突需要人为解决。</strong></p>
-<h3 id="跨团队协作"><a href="#跨团队协作" class="headerlink" title="跨团队协作"></a>跨团队协作</h3><ol>
-<li>程序员 C fork仓库</li>
-<li>程序员 C 将仓库克隆在本地进行修改</li>
-<li>程序员 C 将仓库推送到远程</li>
-<li>程序员 C 发起pull reqest</li>
-<li>原仓库作者审核</li>
-<li>原仓库作者合并代码</li>
-</ol>
-<h3 id="ssh免登陆"><a href="#ssh免登陆" class="headerlink" title="ssh免登陆"></a>ssh免登陆</h3><p>生成秘钥：<code>ssh-keygen</code></p>
-<p>秘钥存储目录：C:\Users\用户\.ssh</p>
-<p>公钥名称：id_rsa.pub</p>
-<p>私钥名称：id_rsa</p>
-<p>公钥放在github</p>
-<p>私钥放在本地</p>
-<h3 id="GIT忽略清单"><a href="#GIT忽略清单" class="headerlink" title="GIT忽略清单"></a>GIT忽略清单</h3><p>将不需要被git管理的文件名字添加到此文件中，在执行git命令的时候，git就会忽略这些文件。</p>
-<p>git忽略清单文件名称：**.gitignore**</p>
-<p>将工作目录中的文件全部添加到暂存区：<code>git add .</code></p>
+  .article-header {
+    position: relative;
+    padding-left: $avatarWidth;
+    width: 100%;
+    height: $avatarWidth;
+    box-sizing: border-box;
 
-        </div>
+    .avatar {
+      position: absolute;
+      top: 0
+      left: 0;
+      width: $avatarWidth;
+      height: $avatarWidth;
+      padding: 1px;
+      box-sizing: border-box;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
 
-        
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>本文标题：git指令</li>
-        <li>本文作者：ZHY</li>
-        <li>创建时间：2022-03-01 09:16:27</li>
-        <li>
-            本文链接：https://niaoyu00.github.io/Blog/2022/03/01/git指令/
-        </li>
-        <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
-        </li>
-    </ul>
-</div>
+      img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        background: var(--avatar-background-color);
+      }
 
-            </div>
-        
+    }
 
-        
-            <ul class="post-tags-box">
-                
-                    <li class="tag-item">
-                        <a href="/Blog/tags/git/">#git</a>&nbsp;
-                    </li>
-                
-            </ul>
-        
 
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/Blog/2022/03/03/%E5%8D%8F%E7%A8%8B/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">协调程序</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/Blog/2022/02/27/unity%E7%9A%84Axis%E8%AE%BE%E7%BD%AE/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">unity的Axis设置</span>
-                                <span class="post-nav-item">下一篇</span>
-                            </span>
-                            <span class="right arrow-icon flex-center">
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
+    .info {
+      padding: 2px 0;
+      margin-left: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
 
-        
-    </div>
-</div>
+      .author {
+        font-weight: 600;
+        font-size: 1.18rem;
+        display: flex;
+        align-items: center;
+
+        .name {
+          color: var(--default-text-color);
+        }
+
+        .author-label {
+          margin-left: 10px;
+          font-size: 0.8rem;
+          font-weight: 500;
+          padding: 0 5px;
+          border-radius: 5px;
+          color: #fff;
+          background: var(--selection-color);
+        }
+
+      }
+    }
+
+  }
+
+
+  .article-header, .article-header-meta-info {
+    margin-top: 16px;
+    +keep-tablet() {
+      transform: scale(0.9);
+      transform-origin: left top;
+    }
+  }
+
+
+  .article-content {
+    margin-top: $component-spacing-value;
+    padding-bottom: 10px;
+    word-wrap: break-word;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--default-text-color);
+  }
+
+
+  .post-tags-box {
+    display: none;
+    margin-top: 1.6rem;
+    justify-content: center;
+    font-size: 1.1rem;
+
+    +keep-tablet() {
+      display: flex;
+    }
+
+    +keep-mobile() {
+      margin-top: 1.2rem;
+      font-size: 1rem;
+    }
+
+
+    .tag-item {
+      margin: 0 0.25rem;
+    }
+  }
+
+  .post-copyright-info {
+    margin-top: $component-spacing-value;
+    width: 100%;
+
+    +keep-tablet() {
+      margin-top: $component-spacing-value * 0.8;
+    }
+  }
+
+
+  .article-nav {
+    height: 40px;
+    margin-top: $component-spacing-value;
+
+    .article-prev, .article-next {
+      max-width: $post-nav-max-width;
+      height: 100%;
+      box-sizing: border-box;
+
+      keep-container(true, 1.03, 1.03, 10px, 0);
+
+      a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        &.prev {
+          padding-left: $arrow-icon-width;
+        }
+
+        &.next {
+          padding-right: $arrow-icon-width;
+        }
+
+        .arrow-icon {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: $arrow-icon-width;
+
+          &.left {
+            left: 0;
+          }
+
+          &.right {
+            right: 0;
+          }
+        }
+
+        .title {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+    }
+
+    .article-prev {
+      float: left;
+    }
+
+    .article-next {
+      float: right;
+    }
+
+    .post-nav-item {
+      display: none;
+
+      +keep-tablet() {
+        display: inline-block;
+      }
+
+    }
+
+
+    .post-nav-title-item {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      +keep-tablet() {
+        display: none;
+      }
+    }
+
+  }
+
+
+}
+
 
 
                 
