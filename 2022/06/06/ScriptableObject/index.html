@@ -170,225 +170,181 @@
             <div class="main-content">
 
                 
-                    $avatarWidth = 46px;
-$arrow-icon-width = 16px;
-$post-nav-max-width = 220px;
-$article-title-font-size = 1.6rem;
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
 
-.article-content-container {
+        <div class="article-title">
+            <span class="title-hover-animation">ScriptableObject简单使用</span>
+        </div>
 
-  keep-container(false, 0, 0, 30px, 30px);
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/Blog/images/Bird.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">ZHY</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-06-06 19:20:04</span>
+        <span class="mobile">2022-06-06 19:20</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/Blog/tags/unity/">unity</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/Blog/tags/ScriptableObject/">ScriptableObject</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
 
-  .article-title {
-    color: var(--second-text-color);
-    font-weight: 600;
-    font-size: $article-title-font-size;
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
 
-    +keep-tablet() {
-      font-size: $article-title-font-size * 0.9;
-    }
+                    </div>
+                </div>
+            </div>
+        
 
-    +keep-mobile() {
-      font-size: $article-title-font-size * 0.8;
-    }
-  }
+        <div class="article-content markdown-body">
+            <h1 id="ScriptableObject"><a href="#ScriptableObject" class="headerlink" title="ScriptableObject"></a>ScriptableObject</h1><h2 id="平时开发存在的一些问题："><a href="#平时开发存在的一些问题：" class="headerlink" title="平时开发存在的一些问题："></a>平时开发存在的一些问题：</h2><ul>
+<li><p>一个场景内有多个相同组件使用相同数值的时候，这个组件也在内存中多了一份实例，浪费内存空间。</p>
+</li>
+<li><p>static或者[Serializable]修饰的变量，在程序退出后会还原。编辑器模式运行时，只能通过Copy Component Values来临时保存调整好的数值。</p>
+</li>
+<li><p>项目之间、场景之间数据很难共享。</p>
+</li>
+<li><p>在runtime下要改变某个GameObject上组件的数值，就一定要获取到这个GameObject实例，使项目耦合度成倍提高，最后变成蜘蛛网。</p>
+</li>
+<li><p>场景中总会有一些空的GameObject用来保存和共享数据，这个GameObject基本不会参与太多的游戏逻辑，但为了保存和共享场景内的数据就不得不碍眼的在场景中出现，逼死强迫症，也不利于模块抽象。</p>
+</li>
+<li><p>同样，要通过UGUI Button中的On Click事件调用一个GameObject上的方法，也只能获取到GameObject实例来调用，数量太多的话也变成了蜘蛛网。</p>
+</li>
+</ul>
+<h2 id="使用ScriptableObject如何解决"><a href="#使用ScriptableObject如何解决" class="headerlink" title="使用ScriptableObject如何解决"></a>使用ScriptableObject如何解决</h2><ul>
+<li>ScriptableObject是将数据存储在.asset文件中的，可以理解为类似material这样的文件，ScriptableObject中存储的数值在runtime中作出修改，在退出后也会被保存下来。</li>
+<li>同样，类似material文件，在多个地方需要用到同一个数据，只要把ScriptableObject生成的.asset文件拖入相应位置就可以，不必再指向某个单例或者实例。</li>
+<li>可以被任何场景引用，在项目之间、场景之间很容易的共享数据。</li>
+<li>不必为了保存数据在场景中放置一个空GameObject。让项目的复杂度和耦合度最大限度的降低，强迫症福音。</li>
+<li>ScriptableObject是自定义的数据类型，应用非常灵活。</li>
+<li>通过UGUI Button中的On Click事件只需要指向某一个ScriptableObject文件，而响应事件的GameObject也只需要获取到这个ScriptableObject文件即可触发，不必让按钮指向GameObject实例。大幅度减少了项目逻辑和结构的复杂程度。</li>
+</ul>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ol>
+<li>通过ScriptableObject获取一个GameObject的实例。</li>
+<li>不获取物体实例，通过ScriptableObject实现UnityEvent的执行。</li>
+</ol>
+<p>角色：player,enemy;</p>
+<p>场景内会在随机位置生成任意数量的敌人，敌人会追着player一直跑，player通过移动来躲避敌人，每次碰到敌人就会减少生命值。</p>
+<h2 id="开始实现"><a href="#开始实现" class="headerlink" title="开始实现"></a>开始实现</h2><h4 id="搭建场景和角色敌人"><a href="#搭建场景和角色敌人" class="headerlink" title="搭建场景和角色敌人:"></a>搭建场景和角色敌人:</h4><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220606180524764.png" alt="image-20220606180524764"></p>
+<h4 id="新建脚本FollowTransformSmooth，实现追踪功能，拖到enemy上面。"><a href="#新建脚本FollowTransformSmooth，实现追踪功能，拖到enemy上面。" class="headerlink" title="新建脚本FollowTransformSmooth，实现追踪功能，拖到enemy上面。"></a>新建脚本FollowTransformSmooth，实现追踪功能，拖到enemy上面。</h4><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">FollowTransformSmooth</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//[SerializeField] Transform target;</span></span><br><span class="line">    [<span class="meta">SerializeField</span>] TargetTransform target;</span><br><span class="line">    [<span class="meta">SerializeField</span>] Rigidbody selfRigidbody;</span><br><span class="line">    [<span class="meta">SerializeField, Range(0f, 100f)</span>] <span class="built_in">float</span> moveSpeed = <span class="number">10f</span>;</span><br><span class="line">    Vector3 _destination;<span class="comment">//目的地</span></span><br><span class="line">    Vector3 _direction;<span class="comment">//方向</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">LateUpdate</span>()</span></span><br><span class="line">    &#123;<span class="comment">//LateUpdate 在调用所有 Update 函数后调用。</span></span><br><span class="line">        <span class="comment">//_destination = target.position;//怪物追踪目的地</span></span><br><span class="line">        _destination = target.targetTrans.position;<span class="comment">//怪物追踪目的地</span></span><br><span class="line">        _direction = (_destination - transform.position).normalized;<span class="comment">//怪物前进方向</span></span><br><span class="line">        <span class="comment">//AddForce,向刚体添加力,(vector3方向,ForceMode力类型)</span></span><br><span class="line">        selfRigidbody.AddForce(_direction * moveSpeed, ForceMode.Acceleration);</span><br><span class="line">        <span class="comment">// ForceMode.Force	向此刚体添加连续力，使用其质量。</span></span><br><span class="line">        <span class="comment">// ForceMode.Acceleration 向此刚体添加连续加速度，忽略其质量。</span></span><br><span class="line">        <span class="comment">// ForceMode.Impulse	向此刚体添加瞬时力冲击，考虑其质量。</span></span><br><span class="line">        <span class="comment">// ForceMode.VelocityChange	向此刚体添加瞬时速度变化，忽略其质量。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h4 id="新建TargetTransform脚本，继承ScriptableObject，用来存储主角的位置信息"><a href="#新建TargetTransform脚本，继承ScriptableObject，用来存储主角的位置信息" class="headerlink" title="新建TargetTransform脚本，继承ScriptableObject，用来存储主角的位置信息"></a>新建TargetTransform脚本，继承ScriptableObject，用来存储主角的位置信息</h4><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">CreateAssetMenu(menuName = <span class="string">&quot;mySubMenu/TargetTransform &quot;</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">TargetTransform</span> : <span class="title">ScriptableObject</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> Transform targetTrans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-  .article-header {
-    position: relative;
-    padding-left: $avatarWidth;
-    width: 100%;
-    height: $avatarWidth;
-    box-sizing: border-box;
+<p><strong>编译完在文件夹新建TargetTransform，命名为Player</strong></p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220606181512646.png" alt="image-20220606181512646"></p>
+<h4 id="新建SetTarget脚本，主角位置数据赋值给TargetTransform。拖到player上"><a href="#新建SetTarget脚本，主角位置数据赋值给TargetTransform。拖到player上" class="headerlink" title="新建SetTarget脚本，主角位置数据赋值给TargetTransform。拖到player上"></a>新建SetTarget脚本，主角位置数据赋值给TargetTransform。拖到player上</h4><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">SetTarget</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">SerializeField</span>] TargetTransform target;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        target.targetTrans = gameObject.transform;<span class="comment">//当前位置数据传递给TargetTransform</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    .avatar {
-      position: absolute;
-      top: 0
-      left: 0;
-      width: $avatarWidth;
-      height: $avatarWidth;
-      padding: 1px;
-      box-sizing: border-box;
-      border: 1px solid var(--border-color);
-      border-radius: 50%;
+<h4 id="预制体上的配置："><a href="#预制体上的配置：" class="headerlink" title="预制体上的配置："></a>预制体上的配置：</h4><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220606181229495.png" alt="image-20220606181229495"></p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220606181237509.png" alt="image-20220606181237509"></p>
 
-      img {
-        border-radius: 50%;
-        width: 100%;
-        height: 100%;
-        background: var(--avatar-background-color);
-      }
+        </div>
 
-    }
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：ScriptableObject简单使用</li>
+        <li>本文作者：ZHY</li>
+        <li>创建时间：2022-06-06 19:20:04</li>
+        <li>
+            本文链接：https://niaoyu00.github.io/Blog/2022/06/06/ScriptableObject/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
 
+            </div>
+        
 
-    .info {
-      padding: 2px 0;
-      margin-left: 10px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 100%;
-      height: 100%;
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/Blog/tags/unity/">#unity</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/Blog/tags/ScriptableObject/">#ScriptableObject</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
 
-      .author {
-        font-weight: 600;
-        font-size: 1.18rem;
-        display: flex;
-        align-items: center;
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/Blog/2022/06/06/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">正则表达式(搬运)</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/Blog/2022/05/27/%E6%A8%AA%E6%9D%BF%E5%8D%B7%E8%BD%B4%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E7%AC%94%E8%AE%B0/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">横板卷轴射击游戏笔记</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
 
-        .name {
-          color: var(--default-text-color);
-        }
-
-        .author-label {
-          margin-left: 10px;
-          font-size: 0.8rem;
-          font-weight: 500;
-          padding: 0 5px;
-          border-radius: 5px;
-          color: #fff;
-          background: var(--selection-color);
-        }
-
-      }
-    }
-
-  }
-
-
-  .article-header, .article-header-meta-info {
-    margin-top: 16px;
-    +keep-tablet() {
-      transform: scale(0.9);
-      transform-origin: left top;
-    }
-  }
-
-
-  .article-content {
-    margin-top: $component-spacing-value;
-    padding-bottom: 10px;
-    word-wrap: break-word;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--default-text-color);
-  }
-
-
-  .post-tags-box {
-    display: none;
-    margin-top: 1.6rem;
-    justify-content: center;
-    font-size: 1.1rem;
-
-    +keep-tablet() {
-      display: flex;
-    }
-
-    +keep-mobile() {
-      margin-top: 1.2rem;
-      font-size: 1rem;
-    }
-
-
-    .tag-item {
-      margin: 0 0.25rem;
-    }
-  }
-
-  .post-copyright-info {
-    margin-top: $component-spacing-value;
-    width: 100%;
-
-    +keep-tablet() {
-      margin-top: $component-spacing-value * 0.8;
-    }
-  }
-
-
-  .article-nav {
-    height: 40px;
-    margin-top: $component-spacing-value;
-
-    .article-prev, .article-next {
-      max-width: $post-nav-max-width;
-      height: 100%;
-      box-sizing: border-box;
-
-      keep-container(true, 1.03, 1.03, 10px, 0);
-
-      a {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-
-        &.prev {
-          padding-left: $arrow-icon-width;
-        }
-
-        &.next {
-          padding-right: $arrow-icon-width;
-        }
-
-        .arrow-icon {
-          position: absolute;
-          top: 0;
-          height: 100%;
-          width: $arrow-icon-width;
-
-          &.left {
-            left: 0;
-          }
-
-          &.right {
-            right: 0;
-          }
-        }
-
-        .title {
-          width: 100%;
-          height: 100%;
-        }
-      }
-
-    }
-
-    .article-prev {
-      float: left;
-    }
-
-    .article-next {
-      float: right;
-    }
-
-    .post-nav-item {
-      display: none;
-
-      +keep-tablet() {
-        display: inline-block;
-      }
-
-    }
-
-
-    .post-nav-title-item {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-
-      +keep-tablet() {
-        display: none;
-      }
-    }
-
-  }
-
-
-}
-
+        
+    </div>
+</div>
 
 
                 

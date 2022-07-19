@@ -170,225 +170,138 @@
             <div class="main-content">
 
                 
-                    $avatarWidth = 46px;
-$arrow-icon-width = 16px;
-$post-nav-max-width = 220px;
-$article-title-font-size = 1.6rem;
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
 
-.article-content-container {
+        <div class="article-title">
+            <span class="title-hover-animation">协调程序</span>
+        </div>
 
-  keep-container(false, 0, 0, 30px, 30px);
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/Blog/images/Bird.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">ZHY</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-03-03 12:55:48</span>
+        <span class="mobile">2022-03-03 12:55</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/Blog/tags/unity/">unity</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
 
-  .article-title {
-    color: var(--second-text-color);
-    font-weight: 600;
-    font-size: $article-title-font-size;
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
 
-    +keep-tablet() {
-      font-size: $article-title-font-size * 0.9;
-    }
+                    </div>
+                </div>
+            </div>
+        
 
-    +keep-mobile() {
-      font-size: $article-title-font-size * 0.8;
-    }
-  }
+        <div class="article-content markdown-body">
+            <h1 id="协程：协同程序"><a href="#协程：协同程序" class="headerlink" title="协程：协同程序"></a>协程：协同程序</h1><p><strong>协程的使用前提</strong>：直接或间接的继承MonoBehavior才可以使用。</p>
+<p><strong>不足</strong>：会产生外的开销。</p>
+<h3 id="协程方法与普通方法的区别："><a href="#协程方法与普通方法的区别：" class="headerlink" title="协程方法与普通方法的区别："></a>协程方法与普通方法的区别：</h3><p><strong>被调用时</strong>：普通方法被调用时，原来执行的部分保留现场，停止执行，然后去执行要调用的方法，并且，被调用的方法执行完之后才能返回到调用前的状态接着往下执行。。。协同方法的执行是不用等协同方法执行完再执行调用之前原来方法的代码。而是两者&#x3D;&#x3D;异步执行&#x3D;&#x3D;。</p>
+<p>类似js的异步</p>
 
+        </div>
 
-  .article-header {
-    position: relative;
-    padding-left: $avatarWidth;
-    width: 100%;
-    height: $avatarWidth;
-    box-sizing: border-box;
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：协调程序</li>
+        <li>本文作者：ZHY</li>
+        <li>创建时间：2022-03-03 12:55:48</li>
+        <li>
+            本文链接：https://niaoyu00.github.io/Blog/2022/03/03/协程/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
 
-    .avatar {
-      position: absolute;
-      top: 0
-      left: 0;
-      width: $avatarWidth;
-      height: $avatarWidth;
-      padding: 1px;
-      box-sizing: border-box;
-      border: 1px solid var(--border-color);
-      border-radius: 50%;
+            </div>
+        
 
-      img {
-        border-radius: 50%;
-        width: 100%;
-        height: 100%;
-        background: var(--avatar-background-color);
-      }
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/Blog/tags/unity/">#unity</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
 
-    }
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/Blog/2022/03/09/unity%E5%A1%94%E9%98%B2demo%E8%AE%B0%E5%BD%95/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">unity塔防demo记录</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/Blog/2022/03/01/git%E6%8C%87%E4%BB%A4/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">git指令</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
 
-
-    .info {
-      padding: 2px 0;
-      margin-left: 10px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 100%;
-      height: 100%;
-
-      .author {
-        font-weight: 600;
-        font-size: 1.18rem;
-        display: flex;
-        align-items: center;
-
-        .name {
-          color: var(--default-text-color);
-        }
-
-        .author-label {
-          margin-left: 10px;
-          font-size: 0.8rem;
-          font-weight: 500;
-          padding: 0 5px;
-          border-radius: 5px;
-          color: #fff;
-          background: var(--selection-color);
-        }
-
-      }
-    }
-
-  }
-
-
-  .article-header, .article-header-meta-info {
-    margin-top: 16px;
-    +keep-tablet() {
-      transform: scale(0.9);
-      transform-origin: left top;
-    }
-  }
-
-
-  .article-content {
-    margin-top: $component-spacing-value;
-    padding-bottom: 10px;
-    word-wrap: break-word;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--default-text-color);
-  }
-
-
-  .post-tags-box {
-    display: none;
-    margin-top: 1.6rem;
-    justify-content: center;
-    font-size: 1.1rem;
-
-    +keep-tablet() {
-      display: flex;
-    }
-
-    +keep-mobile() {
-      margin-top: 1.2rem;
-      font-size: 1rem;
-    }
-
-
-    .tag-item {
-      margin: 0 0.25rem;
-    }
-  }
-
-  .post-copyright-info {
-    margin-top: $component-spacing-value;
-    width: 100%;
-
-    +keep-tablet() {
-      margin-top: $component-spacing-value * 0.8;
-    }
-  }
-
-
-  .article-nav {
-    height: 40px;
-    margin-top: $component-spacing-value;
-
-    .article-prev, .article-next {
-      max-width: $post-nav-max-width;
-      height: 100%;
-      box-sizing: border-box;
-
-      keep-container(true, 1.03, 1.03, 10px, 0);
-
-      a {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-
-        &.prev {
-          padding-left: $arrow-icon-width;
-        }
-
-        &.next {
-          padding-right: $arrow-icon-width;
-        }
-
-        .arrow-icon {
-          position: absolute;
-          top: 0;
-          height: 100%;
-          width: $arrow-icon-width;
-
-          &.left {
-            left: 0;
-          }
-
-          &.right {
-            right: 0;
-          }
-        }
-
-        .title {
-          width: 100%;
-          height: 100%;
-        }
-      }
-
-    }
-
-    .article-prev {
-      float: left;
-    }
-
-    .article-next {
-      float: right;
-    }
-
-    .post-nav-item {
-      display: none;
-
-      +keep-tablet() {
-        display: inline-block;
-      }
-
-    }
-
-
-    .post-nav-title-item {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-
-      +keep-tablet() {
-        display: none;
-      }
-    }
-
-  }
-
-
-}
-
+        
+    </div>
+</div>
 
 
                 

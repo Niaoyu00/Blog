@@ -170,225 +170,149 @@
             <div class="main-content">
 
                 
-                    $avatarWidth = 46px;
-$arrow-icon-width = 16px;
-$post-nav-max-width = 220px;
-$article-title-font-size = 1.6rem;
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
 
-.article-content-container {
+        <div class="article-title">
+            <span class="title-hover-animation">unity中Invoke用法</span>
+        </div>
 
-  keep-container(false, 0, 0, 30px, 30px);
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/Blog/images/Bird.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">ZHY</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-06-16 19:16:00</span>
+        <span class="mobile">2022-06-16 19:16</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/Blog/tags/unity/">unity</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
 
-  .article-title {
-    color: var(--second-text-color);
-    font-weight: 600;
-    font-size: $article-title-font-size;
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
 
-    +keep-tablet() {
-      font-size: $article-title-font-size * 0.9;
-    }
+                    </div>
+                </div>
+            </div>
+        
 
-    +keep-mobile() {
-      font-size: $article-title-font-size * 0.8;
-    }
-  }
+        <div class="article-content markdown-body">
+            <h1 id="Unity中Invoke用法"><a href="#Unity中Invoke用法" class="headerlink" title="Unity中Invoke用法"></a>Unity中Invoke用法</h1><h4 id="Invoke方法是Unity3D-中的一种委托机制。"><a href="#Invoke方法是Unity3D-中的一种委托机制。" class="headerlink" title="Invoke方法是Unity3D 中的一种委托机制。"></a>Invoke方法是Unity3D 中的一种委托机制。</h4><p>现在看一下官网给出的API：</p>
+<blockquote>
+<p>public void Invoke(string methodName, float time);</p>
+<p>methodName 是方法名，time 是具体几秒</p>
+<p>Invokes the method <code>methodName</code> in time seconds.</p>
+</blockquote>
+<p>在具体事件以后调用这个方法</p>
+<p>　　也就是说，Invoke(“SendMessage”,5) ,表示的是在“5s”以后执行“SendMessage”方法。</p>
+<p>使用Invoke方法需要注意以下三点：</p>
+<p>1、它应该在<strong>Start,Update,FixUpdate,LateUpdate,还有OnGUI</strong>中被调用</p>
+<p>2、Invoke中传递的方法不能是含有参数的方法、</p>
+<p>3、当Time.ScaleTime &#x3D; 0时，Invoke()无效，调用不到Invoke方法</p>
+<p>当然，Invoke也支持重复调用:</p>
+<p>InvokeRepeating(“SendMessage”,2,3);</p>
+<p>表示在“2s”以后开始调用第一次，之后每隔“3s”重复调用一次。</p>
 
+        </div>
 
-  .article-header {
-    position: relative;
-    padding-left: $avatarWidth;
-    width: 100%;
-    height: $avatarWidth;
-    box-sizing: border-box;
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：unity中Invoke用法</li>
+        <li>本文作者：ZHY</li>
+        <li>创建时间：2022-06-16 19:16:00</li>
+        <li>
+            本文链接：https://niaoyu00.github.io/Blog/2022/06/16/unity中Invoke用法/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
 
-    .avatar {
-      position: absolute;
-      top: 0
-      left: 0;
-      width: $avatarWidth;
-      height: $avatarWidth;
-      padding: 1px;
-      box-sizing: border-box;
-      border: 1px solid var(--border-color);
-      border-radius: 50%;
+            </div>
+        
 
-      img {
-        border-radius: 50%;
-        width: 100%;
-        height: 100%;
-        background: var(--avatar-background-color);
-      }
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/Blog/tags/unity/">#unity</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
 
-    }
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/Blog/2022/07/08/unity%E5%B9%B3%E5%8F%B0%E8%B7%B3%E8%B7%83%E7%AC%94%E8%AE%B0/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">unity平台跳跃控制器</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/Blog/2022/06/06/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">正则表达式(搬运)</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
 
-
-    .info {
-      padding: 2px 0;
-      margin-left: 10px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 100%;
-      height: 100%;
-
-      .author {
-        font-weight: 600;
-        font-size: 1.18rem;
-        display: flex;
-        align-items: center;
-
-        .name {
-          color: var(--default-text-color);
-        }
-
-        .author-label {
-          margin-left: 10px;
-          font-size: 0.8rem;
-          font-weight: 500;
-          padding: 0 5px;
-          border-radius: 5px;
-          color: #fff;
-          background: var(--selection-color);
-        }
-
-      }
-    }
-
-  }
-
-
-  .article-header, .article-header-meta-info {
-    margin-top: 16px;
-    +keep-tablet() {
-      transform: scale(0.9);
-      transform-origin: left top;
-    }
-  }
-
-
-  .article-content {
-    margin-top: $component-spacing-value;
-    padding-bottom: 10px;
-    word-wrap: break-word;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--default-text-color);
-  }
-
-
-  .post-tags-box {
-    display: none;
-    margin-top: 1.6rem;
-    justify-content: center;
-    font-size: 1.1rem;
-
-    +keep-tablet() {
-      display: flex;
-    }
-
-    +keep-mobile() {
-      margin-top: 1.2rem;
-      font-size: 1rem;
-    }
-
-
-    .tag-item {
-      margin: 0 0.25rem;
-    }
-  }
-
-  .post-copyright-info {
-    margin-top: $component-spacing-value;
-    width: 100%;
-
-    +keep-tablet() {
-      margin-top: $component-spacing-value * 0.8;
-    }
-  }
-
-
-  .article-nav {
-    height: 40px;
-    margin-top: $component-spacing-value;
-
-    .article-prev, .article-next {
-      max-width: $post-nav-max-width;
-      height: 100%;
-      box-sizing: border-box;
-
-      keep-container(true, 1.03, 1.03, 10px, 0);
-
-      a {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-
-        &.prev {
-          padding-left: $arrow-icon-width;
-        }
-
-        &.next {
-          padding-right: $arrow-icon-width;
-        }
-
-        .arrow-icon {
-          position: absolute;
-          top: 0;
-          height: 100%;
-          width: $arrow-icon-width;
-
-          &.left {
-            left: 0;
-          }
-
-          &.right {
-            right: 0;
-          }
-        }
-
-        .title {
-          width: 100%;
-          height: 100%;
-        }
-      }
-
-    }
-
-    .article-prev {
-      float: left;
-    }
-
-    .article-next {
-      float: right;
-    }
-
-    .post-nav-item {
-      display: none;
-
-      +keep-tablet() {
-        display: inline-block;
-      }
-
-    }
-
-
-    .post-nav-title-item {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-
-      +keep-tablet() {
-        display: none;
-      }
-    }
-
-  }
-
-
-}
-
+        
+    </div>
+</div>
 
 
                 
