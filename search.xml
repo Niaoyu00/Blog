@@ -1140,7 +1140,7 @@
 <p><strong>参数1：字符串或者哈希值，参数2：持续时间。</strong></p>
 <p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220804135713005.png" alt="image-20220804135713005"></p>
 <p>玩家状态<strong>PlayerState_Idle和PlayerState_Run</strong>中的<code>animator.Play()</code>改为<code>base.Enter();</code>继承父类</p>
-<p>回到编辑器中只需要在可视化脚本中输入动画名即可</p>
+<p>回到编辑器中只需要在可视化脚本中输入动画名即可.</p>
 <p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220804140201463.png" alt="image-20220804140201463"></p>
 <hr>
 <h2 id="七-玩家跳跃功能"><a href="#七-玩家跳跃功能" class="headerlink" title="七 玩家跳跃功能"></a>七 玩家跳跃功能</h2><h3 id="7-1-地面检测"><a href="#7-1-地面检测" class="headerlink" title="7.1 地面检测"></a>7.1 地面检测</h3><p>要实现跳跃功能，首先要检测地面。</p>
@@ -1148,15 +1148,21 @@
 <p>代码如下:</p>
 <figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Diagnostics;</span><br><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PlayerGroundDetector</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">  [<span class="meta">SerializeField</span>] <span class="built_in">float</span> detectionRadius = <span class="number">0.1f</span>;<span class="comment">//检测半径</span></span><br><span class="line">  [<span class="meta">SerializeField</span>] LayerMask groundLayer;<span class="comment">//层级</span></span><br><span class="line">  Collider[] colliders = <span class="keyword">new</span> Collider[<span class="number">1</span>];<span class="comment">//碰撞数组</span></span><br><span class="line">    </span><br><span class="line">  <span class="comment">//Physics.OverlapSphereNonAlloc 检测碰撞个数,不触发回收机制 判断如不为0则返回true</span></span><br><span class="line">  <span class="comment">//IsGrounded:可以判断玩家是否在地面</span></span><br><span class="line">  <span class="keyword">public</span> <span class="built_in">bool</span> IsGrounded =&gt; Physics.OverlapSphereNonAlloc(transform.position, detectionRadius, colliders,groundLayer) != <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">//OnDrawGizmosSelected():系统提供的方法,不是自己建的。  </span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">OnDrawGizmosSelected</span>()</span></span><br><span class="line">  &#123;<span class="comment">//在编辑器中展示 方便调试</span></span><br><span class="line">    Gizmos.color = Color.green;</span><br><span class="line">    Gizmos.DrawWireSphere(transform.position, detectionRadius);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-
-<hr>
-<p>新建三个状态类<strong>PlayerState_Fall</strong>,<strong>PlayerState_JumpUp</strong>,<strong>PlayerState_Land</strong>。</p>
-<hr>
 <p>在<strong>PlayerController 玩家控制器脚本</strong>中新增代码,以使用玩家地面检测器的参数.</p>
 <p>新增内容:</p>
-<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line">  PlayerGroundDetector groundDetector;<span class="comment">//玩家地面检测</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取地面检测结果</span></span><br><span class="line">  <span class="keyword">public</span> <span class="built_in">bool</span> IsGrounded =&gt; groundDetector.IsGrounded;<span class="comment">//true 为已接触</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//判断玩家是否为漂浮,下落时刚体的y速度为负数,并且需要未落地.</span></span><br><span class="line">  <span class="keyword">public</span> <span class="built_in">bool</span> IsFalling =&gt; rigidBody.velocity.y &lt; <span class="number">0f</span> &amp;&amp; !IsGrounded;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line">PlayerGroundDetector groundDetector;<span class="comment">//玩家地面检测</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取地面检测结果</span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">bool</span> IsGrounded =&gt; groundDetector.IsGrounded;<span class="comment">//true 为已接触</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//判断玩家是否为正在下落,下落时刚体的y速度为负数,并且需要未落地.</span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">bool</span> IsFalling =&gt; rigidBody.velocity.y &lt; <span class="number">0f</span> &amp;&amp; !IsGrounded;</span><br></pre></td></tr></table></figure>
 
+
+
+<hr>
+<h3 id="7-2-检测当前播放动画是否完成"><a href="#7-2-检测当前播放动画是否完成" class="headerlink" title="7.2 检测当前播放动画是否完成"></a>7.2 检测当前播放动画是否完成</h3><p>需要获取:1.动画播放开启的时间;2.当前状态持续时长;3.动画自身播放时长</p>
+<p>打开<strong>玩家状态脚本 PlayerState</strong>,新增代码.</p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="built_in">float</span> stateStartTime;<span class="comment">//状态开始时间</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//动画是否播放完毕,通过判断 [当前状态的持续时间]是否大于等于[动画本身长度],若大于则动画结束.</span></span><br><span class="line">  <span class="keyword">protected</span> <span class="built_in">bool</span> IsAnimationFinished =&gt; StateDuration &gt;= animator.GetCurrentAnimatorStateInfo(<span class="number">0</span>).length;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//当前状态的持续时间,当前时间减去状态开始时间.</span></span><br><span class="line">  <span class="keyword">protected</span> <span class="built_in">float</span> StateDuration =&gt; Time.time - stateStartTime;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Enter()中给stateStartTime赋值</strong></p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Enter</span>()</span></span><br><span class="line">  &#123;<span class="comment">//animator.CrossFade()交叉淡化函数,可传入哈希值或者string</span></span><br><span class="line">    animator.CrossFade(stateHash, transitionDuration);</span><br><span class="line">    stateStartTime = Time.time;<span class="comment">//记录下状态开始时间</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-3-玩家跳跃"><a href="#7-3-玩家跳跃" class="headerlink" title="7.3 玩家跳跃"></a>7.3 玩家跳跃</h3><p>新建三个状态类<strong>PlayerState_Fall</strong>,<strong>PlayerState_JumpUp</strong>,<strong>PlayerState_Land</strong>。</p>
 ]]></content>
       <tags>
         <tag>unity</tag>
@@ -1570,6 +1576,25 @@
       <tags>
         <tag>日记</tag>
         <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日记</title>
+    <url>/Blog/2022/08/11/%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="日记"><a href="#日记" class="headerlink" title="日记"></a>日记</h1><p><strong>2022年8月11日00点59分周四</strong></p>
+<ul>
+<li>今天是略感疲惫的一天,因为昨晚其实睡得不早,大概九点多醒,十点多起床，玩游戏到了十一点多。然后去炒面，吃完十二点四十多。回房间躺了会儿，今天在床上定时十分钟冥想，中途睡着了一会儿，醒来就快十分钟了，小憩一会儿变得精神了些。</li>
+<li>之后我就开始学习了，效率不太高，我在学习的时候吃了荔枝，喝了茶，进度很少但是确实有意识在想学习。</li>
+<li>三点左右老爸回家了，因为家里的很多插座开关老化，这次是回来换开关的，我和他一起研究了一个下午，看电路，看视频。最后终于理解了原理，换好了客厅的单控四开开关。但是第一个开关其实是双控，旧的开关也是双控，他只买了单控的 所以我们决定把小红灯的另一个开关封死，只靠门口的开关来控制。第三个开关使用时偶尔会有不同的力反馈，我猜测是基础不良引起的电火花。但是我们都不知道怎么解决，索性摆烂，反正那个开关平常用得很少，尽量不去使用就好。等装完两个开关（房间的开关也是双控）。剩下还有一些开关需要替换，明天等他回来全部装完。</li>
+<li>我的计划是：在老爸回集美之前尽快写完跳跃功能，还有接下来的功能也尽力去写吧。算了我等会儿就把跳跃功能写了，明天计划就是下一个功能。一定要抓紧进度！精神要紧张起来！自救之路还很漫长~</li>
+</ul>
+<p><strong>01点13分</strong></p>
+<ul>
+<li>还有个问题,就是我右腿尽量别盘腿坐了,最近发现坐久了之后走路筋会疼,可能是我运动太少了,还一直保持一个姿势，这很不好！</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>日记</tag>
       </tags>
   </entry>
 </search>
