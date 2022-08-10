@@ -937,9 +937,9 @@
       </tags>
   </entry>
   <entry>
-    <title>unity平台跳跃控制器</title>
+    <title>unity平台跳跃控制器(持续更新)</title>
     <url>/Blog/2022/07/08/unity%E5%B9%B3%E5%8F%B0%E8%B7%B3%E8%B7%83%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="unity平台跳跃控制器"><a href="#unity平台跳跃控制器" class="headerlink" title="unity平台跳跃控制器"></a>unity平台跳跃控制器</h1><h4 id="教程来自b站阿严-https-www-bilibili-com-video-BV1rL4y1W7KH"><a href="#教程来自b站阿严-https-www-bilibili-com-video-BV1rL4y1W7KH" class="headerlink" title="教程来自b站阿严:https://www.bilibili.com/video/BV1rL4y1W7KH"></a>教程来自b站阿严:<a class="link"   href="https://www.bilibili.com/video/BV1rL4y1W7KH" >https://www.bilibili.com/video/BV1rL4y1W7KH<i class="fas fa-external-link-alt"></i></a></h4><hr>
+    <content><![CDATA[<h1 id="unity平台跳跃控制器-持续更新"><a href="#unity平台跳跃控制器-持续更新" class="headerlink" title="unity平台跳跃控制器(持续更新)"></a>unity平台跳跃控制器(持续更新)</h1><h4 id="教程来自b站阿严-https-www-bilibili-com-video-BV1rL4y1W7KH"><a href="#教程来自b站阿严-https-www-bilibili-com-video-BV1rL4y1W7KH" class="headerlink" title="教程来自b站阿严:https://www.bilibili.com/video/BV1rL4y1W7KH"></a>教程来自b站阿严:<a class="link"   href="https://www.bilibili.com/video/BV1rL4y1W7KH" >https://www.bilibili.com/video/BV1rL4y1W7KH<i class="fas fa-external-link-alt"></i></a></h4><hr>
 <h2 id="一-项目的创建和管理插件"><a href="#一-项目的创建和管理插件" class="headerlink" title="一 项目的创建和管理插件"></a>一 项目的创建和管理插件</h2><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220708151216150.png" alt="image-20220708151216150"></p>
 <p>删除不需要的插件，安装需要的插件，删除后插件内容：</p>
 <p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220708151839520.png" alt="image-20220708151839520"></p>
@@ -1163,6 +1163,7 @@
 <figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Enter</span>()</span></span><br><span class="line">  &#123;<span class="comment">//animator.CrossFade()交叉淡化函数,可传入哈希值或者string</span></span><br><span class="line">    animator.CrossFade(stateHash, transitionDuration);</span><br><span class="line">    stateStartTime = Time.time;<span class="comment">//记录下状态开始时间</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="7-3-玩家跳跃"><a href="#7-3-玩家跳跃" class="headerlink" title="7.3 玩家跳跃"></a>7.3 玩家跳跃</h3><p>新建三个状态类<strong>PlayerState_Fall</strong>,<strong>PlayerState_JumpUp</strong>,<strong>PlayerState_Land</strong>。</p>
+<p>玩家按下跳跃键,并且玩家在地面上</p>
 ]]></content>
       <tags>
         <tag>unity</tag>
@@ -1594,7 +1595,7 @@
 </ul>
 <p><strong>03点27分</strong></p>
 <ul>
-<li>定时俩小时的空调都结束了,我才刚写完跳跃功能,真是受益匪浅,比较还没有写.明天再写吧.该睡觉了.</li>
+<li>定时俩小时的空调都结束了,我才刚写完跳跃功能,真是受益匪浅,笔记还没有写.明天再写吧.该睡觉了.</li>
 </ul>
 ]]></content>
       <tags>
