@@ -9,7 +9,7 @@
     
     <title>
         
-            横板卷轴射击游戏笔记 |
+            随笔-1 |
         
         Niaoyu
     </title>
@@ -174,7 +174,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">横板卷轴射击游戏笔记</span>
+            <span class="title-hover-animation">随笔-1</span>
         </div>
 
         
@@ -193,8 +193,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-05-27 18:18:20</span>
-        <span class="mobile">2022-05-27 18:18</span>
+        <span class="pc">2022-08-10 02:17:55</span>
+        <span class="mobile">2022-08-10 02:17</span>
     </span>
     
     
@@ -203,7 +203,7 @@
             <ul>
                 
                     <li>
-                        <a href="/Blog/tags/unity/">unity</a>&nbsp;
+                        <a href="/Blog/tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
                     </li>
                 
             </ul>
@@ -226,49 +226,26 @@
         
 
         <div class="article-content markdown-body">
-            <h1 id="横板卷轴射击游戏笔记"><a href="#横板卷轴射击游戏笔记" class="headerlink" title="横板卷轴射击游戏笔记"></a>横板卷轴射击游戏笔记</h1><h2 id="一、背景滚动实现方法"><a href="#一、背景滚动实现方法" class="headerlink" title="一、背景滚动实现方法"></a>一、背景滚动实现方法</h2><ul>
-<li><p>创建一个3d对象Quad,重命名为SimpleBackground,调整好大小(跟图片差不多大)</p>
-</li>
-<li><p>新建一个材质,设置shader为Unlit&#x2F;Textu</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220525113508926.png" alt="image-20220525113508926"></p>
-</li>
-<li><p>将图片texture type设置为default，拖入材质。</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220525114905000.png" alt="image-20220525114905000"></p>
-</li>
-<li><p>将材质拖进SimpleBackground，这样就做好了背景。</p>
-</li>
-<li><p>通过实时更改材质中offset偏移值，来实现滚动效果</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220525115257651.png" alt="image-20220525115257651"></p>
-</li>
-<li><p>滚动代码如下：将Start()改为每帧刷新的协程(模拟Update())</p>
-</li>
-</ul>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Material material;</span><br><span class="line">   [<span class="meta">SerializeField</span>] Vector2 scrollVelocity;<span class="comment">//速度</span></span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">   &#123;</span><br><span class="line">       material = GetComponent&lt;Renderer&gt;().material;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">private</span> IEnumerator <span class="title">Start</span>()</span></span><br><span class="line">   &#123;</span><br><span class="line">       <span class="keyword">while</span> (GameManager.GameState != GameState.GameOver)</span><br><span class="line">           <span class="comment">//游戏状态不为gameover可运行场景滚动</span></span><br><span class="line">       &#123;</span><br><span class="line">           material.mainTextureOffset += scrollVelocity * Time.deltaTime;</span><br><span class="line">           <span class="keyword">yield</span> <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="随笔-1"><a href="#随笔-1" class="headerlink" title="随笔-1"></a>随笔-1</h1><p><strong>2022年8月10日01点30分</strong></p>
+<p>​	现在我的状态是：刚洗完澡,吃着家里最后一个黄桃(虽然这一批黄桃有几个被磕到不太完美，但是真的好吃)。<br>​	<br>​	洗澡的时候就总在反思，我的自觉性为什么这么差！前几天刚开始有点自律的苗头，过了一个周末又完全乱了套，我觉得这种浑浑噩噩的状态绝不纯是外力因素，很大部分原因是我个人的思想觉悟不够高。对睡觉时间做不到严格执行，对自己的约束力不够。这么下去绝对会得病，我必须得想办法自救。“只要早睡就可以了”这句话是我前段时间最经常对自己说的，包括冷静的时候的反思，心里想的也是如此。但是亲身经历这么长时间，我很清楚地知道这句话实施起来有多么困难。<br>​	<br>​	回房间后，一边吃着黄桃，一边想着今后的规划，一边打开了Typora，因为一想到学习我就会打开Typora，做笔记之类的。这次想着要不记日记吧，那就写日记吧！每天睡前总结今日的感想，收获，告诉未来的自己现在的状态。<br>​	<br>​	今天和小伙伴看了汤唯新片子在韩国拍的《分手的决心》，虽然结局有点致郁，但不得不说这部电影挺好看的，有悬疑，有情感，拍的也很唯美，是一部让人看完愿意向其他人安利的电影。刚才搜电影资料的时候又沉迷了，被文章吸引，是一篇将汤唯的经历的文，说她目前在韩国的小乡村隐居，平常只有拍戏才会让大众知晓，我觉得这种态度挺好的。<br>​	<br>​	发现我总是特别容易被某些突发事件给勾走注意力，完全忘记了最初的目标。包括学习的时候，有时候某个知识点不够了解，就专门去搜名词，然后就是花了不少时间在支线任务。其实这样也挺好，前提是我过完支线会继续做主线。目前的问题是我潜意识认为学习是比较痛苦的，即使是无聊没事干，游戏的任务也不需要做的时候，我也不会想敲代码。这就导致了支线过一半，或者过完之后我也不愿回到主线任务学习，这是个很严重的问题。<br>​	<br>​	还有个问题就是我总是在夜间清醒，白天非常疲惫，几乎一直处于朦朦胧胧的状态，又不想做饭。就比如现在已经02点11分，我依然神采奕奕，下午的时候光是躺在床上都犯困。就这样吧！穿好衣服准备睡觉了，希望明天能自然睡够7小时以上，手机就不带上床了。</p>
+<p><strong>02点14分。</strong></p>
+<p>​	我去查一下怎么更方便地发表博客，hexo的常用指令感觉我可以找机会去整合一下。</p>
+<p><strong>02点19分</strong></p>
+<p>​	搞定了，睡觉！</p>
+<p><strong>02点46分</strong></p>
+<p>​	没忍住去看了会儿阿严的视频学习了几分钟，视频接近尾声，但我开始困了。晚安</p>
 
-<h2 id="二、Input-System动作输入系统"><a href="#二、Input-System动作输入系统" class="headerlink" title="二、Input System动作输入系统"></a>二、Input System动作输入系统</h2><p>Input System（安装包）实现了一个，可使用任何类型输入设备来控制unity内容的系统。它旨在替代unity旧的输入管理器（UnityEngine.Input类），并且更为强大，灵活易用。</p>
-<h3 id="安装输入系统"><a href="#安装输入系统" class="headerlink" title="安装输入系统"></a>安装输入系统</h3><p>Window-&gt;Pacjage Manager-&gt;UnityRegistry(搜索input)-&gt;安装</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220525193119457.png" alt="image-20220525193119457"></p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220525193205846.png" alt="image-20220525193205846"></p>
-<h3 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h3><p>新建InputActions文件</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220525193424028.png" alt="image-20220525193424028"></p>
-<p>打开InputActions，绑定输入信号。</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220526133600652.png" alt="image-20220526133600652"></p>
-<p>创建c#文件,注意名字可自定，我取名为PlayerInputActions。</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220527165032291.png" alt="image-20220527165032291"></p>
-<p>新建一个PlayInput类,继承于ScriptableObject,<code>//ScriptableObject:一个类，如果需要创建【无需附加到游戏对象】的对象时，可从该类派生。【】表示强调。</code>继承PlayerInputActions类中的几个接口，实现接口。</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220527173825594.png" alt="image-20220527173825594"></p>
-<h4 id="未完待续…-因为是好早之前看视频学的-详细的内容得去重看视频再补-目前还没那个时间"><a href="#未完待续…-因为是好早之前看视频学的-详细的内容得去重看视频再补-目前还没那个时间" class="headerlink" title="未完待续…(因为是好早之前看视频学的,详细的内容得去重看视频再补,目前还没那个时间)"></a>未完待续…(因为是好早之前看视频学的,详细的内容得去重看视频再补,目前还没那个时间)</h4>
         </div>
 
         
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：横板卷轴射击游戏笔记</li>
+        <li>本文标题：随笔-1</li>
         <li>本文作者：ZHY</li>
-        <li>创建时间：2022-05-27 18:18:20</li>
+        <li>创建时间：2022-08-10 02:17:55</li>
         <li>
-            本文链接：https://niaoyu00.github.io/Blog/2022/05/27/横板卷轴射击游戏笔记/
+            本文链接：https://niaoyu00.github.io/Blog/2022/08/10/随笔-1/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -283,7 +260,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/Blog/tags/unity/">#unity</a>&nbsp;
+                        <a href="/Blog/tags/%E9%9A%8F%E7%AC%94/">#随笔</a>&nbsp;
                     </li>
                 
             </ul>
@@ -295,13 +272,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/Blog/2022/06/06/ScriptableObject/"
+                           href="/Blog/2022/08/11/%E9%9A%8F%E7%AC%94-2/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">ScriptableObject简单使用</span>
+                                <span class="post-nav-title-item">随笔-2</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -311,10 +288,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/Blog/2022/05/23/git%E5%9B%BE%E5%BA%8A/"
+                           href="/Blog/2022/08/04/Cinemachine%20Camera%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3%E5%92%8C%E4%BD%BF%E7%94%A8/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">github图床搭建</span>
+                                <span class="post-nav-title-item">(转载)Cinemachine Camera部分讲解和使用</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -432,7 +409,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%AA%E6%9D%BF%E5%8D%B7%E8%BD%B4%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E7%AC%94%E8%AE%B0"><span class="nav-text">横板卷轴射击游戏笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%83%8C%E6%99%AF%E6%BB%9A%E5%8A%A8%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-text">一、背景滚动实现方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Input-System%E5%8A%A8%E4%BD%9C%E8%BE%93%E5%85%A5%E7%B3%BB%E7%BB%9F"><span class="nav-text">二、Input System动作输入系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%BE%93%E5%85%A5%E7%B3%BB%E7%BB%9F"><span class="nav-text">安装输入系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%8A%9F%E8%83%BD"><span class="nav-text">实现功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD%E2%80%A6-%E5%9B%A0%E4%B8%BA%E6%98%AF%E5%A5%BD%E6%97%A9%E4%B9%8B%E5%89%8D%E7%9C%8B%E8%A7%86%E9%A2%91%E5%AD%A6%E7%9A%84-%E8%AF%A6%E7%BB%86%E7%9A%84%E5%86%85%E5%AE%B9%E5%BE%97%E5%8E%BB%E9%87%8D%E7%9C%8B%E8%A7%86%E9%A2%91%E5%86%8D%E8%A1%A5-%E7%9B%AE%E5%89%8D%E8%BF%98%E6%B2%A1%E9%82%A3%E4%B8%AA%E6%97%B6%E9%97%B4"><span class="nav-text">未完待续…(因为是好早之前看视频学的,详细的内容得去重看视频再补,目前还没那个时间)</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9A%8F%E7%AC%94-1"><span class="nav-text">随笔-1</span></a></li></ol>
     </div>
 </div>
         </aside>
