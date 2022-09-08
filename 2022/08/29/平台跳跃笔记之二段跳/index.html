@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="ZHY">
+    
+    <title>
+        
+            平台跳跃控制器之二段跳 |
+        
+        Niaoyu
+    </title>
+    
+<link rel="stylesheet" href="/Blog/css/style.css">
+
+    <link rel="shortcut icon" href="/Blog/images/Bird.png">
+    
+<link rel="stylesheet" href="/Blog/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"niaoyu00.github.io","root":"/Blog/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/Bird.png","favicon":"/images/Bird.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/Blog/images/bg.svg","description":"三分钟热度也有三分钟收获"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/Blog/images/Bird.png">
+                </a>
+            
+            <a class="logo-title" href="/">
+                Niaoyu
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/Blog/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/Blog/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/Blog/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/Blog/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/Blog/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/Blog/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/Blog/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/Blog/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/Blog/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/Blog/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">平台跳跃控制器之二段跳</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/Blog/images/Bird.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">ZHY</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        .article-meta-info {
+  font-size: 0.8rem;
+  color: var(--third-text-color);
+
+  .article-meta-item {
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .article-date {
+
+    .mobile {
+      display: none;
+    }
+
+    +keep-tablet() {
+      .pc {
+        display: none;
+      }
+
+      .mobile {
+        display: inline;
+      }
+    }
+
+  }
+
+
+  .article-tags, .article-categories {
+    display: inline;
+
+    ul, li {
+      display: inline;
+    }
+
+    a {
+      color: var(--third-text-color);
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  .article-tags {
+    +keep-tablet() {
+      display: none;
+    }
+  }
+
+  .article-min2read, .article-wordcount {
+    +keep-mobile() {
+      display: none;
+    }
+  }
+}
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="平台跳跃控制器之二段跳"><a href="#平台跳跃控制器之二段跳" class="headerlink" title="平台跳跃控制器之二段跳"></a>平台跳跃控制器之二段跳</h1><blockquote>
+<p>总章中间漏了点，最近懒得补。干脆做到哪写到哪吧，有时间再整理。</p>
+</blockquote>
+<ul>
+<li><p><strong>跳跃在空中的状态是：跳起-&gt;下落;</strong></p>
+</li>
+<li><p><strong>跳起之后松开空格就是下落状态，所以二段跳逻辑我们写在下落状态中；</strong></p>
+</li>
+</ul>
+<h2 id="实现空中多段跳"><a href="#实现空中多段跳" class="headerlink" title="实现空中多段跳"></a>实现空中多段跳</h2><ul>
+<li><p><strong>新建一个空中跳跃状态(PlayerState_AirJump.cs),为他添加资产菜单(CreateAssetMenu);</strong></p>
+</li>
+<li><p><strong>空中跳跃的逻辑和普通跳跃一样,所以直接复制代码即可。重要的地方在于,我们需要给二段跳进行限制。</strong></p>
+</li>
+</ul>
+<p>在<strong>PlayerController.cs</strong>中,新建属性<strong>CanAirJump</strong>,<code>public bool CanAirJump &#123; get; set; &#125; = true;//控制空中跳跃能力的开关</code></p>
+<p>在下落状态脚本<strong>PlayerState_Fall.cs</strong>中的**LogicUpdate()**函数里实现判断,当玩家可以跳跃时(吃到星星,测试时条件是落地后)切换状态:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">LogicUpdate</span>()</span></span><br><span class="line"> &#123;</span><br><span class="line">   <span class="keyword">if</span> (player.IsGrounded)</span><br><span class="line">   &#123;<span class="comment">//当玩家接触到地面时,切换到落地状态</span></span><br><span class="line">     stateMachine.SwitchState(<span class="keyword">typeof</span>(PlayerState_Land));</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">if</span> (input.playerjump) 	</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="keyword">if</span> (player.CanAirJump)</span><br><span class="line">     &#123;<span class="comment">//当玩家可以跳跃时(吃到星星,测试时条件是落地后)</span></span><br><span class="line">       stateMachine.SwitchState(<span class="keyword">typeof</span>(PlayerState_AirJump));</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="给跳跃添加粒子特效"><a href="#给跳跃添加粒子特效" class="headerlink" title="给跳跃添加粒子特效"></a>给跳跃添加粒子特效</h3><p>分别在两个跳跃状态新建<code>[SerializeField] ParticleSystem jumpVFX;//粒子特效</code></p>
+<h2 id="实现吃星星增加跳跃次数"><a href="#实现吃星星增加跳跃次数" class="headerlink" title="实现吃星星增加跳跃次数"></a>实现吃星星增加跳跃次数</h2><h3 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h3><p>将玩家控制器脚本<strong>PlayerController</strong>中,属性<code> public bool CanAirJump &#123; get; set; &#125;</code>的ture赋值删除,不进行初始化.默认值为false;</p>
+<h3 id="其次"><a href="#其次" class="headerlink" title="其次"></a>其次</h3><p>在<strong>PlayerState_Land</strong>脚本中删除Enter()里,<code>player.CanAirJump</code>。</p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220901163609823.png" alt="image-20220901163609823"></p>
+<h3 id="打开星星宝石预制体-创建脚本StarGem-内容如下"><a href="#打开星星宝石预制体-创建脚本StarGem-内容如下" class="headerlink" title="打开星星宝石预制体,创建脚本StarGem,内容如下:"></a>打开星星宝石预制体,创建脚本StarGem,内容如下:</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">StarGem</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">//进入触发器</span></span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnTriggerEnter</span>(<span class="params">Collider other</span>)</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">//检测进入触发器的对象是否是玩家</span></span><br><span class="line">    <span class="keyword">if</span> (other.TryGetComponent&lt;PlayerController&gt;(<span class="keyword">out</span> PlayerController player))</span><br><span class="line">    &#123;<span class="comment">//打开空中跳跃能力</span></span><br><span class="line">      player.CanAirJump = <span class="literal">true</span>;</span><br><span class="line">      <span class="comment">//Destroy(gameObject);不可直接摧毁宝石</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>碰撞体配置,记得打开触发器</strong></p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220907181056931.png" alt="image-20220907181056931"></p>
+<p><strong>接下来实现星星宝石消失后延时恢复</strong></p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">StarGem</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;<span class="comment">//进入触发器</span></span><br><span class="line">    </span><br><span class="line">  [<span class="meta">SerializeField</span>] <span class="built_in">float</span> resetTime = <span class="number">2</span>;</span><br><span class="line">  MeshRenderer meshRenderer;<span class="comment">//渲染器组件</span></span><br><span class="line">  <span class="keyword">new</span> Collider collider;<span class="comment">//碰撞器组件</span></span><br><span class="line"></span><br><span class="line">  WaitForSeconds waitResetTime;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    meshRenderer = GetComponentInChildren&lt;MeshRenderer&gt;();</span><br><span class="line">    collider = GetComponent&lt;Collider&gt;();</span><br><span class="line">    waitResetTime = <span class="keyword">new</span> WaitForSeconds(resetTime);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnTriggerEnter</span>(<span class="params">Collider other</span>)</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">//检测进入触发器的对象是否是玩家</span></span><br><span class="line">    <span class="keyword">if</span> (other.TryGetComponent&lt;PlayerController&gt;(<span class="keyword">out</span> PlayerController player))</span><br><span class="line">    &#123;<span class="comment">//打开空中跳跃能力</span></span><br><span class="line">      player.CanAirJump = <span class="literal">true</span>;</span><br><span class="line">      <span class="comment">//Destroy(gameObject);不可直接摧毁宝石</span></span><br><span class="line">      meshRenderer.enabled = <span class="literal">false</span>;<span class="comment">//关闭宝石的渲染器组件</span></span><br><span class="line">      collider.enabled = <span class="literal">false</span>;<span class="comment">//关闭碰撞器组件</span></span><br><span class="line">      <span class="comment">//Invoke(nameof(Reset), resetTime);//延时resetTime秒调用函数</span></span><br><span class="line">      StartCoroutine(ResetCoroutine());<span class="comment">//启动延时携程</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function">IEnumerator <span class="title">ResetCoroutine</span>()</span></span><br><span class="line">  &#123;<span class="comment">//延时携程</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">return</span> waitResetTime;<span class="comment">//挂起等待resetTime秒</span></span><br><span class="line">    Reset();<span class="comment">//实现功能</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">Reset</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    meshRenderer.enabled = <span class="literal">true</span>;<span class="comment">//关闭宝石的渲染器组件</span></span><br><span class="line">    collider.enabled = <span class="literal">true</span>;<span class="comment">//关闭碰撞器组件</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="给星星添加音效"><a href="#给星星添加音效" class="headerlink" title="给星星添加音效"></a>给星星添加音效</h2><p><strong>组件中添加Audio Source,在代码中添加拾取音效.图中已圈出</strong></p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220908024359260.png" alt="image-20220908024359260"></p>
+<h3 id="旋转星星"><a href="#旋转星星" class="headerlink" title="旋转星星"></a>旋转星星</h3>
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：平台跳跃控制器之二段跳</li>
+        <li>本文作者：ZHY</li>
+        <li>创建时间：2022-08-29 17:12:13</li>
+        <li>
+            本文链接：https://niaoyu00.github.io/Blog/2022/08/29/平台跳跃笔记之二段跳/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/Blog/tags/%E5%B9%B3%E5%8F%B0%E8%B7%B3%E8%B7%83%E6%8E%A7%E5%88%B6%E5%99%A8/">#平台跳跃控制器</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/Blog/tags/Unity/">#Unity</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/Blog/2022/08/13/%E9%9A%8F%E7%AC%94-3/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">随笔-3</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">ZHY</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%B3%E5%8F%B0%E8%B7%B3%E8%B7%83%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B9%8B%E4%BA%8C%E6%AE%B5%E8%B7%B3"><span class="nav-text">平台跳跃控制器之二段跳</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E7%A9%BA%E4%B8%AD%E5%A4%9A%E6%AE%B5%E8%B7%B3"><span class="nav-text">实现空中多段跳</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%99%E8%B7%B3%E8%B7%83%E6%B7%BB%E5%8A%A0%E7%B2%92%E5%AD%90%E7%89%B9%E6%95%88"><span class="nav-text">给跳跃添加粒子特效</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%90%83%E6%98%9F%E6%98%9F%E5%A2%9E%E5%8A%A0%E8%B7%B3%E8%B7%83%E6%AC%A1%E6%95%B0"><span class="nav-text">实现吃星星增加跳跃次数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E5%85%88"><span class="nav-text">首先</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E6%AC%A1"><span class="nav-text">其次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E6%98%9F%E6%98%9F%E5%AE%9D%E7%9F%B3%E9%A2%84%E5%88%B6%E4%BD%93-%E5%88%9B%E5%BB%BA%E8%84%9A%E6%9C%ACStarGem-%E5%86%85%E5%AE%B9%E5%A6%82%E4%B8%8B"><span class="nav-text">打开星星宝石预制体,创建脚本StarGem,内容如下:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%99%E6%98%9F%E6%98%9F%E6%B7%BB%E5%8A%A0%E9%9F%B3%E6%95%88"><span class="nav-text">给星星添加音效</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC%E6%98%9F%E6%98%9F"><span class="nav-text">旋转星星</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/Blog/js/utils.js"></script>
+
+<script src="/Blog/js/main.js"></script>
+
+<script src="/Blog/js/header-shrink.js"></script>
+
+<script src="/Blog/js/back2top.js"></script>
+
+<script src="/Blog/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/Blog/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/Blog/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/Blog/js/left-side-toggle.js"></script>
+
+<script src="/Blog/js/libs/anime.min.js"></script>
+
+<script src="/Blog/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/Blog/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
