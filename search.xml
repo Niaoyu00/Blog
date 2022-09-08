@@ -1598,7 +1598,20 @@
 
 <h2 id="给星星添加音效"><a href="#给星星添加音效" class="headerlink" title="给星星添加音效"></a>给星星添加音效</h2><p><strong>组件中添加Audio Source,在代码中添加拾取音效.图中已圈出</strong></p>
 <p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220908024359260.png" alt="image-20220908024359260"></p>
-<h3 id="旋转星星"><a href="#旋转星星" class="headerlink" title="旋转星星"></a>旋转星星</h3>]]></content>
+<h2 id="旋转星星"><a href="#旋转星星" class="headerlink" title="旋转星星"></a>旋转星星</h2><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">AutoRotate</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">  [<span class="meta">SerializeField</span>] Vector3 rotation;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">  &#123;<span class="comment">//旋转</span></span><br><span class="line">    transform.Rotate(rotation * Time.deltaTime);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220908233011726.png" alt="image-20220908233011726"></p>
+]]></content>
+      <tags>
+        <tag>平台跳跃控制器</tag>
+        <tag>Unity</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>平台跳跃控制器之土狼时间</title>
+    <url>/Blog/2022/09/08/%E5%B9%B3%E5%8F%B0%E8%B7%B3%E8%B7%83%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%9C%9F%E7%8B%BC%E6%97%B6%E9%97%B4/</url>
+    <content><![CDATA[<h1 id="平台跳跃控制器之土狼时间"><a href="#平台跳跃控制器之土狼时间" class="headerlink" title="平台跳跃控制器之土狼时间"></a>平台跳跃控制器之土狼时间</h1><h2 id="土狼时间"><a href="#土狼时间" class="headerlink" title="土狼时间"></a>土狼时间</h2><p><strong>人物在地面&#x2F;平台边缘即将掉落的时候,仍有机会进行跳跃动作;</strong><br><strong>其原理是:在人物掉落判定时开始计时,在设置的土狼时间内,可以按键跳跃。</strong></p>
+]]></content>
       <tags>
         <tag>平台跳跃控制器</tag>
         <tag>Unity</tag>
