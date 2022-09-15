@@ -230,7 +230,7 @@
         
 
         <div class="article-content markdown-body">
-            <h1 id="平台跳跃控制器之预输入"><a href="#平台跳跃控制器之预输入" class="headerlink" title="平台跳跃控制器之预输入"></a>平台跳跃控制器之预输入</h1><p><strong>说明:未落地时按跳跃键,可被记录，并且落地后起跳。</strong></p>
+            <h1 id="平台跳跃控制器之预输入"><a href="#平台跳跃控制器之预输入" class="headerlink" title="平台跳跃控制器之预输入"></a>平台跳跃控制器之预输入</h1><h2 id="功能实现"><a href="#功能实现" class="headerlink" title="功能实现"></a>功能实现</h2><p><strong>说明:未落地时按跳跃键,可被记录，并且落地后起跳。</strong></p>
 <ul>
 <li><strong>降落</strong>状态，并且无法二段跳时，<strong>开启缓冲输入</strong>。</li>
 <li>从降落到落地<strong>之间</strong>只要一直按着空格，落地后会立马跳起。</li>
@@ -245,8 +245,17 @@
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (input.playerjump)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">if</span> (player.CanAirJump)</span><br><span class="line">      &#123;<span class="comment">//当玩家可以跳跃时(吃到星星,测试时条件是落地后)</span></span><br><span class="line">        stateMachine.SwitchState(<span class="keyword">typeof</span>(PlayerState_AirJump));</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      input.HasJumpInputBuffer = <span class="literal">true</span>;<span class="comment">//如果玩家不能二段跳,则开启动作预输入(输入缓冲)</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>PlayerState_JumpUp</strong>脚本,**Enter()**中添加<code>input.HasJumpInputBuffer = false;//关闭动作缓冲</code></p>
-<p><strong>PlayerState_Land</strong>,落地状态脚本,判定开启动作输入缓冲时也可跳跃</p>
+<p><strong>PlayerState_Land</strong>,落地状态脚本,判定开启动作缓冲输入时也可跳跃</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (input.HasJumpInputBuffer || input.playerjump)</span><br><span class="line">    &#123;<span class="comment">//如果存在跳跃输入缓冲</span></span><br><span class="line">      <span class="comment">//或者玩家按下空格起跳,则切换状态为跳跃</span></span><br><span class="line">      stateMachine.SwitchState(<span class="keyword">typeof</span>(PlayerState_JumpUp));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="限制缓冲输入时长"><a href="#限制缓冲输入时长" class="headerlink" title="限制缓冲输入时长"></a>限制缓冲输入时长</h2><p>新建协程<strong>JumpInputBufferCoroutine</strong>,跳跃输入缓冲携程</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">IEnumerator <span class="title">JumpInputBufferCoroutine</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">//跳跃输入缓冲携程</span></span><br><span class="line">    HasJumpInputBuffer = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">return</span> waitJumpInputBufferTime;<span class="comment">//延迟0.5s</span></span><br><span class="line">    HasJumpInputBuffer = <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>该协程写进一个方法用以别的类调用</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetJumpInputBufferTimer</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    StopCoroutine(<span class="keyword">nameof</span>(JumpInputBufferCoroutine));</span><br><span class="line">    StartCoroutine(<span class="keyword">nameof</span>(JumpInputBufferCoroutine));</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>例如<strong>PlayerState_Fall</strong>状态中,将无限制缓冲输入时长改为长按0.5s失效</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//若如果玩家不能二段跳,则开启动作预输入(输入缓冲) 携程</span></span><br><span class="line">      <span class="comment">// input.HasJumpInputBuffer = true;</span></span><br><span class="line">      input.SetJumpInputBufferTimer();</span><br></pre></td></tr></table></figure>
 
 
         </div>
@@ -290,13 +299,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/Blog/2022/09/14/%E7%94%BB%E9%9D%A2%E4%B8%AD%E6%9F%A5%E7%9C%8Bdebug-OnGUI/"
+                           href="/Blog/2022/09/14/%E6%B8%B8%E6%88%8F%E7%94%BB%E9%9D%A2%E4%B8%AD%E6%9F%A5%E7%9C%8Bdebug-OnGUI/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">画面中查看debug:OnGUI</span>
+                                <span class="post-nav-title-item">游戏画面中查看debug:OnGUI</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -427,7 +436,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%B3%E5%8F%B0%E8%B7%B3%E8%B7%83%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B9%8B%E9%A2%84%E8%BE%93%E5%85%A5"><span class="nav-text">平台跳跃控制器之预输入</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%B3%E5%8F%B0%E8%B7%B3%E8%B7%83%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B9%8B%E9%A2%84%E8%BE%93%E5%85%A5"><span class="nav-text">平台跳跃控制器之预输入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0"><span class="nav-text">功能实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%90%E5%88%B6%E7%BC%93%E5%86%B2%E8%BE%93%E5%85%A5%E6%97%B6%E9%95%BF"><span class="nav-text">限制缓冲输入时长</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
