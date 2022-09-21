@@ -245,7 +245,11 @@ Cinema...
 
                 <div class="home-article-content markdown-body">
                     
-                        平台跳跃控制器之宝石功能实现-delegate
+                        平台跳跃控制器之宝石功能实现-delegate常规方法：通过委托联系宝石与门(观察者模式)流程是:
+
+在宝石脚本中创建委托,并在碰撞函数中调用(Invoke());
+在门脚本中创建函数(Open())摧毁对象,并且订阅宝石中的委托。
+当宝石碰撞，调用...
                     
                 </div>
 
