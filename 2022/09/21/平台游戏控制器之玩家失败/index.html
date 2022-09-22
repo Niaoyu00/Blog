@@ -9,7 +9,7 @@
     
     <title>
         
-            平台游戏控制器之开始结束画面 |
+            平台游戏控制器之玩家失败 |
         
         Niaoyu
     </title>
@@ -174,7 +174,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">平台游戏控制器之开始结束画面</span>
+            <span class="title-hover-animation">平台游戏控制器之玩家失败</span>
         </div>
 
         
@@ -193,8 +193,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-09-21 16:58:51</span>
-        <span class="mobile">2022-09-21 16:58</span>
+        <span class="pc">2022-09-21 17:50:20</span>
+        <span class="mobile">2022-09-21 17:50</span>
     </span>
     
     
@@ -230,46 +230,33 @@
         
 
         <div class="article-content markdown-body">
-            <h1 id="平台游戏控制器之开始结束画面"><a href="#平台游戏控制器之开始结束画面" class="headerlink" title="平台游戏控制器之开始结束画面"></a>平台游戏控制器之开始结束画面</h1><p><strong>说明:开始游戏时播放ui动画,放完后摧毁红色闸门。游戏结束时(吃完红宝石)，弹出用时、结束画面。</strong></p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220921170427534.png" alt="image-20220921170427534"></p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220921171040912.png" alt="image-20220921171040912"></p>
-<h2 id="开始画面"><a href="#开始画面" class="headerlink" title="开始画面"></a>开始画面</h2><p>开始时<strong>ReadyScreen</strong>对象的<strong>Canvas</strong>和<strong>Animator</strong>组件默认为开启。</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220921173413495.png" alt="image-20220921173413495"></p>
-<p>在ReadyScreen对象下新建同名脚本<strong>ReadyScreen</strong>，拖入脚本化对象<strong>VoidEventChannel</strong>：</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220921171132192.png" alt="image-20220921171132192"></p>
-<p>ui关闭时调用委托(关门)，并且隐藏Canvas和Animator，播放音效。</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ReadyScreen</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">  [<span class="meta">SerializeField</span>] VoidEventChannel levelStartedEventChannel;<span class="comment">//获取事件频道</span></span><br><span class="line">  [<span class="meta">SerializeField</span>] AudioClip beginSFX;<span class="comment">//开始音效</span></span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">CloseUI</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    levelStartedEventChannel.Broadcast();<span class="comment">//调用委托</span></span><br><span class="line">    GetComponent&lt;Canvas&gt;().enabled = <span class="literal">false</span>;</span><br><span class="line">    GetComponent&lt;Animator&gt;().enabled = <span class="literal">false</span>;</span><br><span class="line">    SoundEffectsPlayer.audioSource.PlayOneShot(beginSFX);<span class="comment">//播放音效</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="平台游戏控制器之玩家失败"><a href="#平台游戏控制器之玩家失败" class="headerlink" title="平台游戏控制器之玩家失败"></a>平台游戏控制器之玩家失败</h1><p><strong>说明:玩家碰到尖刺或者被黑球撞到就会死亡</strong></p>
+<h2 id="功能实现"><a href="#功能实现" class="headerlink" title="功能实现"></a>功能实现</h2><h3 id="对player的操作"><a href="#对player的操作" class="headerlink" title="对player的操作"></a>对player的操作</h3><p>首先选中<strong>所有尖刺</strong>,为他们添加脚本<strong>Spike</strong></p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220922130103417.png" alt="image-20220922130103417"></p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Spike</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnTriggerEnter</span>(<span class="params">Collider other</span>)</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span> (other.TryGetComponent(<span class="keyword">out</span> PlayerController player))</span><br><span class="line">    &#123;<span class="comment">//如果碰撞的是挂载PlayerController的对象</span></span><br><span class="line">      player.OnDefeated();<span class="comment">//游戏失败，玩家身上相关功能禁用</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>接下来是<strong>添加动画事件</strong></p>
-<p>动画器中选中最后一帧，<strong>添加事件</strong></p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220921172309718.png" alt="image-20220921172309718"></p>
-<p>选择该ui上脚本里的函数CloseUI(),当动画执行到此就会运行该函数。</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220921172359029.png" alt="image-20220921172359029"></p>
-<p>记得在闸门(StartGate)上添加Gate脚本 附加上对应的脚本化文件。</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220921172756313.png" alt="image-20220921172756313"></p>
-<p>因此实现通过动画事件，隐藏ui、播放开始动画、移除闸门等操作。</p>
-<h2 id="结束画面"><a href="#结束画面" class="headerlink" title="结束画面"></a>结束画面</h2><p><strong>与上面原理相同，流程：吃到红宝石游戏结束，弹出游戏结束画面。</strong></p>
-<p>红宝石中的同名脚本<strong>VitoryGem</strong>中，获取事件频道，触发函数时调用委托。</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">VitoryGem</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">  [<span class="meta">SerializeField</span>] AudioClip pickUpSound;<span class="comment">//音效</span></span><br><span class="line">  [<span class="meta">SerializeField</span>] ParticleSystem pickUpVFX;<span class="comment">//特效</span></span><br><span class="line">  [<span class="meta">SerializeField</span>] VoidEventChannel levelClearedEventChannel;<span class="comment">//获取事件频道</span></span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnTriggerEnter</span>(<span class="params">Collider other</span>)</span></span><br><span class="line">  &#123;</span><br><span class="line">    levelClearedEventChannel.Broadcast();<span class="comment">//调用委托</span></span><br><span class="line">    SoundEffectsPlayer.audioSource.PlayOneShot(pickUpSound);</span><br><span class="line">    Instantiate(pickUpVFX, transform.position, Quaternion.identity);</span><br><span class="line">    Destroy(gameObject);<span class="comment">//摧毁</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过问题修复功能,自动在<strong>PlayerController</strong>脚本中生成**OnDefeated()**函数;</p>
+<p>同样地,在<strong>input</strong>类中生成<strong>DisableGamePlayInputs()</strong>;</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">OnDefeated</span>()</span></span><br><span class="line">  &#123;<span class="comment">//游戏失败</span></span><br><span class="line">    input.DisableGamePlayInputs();<span class="comment">//关闭输入</span></span><br><span class="line">    rigidBody.velocity = Vector3.zero;<span class="comment">//速度清零</span></span><br><span class="line">    rigidBody.useGravity = <span class="literal">false</span>;<span class="comment">//关闭重力对刚体的影响</span></span><br><span class="line">    rigidBody.detectCollisions = <span class="literal">false</span>;<span class="comment">//关闭刚体碰撞检测</span></span><br><span class="line">    <span class="comment">//状态机切换到失败状态</span></span><br><span class="line">    GetComponent&lt;StateMachine&gt;().SwitchState(<span class="keyword">typeof</span>(PlayerState_Defeated));</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
-<p>VictoryScreen对象(UI)创建同名脚本<strong>VictoryScreen</strong></p>
-<p>VictoryScreen默认Canvas和Animator为隐藏</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220921174100250.png" alt="image-20220921174100250"></p>
-<p>在ShowUI函数中开启显示Canvas和Animator组件。</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">VictoryScreen</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">  [<span class="meta">SerializeField</span>] VoidEventChannel levelClearedEventChannel;<span class="comment">//获取事件频道</span></span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnEnable</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    levelClearedEventChannel.AddListener(ShowUI);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnDisable</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    levelClearedEventChannel.RemoveListener(ShowUI);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ShowUI</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    GetComponent&lt;Canvas&gt;().enabled = <span class="literal">true</span>;</span><br><span class="line">    GetComponent&lt;Animator&gt;().enabled = <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>DisableGamePlayInputs()</strong>;只有一行代码:禁用当前输入动作表。<code>playerInputAction.GamePlay.Disable();</code></p>
+<h3 id="对状态的操作"><a href="#对状态的操作" class="headerlink" title="对状态的操作"></a>对状态的操作</h3><p>新建状态<strong>PlayerState_Defeated</strong></p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220922131642449.png" alt="image-20220922131642449"></p>
+<p>用来玩家生成死亡时的音效、特效</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line">[<span class="meta">CreateAssetMenu(menuName = <span class="string">&quot;Data/StateMachine/PlayerState/Defeated&quot;</span>, fileName = <span class="string">&quot;PlayerState_Defeated&quot;</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PlayerState_Defeated</span> : <span class="title">PlayerState</span></span><br><span class="line">&#123;</span><br><span class="line">  [<span class="meta">SerializeField</span>] ParticleSystem Deathvfx;<span class="comment">//死亡特效</span></span><br><span class="line">  [<span class="meta">SerializeField</span>] AudioClip[] voice;<span class="comment">//音效集合</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Enter</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">base</span>.Enter();</span><br><span class="line">    Instantiate(Deathvfx, player.transform.position, Quaternion.identity);<span class="comment">//生成特效</span></span><br><span class="line">    AudioClip deathVoice = voice[UnityEngine.Random.Range(<span class="number">0</span>, voice.Length)];<span class="comment">//随机选中一个音效</span></span><br><span class="line">    player.voicePlayer.PlayOneShot(deathVoice);<span class="comment">//播放音效</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
+<h3 id="UI相关"><a href="#UI相关" class="headerlink" title="UI相关"></a>UI相关</h3>
         </div>
 
         
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：平台游戏控制器之开始结束画面</li>
+        <li>本文标题：平台游戏控制器之玩家失败</li>
         <li>本文作者：ZHY</li>
-        <li>创建时间：2022-09-21 16:58:51</li>
+        <li>创建时间：2022-09-21 17:50:20</li>
         <li>
-            本文链接：https://niaoyu00.github.io/Blog/2022/09/21/平台游戏控制器之开始结束画面/
+            本文链接：https://niaoyu00.github.io/Blog/2022/09/21/平台游戏控制器之玩家失败/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -297,29 +284,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/Blog/2022/09/21/%E5%B9%B3%E5%8F%B0%E6%B8%B8%E6%88%8F%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B9%8B%E7%8E%A9%E5%AE%B6%E5%A4%B1%E8%B4%A5/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">平台游戏控制器之玩家失败</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/Blog/2022/09/20/%E5%B9%B3%E5%8F%B0%E8%B7%B3%E8%B7%83%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B9%8B%E5%AE%9D%E7%9F%B3%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0-delegate/"
+                           href="/Blog/2022/09/21/%E5%B9%B3%E5%8F%B0%E6%B8%B8%E6%88%8F%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B9%8B%E5%BC%80%E5%A7%8B%E7%BB%93%E6%9D%9F%E7%94%BB%E9%9D%A2/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">平台跳跃控制器之宝石功能实现:delegate</span>
+                                <span class="post-nav-title-item">平台游戏控制器之开始结束画面</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -437,7 +409,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%B3%E5%8F%B0%E6%B8%B8%E6%88%8F%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B9%8B%E5%BC%80%E5%A7%8B%E7%BB%93%E6%9D%9F%E7%94%BB%E9%9D%A2"><span class="nav-text">平台游戏控制器之开始结束画面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E7%94%BB%E9%9D%A2"><span class="nav-text">开始画面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9D%9F%E7%94%BB%E9%9D%A2"><span class="nav-text">结束画面</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%B3%E5%8F%B0%E6%B8%B8%E6%88%8F%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B9%8B%E7%8E%A9%E5%AE%B6%E5%A4%B1%E8%B4%A5"><span class="nav-text">平台游戏控制器之玩家失败</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0"><span class="nav-text">功能实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9player%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-text">对player的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E7%8A%B6%E6%80%81%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-text">对状态的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UI%E7%9B%B8%E5%85%B3"><span class="nav-text">UI相关</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
