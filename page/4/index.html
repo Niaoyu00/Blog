@@ -9,8 +9,6 @@
     
     <title>
         
-            协调程序 |
-        
         Niaoyu
     </title>
     
@@ -70,7 +68,7 @@
                 <ul class="menu-list">
                     
                         <li class="menu-item">
-                            <a class=""
+                            <a class="active"
                                href="/Blog/"
                             >
                                 首页
@@ -131,7 +129,7 @@
         <ul class="drawer-menu-list">
             
                 <li class="drawer-menu-item flex-center">
-                    <a class=""
+                    <a class="active"
                        href="/Blog/">首页</a>
                 </li>
             
@@ -170,136 +168,113 @@
             <div class="main-content">
 
                 
-                    <div class="fade-in-down-animation">
-    <div class="article-content-container">
-
-        <div class="article-title">
-            <span class="title-hover-animation">协调程序</span>
-        </div>
-
+                    <div class="home-content-container fade-in-down-animation">
+    <ul class="home-article-list">
         
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/Blog/images/Bird.png">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">ZHY</span>
-                        
-                            <span class="author-label">Lv4</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-03-03 12:55:48</span>
-        <span class="mobile">2022-03-03 12:55</span>
-    </span>
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/Blog/tags/unity/">unity</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
+            <li class="home-article-item">
 
-    
-    
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
-    
+                
+
+                <h3 class="home-article-title">
+                    <a href="/Blog/2021/10/25/%E9%A1%B6%E7%82%B9%E7%BB%98%E5%88%B6/">
+                        ue4顶点绘制
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        网格体绘制（顶点绘制）
+步骤混合材质
+打开这个，依顺序从底层-&gt;中间层-&gt;顶层进行选择。
+截图里红色框命名，蓝色框确认，创建后就是混合后的材质。
+然后将混合后材质拖进平面，调整平铺比例（视频里材质UV是4x4，而box盒子是一米见方，因此...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Oct 25 2021 12:36:18 GMT+0800">2021-10-25</span></span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/Blog/tags/ue4%E6%9D%90%E8%B4%A8/">ue4材质</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/Blog/2021/10/25/%E9%A1%B6%E7%82%B9%E7%BB%98%E5%88%B6/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
-                    </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/Blog/2021/10/15/ue4%E6%9D%90%E8%B4%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        ue4材质笔记
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        简明PBR2：介绍了菲尼尔，以及两个网站可以查折射率
+材质基础
+常量Constant：不能在材质实例中调整
+变量Variable：可以在材质中调整
+右键可以转换常量或变量
+矢量Vector：表示颜色、坐标信息
+标量Scalar：常用参数调整手段
+用作...
+                    
                 </div>
-            </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Oct 15 2021 23:20:31 GMT+0800">2021-10-15</span></span>
         
-
-        <div class="article-content markdown-body">
-            <h1 id="协程：协同程序"><a href="#协程：协同程序" class="headerlink" title="协程：协同程序"></a>协程：协同程序</h1><p><strong>协程的使用前提</strong>：直接或间接的继承MonoBehavior才可以使用。</p>
-<p><strong>不足</strong>：会产生外的开销。</p>
-<h3 id="协程方法与普通方法的区别："><a href="#协程方法与普通方法的区别：" class="headerlink" title="协程方法与普通方法的区别："></a>协程方法与普通方法的区别：</h3><p><strong>被调用时</strong>：普通方法被调用时，原来执行的部分保留现场，停止执行，然后去执行要调用的方法，并且，被调用的方法执行完之后才能返回到调用前的状态接着往下执行。。。协同方法的执行是不用等协同方法执行完再执行调用之前原来方法的代码。而是两者&#x3D;&#x3D;异步执行&#x3D;&#x3D;。</p>
-<p>类似js的异步</p>
-
-        </div>
-
         
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>本文标题：协调程序</li>
-        <li>本文作者：ZHY</li>
-        <li>创建时间：2022-03-03 12:55:48</li>
-        <li>
-            本文链接：https://niaoyu00.github.io/Blog/2022/03/03/协程/
-        </li>
-        <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
-        </li>
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/Blog/tags/ue4%E6%9D%90%E8%B4%A8/">ue4材质</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/Blog/2021/10/15/ue4%E6%9D%90%E8%B4%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
     </ul>
+
+    <div class="home-paginator">
+        <div class="paginator">
+    
+        <a class="prev btn"
+           href="/Blog/page/3/"
+        >上一页</a>
+    
+
+    
 </div>
 
-            </div>
-        
-
-        
-            <ul class="post-tags-box">
-                
-                    <li class="tag-item">
-                        <a href="/Blog/tags/unity/">#unity</a>&nbsp;
-                    </li>
-                
-            </ul>
-        
-
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/Blog/2022/03/09/unity%E5%A1%94%E9%98%B2demo%E8%AE%B0%E5%BD%95/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">unity塔防demo记录</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/Blog/2022/03/01/git%E6%8C%87%E4%BB%A4/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">git指令</span>
-                                <span class="post-nav-item">下一篇</span>
-                            </span>
-                            <span class="right arrow-icon flex-center">
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
-
-        
     </div>
 </div>
 
@@ -338,23 +313,6 @@
         </div>
     </div>
 
-    
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="tools-item page-aside-toggle">
-                <i class="fas fa-outdent"></i>
-            </li>
-        
-
-        <!-- go comment -->
-        
-    </ul>
-</div>
-
-        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -402,14 +360,6 @@
     </div>
 
     
-        <aside class="page-aside">
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%8F%E7%A8%8B%EF%BC%9A%E5%8D%8F%E5%90%8C%E7%A8%8B%E5%BA%8F"><span class="nav-text">协程：协同程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8F%E7%A8%8B%E6%96%B9%E6%B3%95%E4%B8%8E%E6%99%AE%E9%80%9A%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="nav-text">协程方法与普通方法的区别：</span></a></li></ol></li></ol></li></ol>
-    </div>
-</div>
-        </aside>
-    
 
     <div class="image-viewer-container">
     <img src="">
@@ -452,6 +402,7 @@
 
 
 
+
 <script src="/Blog/js/utils.js"></script>
 
 <script src="/Blog/js/main.js"></script>
@@ -478,14 +429,6 @@
 
 
 <div class="post-scripts pjax">
-    
-        
-<script src="/Blog/js/left-side-toggle.js"></script>
-
-<script src="/Blog/js/libs/anime.min.js"></script>
-
-<script src="/Blog/js/toc.js"></script>
-
     
 </div>
 
