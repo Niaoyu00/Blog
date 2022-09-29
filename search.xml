@@ -1821,7 +1821,8 @@
 <p><strong>更简便的写法:</strong></p>
 <figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Ball</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">// [SerializeField] Collider gameplayer;//获取玩家碰撞体</span></span><br><span class="line">  <span class="comment">// [SerializeField] PlayerController player;//获取玩家控制器</span></span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnCollisionEnter</span>(<span class="params">Collision other</span>)</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span> (other.gameObject.TryGetComponent(<span class="keyword">out</span> PlayerController player))</span><br><span class="line">    &#123;</span><br><span class="line">      player.OnDefeated();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// if (other.collider == gameplayer)</span></span><br><span class="line">    <span class="comment">// &#123;</span></span><br><span class="line">    <span class="comment">//   player.OnDefeated();</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
+<p><strong>给小球加上消失功能,大约6s摧毁自身</strong></p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Ball</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">  [<span class="meta">SerializeField</span>] VoidEventChannel ballTriggeredEventChannel;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnEnable</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    ballTriggeredEventChannel.AddListener(EliminateBall);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnDisable</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    ballTriggeredEventChannel.RemoveListener(EliminateBall);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnCollisionEnter</span>(<span class="params">Collision other</span>)</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span> (other.gameObject.TryGetComponent(<span class="keyword">out</span> PlayerController player))</span><br><span class="line">    &#123;</span><br><span class="line">      player.OnDefeated();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">EliminateBall</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    Destroy(gameObject, <span class="number">6f</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h3 id="对状态的操作"><a href="#对状态的操作" class="headerlink" title="对状态的操作"></a>对状态的操作</h3><p>新建状态<strong>PlayerState_Defeated</strong></p>
 <p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20220922131642449.png" alt="image-20220922131642449"></p>
@@ -1894,6 +1895,30 @@
       <tags>
         <tag>unity</tag>
         <tag>平台跳跃控制器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Csharp中问号的用法（转载）</title>
+    <url>/Blog/2022/09/25/Csharp%E4%B8%AD%E9%97%AE%E5%8F%B7%E7%9A%84%E7%94%A8%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="C-中-、-、-、-x3D-的用法和说明（转载）"><a href="#C-中-、-、-、-x3D-的用法和说明（转载）" class="headerlink" title="C#中? 、?? 、?. 、??&#x3D; 的用法和说明（转载）"></a>C#中? 、?? 、?. 、??&#x3D; 的用法和说明（转载）</h1><h2 id="一、可空类型修饰符-lt-gt"><a href="#一、可空类型修饰符-lt-gt" class="headerlink" title="一、可空类型修饰符&lt; ? &gt;"></a>一、可空类型修饰符&lt; ? &gt;</h2><p>引用类型能用空引用来表示一个表示一个不存在的值，但是值类型不能。例如：</p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> str = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">int</span> i = <span class="literal">null</span>;<span class="comment">//编译报错</span></span><br></pre></td></tr></table></figure>
+
+<p>为了使值类型也能使用可空类型，就可以用 “ ? “来表示，表现形式为”T?”。例如：</p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="built_in">int</span> i? <span class="comment">//表示可空的整型</span></span><br><span class="line">DateTime time? <span class="comment">//表示可空的时间</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="二、空合并运算符-lt-gt"><a href="#二、空合并运算符-lt-gt" class="headerlink" title="二、空合并运算符&lt; ??  &gt;"></a>二、空合并运算符&lt; ??  &gt;</h2><p>用于定义引用类型和可空类型的默认值。如果此运算符的左操作数不为Null，则此操作符将返回左操作数，否则返回右操作数。</p>
+<p><code>var c = a??b //当a不为null时返回a，为null时返回b</code></p>
+<h2 id="三、-lt-gt"><a href="#三、-lt-gt" class="headerlink" title="三、&lt; ?. &gt;"></a>三、&lt; ?. &gt;</h2><p>不为null时执行后面的操作。例如：</p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line">Person.Name?.Person.Code </span><br><span class="line">Person.Name = Person == <span class="literal">null</span> ? <span class="literal">null</span> : Person.Code <span class="comment">//两段代码等效</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="四、-lt-x3D-gt"><a href="#四、-lt-x3D-gt" class="headerlink" title="四、&lt; ??&#x3D; &gt;"></a>四、&lt; ??&#x3D; &gt;</h2><p>C# 8.0 引入了 null 合并赋值运算符 ??&#x3D;。 仅当左操作数计算为 null 时，才能使用运算符 ??&#x3D; 将其右操作数的值分配给左操作数。</p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line">List&lt;<span class="built_in">int</span>&gt; numbers = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">int</span>? i = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">numbers ??= <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line">numbers.Add(i ??= <span class="number">17</span>);</span><br><span class="line">numbers.Add(i ??= <span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">Console.WriteLine(<span class="built_in">string</span>.Join(<span class="string">&quot; &quot;</span>, numbers));  <span class="comment">// output: 17 17</span></span><br><span class="line">Console.WriteLine(i);  <span class="comment">// output: 17</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>版权声明：本文为CSDN博主「机械键盘侠」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a class="link"   href="https://blog.csdn.net/xuchen_wang/article/details/102850615" >https://blog.csdn.net/xuchen_wang/article/details/102850615<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <tags>
+        <tag>Csharp</tag>
       </tags>
   </entry>
 </search>
