@@ -1,0 +1,36 @@
+.is-3-column {
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+.widget,
+.footer {
+  background-color: rgba(255,255,255,0.812);
+}
+@media screen and (min-width: 1000px), print {
+  .column.is-4,
+  .column.is-4-tablet,
+  .is-4-desktop,
+  .is-4-widescreen {
+    width: 20%;
+    max-width: 25rem;
+  }
+  .column.is-8,
+  .column.is-8-tablet,
+  .is-8-desktop,
+  .is-8-widescreen {
+    width: 60%;
+  }
+  .column.is-3,
+  .column.is-3-tablet,
+  .is-3-desktop,
+  .is-3-widescreen {
+    width: 20%;
+  }
+}
+.article {
+  margin-right: 16px;
+  margin-left: 16px;
+}
+.article .content a img {
+  margin: auto;
+  display: block;
+}
