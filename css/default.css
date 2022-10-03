@@ -11678,10 +11678,11 @@ figure.highlight.foldable div.level-left {
   }
 }
 .is-3-column {
-  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  background-image: linear-gradient(to top, #fddb92 0%, #e2ebf0 100%);
 }
 .widget,
-.footer {
+.footer,
+.navbar {
   background-color: rgba(255,255,255,0.812);
 }
 @media screen and (min-width: 1000px), print {
