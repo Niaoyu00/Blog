@@ -1,6 +1,9 @@
 .is-3-column {
   background-image: linear-gradient(to top, #fddb92 0%, #e2ebf0 100%);
 }
+.title.is-3 {
+  color: #dc143c;
+}
 .widget,
 .footer,
 .navbar {
