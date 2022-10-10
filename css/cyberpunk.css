@@ -11681,6 +11681,13 @@ figure.highlight.foldable div.level-left {
 .is-3-column {
   background-image: linear-gradient(to top, #fddb92 0%, #e2ebf0 100%);
 }
+.title.is-3 {
+  color: #dc143c;
+}
+img {
+  padding: 0.3rem;
+  box-shadow: 1px 2px 4px #808080;
+}
 .widget,
 .footer,
 .navbar {
