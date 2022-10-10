@@ -242,6 +242,20 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo新建文章模板</title>
+    <url>/Blog/2022/10/10/Hexo%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p><strong>hexo新建文章时,头部默认是只有title和date,每次要添加类别都要重新写。</strong></p>
+<h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h3><p><strong>根目录下找到scaffolds文件夹下的post.md就可以编辑模板了</strong></p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20221010170728952.png" alt="image-20221010170728952"></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo首页显示摘要</title>
     <url>/Blog/2022/10/10/Hexo%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%91%98%E8%A6%81/</url>
     <content><![CDATA[<h3 id="解决Hexo博客没有auto-excerpt的问题"><a href="#解决Hexo博客没有auto-excerpt的问题" class="headerlink" title="解决Hexo博客没有auto_excerpt的问题"></a>解决Hexo博客没有auto_excerpt的问题</h3><h2 id="1：使用npm安装hexo-excerpt"><a href="#1：使用npm安装hexo-excerpt" class="headerlink" title="1：使用npm安装hexo-excerpt"></a>1：使用npm安装hexo-excerpt</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-excerpt --save</span><br></pre></td></tr></table></figure>
@@ -293,6 +307,10 @@
 <p><strong>打印结果:</strong></p>
 <p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20221006181635722.png" alt="image-20221006181635722"></p>
 <h2 id="栈的应用"><a href="#栈的应用" class="headerlink" title="栈的应用"></a>栈的应用</h2><p><strong>十进制转二进制</strong></p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line">Console.WriteLine(<span class="string">&quot;请输入一个十进制数字&quot;</span>);</span><br><span class="line">        <span class="built_in">int</span> num = <span class="built_in">int</span>.Parse(Console.ReadLine());</span><br><span class="line">        Stack&lt;<span class="built_in">int</span>&gt; Remainder = <span class="keyword">new</span> Stack&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line">        <span class="keyword">while</span> (num != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Remainder.Push(num % <span class="number">2</span>);</span><br><span class="line">            num /= <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">foreach</span> (<span class="keyword">var</span> item <span class="keyword">in</span> Remainder)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.ForegroundColor = ConsoleColor.DarkBlue;</span><br><span class="line">            Console.Write(item);</span><br><span class="line">        &#125;</span><br><span class="line">        Console.ReadKey();</span><br></pre></td></tr></table></figure>
+
+<p><strong>打印结果:</strong></p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20221010164950111.png" alt="image-20221010164950111"></p>
 ]]></content>
       <categories>
         <category>基础学习</category>
