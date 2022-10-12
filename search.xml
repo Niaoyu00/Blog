@@ -243,9 +243,147 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo文章添加音乐插件</title>
+    <url>/Blog/2022/10/12/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script>
+    <div id="aplayer-qVTwJRsU" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="979896497" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-listfolded="true"
+    ></div>
+
+<h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-tag-aplayer</span><br></pre></td></tr></table></figure>
+
+<h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><ul>
+<li>APlayer.js &gt; 1.8.0</li>
+<li>Meting.js &gt; 1.1.1</li>
+</ul>
+<h3 id="MeingJS-支持-3-0-新功能"><a href="#MeingJS-支持-3-0-新功能" class="headerlink" title="MeingJS 支持 (3.0 新功能)"></a>MeingJS 支持 (3.0 新功能)</h3><p>在<code>_config.yml</code>中添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">aplayer:</span><br><span class="line">  meting: true</span><br></pre></td></tr></table></figure>
+
+<p>接着就可以通过 <code>&#123;% meting ...%&#125;</code> 在文章中使用 MetingJS 播放器了：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 简单示例 (id, server, type)  --&gt;</span><br><span class="line">&#123;% meting &quot;60198&quot; &quot;netease&quot; &quot;playlist&quot; %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 进阶示例 --&gt;</span><br><span class="line">&#123;% meting &quot;60198&quot; &quot;netease&quot; &quot;playlist&quot; &quot;autoplay&quot; &quot;mutex:false&quot; &quot;listmaxheight:340px&quot; &quot;preload:none&quot; &quot;theme:#ad7a86&quot;%&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>有关 
+    <div id="aplayer-eGPTVDvK" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="undefined" data-server="undefined" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
+    ></div> 的选项列表如下:</strong></p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td><strong>必须值</strong></td>
+<td>歌曲 id &#x2F; 播放列表 id &#x2F; 相册 id &#x2F; 搜索关键字</td>
+</tr>
+<tr>
+<td>server</td>
+<td><strong>必须值</strong></td>
+<td>音乐平台: <code>netease</code>, <code>tencent</code>, <code>kugou</code>, <code>xiami</code>, <code>baidu</code></td>
+</tr>
+<tr>
+<td>type</td>
+<td><strong>必须值</strong></td>
+<td><code>song</code>, <code>playlist</code>, <code>album</code>, <code>search</code>, <code>artist</code></td>
+</tr>
+<tr>
+<td>fixed</td>
+<td><code>false</code></td>
+<td>开启固定模式</td>
+</tr>
+<tr>
+<td>mini</td>
+<td><code>false</code></td>
+<td>开启迷你模式</td>
+</tr>
+<tr>
+<td>loop</td>
+<td><code>all</code></td>
+<td>列表循环模式：<code>all</code>, <code>one</code>,<code>none</code></td>
+</tr>
+<tr>
+<td>order</td>
+<td><code>list</code></td>
+<td>列表播放模式： <code>list</code>, <code>random</code></td>
+</tr>
+<tr>
+<td>volume</td>
+<td>0.7</td>
+<td>播放器音量</td>
+</tr>
+<tr>
+<td>lrctype</td>
+<td>0</td>
+<td>歌词格式类型</td>
+</tr>
+<tr>
+<td>listfolded</td>
+<td><code>false</code></td>
+<td>指定音乐播放列表是否折叠</td>
+</tr>
+<tr>
+<td>storagename</td>
+<td><code>metingjs</code></td>
+<td>LocalStorage 中存储播放器设定的键名</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td><code>true</code></td>
+<td>自动播放，移动端浏览器暂时不支持此功能</td>
+</tr>
+<tr>
+<td>mutex</td>
+<td><code>true</code></td>
+<td>该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停</td>
+</tr>
+<tr>
+<td>listmaxheight</td>
+<td><code>340px</code></td>
+<td>播放列表的最大长度</td>
+</tr>
+<tr>
+<td>preload</td>
+<td><code>auto</code></td>
+<td>音乐文件预载入模式，可选项： <code>none</code>, <code>metadata</code>, <code>auto</code></td>
+</tr>
+<tr>
+<td>theme</td>
+<td><code>#ad7a86</code></td>
+<td>播放器风格色彩设置</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>音乐播放器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>实现线性表List</title>
     <url>/Blog/2022/10/10/%E5%AE%9E%E7%8E%B0%E7%BA%BF%E6%80%A7%E8%A1%A8List/</url>
-    <content><![CDATA[<h2 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h2><h2 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h2><h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><h3 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h3>]]></content>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><h2 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h2><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20221010174739617.png" alt="image-20221010174739617"></p>
+<h3 id="定义接口"><a href="#定义接口" class="headerlink" title="定义接口"></a>定义接口</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">IListDS</span>&lt;<span class="title">T</span>&gt;</span><br><span class="line">   &#123;</span><br><span class="line">       <span class="function"><span class="built_in">int</span> <span class="title">GetLength</span>()</span>;<span class="comment">//求长度</span></span><br><span class="line">    </span><br><span class="line">       <span class="function"><span class="keyword">void</span> <span class="title">Chear</span>()</span>;<span class="comment">//清空</span></span><br><span class="line">    </span><br><span class="line">       <span class="function"><span class="built_in">bool</span> <span class="title">IsEmpty</span>()</span>;<span class="comment">//判断线性表是否为空</span></span><br><span class="line">    </span><br><span class="line">       <span class="function"><span class="keyword">void</span> <span class="title">Add</span>(<span class="params">T item</span>)</span>;<span class="comment">//添加</span></span><br><span class="line">    </span><br><span class="line">       <span class="function"><span class="keyword">void</span> <span class="title">Insert</span>(<span class="params"><span class="built_in">int</span> i, T item</span>)</span>;<span class="comment">//插入</span></span><br><span class="line">    </span><br><span class="line">       <span class="function">T <span class="title">Delete</span>(<span class="params"><span class="built_in">int</span> i</span>)</span>;<span class="comment">//删除</span></span><br><span class="line">    </span><br><span class="line">       T <span class="keyword">this</span>[<span class="built_in">int</span> i] &#123; <span class="keyword">get</span>; &#125;<span class="comment">//定义索引器 获取元素</span></span><br><span class="line">    </span><br><span class="line">       <span class="function">T <span class="title">GetElem</span>(<span class="params"><span class="built_in">int</span> i</span>)</span>;<span class="comment">//取表元</span></span><br><span class="line">    </span><br><span class="line">       <span class="function"><span class="built_in">int</span> <span class="title">Locate</span>(<span class="params">T <span class="keyword">value</span></span>)</span>;<span class="comment">//按值查找</span></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="实现接口"><a href="#实现接口" class="headerlink" title="实现接口"></a>实现接口</h4><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 实现顺序表</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;typeparam name=&quot;T&quot;&gt;</span><span class="doctag">&lt;/typeparam&gt;</span></span></span><br><span class="line"><span class="keyword">class</span> <span class="title">SeqList</span>&lt;<span class="title">T</span>&gt; : <span class="title">IListDS</span>&lt;<span class="title">T</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//新建类,继承IListDs&lt;T&gt;并且实现接口</span></span><br><span class="line">    <span class="keyword">private</span> T[] data;<span class="comment">//存储数据的数组</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">int</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SeqList</span>(<span class="params"><span class="built_in">int</span> size</span>)</span></span><br><span class="line">    &#123;<span class="comment">//size是最大容量</span></span><br><span class="line">        data = <span class="keyword">new</span> T[size];</span><br><span class="line">        count = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//默认构造函数容量为10</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SeqList</span>() : <span class="title">this</span>(<span class="params"><span class="number">10</span></span>)</span> &#123; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Insert</span>(<span class="params"><span class="built_in">int</span> index, T item</span>)</span></span><br><span class="line">    &#123;<span class="comment">//插入</span></span><br><span class="line">        <span class="keyword">if</span> (index &lt; <span class="number">0</span> || index &gt; count)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ArgumentException(<span class="string">&quot;数组索引越界&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (count == data.Length)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ArgumentException(<span class="string">&quot;数组已满&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = count - <span class="number">1</span>; i &gt;= index; i--)</span><br><span class="line">        &#123;</span><br><span class="line">            data[i + <span class="number">1</span>] = data[i];</span><br><span class="line">        &#125;</span><br><span class="line">        data[index] = item;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Add</span>(<span class="params">T item</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        Insert(count, item);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">Delete</span>(<span class="params"><span class="built_in">int</span> index</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        T temp = data[index];</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = index + <span class="number">1</span>; i &lt; count; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            data[i - <span class="number">1</span>] = data[i];<span class="comment">//左移</span></span><br><span class="line">        &#125;</span><br><span class="line">        count--;</span><br><span class="line">        <span class="keyword">return</span> temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Chear</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        count = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">GetElem</span>(<span class="params"><span class="built_in">int</span> i</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &gt;= <span class="number">0</span> &amp;&amp; i &lt;= count - <span class="number">1</span>)<span class="comment">//索引存在</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> data[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">default</span>(T);</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ArgumentException(<span class="string">&quot;索引不存在&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> T <span class="keyword">this</span>[<span class="built_in">int</span> i]</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">get</span> &#123; <span class="keyword">return</span> GetElem(i); &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">GetLength</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">bool</span> <span class="title">IsEmpty</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> count == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">Locate</span>(<span class="params">T <span class="keyword">value</span></span>)</span></span><br><span class="line">    &#123;<span class="comment">//根据值找索引</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; count; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (data[i].Equals(<span class="keyword">value</span>))</span><br><span class="line">            &#123;<span class="comment">//确定指定的对象是否等于当前对象。</span></span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;<span class="comment">//值不存在</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] argss</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//使用自己封装的顺序表</span></span><br><span class="line">        SeqList&lt;<span class="built_in">int</span>&gt; seqlist = <span class="keyword">new</span> SeqList&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            seqlist.Add(i);</span><br><span class="line">        &#125;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;个数:&quot;</span> + seqlist.GetLength());</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;----------------&quot;</span>);</span><br><span class="line">        seqlist.Insert(<span class="number">3</span>, <span class="number">100</span>);<span class="comment">//索引3添加数字100</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; seqlist.GetLength(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.Write(seqlist.GetElem(i) + <span class="string">&quot;;&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;\n个数:&quot;</span> + seqlist.GetLength());</span><br><span class="line">        seqlist.Chear();</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;清空后个数:&quot;</span> + seqlist.GetLength());</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;是否为空&quot;</span> + seqlist.IsEmpty());</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;----------------&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">4</span>; i &gt; <span class="number">0</span>; i--)</span><br><span class="line">        &#123;</span><br><span class="line">            seqlist.Add(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; seqlist.GetLength(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.Write(seqlist[i] + <span class="string">&quot;;&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;\n----------------&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;删除&quot;</span> + seqlist.Delete(<span class="number">2</span>));</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; seqlist.GetLength(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.Write(seqlist[i] + <span class="string">&quot;;&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;\n----------------&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;输入值找索引:&quot;</span>);</span><br><span class="line">        <span class="built_in">int</span> <span class="keyword">value</span> = <span class="built_in">int</span>.Parse(Console.ReadLine());</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;索引:&quot;</span> + seqlist.Locate(<span class="keyword">value</span>));</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;----------------&quot;</span>);</span><br><span class="line">        </span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="打印结果"><a href="#打印结果" class="headerlink" title="打印结果:"></a>打印结果:</h4><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20221012180927781.png" alt="image-20221012180927781"></p>
+<h4 id="重写ToString-添加打印功能"><a href="#重写ToString-添加打印功能" class="headerlink" title="重写ToString,添加打印功能"></a>重写ToString,添加打印功能</h4><p><code>class SeqList&lt;T&gt; : IListDS&lt;T&gt;</code></p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="built_in">string</span> <span class="title">ToString</span>()</span></span><br><span class="line">       &#123;</span><br><span class="line">           StringBuilder res = <span class="keyword">new</span> StringBuilder();</span><br><span class="line"></span><br><span class="line">           <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; count; i++)</span><br><span class="line">           &#123;</span><br><span class="line">               res.Append(data[i]);</span><br><span class="line">               <span class="keyword">if</span> (i != count - <span class="number">1</span>)</span><br><span class="line">               <span class="comment">//如果不是最后一个元素</span></span><br><span class="line">               &#123;</span><br><span class="line">                   res.Append(<span class="string">&quot;, &quot;</span>);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">return</span> res.ToString();</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>修改一下,去掉了if,将最后一个元素单独打印</strong></p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="built_in">string</span> <span class="title">ToString</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            StringBuilder res = <span class="keyword">new</span> StringBuilder();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; count - <span class="number">1</span>; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                res.Append(data[i]);</span><br><span class="line">                <span class="comment">// if (i != count - 1)</span></span><br><span class="line">                <span class="comment">//如果不是最后一个元素</span></span><br><span class="line">                <span class="comment">//&#123;</span></span><br><span class="line">                res.Append(<span class="string">&quot;,&quot;</span>);</span><br><span class="line">                <span class="comment">//&#125;</span></span><br><span class="line">            &#125;</span><br><span class="line">            res.Append(data[count - <span class="number">1</span>]);</span><br><span class="line">            <span class="keyword">return</span> res.ToString();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Main方法中直接打印seqlist,结果如下:</strong></p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20221012185423285.png" alt="image-20221012185423285"></p>
+<hr>
+<h2 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h2><h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><h3 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h3>]]></content>
       <categories>
         <category>基础学习</category>
       </categories>
