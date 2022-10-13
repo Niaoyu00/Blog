@@ -2428,6 +2428,7 @@
 <p>但是这样会有个问题,就是官方的播放器没法调音量看歌词之类的</p>
 <p>所以我又想到个比较偷懒的办法,就是永久置顶一篇文章,里面只放播放器,这样就和在主页放差不多的效果了</p>
 <p>还有个最大的问题就是虽然音乐不会断,但是操作界面会消失,这就非常难受。</p>
+<p>最终解决方法:将网页版写在右侧用户栏,开启固定模式,就会一直悬在底部了</p>
 </blockquote>
 ]]></content>
       <categories>
@@ -2435,20 +2436,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>来点音乐</title>
-    <url>/Blog/2022/10/14/%E6%9D%A5%E7%82%B9%E9%9F%B3%E4%B9%90/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script>
-    <div id="aplayer-NRLrHxEA" class="aplayer aplayer-tag-marker meting-tag-marker"
-         data-id="979896497" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-listfolded="true"
-    ></div>]]></content>
-      <categories>
-        <category>music</category>
-      </categories>
-      <tags>
-        <tag>music</tag>
       </tags>
   </entry>
 </search>

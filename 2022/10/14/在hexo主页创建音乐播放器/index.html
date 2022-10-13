@@ -81,7 +81,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">18</span></a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">47</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">17</span></a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">46</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -126,7 +126,11 @@
   <aside class="sidebar">
 
     <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
-      <ul class="sidebar-nav">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+     <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
         </li>
@@ -153,18 +157,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/Blog/archives/">
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/Blog/categories/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/Blog/tags/">
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -182,6 +186,17 @@
 
         </div>
       </div>
+<meting-js
+    server="netease"
+    type="playlist" 
+    id="979896497"
+    fixed="true"
+    list-folded="true"
+    autoplay="false"
+    volume="0.7"
+    preload="auto"
+    mutex="true">
+</meting-js>
     </div>
   </aside>
   <div class="sidebar-dimmer">
@@ -246,7 +261,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-10-14 02:38:50 / 修改时间：03:14:09" itemprop="dateCreated datePublished" datetime="2022-10-14T02:38:50+08:00">2022-10-14</time>
+      <time title="创建时间：2022-10-14 02:38:50 / 修改时间：06:21:59" itemprop="dateCreated datePublished" datetime="2022-10-14T02:38:50+08:00">2022-10-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -282,6 +297,7 @@
 <p>但是这样会有个问题,就是官方的播放器没法调音量看歌词之类的</p>
 <p>所以我又想到个比较偷懒的办法,就是永久置顶一篇文章,里面只放播放器,这样就和在主页放差不多的效果了</p>
 <p>还有个最大的问题就是虽然音乐不会断,但是操作界面会消失,这就非常难受。</p>
+<p>最终解决方法:将网页版写在右侧用户栏,开启固定模式,就会一直悬在底部了</p>
 </blockquote>
 
     </div>
@@ -322,9 +338,6 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/Blog/2022/10/14/%E6%9D%A5%E7%82%B9%E9%9F%B3%E4%B9%90/" rel="next" title="来点音乐">
-                  来点音乐 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
