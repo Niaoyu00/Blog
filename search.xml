@@ -1,10 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>在hexo主页中创建音乐播放器</title>
+    <url>/Blog/2022/10/14/%E5%9C%A8hexo%E4%B8%AD%E5%88%9B%E5%BB%BA%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><h2 id="复制链接"><a href="#复制链接" class="headerlink" title="复制链接"></a>复制链接</h2><p>打开网易云音乐,找到专辑或者单曲,点击生成外链。</p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20221014025007402.png" alt="image-20221014025007402"></p>
+<p>调完配置后复制html代码</p>
+<p>到next皮肤文件夹下<code>layout\_macro</code>里打开文件<code>sidebar.njk</code></p>
+<p>粘贴代码到这里</p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20221014025243285.png" alt="image-20221014025243285"></p>
+<h2 id="切换页面不停播"><a href="#切换页面不停播" class="headerlink" title="切换页面不停播"></a>切换页面不停播</h2><p>在next<strong>主题文件夹</strong>下打开<code>_config.yml</code>把<strong>pjax</strong>打开</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pjax: true</span><br></pre></td></tr></table></figure>
+
+<p>配置完成。</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>next主题自定义</title>
+    <url>/Blog/2022/10/13/next%E4%B8%BB%E9%A2%98%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><blockquote>
+<p>之前我用的主题是icarus,研究了很久发现没法在主页固定音乐播放器，网上找了很多全是关于next的教程；</p>
+<p>一气之下把主题换成了next，换过来之后我觉得配色之类的过于简约，有点不太喜欢；</p>
+<p>于是打算先换换配色，搜了一圈发现那些diy主题的攻略全是旧版本的,和新版不同；</p>
+<p>于是就有了这篇文章。</p>
+<p>NexT version: 8.13.1</p>
+</blockquote>
+<h2 id="改背景色"><a href="#改背景色" class="headerlink" title="改背景色"></a>改背景色</h2><p>我的博客主体会偏明亮一些，个人比较喜欢橙色黄色蓝色这类比较鲜艳的颜色，所以先改背景色。</p>
+<p>找到主题目录下的<code>\source\css\_common\scaffolding</code>文件<code>base.styl</code></p>
+<p><strong>body里注释原本的颜色并添加:</strong></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  //<span class="attribute">background</span>: <span class="number">#FFA873</span>;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(<span class="number">120deg</span>, <span class="number">#f6d365</span> <span class="number">0%</span>, <span class="number">#fda085</span> <span class="number">100%</span>);</span><br><span class="line">  <span class="attribute">background-repeat</span>:  no-repeat;</span><br><span class="line">  <span class="attribute">background-attachment</span>: fixed;</span><br><span class="line">  <span class="attribute">background-size</span>:  cover;</span><br></pre></td></tr></table></figure>
+
+<p>其中第一行<code>background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);</code></p>
+<p>我是在<span class="exturl" data-url="aHR0cHM6Ly93ZWJncmFkaWVudHMuY29tLw==">https://webgradients.com<i class="fa fa-external-link-alt"></i></span></p>
+<p>这个网站中获取的渐变色背景,非常好用,直接复制就行。</p>
+<h2 id="改文章透明度"><a href="#改文章透明度" class="headerlink" title="改文章透明度"></a>改文章透明度</h2><p>找到主题目录下的<code>\source\css\_variables</code>文件<code>base.styl</code></p>
+<p>ctrl+f搜索<code>content-bg-color</code>,改成下面这样</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$content-bg-color             = #ffffffc9;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20221013195611434.png" alt="image-20221013195611434"></p>
+<h2 id="改博客标题背景颜色"><a href="#改博客标题背景颜色" class="headerlink" title="改博客标题背景颜色"></a>改博客标题背景颜色</h2><p>左上角那一坨黑色看着实在难受,我直接把他变白色透明度0,舒服多了。记得字体也要改下颜色</p>
+<h3 id="改颜色"><a href="#改颜色" class="headerlink" title="改颜色"></a>改颜色</h3><p>找到主题文件夹下面的<code>_config.yml</code>文件,搜索<code>theme_color</code>,直接改颜色为<code>#ffffff00</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme_color:</span><br><span class="line">  light: &quot;#ffffff00&quot;</span><br><span class="line">  dark: &quot;#ffffff00&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="改标题字体颜色和粗细"><a href="#改标题字体颜色和粗细" class="headerlink" title="改标题字体颜色和粗细"></a>改标题字体颜色和粗细</h3><p>找到<code>\source\css\_common\outline\header</code>的文件<code>site-meta.styl</code>,进去搜site-title</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.site-title &#123;</span><br><span class="line">  font-family: $font-family-logo;</span><br><span class="line">  font-size: $font-size-title;</span><br><span class="line">  font-weight: bold;</span><br><span class="line">  line-height: 1.5;</span><br><span class="line">  color: black;</span><br><span class="line">  margin: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我改了颜色顺便加粗了</p>
+<h3 id="改文章标题为粗体"><a href="#改文章标题为粗体" class="headerlink" title="改文章标题为粗体"></a>改文章标题为粗体</h3><p>找到<code>\source\css\_common\components\post</code>的文件<code>post-header.styl</code></p>
+<p>搜索<code>post-title</code>修改里面的值</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">font-weight: bold;</span><br></pre></td></tr></table></figure>
+
+<h2 id="为顶端留空"><a href="#为顶端留空" class="headerlink" title="为顶端留空"></a>为顶端留空</h2><p>顶格看着不难受嘛?反正我是受不了</p>
+<p>还是在主题目录下的<code>\source\css\_variables</code>文件<code>base.styl</code></p>
+<p>搜<code>headband</code>,改透明 增大间距,依个人口味可以调大点像素.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$headband-height                = 30px;</span><br><span class="line">$headband-bg                    = #ffffff00//var(--theme-color);</span><br></pre></td></tr></table></figure>
+
+<p>顺便可以搜一下这个词条<code>black-deep</code>,这个是鼠标悬停在按钮时的颜色,我改的橙色</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$black-deep  = #FC6423;</span><br></pre></td></tr></table></figure>
+
+<h2 id="改”回顶部”小按钮的样式"><a href="#改”回顶部”小按钮的样式" class="headerlink" title="改”回顶部”小按钮的样式"></a>改”回顶部”小按钮的样式</h2><p>找到主题目录下的<code>\source\css\_variables</code>文件<code>base.styl</code></p>
+<p>搜索<code>b2</code>我只改了最后一个,背景色:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$b2t-bg-color                 = black//$black-deep;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo文章添加音乐插件</title>
     <url>/Blog/2022/10/12/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script>
-    <div id="aplayer-YbUBPKBC" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-oUgPIbMx" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="979896497" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-listfolded="true"
     ></div>
 
@@ -20,7 +96,7 @@
 <p>接着就可以通过 <code>&#123;% meting ...%&#125;</code> 在文章中使用 MetingJS 播放器了：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 简单示例 (id, server, type)  --&gt;</span><br><span class="line">&#123;% meting &quot;60198&quot; &quot;netease&quot; &quot;playlist&quot; %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 进阶示例 --&gt;</span><br><span class="line">&#123;% meting &quot;60198&quot; &quot;netease&quot; &quot;playlist&quot; &quot;autoplay&quot; &quot;mutex:false&quot; &quot;listmaxheight:340px&quot; &quot;preload:none&quot; &quot;theme:#ad7a86&quot;%&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>有关 
-    <div id="aplayer-EyqXMBGb" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-DVnfEumY" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="undefined" data-server="undefined" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div> 的选项列表如下:</strong></p>
 <table>
@@ -119,61 +195,6 @@
       <tags>
         <tag>Hexo</tag>
         <tag>音乐播放器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>next主题自定义</title>
-    <url>/Blog/2022/10/13/next%E4%B8%BB%E9%A2%98%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><blockquote>
-<p>之前我用的主题是icarus,研究了很久发现没法在主页固定音乐播放器，网上找了很多全是关于next的教程；</p>
-<p>一气之下把主题换成了next，换过来之后我觉得配色之类的过于简约，有点不太喜欢；</p>
-<p>于是打算先换换配色，搜了一圈发现那些diy主题的攻略全是旧版本的,和新版不同；</p>
-<p>于是就有了这篇文章。</p>
-<p>NexT version: 8.13.1</p>
-</blockquote>
-<h2 id="改背景色"><a href="#改背景色" class="headerlink" title="改背景色"></a>改背景色</h2><p>我的博客主体会偏明亮一些，个人比较喜欢橙色黄色蓝色这类比较鲜艳的颜色，所以先改背景色。</p>
-<p>找到主题目录下的<code>\source\css\_common\scaffolding</code>文件<code>base.styl</code></p>
-<p><strong>body里注释原本的颜色并添加:</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  //<span class="attribute">background</span>: <span class="number">#FFA873</span>;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(<span class="number">120deg</span>, <span class="number">#f6d365</span> <span class="number">0%</span>, <span class="number">#fda085</span> <span class="number">100%</span>);</span><br><span class="line">  <span class="attribute">background-repeat</span>:  no-repeat;</span><br><span class="line">  <span class="attribute">background-attachment</span>: fixed;</span><br><span class="line">  <span class="attribute">background-size</span>:  cover;</span><br></pre></td></tr></table></figure>
-
-<p>其中第一行<code>background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);</code></p>
-<p>我是在<span class="exturl" data-url="aHR0cHM6Ly93ZWJncmFkaWVudHMuY29tLw==">https://webgradients.com<i class="fa fa-external-link-alt"></i></span></p>
-<p>这个网站中获取的渐变色背景,非常好用,直接复制就行。</p>
-<h2 id="改文章透明度"><a href="#改文章透明度" class="headerlink" title="改文章透明度"></a>改文章透明度</h2><p>找到主题目录下的<code>\source\css\_variables</code>文件<code>base.styl</code></p>
-<p>ctrl+f搜索<code>content-bg-color</code>,改成下面这样</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$content-bg-color             = #ffffffc9;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20221013195611434.png" alt="image-20221013195611434"></p>
-<h2 id="改博客标题背景颜色"><a href="#改博客标题背景颜色" class="headerlink" title="改博客标题背景颜色"></a>改博客标题背景颜色</h2><p>左上角那一坨黑色看着实在难受,我直接把他变白色透明度0,舒服多了。记得字体也要改下颜色</p>
-<h3 id="改颜色"><a href="#改颜色" class="headerlink" title="改颜色"></a>改颜色</h3><p>找到主题文件夹下面的<code>_config.yml</code>文件,搜索<code>theme_color</code>,直接改颜色为<code>#ffffff00</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme_color:</span><br><span class="line">  light: &quot;#ffffff00&quot;</span><br><span class="line">  dark: &quot;#ffffff00&quot;</span><br></pre></td></tr></table></figure>
-
-<h3 id="改标题字体颜色和粗细"><a href="#改标题字体颜色和粗细" class="headerlink" title="改标题字体颜色和粗细"></a>改标题字体颜色和粗细</h3><p>找到<code>\source\css\_common\outline\header</code>的文件<code>site-meta.styl</code>,进去搜site-title</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.site-title &#123;</span><br><span class="line">  font-family: $font-family-logo;</span><br><span class="line">  font-size: $font-size-title;</span><br><span class="line">  font-weight: bold;</span><br><span class="line">  line-height: 1.5;</span><br><span class="line">  color: black;</span><br><span class="line">  margin: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我改了颜色顺便加粗了</p>
-<h3 id="改文章标题为粗体"><a href="#改文章标题为粗体" class="headerlink" title="改文章标题为粗体"></a>改文章标题为粗体</h3><p>找到<code>\source\css\_common\components\post</code>的文件<code>post-header.styl</code></p>
-<p>搜索<code>post-title</code>修改里面的值</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">font-weight: bold;</span><br></pre></td></tr></table></figure>
-
-<h2 id="为顶端留空"><a href="#为顶端留空" class="headerlink" title="为顶端留空"></a>为顶端留空</h2><p>顶格看着不难受嘛?反正我是受不了</p>
-<p>还是在主题目录下的<code>\source\css\_variables</code>文件<code>base.styl</code></p>
-<p>搜<code>headband</code>,改透明 增大间距,依个人口味可以调大点像素.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$headband-height                = 30px;</span><br><span class="line">$headband-bg                    = #ffffff00//var(--theme-color);</span><br></pre></td></tr></table></figure>
-
-<p>顺便可以搜一下这个词条<code>black-deep</code>,这个是鼠标悬停在按钮时的颜色,我改的橙色</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$black-deep  = #FC6423;</span><br></pre></td></tr></table></figure>
-
-<h2 id="改”回顶部”小按钮的样式"><a href="#改”回顶部”小按钮的样式" class="headerlink" title="改”回顶部”小按钮的样式"></a>改”回顶部”小按钮的样式</h2><p>找到主题目录下的<code>\source\css\_variables</code>文件<code>base.styl</code></p>
-<p>搜索<code>b2</code>我只改了最后一个,背景色:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$b2t-bg-color                 = black//$black-deep;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
