@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>在hexo主页中创建音乐播放器</title>
-    <url>/Blog/2022/10/14/%E5%9C%A8hexo%E4%B8%AD%E5%88%9B%E5%BB%BA%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/</url>
+    <title>来点音乐</title>
+    <url>/Blog/2022/10/14/%E6%9D%A5%E7%82%B9%E9%9F%B3%E4%B9%90/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script>
+    <div id="aplayer-NRLrHxEA" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="979896497" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-listfolded="true"
+    ></div>]]></content>
+      <categories>
+        <category>music</category>
+      </categories>
+      <tags>
+        <tag>music</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在hexo主页创建音乐播放器</title>
+    <url>/Blog/2022/10/14/%E5%9C%A8hexo%E4%B8%BB%E9%A1%B5%E5%88%9B%E5%BB%BA%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><h2 id="复制链接"><a href="#复制链接" class="headerlink" title="复制链接"></a>复制链接</h2><p>打开网易云音乐,找到专辑或者单曲,点击生成外链。</p>
 <p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20221014025007402.png" alt="image-20221014025007402"></p>
 <p>调完配置后复制html代码</p>
@@ -13,6 +27,11 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pjax: true</span><br></pre></td></tr></table></figure>
 
 <p>配置完成。</p>
+<blockquote>
+<p>但是这样会有个问题,就是官方的播放器没法调音量看歌词之类的</p>
+<p>所以我又想到个比较偷懒的办法,就是永久置顶一篇文章,里面只放播放器,这样就和在主页放差不多的效果了</p>
+<p>还有个最大的问题就是虽然音乐不会断,但是操作界面会消失,这就非常难受。</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>Hexo</category>
@@ -79,12 +98,7 @@
   <entry>
     <title>Hexo文章添加音乐插件</title>
     <url>/Blog/2022/10/12/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script>
-    <div id="aplayer-oUgPIbMx" class="aplayer aplayer-tag-marker meting-tag-marker"
-         data-id="979896497" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86" data-listfolded="true"
-    ></div>
-
-<h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-tag-aplayer</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-tag-aplayer</span><br></pre></td></tr></table></figure>
 
 <h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><ul>
 <li>APlayer.js &gt; 1.8.0</li>
@@ -96,7 +110,7 @@
 <p>接着就可以通过 <code>&#123;% meting ...%&#125;</code> 在文章中使用 MetingJS 播放器了：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 简单示例 (id, server, type)  --&gt;</span><br><span class="line">&#123;% meting &quot;60198&quot; &quot;netease&quot; &quot;playlist&quot; %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 进阶示例 --&gt;</span><br><span class="line">&#123;% meting &quot;60198&quot; &quot;netease&quot; &quot;playlist&quot; &quot;autoplay&quot; &quot;mutex:false&quot; &quot;listmaxheight:340px&quot; &quot;preload:none&quot; &quot;theme:#ad7a86&quot;%&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>有关 
-    <div id="aplayer-DVnfEumY" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-RPByXmZu" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="undefined" data-server="undefined" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div> 的选项列表如下:</strong></p>
 <table>
