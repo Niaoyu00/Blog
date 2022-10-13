@@ -1,36 +1,453 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>Niaoyu</title><link rel="manifest" href="/Blog/manifest.json"><meta name="application-name" content="Niaoyu"><meta name="msapplication-TileImage" content="/img/Bird.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Niaoyu"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="website"><meta property="og:title" content="Niaoyu"><meta property="og:url" content="https://niaoyu00.github.io/Blog"><meta property="og:site_name" content="Niaoyu"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://niaoyu00.github.io/Blog/img/og_image.png"><meta property="article:author" content="ZHY"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://niaoyu00.github.io/Blog/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://niaoyu00.github.io/Blog"},"headline":"Niaoyu","image":["https://niaoyu00.github.io/Blog/img/og_image.png"],"author":{"@type":"Person","name":"ZHY"},"publisher":{"@type":"Organization","name":"Niaoyu","logo":{"@type":"ImageObject","url":"https://niaoyu00.github.io/img/Bird.png"}},"description":""}</script><link rel="icon" href="/Blog/img/Bird.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/Blog/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!-- hexo injector head_end start --><script>
-  (function () {
-      function switchTab() {
-          if (!location.hash) {
-            return;
-          }
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#ffffff00"><meta name="generator" content="Hexo 6.1.0">
 
-          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
-          if (!$tabMenu) {
-            return;
-          }
 
-          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
-          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
-          Array.from($tabMenuContainer.querySelectorAll('a'))
-              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
-              .forEach($content => $content.classList.add('is-hidden'));
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Blog/images/logo.svg" color="#ffffff00">
 
-          if ($tabMenu) {
-              $tabMenu.parentElement.classList.add('is-active');
-          }
-          const $activeTab = document.querySelector(location.hash);
-          if ($activeTab) {
-              $activeTab.classList.remove('is-hidden');
-          }
-      }
-      switchTab();
-      window.addEventListener('hashchange', switchTab, false);
-  })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/Blog/"><img src="/Blog/img/Bird.png" alt="Niaoyu" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/Blog/">首页</a><a class="navbar-item" href="/Blog/archives">时间线</a><a class="navbar-item" href="/Blog/categories">分类</a><a class="navbar-item" href="/Blog/tags">标签</a><a class="navbar-item" href="/Blog/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="我的 GitHub" href="https://github.com/Niaoyu00"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-05-11T18:36:12.000Z" title="2022/5/12 02:36:12">2022-05-12</time>发表</span><span class="level-item"><time dateTime="2022-10-02T19:48:49.599Z" title="2022/10/3 03:48:49">2022-10-03</time>更新</span><span class="level-item"><a class="link-muted" href="/Blog/categories/unity/">unity</a></span><span class="level-item">几秒读完 (大约37个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/Blog/2022/05/12/unity%E6%BB%91%E6%9D%A1%E6%8E%A7%E5%88%B6%E9%9F%B3%E9%87%8F%E4%BA%8B%E4%BB%B6/">unity滑条控制音量事件</a></h1><div class="content"><h3 id="slider-onValueChanged-AddListener"><a href="#slider-onValueChanged-AddListener" class="headerlink" title="slider.onValueChanged.AddListener"></a>slider.onValueChanged.AddListener</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">slider.onValueChanged.AddListener((<span class="built_in">float</span> v) =&gt;</span><br><span class="line">        &#123;<span class="comment">//v等价于slider.value</span></span><br><span class="line">            AudioTuning.Instance.SetMasterVolume(v);</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<link rel="stylesheet" href="/Blog/css/main.css">
 
-<h4 id="AudioTuning"><a href="#AudioTuning" class="headerlink" title="AudioTuning:"></a>AudioTuning:</h4><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">AudioTuning</span> : <span class="title">SingLeton</span>&lt;<span class="title">AudioTuning</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">SerializeField</span>] AudioMixer audioMixer;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetMasterVolume</span>(<span class="params"><span class="built_in">float</span> volume</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        audioMixer.SetFloat(<span class="string">&quot;MasterVolume&quot;</span>, volume);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-05-11T18:31:17.000Z" title="2022/5/12 02:31:17">2022-05-12</time>发表</span><span class="level-item"><time dateTime="2022-10-02T19:48:51.278Z" title="2022/10/3 03:48:51">2022-10-03</time>更新</span><span class="level-item"><a class="link-muted" href="/Blog/categories/unity/">unity</a></span><span class="level-item">几秒读完 (大约85个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/Blog/2022/05/12/unity%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BA%94%E7%A7%8D%E6%96%B9%E6%B3%95/">unity中查找对象的五种方法</a></h1><div class="content"><ul>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"niaoyu00.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Niaoyu">
+<meta property="og:url" content="https://niaoyu00.github.io/Blog/page/4/index.html">
+<meta property="og:site_name" content="Niaoyu">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="ZHY">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://niaoyu00.github.io/Blog/page/4/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"page/4/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Niaoyu</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/Blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Niaoyu</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ZHY"
+      src="/Blog/images/apple-touch-icon-next.jpg">
+  <p class="site-author-name" itemprop="name">ZHY</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/Blog/archives/">
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/Blog/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/Blog/tags/">
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Niaoyu00" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Niaoyu00" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/05/23/git%E5%9B%BE%E5%BA%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/apple-touch-icon-next.jpg">
+      <meta itemprop="name" content="ZHY">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/2022/05/23/git%E5%9B%BE%E5%BA%8A/" class="post-title-link" itemprop="url">github图床搭建</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-23 19:58:22" itemprop="dateCreated datePublished" datetime="2022-05-23T19:58:22+08:00">2022-05-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-03 03:48:45" itemprop="dateModified" datetime="2022-10-03T03:48:45+08:00">2022-10-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>​	gitee的图床居然炸了？！难怪我之前看网站里图片都没了，一直没意识到是gitee的问题。因为本人前段时间重装电脑系统，导致今天整理笔记的时候要重新配置picgo的图床，刚配置完一看图片显示都是空的…我一直怀疑是因为我typora没升级付费版，所以他不给显示。网上查了半天，最后才发现是gitee加了防盗链，虽然说拿他白嫖做图床有点不厚道，但是你既然开放了这个功能，要停的话至少提前说一下嘛。算了，回到重点，下面是<strong>github图床搭建流程</strong>，在此记录下来以后忘了可以看看：</p>
+<h2 id="1、新建一个github仓库，clone到本地，然后将gitee旧图片文件夹拷进来再上传。"><a href="#1、新建一个github仓库，clone到本地，然后将gitee旧图片文件夹拷进来再上传。" class="headerlink" title="1、新建一个github仓库，clone到本地，然后将gitee旧图片文件夹拷进来再上传。"></a>1、新建一个github仓库，clone到本地，然后将gitee旧图片文件夹拷进来再上传。</h2><p>完成后大概是这样：</p>
+<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/pics/image-2022052319275.png" alt="image-2022052319275"></p>
+<h2 id="2、仓库搞完去获取个人令牌"><a href="#2、仓库搞完去获取个人令牌" class="headerlink" title="2、仓库搞完去获取个人令牌"></a>2、仓库搞完去获取个人令牌</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/2022/05/23/git%E5%9B%BE%E5%BA%8A/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/05/12/unity%E6%BB%91%E6%9D%A1%E6%8E%A7%E5%88%B6%E9%9F%B3%E9%87%8F%E4%BA%8B%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/apple-touch-icon-next.jpg">
+      <meta itemprop="name" content="ZHY">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/2022/05/12/unity%E6%BB%91%E6%9D%A1%E6%8E%A7%E5%88%B6%E9%9F%B3%E9%87%8F%E4%BA%8B%E4%BB%B6/" class="post-title-link" itemprop="url">unity滑条控制音量事件</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-12 02:36:12" itemprop="dateCreated datePublished" datetime="2022-05-12T02:36:12+08:00">2022-05-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-03 03:48:49" itemprop="dateModified" datetime="2022-10-03T03:48:49+08:00">2022-10-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/unity/" itemprop="url" rel="index"><span itemprop="name">unity</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="slider-onValueChanged-AddListener"><a href="#slider-onValueChanged-AddListener" class="headerlink" title="slider.onValueChanged.AddListener"></a>slider.onValueChanged.AddListener</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">slider.onValueChanged.AddListener((<span class="built_in">float</span> v) =&gt;</span><br><span class="line">        &#123;<span class="comment">//v等价于slider.value</span></span><br><span class="line">            AudioTuning.Instance.SetMasterVolume(v);</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="AudioTuning"><a href="#AudioTuning" class="headerlink" title="AudioTuning:"></a>AudioTuning:</h4><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">AudioTuning</span> : <span class="title">SingLeton</span>&lt;<span class="title">AudioTuning</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">SerializeField</span>] AudioMixer audioMixer;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetMasterVolume</span>(<span class="params"><span class="built_in">float</span> volume</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        audioMixer.SetFloat(<span class="string">&quot;MasterVolume&quot;</span>, volume);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/05/12/unity%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BA%94%E7%A7%8D%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/apple-touch-icon-next.jpg">
+      <meta itemprop="name" content="ZHY">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/2022/05/12/unity%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BA%94%E7%A7%8D%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">unity中查找对象的五种方法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-12 02:31:17" itemprop="dateCreated datePublished" datetime="2022-05-12T02:31:17+08:00">2022-05-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-03 03:48:51" itemprop="dateModified" datetime="2022-10-03T03:48:51+08:00">2022-10-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/unity/" itemprop="url" rel="index"><span itemprop="name">unity</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ul>
 <li>通过对象名称（Find方法）<ul>
 <li><code>GameObject.Find(&quot;name&quot;)</code></li>
 </ul>
@@ -43,72 +460,715 @@
 <li>通过类型获取单个游戏对象（FindObjectOfType方法）</li>
 <li>通过类型获取多个游戏对象（FindObjectsOfType方法）</li>
 </ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-09T11:30:04.000Z" title="2022/3/9 19:30:04">2022-03-09</time>发表</span><span class="level-item"><time dateTime="2022-10-02T19:46:19.882Z" title="2022/10/3 03:46:19">2022-10-03</time>更新</span><span class="level-item"><a class="link-muted" href="/Blog/categories/unity/">unity</a></span><span class="level-item">1 分钟读完 (大约204个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/Blog/2022/03/09/unity%E5%A1%94%E9%98%B2demo%E8%AE%B0%E5%BD%95/">unity塔防demo记录</a></h1><div class="content"><h3 id="参考项目-https-www-bilibili-com-video-BV15W411976h"><a href="#参考项目-https-www-bilibili-com-video-BV15W411976h" class="headerlink" title="参考项目:https://www.bilibili.com/video/BV15W411976h"></a>参考项目:<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15W411976h">https://www.bilibili.com/video/BV15W411976h</a></h3><h3 id="新加的功能"><a href="#新加的功能" class="headerlink" title="新加的功能"></a>新加的功能</h3><p>1.怪物球自转</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/03/09/unity%E5%A1%94%E9%98%B2demo%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/apple-touch-icon-next.jpg">
+      <meta itemprop="name" content="ZHY">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/2022/03/09/unity%E5%A1%94%E9%98%B2demo%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">unity塔防demo记录</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-03-09 19:30:04" itemprop="dateCreated datePublished" datetime="2022-03-09T19:30:04+08:00">2022-03-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-03 03:46:19" itemprop="dateModified" datetime="2022-10-03T03:46:19+08:00">2022-10-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/unity/" itemprop="url" rel="index"><span itemprop="name">unity</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="参考项目-https-www-bilibili-com-video-BV15W411976h"><a href="#参考项目-https-www-bilibili-com-video-BV15W411976h" class="headerlink" title="参考项目:https://www.bilibili.com/video/BV15W411976h"></a>参考项目:<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15W411976h">https://www.bilibili.com/video/BV15W411976h</a></h3><h3 id="新加的功能"><a href="#新加的功能" class="headerlink" title="新加的功能"></a>新加的功能</h3><p>1.怪物球自转</p>
 <p>2.不同炮台只可在特定颜色，区域内建造。</p>
-<p>3.未选中炮台不可建造</p></div><a class="article-more button is-small is-size-7" href="/Blog/2022/03/09/unity%E5%A1%94%E9%98%B2demo%E8%AE%B0%E5%BD%95/#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-03T04:55:48.000Z" title="2022/3/3 12:55:48">2022-03-03</time>发表</span><span class="level-item"><time dateTime="2022-10-02T19:46:57.572Z" title="2022/10/3 03:46:57">2022-10-03</time>更新</span><span class="level-item"><a class="link-muted" href="/Blog/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">基础学习</a></span><span class="level-item">1 分钟读完 (大约179个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/Blog/2022/03/03/%E5%8D%8F%E7%A8%8B/">协调程序</a></h1><div class="content"><h1 id="协程：协同程序"><a href="#协程：协同程序" class="headerlink" title="协程：协同程序"></a>协程：协同程序</h1><p><strong>协程的使用前提</strong>：直接或间接的继承MonoBehavior才可以使用。</p>
+<p>3.未选中炮台不可建造</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/2022/03/09/unity%E5%A1%94%E9%98%B2demo%E8%AE%B0%E5%BD%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/03/03/%E5%8D%8F%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/apple-touch-icon-next.jpg">
+      <meta itemprop="name" content="ZHY">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/2022/03/03/%E5%8D%8F%E7%A8%8B/" class="post-title-link" itemprop="url">协调程序</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-03-03 12:55:48" itemprop="dateCreated datePublished" datetime="2022-03-03T12:55:48+08:00">2022-03-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-03 03:46:57" itemprop="dateModified" datetime="2022-10-03T03:46:57+08:00">2022-10-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">基础学习</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="协程：协同程序"><a href="#协程：协同程序" class="headerlink" title="协程：协同程序"></a>协程：协同程序</h1><p><strong>协程的使用前提</strong>：直接或间接的继承MonoBehavior才可以使用。</p>
 <p><strong>不足</strong>：会产生外的开销。</p>
-<h3 id="协程方法与普通方法的区别："><a href="#协程方法与普通方法的区别：" class="headerlink" title="协程方法与普通方法的区别："></a>协程方法与普通方法的区别：</h3><p><strong>被调用时</strong>：普通方法被调用时，原来执行的部分保留现场，停止执行，然后去执行要调用的方法，并且，被调用的方法执行完之后才能返回到调用前的状态接着往下执行。。。协同方法的执行是不用等协同方法执行完再执行调用之前原来方法的代码。而是两者&#x3D;&#x3D;异步执行&#x3D;&#x3D;。</p></div><a class="article-more button is-small is-size-7" href="/Blog/2022/03/03/%E5%8D%8F%E7%A8%8B/#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-01T01:16:27.000Z" title="2022/3/1 09:16:27">2022-03-01</time>发表</span><span class="level-item"><time dateTime="2022-10-02T19:32:59.206Z" title="2022/10/3 03:32:59">2022-10-03</time>更新</span><span class="level-item"><a class="link-muted" href="/Blog/categories/git/">git</a></span><span class="level-item">5 分钟读完 (大约714个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/Blog/2022/03/01/git%E6%8C%87%E4%BB%A4/">git指令</a></h1><div class="content"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.配置提交人姓名: git config --global user.name提交人姓名</span><br><span class="line">2.配置提交人姓名: git config --global user.email提交人邮箱</span><br><span class="line">3.查看git配置信息: git config --list</span><br></pre></td></tr></table></figure>
+<h3 id="协程方法与普通方法的区别："><a href="#协程方法与普通方法的区别：" class="headerlink" title="协程方法与普通方法的区别："></a>协程方法与普通方法的区别：</h3><p><strong>被调用时</strong>：普通方法被调用时，原来执行的部分保留现场，停止执行，然后去执行要调用的方法，并且，被调用的方法执行完之后才能返回到调用前的状态接着往下执行。。。协同方法的执行是不用等协同方法执行完再执行调用之前原来方法的代码。而是两者&#x3D;&#x3D;异步执行&#x3D;&#x3D;。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/2022/03/03/%E5%8D%8F%E7%A8%8B/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/03/01/git%E6%8C%87%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/apple-touch-icon-next.jpg">
+      <meta itemprop="name" content="ZHY">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/2022/03/01/git%E6%8C%87%E4%BB%A4/" class="post-title-link" itemprop="url">git指令</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-03-01 09:16:27" itemprop="dateCreated datePublished" datetime="2022-03-01T09:16:27+08:00">2022-03-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-03 03:32:59" itemprop="dateModified" datetime="2022-10-03T03:32:59+08:00">2022-10-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.配置提交人姓名: git config --global user.name提交人姓名</span><br><span class="line">2.配置提交人姓名: git config --global user.email提交人邮箱</span><br><span class="line">3.查看git配置信息: git config --list</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init          	  |初始化git仓库</span><br><span class="line">git status        	  |查看文件状态</span><br><span class="line">git add 文件列表    	|提交到暂存区</span><br><span class="line">git commit -m 提交信息  |向仓库提交代码</span><br></pre></td></tr></table></figure>
 
 <p><strong>用&#x3D;&#x3D;暂存区&#x3D;&#x3D;中的文件覆盖&#x3D;&#x3D;电脑工作目录&#x3D;&#x3D;的文件：<code>git checkout 文件名</code></strong></p>
 <p><strong>将文件从暂存区里删除: <code>git rm --cached 文件</code></strong></p>
-<p><strong>将git仓库中置顶的更新&#x3D;&#x3D;记录恢复&#x3D;&#x3D;出来，并且覆盖&#x3D;&#x3D;暂存区和工作目录&#x3D;&#x3D;:</strong></p></div><a class="article-more button is-small is-size-7" href="/Blog/2022/03/01/git%E6%8C%87%E4%BB%A4/#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-26T23:02:27.000Z" title="2022/2/27 07:02:27">2022-02-27</time>发表</span><span class="level-item"><time dateTime="2022-10-02T19:47:48.080Z" title="2022/10/3 03:47:48">2022-10-03</time>更新</span><span class="level-item"><a class="link-muted" href="/Blog/categories/unity/">unity</a></span><span class="level-item">4 分钟读完 (大约559个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/Blog/2022/02/27/unity%E7%9A%84Axis%E8%AE%BE%E7%BD%AE/">unity的Axis设置</a></h1><div class="content"><p>unity的Axis设置，路径为Edit-&gt;Project setting-&gt;Input:</p>
+<p><strong>将git仓库中置顶的更新&#x3D;&#x3D;记录恢复&#x3D;&#x3D;出来，并且覆盖&#x3D;&#x3D;暂存区和工作目录&#x3D;&#x3D;:</strong></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/2022/03/01/git%E6%8C%87%E4%BB%A4/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/02/27/unity%E7%9A%84Axis%E8%AE%BE%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/apple-touch-icon-next.jpg">
+      <meta itemprop="name" content="ZHY">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/2022/02/27/unity%E7%9A%84Axis%E8%AE%BE%E7%BD%AE/" class="post-title-link" itemprop="url">unity的Axis设置</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-27 07:02:27" itemprop="dateCreated datePublished" datetime="2022-02-27T07:02:27+08:00">2022-02-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-03 03:47:48" itemprop="dateModified" datetime="2022-10-03T03:47:48+08:00">2022-10-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/unity/" itemprop="url" rel="index"><span itemprop="name">unity</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>unity的Axis设置，路径为Edit-&gt;Project setting-&gt;Input:</p>
 <p>属性如下：</p>
 <p><strong>Name</strong>：&#x3D;&#x3D;按键名&#x3D;&#x3D;该键的名称，可以在脚本编程中直接引用他。比如：Input.GetButtonDown(“Jump”);</p>
 <p><strong>Descriptive Name</strong>:&#x3D;&#x3D;【描述名】&#x3D;&#x3D;在游戏的独立机构中的配置对话框中，当控制值为正时候所显示的名称。默认空白。</p>
-<p><strong>Negative Descriptive Name</strong>：&#x3D;&#x3D;【负描述】&#x3D;&#x3D;在游戏的独立机构中的配置对话框中，当控制值为负的时候所显示的名称。</p></div><a class="article-more button is-small is-size-7" href="/Blog/2022/02/27/unity%E7%9A%84Axis%E8%AE%BE%E7%BD%AE/#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-23T10:35:39.000Z" title="2022/2/23 18:35:39">2022-02-23</time>发表</span><span class="level-item"><time dateTime="2022-10-02T19:46:41.408Z" title="2022/10/3 03:46:41">2022-10-03</time>更新</span><span class="level-item"><a class="link-muted" href="/Blog/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">基础学习</a></span><span class="level-item">2 分钟读完 (大约266个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/Blog/2022/02/23/Csharp%E8%AE%A1%E7%AE%97%E5%99%A8/">计算器</a></h1><div class="content"><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Calculator</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">string</span> inputStr = Console.ReadLine(); CalcOnline(inputStr);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">static</span> CalcInfo[] configs = <span class="keyword">new</span> CalcInfo[]</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;+&quot;</span>,(a,b)=&gt;a+b),</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;-&quot;</span>,(a,b)=&gt;a-b),</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;*&quot;</span>,(a,b)=&gt;a*b),</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;/&quot;</span>,(a,b)=&gt;a/b),</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">CalcOnline</span>(<span class="params"><span class="built_in">string</span> inputStr</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span> index = <span class="number">-1</span>;</span><br><span class="line">            Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func = <span class="literal">null</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; configs.Length; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">var</span> item = configs[i];</span><br><span class="line">                index = inputStr.IndexOf(item.tag);<span class="comment">//找到符号，返回所在下标，未找到返回-1</span></span><br><span class="line">                <span class="keyword">if</span> (index != <span class="number">-1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    func = item.func;<span class="comment">//如果找到的是+，那么index为1，+的func函数内容是a+b</span></span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (index == <span class="number">-1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;只支持+-*/&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            CalcResult(inputStr, func, index);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">CalcResult</span>(<span class="params"><span class="built_in">string</span> inputStr, Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func, <span class="built_in">int</span> index</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> num1Str = inputStr.Substring(<span class="number">0</span>, index);<span class="comment">//0~index之间的内容(不包括后面的)赋值给num1Str，若输入1+2则获得1</span></span><br><span class="line">            <span class="built_in">int</span> strLen = inputStr.Count();</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;strLen:<span class="subst">&#123;strLen&#125;</span>,index:<span class="subst">&#123;index&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="built_in">string</span> num2Str = inputStr.Substring(index+<span class="number">1</span>,strLen-index<span class="number">-1</span>);<span class="comment">//若输入1+2则获得2</span></span><br><span class="line">            <span class="built_in">float</span> num1 = <span class="built_in">float</span>.Parse(num1Str);</span><br><span class="line">            <span class="built_in">float</span> num2 = <span class="built_in">float</span>.Parse(num2Str);</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;num1:<span class="subst">&#123;num1&#125;</span>, num2:<span class="subst">&#123;num2&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="built_in">float</span> result = func(num1, num2);</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;<span class="subst">&#123;inputStr&#125;</span>的计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CalcInfo</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> tag;</span><br><span class="line">        <span class="keyword">public</span> Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">CalcInfo</span>(<span class="params"><span class="built_in">string</span> tag, Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>.tag = tag;</span><br><span class="line">            <span class="keyword">this</span>.func = func;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//5+6</span></span><br><span class="line"><span class="comment">//strLen:3,index:1</span></span><br><span class="line"><span class="comment">//num1:5, num2:6</span></span><br><span class="line"><span class="comment">//5+6的计算结果：11</span></span><br></pre></td></tr></table></figure>
+<p><strong>Negative Descriptive Name</strong>：&#x3D;&#x3D;【负描述】&#x3D;&#x3D;在游戏的独立机构中的配置对话框中，当控制值为负的时候所显示的名称。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/2022/02/27/unity%E7%9A%84Axis%E8%AE%BE%E7%BD%AE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
 
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-22T11:25:14.000Z" title="2022/2/22 19:25:14">2022-02-22</time>发表</span><span class="level-item"><time dateTime="2022-10-02T19:47:06.545Z" title="2022/10/3 03:47:06">2022-10-03</time>更新</span><span class="level-item"><a class="link-muted" href="/Blog/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">基础学习</a></span><span class="level-item">2 分钟读完 (大约274个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/Blog/2022/02/22/%E5%A7%94%E6%89%98/">委托</a></h1><div class="content"><h1 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h1><h5 id="delegate：可以保存多个函数指针，试用-x3D-，-进行操作。"><a href="#delegate：可以保存多个函数指针，试用-x3D-，-进行操作。" class="headerlink" title="delegate：可以保存多个函数指针，试用&#x3D;+，-+进行操作。"></a>delegate：可以保存多个函数指针，试用&#x3D;+，-+进行操作。</h5><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将函数赋值给delegate，delegate会储存下来。</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment">//Action无返回值</span></span><br><span class="line">            Action&lt;<span class="built_in">string</span>&gt; print = Print;</span><br><span class="line">            print(<span class="string">&quot;使用print打印&quot;</span>);</span><br><span class="line"></span><br><span class="line">            Func&lt;<span class="built_in">float</span>,<span class="built_in">float</span>,<span class="built_in">float</span>&gt; fc = Mul;<span class="comment">//打印：Func，第三个参数是返回值类型</span></span><br><span class="line">            <span class="keyword">var</span> f = fc(<span class="number">3</span>, <span class="number">4</span>).ToString(); <span class="comment">//打印：乘法3 * 4 = 12</span></span><br><span class="line">            Console.WriteLine(f);<span class="comment">//打印：12</span></span><br><span class="line"></span><br><span class="line">            CalFunc func = Add;</span><br><span class="line">            func(<span class="number">1.1f</span>, <span class="number">2</span>);<span class="comment">//打印：加法1.1+2=3.1</span></span><br><span class="line"></span><br><span class="line">            Console.WriteLine(<span class="string">&quot;加入Sub()&quot;</span>);</span><br><span class="line">            func += Sub;</span><br><span class="line">            func(<span class="number">1.1f</span>, <span class="number">2</span>);<span class="comment">//打印：减法1.1+2=3.1</span></span><br><span class="line">                          <span class="comment">//1.1-2=-0.9</span></span><br><span class="line"></span><br><span class="line">            Console.WriteLine(<span class="string">&quot;移除Add()&quot;</span>);</span><br><span class="line">            func -= Add;</span><br><span class="line">            func(<span class="number">1.1f</span>, <span class="number">2</span>);<span class="comment">//打印：减法1.1-2=-0.9</span></span><br><span class="line"></span><br><span class="line">            Console.WriteLine(<span class="string">&quot;-------------闭包↓----------------&quot;</span>);</span><br><span class="line">            <span class="built_in">int</span> intVal = <span class="number">10</span>;</span><br><span class="line">            <span class="comment">//匿名函数 执行后改变的值可作用到函数外。</span></span><br><span class="line">            Action aa = () =&gt;</span><br><span class="line">            &#123;</span><br><span class="line">                intVal += <span class="number">10</span>;</span><br><span class="line">            &#125;;</span><br><span class="line">            aa();<span class="comment">//调用</span></span><br><span class="line">            Console.WriteLine(intVal);<span class="comment">//打印：20</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//无返回值，封装了一个print代替writeline</span></span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Print</span>(<span class="params"><span class="built_in">string</span> info</span>)</span>  =&gt;Console.WriteLine(info);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义了delegate，可以存储函数指针</span></span><br><span class="line">        <span class="function"><span class="built_in">delegate</span> <span class="built_in">float</span> <span class="title">CalFunc</span>(<span class="params"><span class="built_in">float</span> f1, <span class="built_in">float</span> f2</span>)</span>;</span><br><span class="line">        <span class="comment">//下面是好几个函数，实现加减乘。</span></span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="built_in">float</span> <span class="title">Add</span>(<span class="params"><span class="built_in">float</span> arg1, <span class="built_in">float</span> arg2</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;加法<span class="subst">&#123;arg1&#125;</span>+<span class="subst">&#123;arg2&#125;</span>=<span class="subst">&#123;arg1 + arg2&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> arg1 + arg2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="built_in">float</span> <span class="title">Sub</span>(<span class="params"><span class="built_in">float</span> arg1, <span class="built_in">float</span> arg2</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;减法<span class="subst">&#123;arg1&#125;</span>-<span class="subst">&#123;arg2&#125;</span>=<span class="subst">&#123;arg1 - arg2&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> arg1 - arg2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="built_in">float</span> <span class="title">Mul</span>(<span class="params"><span class="built_in">float</span> arg1, <span class="built_in">float</span> arg2</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;乘法<span class="subst">&#123;arg1&#125;</span>*<span class="subst">&#123;arg2&#125;</span>=<span class="subst">&#123;arg1 * arg2&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> arg1 * arg2;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+    
+    
+    
 
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-21T11:37:16.000Z" title="2022/2/21 19:37:16">2022-02-21</time>发表</span><span class="level-item"><time dateTime="2022-10-02T19:47:15.159Z" title="2022/10/3 03:47:15">2022-10-03</time>更新</span><span class="level-item"><a class="link-muted" href="/Blog/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">基础学习</a></span><span class="level-item">2 分钟读完 (大约346个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/Blog/2022/02/21/CsharpClass%E4%B8%8EStruct%E7%9A%84%E5%85%B3%E7%B3%BB/">Csharpclass与struct的关系</a></h1><div class="content"><h1 id="值与引用的关系"><a href="#值与引用的关系" class="headerlink" title="值与引用的关系"></a>值与引用的关系</h1><p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20220221193324778.png" alt="image-20220221193324778"></p>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/02/23/Csharp%E8%AE%A1%E7%AE%97%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/apple-touch-icon-next.jpg">
+      <meta itemprop="name" content="ZHY">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/2022/02/23/Csharp%E8%AE%A1%E7%AE%97%E5%99%A8/" class="post-title-link" itemprop="url">计算器</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-23 18:35:39" itemprop="dateCreated datePublished" datetime="2022-02-23T18:35:39+08:00">2022-02-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-03 03:46:41" itemprop="dateModified" datetime="2022-10-03T03:46:41+08:00">2022-10-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">基础学习</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Calculator</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">string</span> inputStr = Console.ReadLine(); CalcOnline(inputStr);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">static</span> CalcInfo[] configs = <span class="keyword">new</span> CalcInfo[]</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;+&quot;</span>,(a,b)=&gt;a+b),</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;-&quot;</span>,(a,b)=&gt;a-b),</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;*&quot;</span>,(a,b)=&gt;a*b),</span><br><span class="line">            <span class="keyword">new</span> CalcInfo(<span class="string">&quot;/&quot;</span>,(a,b)=&gt;a/b),</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">CalcOnline</span>(<span class="params"><span class="built_in">string</span> inputStr</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span> index = <span class="number">-1</span>;</span><br><span class="line">            Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func = <span class="literal">null</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; configs.Length; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">var</span> item = configs[i];</span><br><span class="line">                index = inputStr.IndexOf(item.tag);<span class="comment">//找到符号，返回所在下标，未找到返回-1</span></span><br><span class="line">                <span class="keyword">if</span> (index != <span class="number">-1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    func = item.func;<span class="comment">//如果找到的是+，那么index为1，+的func函数内容是a+b</span></span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (index == <span class="number">-1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;只支持+-*/&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            CalcResult(inputStr, func, index);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">CalcResult</span>(<span class="params"><span class="built_in">string</span> inputStr, Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func, <span class="built_in">int</span> index</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> num1Str = inputStr.Substring(<span class="number">0</span>, index);<span class="comment">//0~index之间的内容(不包括后面的)赋值给num1Str，若输入1+2则获得1</span></span><br><span class="line">            <span class="built_in">int</span> strLen = inputStr.Count();</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;strLen:<span class="subst">&#123;strLen&#125;</span>,index:<span class="subst">&#123;index&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="built_in">string</span> num2Str = inputStr.Substring(index+<span class="number">1</span>,strLen-index<span class="number">-1</span>);<span class="comment">//若输入1+2则获得2</span></span><br><span class="line">            <span class="built_in">float</span> num1 = <span class="built_in">float</span>.Parse(num1Str);</span><br><span class="line">            <span class="built_in">float</span> num2 = <span class="built_in">float</span>.Parse(num2Str);</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;num1:<span class="subst">&#123;num1&#125;</span>, num2:<span class="subst">&#123;num2&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="built_in">float</span> result = func(num1, num2);</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;<span class="subst">&#123;inputStr&#125;</span>的计算结果：<span class="subst">&#123;result&#125;</span>&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CalcInfo</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> tag;</span><br><span class="line">        <span class="keyword">public</span> Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">CalcInfo</span>(<span class="params"><span class="built_in">string</span> tag, Func&lt;<span class="built_in">float</span>, <span class="built_in">float</span>, <span class="built_in">float</span>&gt; func</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>.tag = tag;</span><br><span class="line">            <span class="keyword">this</span>.func = func;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//5+6</span></span><br><span class="line"><span class="comment">//strLen:3,index:1</span></span><br><span class="line"><span class="comment">//num1:5, num2:6</span></span><br><span class="line"><span class="comment">//5+6的计算结果：11</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/02/22/%E5%A7%94%E6%89%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/apple-touch-icon-next.jpg">
+      <meta itemprop="name" content="ZHY">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/2022/02/22/%E5%A7%94%E6%89%98/" class="post-title-link" itemprop="url">委托</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-22 19:25:14" itemprop="dateCreated datePublished" datetime="2022-02-22T19:25:14+08:00">2022-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-03 03:47:06" itemprop="dateModified" datetime="2022-10-03T03:47:06+08:00">2022-10-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">基础学习</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h1><h5 id="delegate：可以保存多个函数指针，试用-x3D-，-进行操作。"><a href="#delegate：可以保存多个函数指针，试用-x3D-，-进行操作。" class="headerlink" title="delegate：可以保存多个函数指针，试用&#x3D;+，-+进行操作。"></a>delegate：可以保存多个函数指针，试用&#x3D;+，-+进行操作。</h5><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将函数赋值给delegate，delegate会储存下来。</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment">//Action无返回值</span></span><br><span class="line">            Action&lt;<span class="built_in">string</span>&gt; print = Print;</span><br><span class="line">            print(<span class="string">&quot;使用print打印&quot;</span>);</span><br><span class="line"></span><br><span class="line">            Func&lt;<span class="built_in">float</span>,<span class="built_in">float</span>,<span class="built_in">float</span>&gt; fc = Mul;<span class="comment">//打印：Func，第三个参数是返回值类型</span></span><br><span class="line">            <span class="keyword">var</span> f = fc(<span class="number">3</span>, <span class="number">4</span>).ToString(); <span class="comment">//打印：乘法3 * 4 = 12</span></span><br><span class="line">            Console.WriteLine(f);<span class="comment">//打印：12</span></span><br><span class="line"></span><br><span class="line">            CalFunc func = Add;</span><br><span class="line">            func(<span class="number">1.1f</span>, <span class="number">2</span>);<span class="comment">//打印：加法1.1+2=3.1</span></span><br><span class="line"></span><br><span class="line">            Console.WriteLine(<span class="string">&quot;加入Sub()&quot;</span>);</span><br><span class="line">            func += Sub;</span><br><span class="line">            func(<span class="number">1.1f</span>, <span class="number">2</span>);<span class="comment">//打印：减法1.1+2=3.1</span></span><br><span class="line">                          <span class="comment">//1.1-2=-0.9</span></span><br><span class="line"></span><br><span class="line">            Console.WriteLine(<span class="string">&quot;移除Add()&quot;</span>);</span><br><span class="line">            func -= Add;</span><br><span class="line">            func(<span class="number">1.1f</span>, <span class="number">2</span>);<span class="comment">//打印：减法1.1-2=-0.9</span></span><br><span class="line"></span><br><span class="line">            Console.WriteLine(<span class="string">&quot;-------------闭包↓----------------&quot;</span>);</span><br><span class="line">            <span class="built_in">int</span> intVal = <span class="number">10</span>;</span><br><span class="line">            <span class="comment">//匿名函数 执行后改变的值可作用到函数外。</span></span><br><span class="line">            Action aa = () =&gt;</span><br><span class="line">            &#123;</span><br><span class="line">                intVal += <span class="number">10</span>;</span><br><span class="line">            &#125;;</span><br><span class="line">            aa();<span class="comment">//调用</span></span><br><span class="line">            Console.WriteLine(intVal);<span class="comment">//打印：20</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//无返回值，封装了一个print代替writeline</span></span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Print</span>(<span class="params"><span class="built_in">string</span> info</span>)</span>  =&gt;Console.WriteLine(info);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义了delegate，可以存储函数指针</span></span><br><span class="line">        <span class="function"><span class="built_in">delegate</span> <span class="built_in">float</span> <span class="title">CalFunc</span>(<span class="params"><span class="built_in">float</span> f1, <span class="built_in">float</span> f2</span>)</span>;</span><br><span class="line">        <span class="comment">//下面是好几个函数，实现加减乘。</span></span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="built_in">float</span> <span class="title">Add</span>(<span class="params"><span class="built_in">float</span> arg1, <span class="built_in">float</span> arg2</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;加法<span class="subst">&#123;arg1&#125;</span>+<span class="subst">&#123;arg2&#125;</span>=<span class="subst">&#123;arg1 + arg2&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> arg1 + arg2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="built_in">float</span> <span class="title">Sub</span>(<span class="params"><span class="built_in">float</span> arg1, <span class="built_in">float</span> arg2</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;减法<span class="subst">&#123;arg1&#125;</span>-<span class="subst">&#123;arg2&#125;</span>=<span class="subst">&#123;arg1 - arg2&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> arg1 - arg2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="built_in">float</span> <span class="title">Mul</span>(<span class="params"><span class="built_in">float</span> arg1, <span class="built_in">float</span> arg2</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">$&quot;乘法<span class="subst">&#123;arg1&#125;</span>*<span class="subst">&#123;arg2&#125;</span>=<span class="subst">&#123;arg1 * arg2&#125;</span>&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> arg1 * arg2;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/02/21/CsharpClass%E4%B8%8EStruct%E7%9A%84%E5%85%B3%E7%B3%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/apple-touch-icon-next.jpg">
+      <meta itemprop="name" content="ZHY">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/2022/02/21/CsharpClass%E4%B8%8EStruct%E7%9A%84%E5%85%B3%E7%B3%BB/" class="post-title-link" itemprop="url">Csharpclass与struct的关系</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-21 19:37:16" itemprop="dateCreated datePublished" datetime="2022-02-21T19:37:16+08:00">2022-02-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-03 03:47:15" itemprop="dateModified" datetime="2022-10-03T03:47:15+08:00">2022-10-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">基础学习</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="值与引用的关系"><a href="#值与引用的关系" class="headerlink" title="值与引用的关系"></a>值与引用的关系</h1><p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20220221193324778.png" alt="image-20220221193324778"></p>
 <p><strong>值类型</strong>在栈中存储</p>
 <p><strong>引用类型</strong>在堆中存储</p>
-<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20220221190214776.png" alt="image-20220221190214776"></p></div><a class="article-more button is-small is-size-7" href="/Blog/2022/02/21/CsharpClass%E4%B8%8EStruct%E7%9A%84%E5%85%B3%E7%B3%BB/#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-18T01:17:07.000Z" title="2022/2/18 09:17:07">2022-02-18</time>发表</span><span class="level-item"><time dateTime="2022-10-02T19:53:28.970Z" title="2022/10/3 03:53:28">2022-10-03</time>更新</span><span class="level-item"><a class="link-muted" href="/Blog/categories/ue4/">ue4</a></span><span class="level-item">4 分钟读完 (大约552个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/Blog/2022/02/18/%E6%9D%90%E8%B4%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">Ue4材质快捷键（转载）</a></h1><div class="content"><h3 id="虚幻材质里面的快捷键"><a href="#虚幻材质里面的快捷键" class="headerlink" title="虚幻材质里面的快捷键"></a>虚幻材质里面的快捷键</h3><p>注：以下快捷键都需要结合鼠标左键来创建</p>
-<p>首先是数字键1234分别对应的是1234维的常数节点，然后这里有个主意的地方就是1维常数的参数快捷键是S，三维常数的参数快捷键是V。</p>
-<p><img src="https://i0.hdslb.com/bfs/article/dad1288f3aef5afc85013d7192ae060e62b43d4c.png@942w_347h_progressive.webp" alt="img"></p>
-<p>然后是ABCD ，A是Add加法节点， B是bumpoffset凹凸偏移，C是注释，D是Divide除法节点，当然还有我们的M,multiply乘法节点</p></div><a class="article-more button is-small is-size-7" href="/Blog/2022/02/18/%E6%9D%90%E8%B4%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/#more">阅读更多</a></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/Blog/page/3/">上一页</a></div><div class="pagination-next"><a href="/Blog/page/5/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/Blog/">1</a></li><li><a class="pagination-link" href="/Blog/page/2/">2</a></li><li><a class="pagination-link" href="/Blog/page/3/">3</a></li><li><a class="pagination-link is-current" href="/Blog/page/4/">4</a></li><li><a class="pagination-link" href="/Blog/page/5/">5</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-12T13:32:21.000Z">2022-10-12</time></p><p class="title"><a href="/Blog/2022/10/12/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/">Hexo文章添加音乐插件</a></p><p class="categories"><a href="/Blog/categories/Hexo/">Hexo</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-10T09:09:19.000Z">2022-10-10</time></p><p class="title"><a href="/Blog/2022/10/10/%E5%AE%9E%E7%8E%B0%E7%BA%BF%E6%80%A7%E8%A1%A8List/">实现线性表List</a></p><p class="categories"><a href="/Blog/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">基础学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-10T09:03:52.000Z">2022-10-10</time></p><p class="title"><a href="/Blog/2022/10/10/Hexo%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF/">Hexo新建文章模板</a></p><p class="categories"><a href="/Blog/categories/Hexo/">Hexo</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-10T07:52:44.000Z">2022-10-10</time></p><p class="title"><a href="/Blog/2022/10/10/Hexo%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%91%98%E8%A6%81/">Hexo首页显示摘要</a></p><p class="categories"><a href="/Blog/categories/Hexo/">Hexo</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-10-09T04:34:50.000Z">2022-10-09</time></p><p class="title"><a href="/Blog/2022/10/09/Hexo%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/">Hexo置顶功能</a></p><p class="categories"><a href="/Blog/categories/Hexo/">Hexo</a></p></div></article></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/Blog/categories/Csharp/"><span class="level-start"><span class="level-item">Csharp</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/Blog/categories/Hexo/"><span class="level-start"><span class="level-item">Hexo</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/Blog/categories/git/"><span class="level-start"><span class="level-item">git</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/Blog/categories/ue4/"><span class="level-start"><span class="level-item">ue4</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/Blog/categories/unity/"><span class="level-start"><span class="level-item">unity</span></span><span class="level-end"><span class="level-item tag">20</span></span></a></li><li><a class="level is-mobile" href="/Blog/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">基础学习</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/Blog/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"><span class="level-start"><span class="level-item">开发工具</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/Blog/archives/2022/10/"><span class="level-start"><span class="level-item">十月 2022</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/Blog/archives/2022/09/"><span class="level-start"><span class="level-item">九月 2022</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile" href="/Blog/archives/2022/08/"><span class="level-start"><span class="level-item">八月 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/Blog/archives/2022/07/"><span class="level-start"><span class="level-item">七月 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/Blog/archives/2022/06/"><span class="level-start"><span class="level-item">六月 2022</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/Blog/archives/2022/05/"><span class="level-start"><span class="level-item">五月 2022</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/Blog/archives/2022/03/"><span class="level-start"><span class="level-item">三月 2022</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/Blog/archives/2022/02/"><span class="level-start"><span class="level-item">二月 2022</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/Blog/archives/2021/10/"><span class="level-start"><span class="level-item">十月 2021</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><!--!--><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/Blog/img/Bird.png" alt="Niaoyu"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Niaoyu</p><p class="is-size-6 is-block">不如早睡</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>福建</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/Blog/archives"><p class="title">44</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/Blog/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/Blog/tags"><p class="title">17</p></a></div></div></nav><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Niaoyu00"><i class="fab fa-github"></i></a></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/Blog/tags/CSharp/"><span class="tag">CSharp</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/Blog/tags/Cinemachine-Camera/"><span class="tag">Cinemachine Camera</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/Blog/tags/Csharp/"><span class="tag">Csharp</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/Blog/tags/Hexo/"><span class="tag">Hexo</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/Blog/tags/Invoke/"><span class="tag">Invoke</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/Blog/tags/OnGUI/"><span class="tag">OnGUI</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/Blog/tags/ScriptableObject/"><span class="tag">ScriptableObject</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/Blog/tags/VsCode/"><span class="tag">VsCode</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/Blog/tags/git/"><span class="tag">git</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/Blog/tags/ue4%E6%9D%90%E8%B4%A8/"><span class="tag">ue4材质</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/Blog/tags/unity/"><span class="tag">unity</span><span class="tag">22</span></a></div><div class="control"><a class="tags has-addons" href="/Blog/tags/%E5%A1%94%E9%98%B2demo/"><span class="tag">塔防demo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/Blog/tags/%E5%B9%B3%E5%8F%B0%E8%B7%B3%E8%B7%83%E6%8E%A7%E5%88%B6%E5%99%A8/"><span class="tag">平台跳跃控制器</span><span class="tag">11</span></a></div><div class="control"><a class="tags has-addons" href="/Blog/tags/%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/"><span class="tag">开发笔记</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/Blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"><span class="tag">数据结构与算法</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/Blog/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"><span class="tag">正则表达式</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/Blog/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/"><span class="tag">音乐播放器</span><span class="tag">1</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/Blog/"><img src="/Blog/img/Bird.png" alt="Niaoyu" height="28"></a><p class="is-size-7"><span>&copy; 2022 ZHY</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
-            article: {
-                highlight: {
-                    clipboard: false,
-                    fold: 'unfolded'
-                }
-            }
-        };</script><script src="/Blog/js/column.js"></script><script src="/Blog/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/Blog/js/back_to_top.js" defer></script><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
-      window.cookieconsent.initialise({
-        type: "info",
-        theme: "edgeless",
-        static: false,
-        position: "bottom-left",
-        content: {
-          message: "此网站使用Cookie来改善您的体验。",
-          dismiss: "知道了！",
-          allow: "允许使用Cookie",
-          deny: "拒绝",
-          link: "了解更多",
-          policy: "Cookie政策",
-          href: "https://www.cookiesandyou.com/",
-        },
-        palette: {
-          popup: {
-            background: "#edeff5",
-            text: "#838391"
-          },
-          button: {
-            background: "#4b81e8"
-          },
-        },
-      });
-    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
-            if (typeof $.fn.lightGallery === 'function') {
-                $('.article').lightGallery({ selector: '.gallery-item' });
-            }
-            if (typeof $.fn.justifiedGallery === 'function') {
-                if ($('.justified-gallery > p > .gallery-item').length) {
-                    $('.justified-gallery > p > .gallery-item').unwrap();
-                }
-                $('.justified-gallery').justifiedGallery();
-            }
-        });</script><!--!--><!--!--><script src="/Blog/js/main.js" defer></script><script src="/Blog/js/custom.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/Blog/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
-            loadInsight({"contentUrl":"/Blog/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
-        });</script></body></html>
+<p><img src="https://gitee.com/Niaoyu233/pic/raw/master/imgs/image-20220221190214776.png" alt="image-20220221190214776"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/2022/02/21/CsharpClass%E4%B8%8EStruct%E7%9A%84%E5%85%B3%E7%B3%BB/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/Blog/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/Blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/Blog/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/Blog/page/5/">5</a><a class="extend next" rel="next" href="/Blog/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZHY</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/Blog/js/comments.js"></script><script src="/Blog/js/utils.js"></script><script src="/Blog/js/motion.js"></script><script src="/Blog/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/Blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
