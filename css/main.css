@@ -327,7 +327,7 @@ td {
   line-height: 0;
 }
 .toggle .toggle-line {
-  background: #fff;
+  background: #574125;
   display: block;
   height: 2px;
   left: 0;
@@ -1209,13 +1209,13 @@ header.header {
 }
 .site-nav-toggle .toggle,
 .site-nav-right .toggle {
-  color: var(--text-color);
+  color: #574125;
   padding: 10px;
   width: 22px;
 }
 .site-nav-toggle .toggle .toggle-line,
 .site-nav-right .toggle .toggle-line {
-  background: var(--text-color);
+  background: #574125;
   border-radius: 1px;
 }
 @media (max-width: 767px) {
@@ -1386,7 +1386,7 @@ header.header {
 }
 .sidebar-inner {
   color: #999;
-  max-height: calc(100vh - 40px);
+  max-height: calc(100vh - 30px);
   padding: 20px 10px;
   text-align: center;
   display: flex;
@@ -2695,7 +2695,7 @@ mark.search-keyword {
 .main-inner {
   border-radius: 7px;
   box-sizing: border-box;
-  width: calc(100% - 360px);
+  width: calc(100% - 355px);
 }
 @media (max-width: 991px) {
   .main-inner {
@@ -2704,7 +2704,7 @@ mark.search-keyword {
   }
 }
 .footer-inner {
-  padding-right: 360px;
+  padding-right: 355px;
 }
 @media (max-width: 991px) {
   .footer-inner {
@@ -2737,14 +2737,6 @@ mark.search-keyword {
     flex-direction: column;
     justify-content: center;
   }
-}
-.site-nav-toggle .toggle,
-.site-nav-right .toggle {
-  color: #fff;
-}
-.site-nav-toggle .toggle .toggle-line,
-.site-nav-right .toggle .toggle-line {
-  background: #fff;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .site-nav {
@@ -2808,10 +2800,10 @@ mark.search-keyword {
   border-bottom-color: #fc6423;
 }
 .sidebar {
-  margin-top: 20px;
+  margin-top: 15px;
   position: -webkit-sticky;
   position: sticky;
-  top: 20px;
+  top: 15px;
   width: 340px;
 }
 @media (max-width: 991px) {
@@ -2892,7 +2884,7 @@ mark.search-keyword {
   border-radius: 7px;
   border: $border-solid;
   box-shadow: 1px 2px 5px #884e03;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .main-inner > .sub-menu:not(:first-child):not(.sub-menu),
@@ -2949,12 +2941,12 @@ mark.search-keyword {
     padding: 8px;
   }
   .posts-expand .post-button {
-    margin: 20px 0;
+    margin: 15px 0;
   }
   .post-block {
-    padding: 20px;
+    padding: 15px;
   }
   .comments {
-    padding: 10px 20px;
+    padding: 10px 15px;
   }
 }
