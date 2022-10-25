@@ -24,14 +24,14 @@
 
 
 
-<link rel="canonical" href="https://niaoyu00.github.io/Blog/2022/10/12/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/">
+<link rel="canonical" href="https://niaoyu00.github.io/Blog/2022/10/25/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91oss%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://niaoyu00.github.io/Blog/2022/10/12/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/","path":"2022/10/12/Hexo文章添加音乐插件/","title":"Hexo文章添加音乐插件"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://niaoyu00.github.io/Blog/2022/10/25/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91oss%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/","path":"2022/10/25/使用阿里云oss搭建图床/","title":"使用阿里云oss搭建图床"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hexo文章添加音乐插件 | Niaoyu</title>
+<title>使用阿里云oss搭建图床 | Niaoyu</title>
   
 
   <script src="/Blog/js/third-party/analytics/baidu-analytics.js"></script>
@@ -44,10 +44,7 @@
   <noscript>
     <link rel="stylesheet" href="/Blog/css/noscript.css">
   </noscript>
-<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style><link rel="stylesheet" href="\Blog\assets\css\APlayer.min.css" class="aplayer-style-marker">
-<script src="\Blog\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
-<script src="\Blog\assets\js\Meting.min.js" class="meting-script-marker"></script>
-</head>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -86,7 +83,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">20</span></a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">51</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">51</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -147,7 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-text">实现方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96"><span class="nav-text">依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MeingJS-%E6%94%AF%E6%8C%81-3-0-%E6%96%B0%E5%8A%9F%E8%83%BD"><span class="nav-text">MeingJS 支持 (3.0 新功能)</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E9%80%9A%E7%82%B9%E6%AD%A4-%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8OSS"><span class="nav-text">开通点此:对象存储OSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="nav-text">创建用户:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E5%8F%B3%E4%B8%8A%E8%A7%92"><span class="nav-text">网页右上角</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8D%E7%A7%B0%E9%9A%8F%E4%BE%BF%E5%8F%96-%E8%BF%99%E9%87%8C%E8%A6%81%E5%8B%BE%E4%B8%8A"><span class="nav-text">名称随便取,这里要勾上</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E8%A1%8C%E4%B8%80%E4%B8%8B%E9%AA%8C%E8%AF%81"><span class="nav-text">进行一下验证</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E5%88%B0%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2-%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90"><span class="nav-text">回到用户界面,添加用户权限</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2oss-%E7%A1%AE%E8%AE%A4"><span class="nav-text">搜索oss,确认</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E5%88%B0%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%8E%A7%E5%88%B6%E5%8F%B0-%E5%88%9B%E5%BB%BAbucket"><span class="nav-text">回到对象存储控制台,创建bucket</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%B0%E5%9F%9F%E9%80%89%E9%99%84%E8%BF%91%E7%9A%84-%E8%AF%BB%E5%86%99%E6%9D%83%E9%99%90%E9%80%89%E5%85%AC%E8%AF%BB-%E5%85%B6%E4%BB%96%E9%80%89%E9%A1%B9%E5%85%A8%E9%83%A8%E9%BB%98%E8%AE%A4"><span class="nav-text">地域选附近的,读写权限选公读,其他选项全部默认.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bucket%E4%B8%AD%E6%8E%88%E6%9D%83%E7%94%A8%E6%88%B7"><span class="nav-text">bucket中授权用户</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-text">进入文件管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E5%AD%90%E8%B4%A6%E5%8F%B7-%E9%80%89%E6%8B%A9%E8%AF%BB-x2F-%E5%86%99-%E7%A1%AE%E8%AE%A4"><span class="nav-text">选择子账号,选择读&#x2F;写,确认</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#picgo%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-text">picgo软件配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9C%8B%E6%8F%90%E7%A4%BA%E5%A1%AB%E5%B0%B1%E8%A1%8C"><span class="nav-text">看提示填就行</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%AE%8C%E6%88%90"><span class="nav-text">配置完成</span></a></div>
         </div>
         <!--/noindex-->
 
@@ -168,12 +165,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/Blog/categories/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/Blog/tags/">
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -259,7 +256,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/10/12/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/">
+    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/10/25/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91oss%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Blog/images/apple-touch-icon-next.jpg">
@@ -272,12 +269,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Hexo文章添加音乐插件 | Niaoyu">
+      <meta itemprop="name" content="使用阿里云oss搭建图床 | Niaoyu">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hexo文章添加音乐插件
+          使用阿里云oss搭建图床
         </h1>
 
         <div class="post-meta-container">
@@ -287,15 +284,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2022-10-12 21:32:21" itemprop="dateCreated datePublished" datetime="2022-10-12T21:32:21+08:00">2022-10-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-14 03:07:33" itemprop="dateModified" datetime="2022-10-14T03:07:33+08:00">2022-10-14</time>
+      <time title="创建时间：2022-10-25 13:14:26 / 修改时间：14:13:49" itemprop="dateCreated datePublished" datetime="2022-10-25T13:14:26+08:00">2022-10-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -303,7 +294,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+          <a href="/Blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
         </span>
     </span>
 
@@ -317,111 +308,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-tag-aplayer</span><br></pre></td></tr></table></figure>
-
-<h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><ul>
-<li>APlayer.js &gt; 1.8.0</li>
-<li>Meting.js &gt; 1.1.1</li>
-</ul>
-<h3 id="MeingJS-支持-3-0-新功能"><a href="#MeingJS-支持-3-0-新功能" class="headerlink" title="MeingJS 支持 (3.0 新功能)"></a>MeingJS 支持 (3.0 新功能)</h3><p>在<code>_config.yml</code>中添加</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">aplayer:</span><br><span class="line">  meting: true</span><br></pre></td></tr></table></figure>
-
-<p>接着就可以通过 <code>&#123;% meting ...%&#125;</code> 在文章中使用 MetingJS 播放器了：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 简单示例 (id, server, type)  --&gt;</span><br><span class="line">&#123;% meting &quot;60198&quot; &quot;netease&quot; &quot;playlist&quot; %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 进阶示例 --&gt;</span><br><span class="line">&#123;% meting &quot;60198&quot; &quot;netease&quot; &quot;playlist&quot; &quot;autoplay&quot; &quot;mutex:false&quot; &quot;listmaxheight:340px&quot; &quot;preload:none&quot; &quot;theme:#ad7a86&quot;%&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>有关 
-    <div id="aplayer-RPByXmZu" class="aplayer aplayer-tag-marker meting-tag-marker"
-         data-id="undefined" data-server="undefined" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
-    ></div> 的选项列表如下:</strong></p>
-<table>
-<thead>
-<tr>
-<th>选项</th>
-<th>默认值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>id</td>
-<td><strong>必须值</strong></td>
-<td>歌曲 id &#x2F; 播放列表 id &#x2F; 相册 id &#x2F; 搜索关键字</td>
-</tr>
-<tr>
-<td>server</td>
-<td><strong>必须值</strong></td>
-<td>音乐平台: <code>netease</code>, <code>tencent</code>, <code>kugou</code>, <code>xiami</code>, <code>baidu</code></td>
-</tr>
-<tr>
-<td>type</td>
-<td><strong>必须值</strong></td>
-<td><code>song</code>, <code>playlist</code>, <code>album</code>, <code>search</code>, <code>artist</code></td>
-</tr>
-<tr>
-<td>fixed</td>
-<td><code>false</code></td>
-<td>开启固定模式</td>
-</tr>
-<tr>
-<td>mini</td>
-<td><code>false</code></td>
-<td>开启迷你模式</td>
-</tr>
-<tr>
-<td>loop</td>
-<td><code>all</code></td>
-<td>列表循环模式：<code>all</code>, <code>one</code>,<code>none</code></td>
-</tr>
-<tr>
-<td>order</td>
-<td><code>list</code></td>
-<td>列表播放模式： <code>list</code>, <code>random</code></td>
-</tr>
-<tr>
-<td>volume</td>
-<td>0.7</td>
-<td>播放器音量</td>
-</tr>
-<tr>
-<td>lrctype</td>
-<td>0</td>
-<td>歌词格式类型</td>
-</tr>
-<tr>
-<td>listfolded</td>
-<td><code>false</code></td>
-<td>指定音乐播放列表是否折叠</td>
-</tr>
-<tr>
-<td>storagename</td>
-<td><code>metingjs</code></td>
-<td>LocalStorage 中存储播放器设定的键名</td>
-</tr>
-<tr>
-<td>autoplay</td>
-<td><code>true</code></td>
-<td>自动播放，移动端浏览器暂时不支持此功能</td>
-</tr>
-<tr>
-<td>mutex</td>
-<td><code>true</code></td>
-<td>该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停</td>
-</tr>
-<tr>
-<td>listmaxheight</td>
-<td><code>340px</code></td>
-<td>播放列表的最大长度</td>
-</tr>
-<tr>
-<td>preload</td>
-<td><code>auto</code></td>
-<td>音乐文件预载入模式，可选项： <code>none</code>, <code>metadata</code>, <code>auto</code></td>
-</tr>
-<tr>
-<td>theme</td>
-<td><code>#ad7a86</code></td>
-<td>播放器风格色彩设置</td>
-</tr>
-</tbody></table>
-
+        <blockquote>
+<p>最近发现墙变厚了,不开飞机放在github的图加载实在慢,于是我去了解了下云存储。</p>
+<p>花了45买了五年的阿里云oss，在此记录下。</p>
+</blockquote>
+<h3 id="开通点此-对象存储OSS"><a href="#开通点此-对象存储OSS" class="headerlink" title="开通点此:对象存储OSS"></a><strong>开通点此:</strong><span class="exturl" data-url="aHR0cHM6Ly93d3cuYWxpeXVuLmNvbS9wcm9kdWN0L29zcz9zcG09NTE3Ni44NDY1OTgwLnVudXNhYmxlLmRkZXRhaWwuNTJlNzE0NTBjNG1VU3o=">对象存储OSS<i class="fa fa-external-link-alt"></i></span></h3><h3 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户:"></a>创建用户:</h3><h4 id="网页右上角"><a href="#网页右上角" class="headerlink" title="网页右上角"></a>网页右上角</h4><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221025140017675.png" alt="image-20221025140017675"></p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221025140116066.png" alt="image-20221025140116066"></p>
+<h4 id="名称随便取-这里要勾上"><a href="#名称随便取-这里要勾上" class="headerlink" title="名称随便取,这里要勾上"></a>名称随便取,这里要勾上</h4><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221025140219928.png" alt="image-20221025140219928"></p>
+<h4 id="进行一下验证"><a href="#进行一下验证" class="headerlink" title="进行一下验证"></a>进行一下验证</h4><p><strong>创建完之后一定要复制这俩key,只有创建时会显示,错过忘了得重新生成</strong></p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221025140425388.png" alt="image-20221025140425388"></p>
+<h3 id="回到用户界面-添加用户权限"><a href="#回到用户界面-添加用户权限" class="headerlink" title="回到用户界面,添加用户权限"></a>回到用户界面,添加用户权限</h3><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221025140542152.png" alt="image-20221025140542152"></p>
+<h4 id="搜索oss-确认"><a href="#搜索oss-确认" class="headerlink" title="搜索oss,确认"></a>搜索oss,确认</h4><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221025140608647.png" alt="image-20221025140608647"></p>
+<h3 id="回到对象存储控制台-创建bucket"><a href="#回到对象存储控制台-创建bucket" class="headerlink" title="回到对象存储控制台,创建bucket"></a>回到对象存储控制台,创建bucket</h3><h4 id="地域选附近的-读写权限选公读-其他选项全部默认"><a href="#地域选附近的-读写权限选公读-其他选项全部默认" class="headerlink" title="地域选附近的,读写权限选公读,其他选项全部默认."></a>地域选附近的,读写权限选公读,其他选项全部默认.</h4><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221025140807924.png" alt="image-20221025140807924"></p>
+<h3 id="bucket中授权用户"><a href="#bucket中授权用户" class="headerlink" title="bucket中授权用户"></a>bucket中授权用户</h3><h4 id="进入文件管理"><a href="#进入文件管理" class="headerlink" title="进入文件管理"></a>进入文件管理</h4><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221025141219973.png" alt="image-20221025141219973"></p>
+<h4 id="选择子账号-选择读-x2F-写-确认"><a href="#选择子账号-选择读-x2F-写-确认" class="headerlink" title="选择子账号,选择读&#x2F;写,确认"></a>选择子账号,选择读&#x2F;写,确认</h4><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221025141309175.png" alt="image-20221025141309175"></p>
+<h3 id="picgo软件配置"><a href="#picgo软件配置" class="headerlink" title="picgo软件配置"></a>picgo软件配置</h3><h4 id="看提示填就行"><a href="#看提示填就行" class="headerlink" title="看提示填就行"></a>看提示填就行</h4><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221025141028197.png" alt="image-20221025141028197"></p>
+<h2 id="配置完成"><a href="#配置完成" class="headerlink" title="配置完成"></a>配置完成</h2>
     </div>
 
     
@@ -448,22 +350,19 @@
 </div>
 
           <div class="post-tags">
-              <a href="/Blog/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
-              <a href="/Blog/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" rel="tag"><i class="fa fa-tag"></i> 音乐播放器</a>
+              <a href="/Blog/tags/%E9%98%BF%E9%87%8C%E4%BA%91/" rel="tag"><i class="fa fa-tag"></i> 阿里云</a>
+              <a href="/Blog/tags/%E5%9B%BE%E5%BA%8A/" rel="tag"><i class="fa fa-tag"></i> 图床</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/Blog/2022/10/10/%E5%AE%9E%E7%8E%B0%E7%BA%BF%E6%80%A7%E8%A1%A8List%E4%B9%8B%E9%A1%BA%E5%BA%8F%E8%A1%A8/" rel="prev" title="实现线性表List之顺序表">
-                  <i class="fa fa-chevron-left"></i> 实现线性表List之顺序表
+                <a href="/Blog/2022/10/24/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/" rel="prev" title="时间复杂度分析">
+                  <i class="fa fa-chevron-left"></i> 时间复杂度分析
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/Blog/2022/10/13/next%E4%B8%BB%E9%A2%98%E8%87%AA%E5%AE%9A%E4%B9%89/" rel="next" title="next主题自定义">
-                  next主题自定义 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -538,7 +437,7 @@ darkmode.showWidget();
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Niaoyu00","repo":"Gitalks-Repo","client_id":"10947b0e111d05bdb5ab","client_secret":"389f8db64c7a84288bb738035f02dcb8f94180c9","admin_user":"Niaoyu00","distraction_free_mode":true,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"7b9db8de739e570719f63aa12d027754"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Niaoyu00","repo":"Gitalks-Repo","client_id":"10947b0e111d05bdb5ab","client_secret":"389f8db64c7a84288bb738035f02dcb8f94180c9","admin_user":"Niaoyu00","distraction_free_mode":true,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"6952dd311687acbd145a84184407d01d"}</script>
 <script src="/Blog/js/third-party/comments/gitalk.js"></script>
 
 </body>

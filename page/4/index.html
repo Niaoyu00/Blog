@@ -83,7 +83,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">20</span></a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">51</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">51</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -164,12 +164,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/Blog/categories/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/Blog/tags/">
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -921,7 +921,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-03 03:48:45" itemprop="dateModified" datetime="2022-10-03T03:48:45+08:00">2022-10-03</time>
+      <time title="修改时间：2022-10-25 13:56:04" itemprop="dateModified" datetime="2022-10-25T13:56:04+08:00">2022-10-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -943,10 +943,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>​	gitee的图床居然炸了？！难怪我之前看网站里图片都没了，一直没意识到是gitee的问题。因为本人前段时间重装电脑系统，导致今天整理笔记的时候要重新配置picgo的图床，刚配置完一看图片显示都是空的…我一直怀疑是因为我typora没升级付费版，所以他不给显示。网上查了半天，最后才发现是gitee加了防盗链，虽然说拿他白嫖做图床有点不厚道，但是你既然开放了这个功能，要停的话至少提前说一下嘛。算了，回到重点，下面是<strong>github图床搭建流程</strong>，在此记录下来以后忘了可以看看：</p>
+          <p><strong>※提示:github是国外网站，所以图片加载速度一般，现在我已经换成了阿里云存储了，详细请看：<a href="https://niaoyu00.github.io/Blog/2022/10/24/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/">https://niaoyu00.github.io/Blog/2022/10/24/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/</a></strong></p>
+<blockquote>
+<p>gitee的图床居然炸了？！难怪我之前看网站里图片都没了，一直没意识到是gitee的问题。因为本人前段时间重装电脑系统，导致今天整理笔记的时候要重新配置picgo的图床，刚配置完一看图片显示都是空的…我一直怀疑是因为我typora没升级付费版，所以他不给显示。网上查了半天，最后才发现是gitee加了防盗链，虽然说拿他白嫖做图床有点不厚道，但是你既然开放了这个功能，要停的话至少提前说一下嘛。算了，回到重点，下面是<strong>github图床搭建流程</strong>，在此记录下来以后忘了可以看看：</p>
+</blockquote>
 <h2 id="1、新建一个github仓库，clone到本地，然后将gitee旧图片文件夹拷进来再上传。"><a href="#1、新建一个github仓库，clone到本地，然后将gitee旧图片文件夹拷进来再上传。" class="headerlink" title="1、新建一个github仓库，clone到本地，然后将gitee旧图片文件夹拷进来再上传。"></a>1、新建一个github仓库，clone到本地，然后将gitee旧图片文件夹拷进来再上传。</h2><p>完成后大概是这样：</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/pics/image-2022052319275.png" alt="image-2022052319275"></p>
-<h2 id="2、仓库搞完去获取个人令牌"><a href="#2、仓库搞完去获取个人令牌" class="headerlink" title="2、仓库搞完去获取个人令牌"></a>2、仓库搞完去获取个人令牌</h2>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Blog/2022/05/23/git%E5%9B%BE%E5%BA%8A/#more" rel="contents">

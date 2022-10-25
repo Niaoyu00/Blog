@@ -83,7 +83,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">20</span></a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">51</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">51</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -164,12 +164,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/Blog/categories/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/Blog/tags/">
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -245,6 +245,96 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/10/25/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91oss%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/apple-touch-icon-next.jpg">
+      <meta itemprop="name" content="ZHY">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/2022/10/25/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91oss%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/" class="post-title-link" itemprop="url">使用阿里云oss搭建图床</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-10-25 13:14:26 / 修改时间：14:13:49" itemprop="dateCreated datePublished" datetime="2022-10-25T13:14:26+08:00">2022-10-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>最近发现墙变厚了,不开飞机放在github的图加载实在慢,于是我去了解了下云存储。</p>
+<p>花了45买了五年的阿里云oss，在此记录下。</p>
+</blockquote>
+<h3 id="开通点此-对象存储OSS"><a href="#开通点此-对象存储OSS" class="headerlink" title="开通点此:对象存储OSS"></a><strong>开通点此:</strong><span class="exturl" data-url="aHR0cHM6Ly93d3cuYWxpeXVuLmNvbS9wcm9kdWN0L29zcz9zcG09NTE3Ni44NDY1OTgwLnVudXNhYmxlLmRkZXRhaWwuNTJlNzE0NTBjNG1VU3o=">对象存储OSS<i class="fa fa-external-link-alt"></i></span></h3><h3 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户:"></a>创建用户:</h3><h4 id="网页右上角"><a href="#网页右上角" class="headerlink" title="网页右上角"></a>网页右上角</h4>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/2022/10/25/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91oss%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -470,7 +560,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-24 15:56:45" itemprop="dateModified" datetime="2022-10-24T15:56:45+08:00">2022-10-24</time>
+      <time title="修改时间：2022-10-25 13:43:35" itemprop="dateModified" datetime="2022-10-25T13:43:35+08:00">2022-10-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -493,7 +583,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="什么是链表"><a href="#什么是链表" class="headerlink" title="什么是链表"></a>什么是链表</h2><p>链表由若干节点构成,节点之间有链接,链接末尾没有节点,指向空null.</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20221018022211183.png" alt="image-20221018022211183"></p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221025134229495.png" alt="image-20221025134229495"></p>
 <p>链表的实现需要定义:</p>
           <!--noindex-->
             <div class="post-button">
@@ -643,9 +733,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-10-18 01:42:10 / 修改时间：02:13:17" itemprop="dateCreated datePublished" datetime="2022-10-18T01:42:10+08:00">2022-10-18</time>
+      <time title="创建时间：2022-10-18 01:42:10" itemprop="dateCreated datePublished" datetime="2022-10-18T01:42:10+08:00">2022-10-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-25 13:56:09" itemprop="dateModified" datetime="2022-10-25T13:56:09+08:00">2022-10-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -738,9 +834,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-10-14 02:38:50 / 修改时间：07:12:30" itemprop="dateCreated datePublished" datetime="2022-10-14T02:38:50+08:00">2022-10-14</time>
+      <time title="创建时间：2022-10-14 02:38:50" itemprop="dateCreated datePublished" datetime="2022-10-14T02:38:50+08:00">2022-10-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-25 13:48:19" itemprop="dateModified" datetime="2022-10-25T13:48:19+08:00">2022-10-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -763,7 +865,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="获取链接"><a href="#获取链接" class="headerlink" title="获取链接"></a>获取链接</h2><p>打开网易云音乐,找到专辑或者单曲,点击生成外链。</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20221014071152610.png" alt="image-20221014071152610"></p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221025134547027.png" alt="image-20221025134547027"></p>
 <p>调完配置后复制html代码</p>
           <!--noindex-->
             <div class="post-button">
@@ -834,7 +936,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-25 03:25:19" itemprop="dateModified" datetime="2022-10-25T03:25:19+08:00">2022-10-25</time>
+      <time title="修改时间：2022-10-25 13:41:41" itemprop="dateModified" datetime="2022-10-25T13:41:41+08:00">2022-10-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -867,100 +969,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Blog/2022/10/13/next%E4%B8%BB%E9%A2%98%E8%87%AA%E5%AE%9A%E4%B9%89/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/10/12/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/apple-touch-icon-next.jpg">
-      <meta itemprop="name" content="ZHY">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Niaoyu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Niaoyu">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/2022/10/12/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/" class="post-title-link" itemprop="url">Hexo文章添加音乐插件</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-10-12 21:32:21" itemprop="dateCreated datePublished" datetime="2022-10-12T21:32:21+08:00">2022-10-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-14 03:07:33" itemprop="dateModified" datetime="2022-10-14T03:07:33+08:00">2022-10-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-tag-aplayer</span><br></pre></td></tr></table></figure>
-
-<h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/2022/10/12/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1027,7 +1035,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-18 02:12:51" itemprop="dateModified" datetime="2022-10-18T02:12:51+08:00">2022-10-18</time>
+      <time title="修改时间：2022-10-25 13:45:08" itemprop="dateModified" datetime="2022-10-25T13:45:08+08:00">2022-10-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1049,7 +1057,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h2><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20221010174739617.png" alt="image-20221010174739617"></p>
+          <h2 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h2><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221025134433697.png" alt="image-20221025134433697"></p>
 <h3 id="定义接口"><a href="#定义接口" class="headerlink" title="定义接口"></a>定义接口</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">namespace</span> <span class="title">AlgorithmTest06_List</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">interface</span> <span class="title">IListDS</span>&lt;<span class="title">T</span>&gt;</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="built_in">int</span> <span class="title">GetLength</span>()</span>;<span class="comment">//求长度</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">Chear</span>()</span>;<span class="comment">//清空</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="built_in">bool</span> <span class="title">IsEmpty</span>()</span>;<span class="comment">//判断线性表是否为空</span></span><br><span class="line"></span><br><span class="line">        <span class="function">T <span class="title">Add</span>(<span class="params">T item</span>)</span>;<span class="comment">//添加</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">Insert</span>(<span class="params"><span class="built_in">int</span> index, T item</span>)</span>;<span class="comment">//插入</span></span><br><span class="line"></span><br><span class="line">        <span class="function">T <span class="title">Delete</span>(<span class="params"><span class="built_in">int</span> i</span>)</span>;<span class="comment">//删除</span></span><br><span class="line"></span><br><span class="line">        T <span class="keyword">this</span>[<span class="built_in">int</span> i] &#123; <span class="keyword">get</span>; &#125;<span class="comment">//定义索引器 获取元素</span></span><br><span class="line"></span><br><span class="line">        <span class="function">T <span class="title">GetElem</span>(<span class="params"><span class="built_in">int</span> i</span>)</span>;<span class="comment">//取表元</span></span><br><span class="line"></span><br><span class="line">        <span class="function">T <span class="title">Set</span>(<span class="params"><span class="built_in">int</span> i, T item</span>)</span>;<span class="comment">//修改</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="built_in">int</span> <span class="title">IndexOf</span>(<span class="params">T <span class="keyword">value</span></span>)</span>;<span class="comment">//按值查找</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">Remove</span>(<span class="params">T <span class="keyword">value</span></span>)</span>;<span class="comment">//根据值删除</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
@@ -1112,9 +1120,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-10-10 17:03:52 / 修改时间：17:07:46" itemprop="dateCreated datePublished" datetime="2022-10-10T17:03:52+08:00">2022-10-10</time>
+      <time title="创建时间：2022-10-10 17:03:52" itemprop="dateCreated datePublished" datetime="2022-10-10T17:03:52+08:00">2022-10-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-25 13:49:11" itemprop="dateModified" datetime="2022-10-25T13:49:11+08:00">2022-10-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1138,7 +1152,6 @@
     <div class="post-body" itemprop="articleBody">
           <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p><strong>hexo新建文章时,头部默认是只有title和date,每次要添加类别都要重新写。</strong></p>
 <h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h3><p><strong>根目录下找到scaffolds文件夹下的post.md就可以编辑模板了</strong></p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20221010170728952.png" alt="image-20221010170728952"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Blog/2022/10/10/Hexo%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF/#more" rel="contents">
