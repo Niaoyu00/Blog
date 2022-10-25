@@ -349,7 +349,7 @@
 
 <p>接着到该目录<code>hexo-theme-next\source\css\_common\scaffolding</code>打开<code>base.styl</code></p>
 <p>搜索<code>iframe, img,</code>,删除其中的video标签,会影响布局。删除后长这样：</p>
-<p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/image-20221025023010916.png" alt="image-20221025023010916"></p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221025150021652.png" alt="image-20221025150021652"></p>
 <p>添加字段(top数值根据网站上面空位灵活调整):</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.poster__bg</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">z-index</span> :-<span class="number">999</span>;</span><br><span class="line">    <span class="attribute">top</span>:-<span class="number">30px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
