@@ -1,7 +1,7 @@
 :root {
-  --body-bg-color: rgba(197,235,252,0.5);
+  --body-bg-color: rgba(197,235,252,0.7);
   --content-bg-color: rgba(255,255,255,0.8);
-  --card-bg-color: rgba(197,235,252,0.5);
+  --card-bg-color: rgba(197,235,252,0.7);
   --text-color: #09233f;
   --blockquote-color: #666;
   --link-color: #09233f;
@@ -9,13 +9,13 @@
   --brand-color: #fff;
   --brand-hover-color: #fff;
   --table-row-odd-bg-color: #f9f9f9;
-  --table-row-hover-bg-color: rgba(197,235,252,0.5);
-  --menu-item-bg-color: rgba(197,235,252,0.5);
+  --table-row-hover-bg-color: rgba(197,235,252,0.7);
+  --menu-item-bg-color: rgba(197,235,252,0.7);
   --theme-color: rgba(255,255,255,0);
   --btn-default-bg: #fff;
   --btn-default-color: #2d5279;
   --btn-default-border-color: #09233f;
-  --btn-default-hover-bg: rgba(197,235,252,0.5);
+  --btn-default-hover-bg: rgba(197,235,252,0.7);
   --btn-default-hover-color: #09233f;
   --btn-default-hover-border-color: #09233f;
   --highlight-background: #f4f3ec;
@@ -173,7 +173,7 @@ template {
   display: none;
 }
 ::selection {
-  background: #262a30;
+  background: #8b8b8b;
   color: #eee;
 }
 html,
@@ -189,7 +189,7 @@ meting-js {
   margin-top: 10px;
 }
 body {
-  background: rgba(197,235,252,0.5);
+  background: rgba(197,235,252,0.7);
   box-sizing: border-box;
   color: var(--text-color);
   font-family: Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
@@ -1946,7 +1946,7 @@ header.header {
   margin-left: 5px;
 }
 .posts-collapse .post-content::before {
-  background: rgba(197,235,252,0.5);
+  background: rgba(197,235,252,0.7);
   content: ' ';
   height: 100%;
   margin-left: -2px;
@@ -2428,7 +2428,7 @@ header.header {
   content: '\f024';
 }
 .event-list .event-past {
-  --event-background: rgba(197,235,252,0.5);
+  --event-background: rgba(197,235,252,0.7);
   --event-foreground: #09233f;
   --event-title: #09233f;
 }
@@ -2926,10 +2926,10 @@ mark.search-keyword {
 }
 .post-body h1,
 .post-body h2 {
-  border-bottom: 1px solid rgba(197,235,252,0.5);
+  border-bottom: 1px solid rgba(197,235,252,0.7);
 }
 .post-body h3 {
-  border-bottom: 1px dotted rgba(197,235,252,0.5);
+  border-bottom: 1px dotted rgba(197,235,252,0.7);
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .main-inner {
