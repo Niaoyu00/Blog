@@ -86,7 +86,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">25</span></a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">55</span></a></li><li class="menu-item menu-item-links"><a href="/Blog/links/" rel="section"><i class="fa fa-book fa-fw"></i>友链</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">25</span></a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">54</span></a></li><li class="menu-item menu-item-links"><a href="/Blog/links/" rel="section"><i class="fa fa-book fa-fw"></i>友链</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -161,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/Blog/archives/">
-          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -259,6 +259,98 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/11/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%98%9F%E5%88%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/apple-touch-icon-next.jpg">
+      <meta itemprop="name" content="ZHY">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/2022/11/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%98%9F%E5%88%97/" class="post-title-link" itemprop="url">数据结构-队列</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-11-05 19:19:01 / 修改时间：20:38:06" itemprop="dateCreated datePublished" datetime="2022-11-05T19:19:01+08:00">2022-11-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">基础学习</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="队列-Queue"><a href="#队列-Queue" class="headerlink" title="队列(Queue)"></a>队列(Queue)</h1><h2 id="数组实现队列"><a href="#数组实现队列" class="headerlink" title="数组实现队列"></a>数组实现队列</h2><h3 id="队列相关操作"><a href="#队列相关操作" class="headerlink" title="队列相关操作"></a>队列相关操作</h3><blockquote>
+<p>void Enqueue(T t);&#x2F;&#x2F;入队</p>
+<p>T Dequeue();&#x2F;&#x2F;出队</p>
+<p>T Peek();&#x2F;&#x2F;查看队首元素</p>
+<p>int Count { get; }&#x2F;&#x2F;查看元素个数</p>
+<p> bool IsEmpty { get; }&#x2F;&#x2F;查看队列是否为空</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/2022/11/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%98%9F%E5%88%97/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/11/01/%E4%B8%89%E7%A7%8D%E6%A0%88%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -317,101 +409,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Blog/2022/11/01/%E4%B8%89%E7%A7%8D%E6%A0%88%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/11/01/%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0%E6%A0%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/apple-touch-icon-next.jpg">
-      <meta itemprop="name" content="ZHY">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Niaoyu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Niaoyu">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/2022/11/01/%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0%E6%A0%88/" class="post-title-link" itemprop="url">链表实现栈</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-11-01 14:49:04 / 修改时间：15:27:38" itemprop="dateCreated datePublished" datetime="2022-11-01T14:49:04+08:00">2022-11-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">基础学习</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="栈的相关操作"><a href="#栈的相关操作" class="headerlink" title="栈的相关操作"></a>栈的相关操作</h3><blockquote>
-<p>Stack</p>
-<p>void Push(t) 添加元素</p>
-<p>T Pop() 删除栈顶</p>
-<p>T Peek() 查询栈顶</p>
-<p>int Count 栈中多少元素</p>
-<p>bool IsEmpty 是否为空</p>
-</blockquote>
-<p><strong>链表最方便的是在头部进行添加或删除操作</strong></p>
-<h3 id="新建LinkedList1Stack类实现IStack接口的方法"><a href="#新建LinkedList1Stack类实现IStack接口的方法" class="headerlink" title="新建LinkedList1Stack类实现IStack接口的方法"></a>新建LinkedList1Stack<t>类实现IStack<t>接口的方法</t></t></h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/2022/11/01/%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0%E6%A0%88/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -535,107 +532,6 @@
 </li>
 </ul>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/10/27/%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E6%A0%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/apple-touch-icon-next.jpg">
-      <meta itemprop="name" content="ZHY">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Niaoyu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Niaoyu">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/2022/10/27/%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E6%A0%88/" class="post-title-link" itemprop="url">数组实现栈</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-10-27 13:20:24" itemprop="dateCreated datePublished" datetime="2022-10-27T13:20:24+08:00">2022-10-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-11-01 15:02:41" itemprop="dateModified" datetime="2022-11-01T15:02:41+08:00">2022-11-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">基础学习</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="栈的相关操作"><a href="#栈的相关操作" class="headerlink" title="栈的相关操作"></a>栈的相关操作</h2><blockquote>
-<p>Stack<t></t></p>
-<p>void Push(t)	添加元素</p>
-<p>T Pop() 		删除栈顶</p>
-<p>T Peek()		查询栈顶</p>
-<p>int Count	   栈中多少元素</p>
-<p>bool IsEmpty	是否为空</p>
-</blockquote>
-<p><strong>数组在尾端添加删除最合适</strong></p>
-<h3 id="新建一个接口Stack实现以上方法"><a href="#新建一个接口Stack实现以上方法" class="headerlink" title="新建一个接口Stack实现以上方法"></a>新建一个接口Stack<t>实现以上方法</t></h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/2022/10/27/%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E6%A0%88/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 
@@ -1183,6 +1079,100 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Blog/2022/10/18/csharp%E6%8B%86%E8%A3%85%E7%AE%B1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/10/14/%E5%9C%A8hexo%E4%B8%BB%E9%A1%B5%E5%88%9B%E5%BB%BA%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Blog/images/apple-touch-icon-next.jpg">
+      <meta itemprop="name" content="ZHY">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/2022/10/14/%E5%9C%A8hexo%E4%B8%BB%E9%A1%B5%E5%88%9B%E5%BB%BA%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" class="post-title-link" itemprop="url">在hexo主页创建音乐播放器且不停播</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-10-14 02:38:50" itemprop="dateCreated datePublished" datetime="2022-10-14T02:38:50+08:00">2022-10-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-25 13:48:19" itemprop="dateModified" datetime="2022-10-25T13:48:19+08:00">2022-10-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="获取链接"><a href="#获取链接" class="headerlink" title="获取链接"></a>获取链接</h2><p>打开网易云音乐,找到专辑或者单曲,点击生成外链。</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221025134547027.png" alt="image-20221025134547027"></p>
+<p>调完配置后复制html代码</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/2022/10/14/%E5%9C%A8hexo%E4%B8%BB%E9%A1%B5%E5%88%9B%E5%BB%BA%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
