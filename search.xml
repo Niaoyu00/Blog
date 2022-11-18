@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>unity生命周期</title>
+    <url>/Blog/2022/11/16/unity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><h2 id="本文转载自csdn"><a href="#本文转载自csdn" class="headerlink" title="本文转载自csdn"></a>本文转载自csdn</h2><p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW95YW9BQ2kvYXJ0aWNsZS9kZXRhaWxzLzExOTg4NzQ2Nz9zcG09MTAwMS4yMDE0LjMwMDEuNTUwMg==">https://blog.csdn.net/xiaoyaoACi/article/details/119887467?spm=1001.2014.3001.5502<i class="fa fa-external-link-alt"></i></span></p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221116174713651.png" alt="image-20221116174713651"></p>
+<p>详细看原帖地址:<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW95YW9BQ2kvYXJ0aWNsZS9kZXRhaWxzLzExOTMyNDE0Nj9zcG09MTAwMS4yMDE0LjMwMDEuNTUwMg==">https://blog.csdn.net/xiaoyaoACi/article/details/119324146?spm=1001.2014.3001.5502<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>unity</category>
+      </categories>
+      <tags>
+        <tag>unity</tag>
+        <tag>unity生命周期</tag>
+        <tag>awake</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>二分查找和顺序查找</title>
     <url>/Blog/2022/11/13/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%92%8C%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><h2 id="二分查找算法"><a href="#二分查找算法" class="headerlink" title="二分查找算法"></a>二分查找算法</h2><p>只能对有序排列数据进行高效查找。</p>
