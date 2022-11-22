@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/red/pace-theme-flash.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"niaoyu00.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":true,"sidebar":{"position":"right","width":300,"display":"post","padding":10,"offset":10},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_body":"fadeIn","coll_header":"fadeInLeft"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"niaoyu00.github.io","root":"/Blog/","images":"/Blog/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":true,"sidebar":{"position":"right","width":300,"display":"always","padding":10,"offset":10},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_body":"fadeIn","coll_header":"fadeInLeft"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/Blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/Blog/js/config.js"></script>
 
 
 
@@ -49,11 +49,13 @@
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
   <video id="bg" autoplay="autoplay"  loop="loop" muted="muted" class="poster__bg" style="opacity: 1;width: 1920px;" >
-  <source src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/video/Wanye2_1.mp4" type="audio/mp4">
+  <source src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/video/shaonv.mp4" type="audio/mp4">
         您的浏览器不支持播放此视频.
   </video>
   <script>
-  document.getElementById('bg').playbackRate = 1;
+        let video = document.getElementById("bg");
+        video.playbackRate = 1;//不透明度
+        
   </script>
   <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -86,7 +88,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">35</span></a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">61</span></a></li><li class="menu-item menu-item-links"><a href="/Blog/links/" rel="section"><i class="fa fa-book fa-fw"></i>友链</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">37</span></a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">62</span></a></li><li class="menu-item menu-item-links"><a href="/Blog/links/" rel="section"><i class="fa fa-book fa-fw"></i>友链</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -161,7 +163,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/Blog/archives/">
-          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-count">62</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -172,19 +174,41 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/Blog/tags/">
-        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
   <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL05pYW95dTAw" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Niaoyu00"><i class="fab fa-github fa-fw"></i></span>
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL05pYW95dTAw" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Niaoyu00"><i class="fab fa-github fa-fw"></i>GitHub</span>
       </span>
       <span class="links-of-author-item">
-        <span class="exturl" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vMzA5MzEzMzA/c3BtX2lkX2Zyb209MzMzLjEwMDcuMC4w" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;30931330?spm_id_from&#x3D;333.1007.0.0"><i class="fa fa-video-camera fa-fw"></i></span>
+        <span class="exturl" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vMzQ5MzA4MDI2OTMyNzEzNA==" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;3493080269327134"><i class="fab fa-youtube fa-fw"></i>Bilibili</span>
+      </span>
+      <span class="links-of-author-item">
+        <button id="btnChange"  title="更换壁纸">
+            <i class="fa fa-camera-retro fa-fw"></i>
+            更换壁纸
+        </button>
       </span>
   </div>
+  <script>
+         let i=0;
+         let btn=document.getElementById("btnChange");
+         let videoSrc = [
+				"https://niaoyu.oss-cn-shenzhen.aliyuncs.com/video/Wanye2_1.mp4",
+				"https://niaoyu.oss-cn-shenzhen.aliyuncs.com/video/shaonv.mp4",
+				"https://niaoyu.oss-cn-shenzhen.aliyuncs.com/video/Duizhang.mp4",
+			  ];
+        btn.onclick = () => {
+				  video.src = videoSrc[i];
+				  i++;
+				  if (i == 3) {
+					i = 0;
+				  }
+			};
+  </script>
   <div class="cc-license site-overview-item animated" itemprop="license">
     <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></span>
   </div>
@@ -259,6 +283,102 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/03/09/unity%E5%A1%94%E9%98%B2demo%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221109163320273.png">
+      <meta itemprop="name" content="ZHY">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Niaoyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Blog/2022/03/09/unity%E5%A1%94%E9%98%B2demo%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">unity塔防demo记录</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+
+  
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-03-09 19:30:04" itemprop="dateCreated datePublished" datetime="2022-03-09T19:30:04+08:00">2022-03-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-03 03:46:19" itemprop="dateModified" datetime="2022-10-03T03:46:19+08:00">2022-10-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/Blog/categories/unity/" itemprop="url" rel="index"><span itemprop="name">unity</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="参考项目-https-www-bilibili-com-video-BV15W411976h"><a href="#参考项目-https-www-bilibili-com-video-BV15W411976h" class="headerlink" title="参考项目:https://www.bilibili.com/video/BV15W411976h"></a>参考项目:<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15W411976h">https://www.bilibili.com/video/BV15W411976h</a></h3><h3 id="新加的功能"><a href="#新加的功能" class="headerlink" title="新加的功能"></a>新加的功能</h3><p>1.怪物球自转</p>
+<p>2.不同炮台只可在特定颜色，区域内建造。</p>
+<p>3.未选中炮台不可建造</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/Blog/2022/03/09/unity%E5%A1%94%E9%98%B2demo%E8%AE%B0%E5%BD%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/03/03/%E5%8D%8F%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -282,6 +402,8 @@
 
         <div class="post-meta-container">
           <div class="post-meta">
+
+  
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar"></i>
@@ -376,6 +498,8 @@
 
         <div class="post-meta-container">
           <div class="post-meta">
+
+  
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar"></i>
@@ -474,6 +598,8 @@
 
         <div class="post-meta-container">
           <div class="post-meta">
+
+  
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar"></i>
@@ -570,6 +696,8 @@
 
         <div class="post-meta-container">
           <div class="post-meta">
+
+  
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar"></i>
@@ -656,6 +784,8 @@
 
         <div class="post-meta-container">
           <div class="post-meta">
+
+  
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar"></i>
@@ -742,6 +872,8 @@
 
         <div class="post-meta-container">
           <div class="post-meta">
+
+  
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar"></i>
@@ -837,6 +969,8 @@
 
         <div class="post-meta-container">
           <div class="post-meta">
+
+  
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar"></i>
@@ -932,6 +1066,8 @@
 
         <div class="post-meta-container">
           <div class="post-meta">
+
+  
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar"></i>
@@ -1027,6 +1163,8 @@
 
         <div class="post-meta-container">
           <div class="post-meta">
+
+  
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar"></i>
@@ -1072,103 +1210,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Blog/2021/10/27/decal/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2021/10/25/%E9%A1%B6%E7%82%B9%E7%BB%98%E5%88%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221109163320273.png">
-      <meta itemprop="name" content="ZHY">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Niaoyu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Niaoyu">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Blog/2021/10/25/%E9%A1%B6%E7%82%B9%E7%BB%98%E5%88%B6/" class="post-title-link" itemprop="url">ue4顶点绘制</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-10-25 12:36:18" itemprop="dateCreated datePublished" datetime="2021-10-25T12:36:18+08:00">2021-10-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-03 03:35:43" itemprop="dateModified" datetime="2022-10-03T03:35:43+08:00">2022-10-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/Blog/categories/ue4/" itemprop="url" rel="index"><span itemprop="name">ue4</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="网格体绘制（顶点绘制）"><a href="#网格体绘制（顶点绘制）" class="headerlink" title="网格体绘制（顶点绘制）"></a>网格体绘制（顶点绘制）</h2><p><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025090537562.png" alt="image-20211025090537562"></p>
-<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><h4 id="混合材质"><a href="#混合材质" class="headerlink" title="混合材质"></a>混合材质</h4><ul>
-<li>打开这个，依顺序从<code>底层-&gt;中间层-&gt;顶层</code>进行选择。<img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025091700720.png" alt="image-20211025091700720"></li>
-<li>截图里红色框命名，蓝色框确认，创建后就是混合后的材质。<img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025091835096.png" alt="image-20211025091835096"></li>
-<li>然后将混合后材质拖进平面，调整平铺比例（视频里材质UV是4x4，而box盒子是一米见方，因此需要调整混合后材质的uv，将材质<code>02-Base Layer</code>参数平铺x平铺y改成四分之一）<img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/imgs/image-20211025092434448.png" alt="image-20211025092434448"></li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Blog/2021/10/25/%E9%A1%B6%E7%82%B9%E7%BB%98%E5%88%B6/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
