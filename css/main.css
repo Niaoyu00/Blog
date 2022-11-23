@@ -1431,6 +1431,23 @@ header.header {
 .links-of-author .fas {
   margin-right: 2px;
 }
+#btnChange {
+  border: solid 2px #09233f;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 13px;
+  font-family: Microsoft YaHei;
+  border-radius: 5px;
+  color: var(--theme-textcolor);
+  background-color: rgba(255,255,255,0);
+}
+#btnChange:hover {
+  background-color: var(--content-bg-color);
+  cursor: pointer;
+}
 .sidebar .sidebar-button:not(:first-child) {
   margin-top: 15px;
 }
