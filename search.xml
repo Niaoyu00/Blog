@@ -3239,4 +3239,17 @@
         <tag>lua</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Addressables</title>
+    <url>/Blog/2022/11/25/Addressables/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><h2 id="什么是Addressables"><a href="#什么是Addressables" class="headerlink" title="什么是Addressables"></a>什么是Addressables</h2>]]></content>
+      <categories>
+        <category>unity</category>
+      </categories>
+      <tags>
+        <tag>unity</tag>
+        <tag>Addressables</tag>
+        <tag>AB包</tag>
+      </tags>
+  </entry>
 </search>
