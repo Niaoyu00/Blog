@@ -24,14 +24,14 @@
 
 
 
-<link rel="canonical" href="https://niaoyu00.github.io/Blog/2022/11/19/UIToolKit/">
+<link rel="canonical" href="https://niaoyu00.github.io/Blog/2022/11/25/unity%E7%83%AD%E6%9B%B4%E6%96%B0/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://niaoyu00.github.io/Blog/2022/11/19/UIToolKit/","path":"2022/11/19/UIToolKit/","title":"UIToolKit"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":"","permalink":"https://niaoyu00.github.io/Blog/2022/11/25/unity%E7%83%AD%E6%9B%B4%E6%96%B0/","path":"2022/11/25/unity热更新/","title":"unity热更新"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>UIToolKit | Niaoyu</title>
+<title>unity热更新 | Niaoyu</title>
   
 
   <script src="/Blog/js/third-party/analytics/baidu-analytics.js"></script>
@@ -87,7 +87,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">39</span></a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">64</span></a></li><li class="menu-item menu-item-links"><a href="/Blog/links/" rel="section"><i class="fa fa-book fa-fw"></i>友链</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">42</span></a></li><li class="menu-item menu-item-categories"><a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a></li><li class="menu-item menu-item-archives"><a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">64</span></a></li><li class="menu-item menu-item-links"><a href="/Blog/links/" rel="section"><i class="fa fa-book fa-fw"></i>友链</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -131,7 +131,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
       <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
       <!-- require MetingJS -->
@@ -148,7 +148,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAUIBuilder"><span class="nav-text">创建UIBuilder</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D-%E7%9B%B4%E6%8E%A5%E5%9C%A8window%E4%B8%AD%E5%88%9B%E5%BB%BA"><span class="nav-text">第一种,直接在window中创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D%E8%B5%84%E4%BA%A7%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E5%88%9B%E5%BB%BAUI-document"><span class="nav-text">第二种资产文件夹下创建UI document</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%BB%E5%B8%83%E8%AE%BE%E7%BD%AE"><span class="nav-text">画布设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B6%E4%BD%9C%E7%94%BB%E9%9D%A2"><span class="nav-text">制作画面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAuss-%E7%B1%BB%E4%BC%BCcss"><span class="nav-text">创建uss(类似css)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E6%B8%B8%E6%88%8F%E5%86%85%E6%98%BE%E7%A4%BA"><span class="nav-text">在游戏内显示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E6%A0%BC%E6%98%BE%E7%A4%BA-x2F-%E9%9A%90%E8%97%8F%E7%94%BB%E9%9D%A2"><span class="nav-text">空格显示&#x2F;隐藏画面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E5%A4%9A%E4%B8%AA%E5%85%83%E7%B4%A0%E8%BF%9B%E8%A1%8C%E6%93%8D%E4%BD%9C-%E6%89%B9%E9%87%8F%E6%93%8D%E4%BD%9C"><span class="nav-text">查找多个元素进行操作(批量操作)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E5%8D%95%E4%B8%AA%E5%85%83%E7%B4%A0"><span class="nav-text">查找单个元素</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -174,7 +173,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/Blog/tags/">
-        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-count">42</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -284,7 +283,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/11/19/UIToolKit/">
+    <link itemprop="mainEntityOfPage" href="https://niaoyu00.github.io/Blog/2022/11/25/unity%E7%83%AD%E6%9B%B4%E6%96%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221109163320273.png">
@@ -297,12 +296,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="UIToolKit | Niaoyu">
+      <meta itemprop="name" content="unity热更新 | Niaoyu">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          UIToolKit
+          unity热更新
         </h1>
 
         <div class="post-meta-container">
@@ -315,14 +314,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-11-19 11:34:07" itemprop="dateCreated datePublished" datetime="2022-11-19T11:34:07+08:00">2022-11-19</time>
+      <time title="创建时间：2022-11-25 14:53:48" itemprop="dateCreated datePublished" datetime="2022-11-25T14:53:48+08:00">2022-11-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-11-23 17:29:23" itemprop="dateModified" datetime="2022-11-23T17:29:23+08:00">2022-11-23</time>
+      <time title="修改时间：2022-11-26 16:07:39" itemprop="dateModified" datetime="2022-11-26T16:07:39+08:00">2022-11-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -345,44 +344,9 @@
     
     <div class="post-body" itemprop="articleBody">
         <blockquote class="blockquote-center">
-<p>目前的UI Toolkit比较适合做画面覆盖ui </p>
+<p>尝试了解unity热更新时，总会看到ab包、Addressables、AssetBundle、xlua等关键字，但是没深入了解的话很难搞清楚这几个是啥关系。<br>今天我就尝试去缕一缕！</p>
 
 </blockquote>
-
-<p>暂时的缺陷如下:</p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221119130244980.png" alt="image-20221119130244980"></p>
-<h2 id="创建UIBuilder"><a href="#创建UIBuilder" class="headerlink" title="创建UIBuilder"></a>创建UIBuilder</h2><h3 id="第一种-直接在window中创建"><a href="#第一种-直接在window中创建" class="headerlink" title="第一种,直接在window中创建"></a>第一种,直接在window中创建</h3><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221119135543774.png" alt="image-20221119135543774"></p>
-<h3 id="第二种资产文件夹下创建UI-document"><a href="#第二种资产文件夹下创建UI-document" class="headerlink" title="第二种资产文件夹下创建UI document"></a>第二种资产文件夹下创建UI document</h3><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221119140813450.png" alt="image-20221119140813450"></p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221119140743326.png" alt="image-20221119140743326"></p>
-<p>打开后就是一样的画面,并且带着根节点</p>
-<p>按住ctrl+alt+左键可以移动窗口(可能鼠标中键也行,但是今天我忘了带鼠标)</p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221119141125755.png" alt="image-20221119141125755"></p>
-<h3 id="画布设置"><a href="#画布设置" class="headerlink" title="画布设置"></a>画布设置</h3><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221119141237141.png" alt="image-20221119141237141"></p>
-<p>不过我们不使用这个功能,手动设定窗口宽高1920*1080.</p>
-<h2 id="制作画面"><a href="#制作画面" class="headerlink" title="制作画面"></a>制作画面</h2><p>画布已经创建好,现在开始做画面吧!效果图:</p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123162036048.png" alt="image-20221123162036048"></p>
-<p>这方面就不细说了,类似安卓的前端页面,也类似web前端的操作方式,值得一提的是这里也有xml代码</p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123162532523.png" alt="image-20221123162532523"></p>
-<h4 id="创建uss-类似css"><a href="#创建uss-类似css" class="headerlink" title="创建uss(类似css)"></a>创建uss(类似css)</h4><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123163048406.png" alt="image-20221123163048406"></p>
-<p>红色框内去掉<code>.</code>,添加<strong>Label</strong>,选中Label即可对所有文本的样式进行编辑.</p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123163219110.png" alt="image-20221123163219110"></p>
-<h2 id="在游戏内显示"><a href="#在游戏内显示" class="headerlink" title="在游戏内显示"></a>在游戏内显示</h2><p>场景内右键创建UIdocument,就会出现一个搭载ui Document脚本的对象</p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123163407846.png" alt="image-20221123163407846"></p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123163506651.png" alt="image-20221123163506651"></p>
-<p>此处可以选展示的页面</p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123163533876.png" alt="image-20221123163533876"></p>
-<h3 id="空格显示-x2F-隐藏画面"><a href="#空格显示-x2F-隐藏画面" class="headerlink" title="空格显示&#x2F;隐藏画面"></a>空格显示&#x2F;隐藏画面</h3><p>新建脚本PartyDataScreen.cs附加到该对象上.</p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123163622836.png" alt="image-20221123163622836"></p>
-<p>getcomponent获取<strong>uidocument</strong>,然后获取<strong>rootVisualElement</strong>根视觉元素,判断根视觉元素的样式是否为flex,来展示&#x2F;隐藏画面.</p>
-<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PartyDataScreen</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    VisualElement rootvisualElement;<span class="comment">//根部视觉部分</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        rootvisualElement = GetComponent&lt;UIDocument&gt;().rootVisualElement;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (Input.GetKeyDown(KeyCode.Space))</span><br><span class="line">        &#123;</span><br><span class="line">            rootvisualElement.style.display =</span><br><span class="line">            rootvisualElement.style.display == DisplayStyle.Flex ?</span><br><span class="line">            DisplayStyle.None :</span><br><span class="line">            DisplayStyle.Flex;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="查找多个元素进行操作-批量操作"><a href="#查找多个元素进行操作-批量操作" class="headerlink" title="查找多个元素进行操作(批量操作)"></a>查找多个元素进行操作(批量操作)</h3><p><code> rtvElement.Query()</code>函数可以对多个元素进行操作</p>
-<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PartyDataScreen</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    VisualElement rtvElement;<span class="comment">//根部视觉部分</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        rtvElement = GetComponent&lt;UIDocument&gt;().rootVisualElement;</span><br><span class="line">        rtvElement.Query(<span class="string">&quot;CharacterDataPanel&quot;</span>).ForEach(OnSelectedMultipleElements);</span><br><span class="line">        rtvElement.Query&lt;Label&gt;(<span class="string">&quot;NameLabel&quot;</span>).ForEach(OnSelectLabelElements);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnSelectLabelElements</span>(<span class="params">Label obj</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        obj.style.color = Color.red;</span><br><span class="line">        obj.text = <span class="string">&quot;冒险家&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnSelectedMultipleElements</span>(<span class="params">VisualElement obj</span>)</span></span><br><span class="line">    &#123;<span class="comment">//设定背景色为黄色</span></span><br><span class="line">        obj.style.backgroundColor = Color.yellow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="查找单个元素"><a href="#查找单个元素" class="headerlink" title="查找单个元素"></a>查找单个元素</h3><p>首先查找到索引1的个体,然后再通过q()单项设置</p>
-<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PartyDataScreen</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">SerializeField</span>] Texture2D cat;</span><br><span class="line">    [<span class="meta">SerializeField</span>] <span class="built_in">string</span> catName;</span><br><span class="line">    VisualElement rtvElement;<span class="comment">//根部视觉部分</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        rtvElement = GetComponent&lt;UIDocument&gt;().rootVisualElement;</span><br><span class="line">        <span class="keyword">var</span> secondDataPanel = rtvElement.Query(<span class="string">&quot;CharacterDataPanel&quot;</span>).AtIndex(<span class="number">1</span>);</span><br><span class="line">        secondDataPanel.Q&lt;Label&gt;().text = catName;</span><br><span class="line">        secondDataPanel.Q(<span class="string">&quot;Avatar&quot;</span>).style.backgroundImage = cat;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
     </div>
 
     
@@ -410,21 +374,21 @@
 
           <div class="post-tags">
               <a href="/Blog/tags/unity/" rel="tag"><i class="fa fa-tag"></i> unity</a>
-              <a href="/Blog/tags/UIToolkit/" rel="tag"><i class="fa fa-tag"></i> UIToolkit</a>
+              <a href="/Blog/tags/Addressables/" rel="tag"><i class="fa fa-tag"></i> Addressables</a>
+              <a href="/Blog/tags/AB%E5%8C%85/" rel="tag"><i class="fa fa-tag"></i> AB包</a>
+              <a href="/Blog/tags/%E7%83%AD%E6%9B%B4%E6%96%B0/" rel="tag"><i class="fa fa-tag"></i> 热更新</a>
+              <a href="/Blog/tags/AssetBundle/" rel="tag"><i class="fa fa-tag"></i> AssetBundle</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/Blog/2022/11/18/unity%E8%84%9A%E6%9C%AC%E6%A8%A1%E6%9D%BF/" rel="prev" title="unity脚本模板">
-                  <i class="fa fa-chevron-left"></i> unity脚本模板
+                <a href="/Blog/2022/11/24/lua%E8%AF%AD%E6%B3%95/" rel="prev" title="lua语法">
+                  <i class="fa fa-chevron-left"></i> lua语法
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/Blog/2022/11/19/unity%E6%A8%A1%E5%9E%8B%E6%8D%A2%E8%A3%85/" rel="next" title="unity模型换装">
-                  unity模型换装 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -436,7 +400,6 @@
 
 
 
-    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -499,7 +462,7 @@ darkmode.showWidget();
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Niaoyu00","repo":"Gitalks-Repo","client_id":"10947b0e111d05bdb5ab","client_secret":"389f8db64c7a84288bb738035f02dcb8f94180c9","admin_user":"Niaoyu00","distraction_free_mode":true,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"f4634f5b9b0b99a26185ab2e3f279d40"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Niaoyu00","repo":"Gitalks-Repo","client_id":"10947b0e111d05bdb5ab","client_secret":"389f8db64c7a84288bb738035f02dcb8f94180c9","admin_user":"Niaoyu00","distraction_free_mode":true,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"2ecf2b6c39cec669adb5c52266075afc"}</script>
 <script src="/Blog/js/third-party/comments/gitalk.js"></script>
 
 </body>

@@ -2827,56 +2827,6 @@
       </tags>
   </entry>
   <entry>
-    <title>UIToolKit</title>
-    <url>/Blog/2022/11/19/UIToolKit/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><blockquote class="blockquote-center">
-<p>目前的UI Toolkit比较适合做画面覆盖ui </p>
-
-</blockquote>
-
-<p>暂时的缺陷如下:</p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221119130244980.png" alt="image-20221119130244980"></p>
-<h2 id="创建UIBuilder"><a href="#创建UIBuilder" class="headerlink" title="创建UIBuilder"></a>创建UIBuilder</h2><h3 id="第一种-直接在window中创建"><a href="#第一种-直接在window中创建" class="headerlink" title="第一种,直接在window中创建"></a>第一种,直接在window中创建</h3><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221119135543774.png" alt="image-20221119135543774"></p>
-<h3 id="第二种资产文件夹下创建UI-document"><a href="#第二种资产文件夹下创建UI-document" class="headerlink" title="第二种资产文件夹下创建UI document"></a>第二种资产文件夹下创建UI document</h3><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221119140813450.png" alt="image-20221119140813450"></p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221119140743326.png" alt="image-20221119140743326"></p>
-<p>打开后就是一样的画面,并且带着根节点</p>
-<p>按住ctrl+alt+左键可以移动窗口(可能鼠标中键也行,但是今天我忘了带鼠标)</p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221119141125755.png" alt="image-20221119141125755"></p>
-<h3 id="画布设置"><a href="#画布设置" class="headerlink" title="画布设置"></a>画布设置</h3><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221119141237141.png" alt="image-20221119141237141"></p>
-<p>不过我们不使用这个功能,手动设定窗口宽高1920*1080.</p>
-<h2 id="制作画面"><a href="#制作画面" class="headerlink" title="制作画面"></a>制作画面</h2><p>画布已经创建好,现在开始做画面吧!效果图:</p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123162036048.png" alt="image-20221123162036048"></p>
-<p>这方面就不细说了,类似安卓的前端页面,也类似web前端的操作方式,值得一提的是这里也有xml代码</p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123162532523.png" alt="image-20221123162532523"></p>
-<h4 id="创建uss-类似css"><a href="#创建uss-类似css" class="headerlink" title="创建uss(类似css)"></a>创建uss(类似css)</h4><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123163048406.png" alt="image-20221123163048406"></p>
-<p>红色框内去掉<code>.</code>,添加<strong>Label</strong>,选中Label即可对所有文本的样式进行编辑.</p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123163219110.png" alt="image-20221123163219110"></p>
-<h2 id="在游戏内显示"><a href="#在游戏内显示" class="headerlink" title="在游戏内显示"></a>在游戏内显示</h2><p>场景内右键创建UIdocument,就会出现一个搭载ui Document脚本的对象</p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123163407846.png" alt="image-20221123163407846"></p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123163506651.png" alt="image-20221123163506651"></p>
-<p>此处可以选展示的页面</p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123163533876.png" alt="image-20221123163533876"></p>
-<h3 id="空格显示-x2F-隐藏画面"><a href="#空格显示-x2F-隐藏画面" class="headerlink" title="空格显示&#x2F;隐藏画面"></a>空格显示&#x2F;隐藏画面</h3><p>新建脚本PartyDataScreen.cs附加到该对象上.</p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123163622836.png" alt="image-20221123163622836"></p>
-<p>getcomponent获取<strong>uidocument</strong>,然后获取<strong>rootVisualElement</strong>根视觉元素,判断根视觉元素的样式是否为flex,来展示&#x2F;隐藏画面.</p>
-<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PartyDataScreen</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    VisualElement rootvisualElement;<span class="comment">//根部视觉部分</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        rootvisualElement = GetComponent&lt;UIDocument&gt;().rootVisualElement;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (Input.GetKeyDown(KeyCode.Space))</span><br><span class="line">        &#123;</span><br><span class="line">            rootvisualElement.style.display =</span><br><span class="line">            rootvisualElement.style.display == DisplayStyle.Flex ?</span><br><span class="line">            DisplayStyle.None :</span><br><span class="line">            DisplayStyle.Flex;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="查找多个元素进行操作-批量操作"><a href="#查找多个元素进行操作-批量操作" class="headerlink" title="查找多个元素进行操作(批量操作)"></a>查找多个元素进行操作(批量操作)</h3><p><code> rtvElement.Query()</code>函数可以对多个元素进行操作</p>
-<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PartyDataScreen</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    VisualElement rtvElement;<span class="comment">//根部视觉部分</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        rtvElement = GetComponent&lt;UIDocument&gt;().rootVisualElement;</span><br><span class="line">        rtvElement.Query(<span class="string">&quot;CharacterDataPanel&quot;</span>).ForEach(OnSelectedMultipleElements);</span><br><span class="line">        rtvElement.Query&lt;Label&gt;(<span class="string">&quot;NameLabel&quot;</span>).ForEach(OnSelectLabelElements);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnSelectLabelElements</span>(<span class="params">Label obj</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        obj.style.color = Color.red;</span><br><span class="line">        obj.text = <span class="string">&quot;冒险家&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnSelectedMultipleElements</span>(<span class="params">VisualElement obj</span>)</span></span><br><span class="line">    &#123;<span class="comment">//设定背景色为黄色</span></span><br><span class="line">        obj.style.backgroundColor = Color.yellow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="查找单个元素"><a href="#查找单个元素" class="headerlink" title="查找单个元素"></a>查找单个元素</h3><p>首先查找到索引1的个体,然后再通过q()单项设置</p>
-<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PartyDataScreen</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">SerializeField</span>] Texture2D cat;</span><br><span class="line">    [<span class="meta">SerializeField</span>] <span class="built_in">string</span> catName;</span><br><span class="line">    VisualElement rtvElement;<span class="comment">//根部视觉部分</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        rtvElement = GetComponent&lt;UIDocument&gt;().rootVisualElement;</span><br><span class="line">        <span class="keyword">var</span> secondDataPanel = rtvElement.Query(<span class="string">&quot;CharacterDataPanel&quot;</span>).AtIndex(<span class="number">1</span>);</span><br><span class="line">        secondDataPanel.Q&lt;Label&gt;().text = catName;</span><br><span class="line">        secondDataPanel.Q(<span class="string">&quot;Avatar&quot;</span>).style.backgroundImage = cat;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>unity</category>
-      </categories>
-      <tags>
-        <tag>unity</tag>
-        <tag>UIToolkit</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>unity模型换装</title>
     <url>/Blog/2022/11/19/unity%E6%A8%A1%E5%9E%8B%E6%8D%A2%E8%A3%85/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><p>开始换装之前,首先需要了解一些概念.</p>
@@ -3240,9 +3190,129 @@
       </tags>
   </entry>
   <entry>
-    <title>Addressables</title>
-    <url>/Blog/2022/11/25/Addressables/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><h2 id="什么是Addressables"><a href="#什么是Addressables" class="headerlink" title="什么是Addressables"></a>什么是Addressables</h2>]]></content>
+    <title>UIToolKit开发arpg游戏</title>
+    <url>/Blog/2022/11/19/UIToolKit%E5%BC%80%E5%8F%91arpg%E6%B8%B8%E6%88%8F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><blockquote class="blockquote-center">
+<p>目前的UI Toolkit比较适合做画面覆盖ui </p>
+
+</blockquote>
+
+<p>暂时的缺陷如下:</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221119130244980.png" alt="image-20221119130244980"></p>
+<blockquote>
+<p>教程来自b站:</p>
+<p><a src="https://space.bilibili.com/27164588">阿严_独立游戏开发</a></p>
+<p>本篇是笔记.</p>
+</blockquote>
+<h2 id="创建UIBuilder"><a href="#创建UIBuilder" class="headerlink" title="创建UIBuilder"></a>创建UIBuilder</h2><h3 id="第一种-直接在window中创建"><a href="#第一种-直接在window中创建" class="headerlink" title="第一种,直接在window中创建"></a>第一种,直接在window中创建</h3><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221119135543774.png" alt="image-20221119135543774"></p>
+<h3 id="第二种资产文件夹下创建UI-document"><a href="#第二种资产文件夹下创建UI-document" class="headerlink" title="第二种资产文件夹下创建UI document"></a>第二种资产文件夹下创建UI document</h3><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221119140813450.png" alt="image-20221119140813450"></p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221119140743326.png" alt="image-20221119140743326"></p>
+<p>打开后就是一样的画面,并且带着根节点</p>
+<p>按住ctrl+alt+左键可以移动窗口(可能鼠标中键也行,但是今天我忘了带鼠标)</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221119141125755.png" alt="image-20221119141125755"></p>
+<h3 id="画布设置"><a href="#画布设置" class="headerlink" title="画布设置"></a>画布设置</h3><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221119141237141.png" alt="image-20221119141237141"></p>
+<p>不过我们不使用这个功能,手动设定窗口宽高1920*1080.</p>
+<hr>
+<h2 id="制作画面"><a href="#制作画面" class="headerlink" title="制作画面"></a>制作画面</h2><p>画布已经创建好,现在开始做画面吧!效果图:</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123162036048.png" alt="image-20221123162036048"></p>
+<p>这方面就不细说了,类似安卓的前端页面,也类似web前端的操作方式,值得一提的是这里也有xml代码</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123162532523.png" alt="image-20221123162532523"></p>
+<h4 id="创建uss-类似css"><a href="#创建uss-类似css" class="headerlink" title="创建uss(类似css)"></a>创建uss(类似css)</h4><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123163048406.png" alt="image-20221123163048406"></p>
+<p>红色框内去掉<code>.</code>,添加<strong>Label</strong>,选中Label即可对所有文本的样式进行编辑.</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123163219110.png" alt="image-20221123163219110"></p>
+<hr>
+<h2 id="在游戏内显示"><a href="#在游戏内显示" class="headerlink" title="在游戏内显示"></a>在游戏内显示</h2><p>场景内右键创建UIdocument,就会出现一个搭载ui Document脚本的对象</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123163407846.png" alt="image-20221123163407846"></p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123163506651.png" alt="image-20221123163506651"></p>
+<p>此处可以选展示的页面</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123163533876.png" alt="image-20221123163533876"></p>
+<h3 id="空格显示-x2F-隐藏画面"><a href="#空格显示-x2F-隐藏画面" class="headerlink" title="空格显示&#x2F;隐藏画面"></a>空格显示&#x2F;隐藏画面</h3><p>新建脚本PartyDataScreen.cs附加到该对象上.</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221123163622836.png" alt="image-20221123163622836"></p>
+<p>getcomponent获取<strong>uidocument</strong>,然后获取<strong>rootVisualElement</strong>根视觉元素,根据根视觉元素的样式是否为flex,来展示&#x2F;隐藏画面.</p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PartyDataScreen</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    VisualElement rootvisualElement;<span class="comment">//根部视觉部分</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        rootvisualElement = GetComponent&lt;UIDocument&gt;().rootVisualElement;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (Input.GetKeyDown(KeyCode.Space))</span><br><span class="line">        &#123;</span><br><span class="line">            rootvisualElement.style.display =</span><br><span class="line">            rootvisualElement.style.display == DisplayStyle.Flex ?</span><br><span class="line">            DisplayStyle.None :</span><br><span class="line">            DisplayStyle.Flex;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查找多个元素进行操作-批量操作"><a href="#查找多个元素进行操作-批量操作" class="headerlink" title="查找多个元素进行操作(批量操作)"></a>查找多个元素进行操作(批量操作)</h3><p><code> rtvElement.Query()</code>函数可以对多个元素进行操作</p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PartyDataScreen</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    VisualElement rtvElement;<span class="comment">//根部视觉部分</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        rtvElement = GetComponent&lt;UIDocument&gt;().rootVisualElement;</span><br><span class="line">        rtvElement.Query(<span class="string">&quot;CharacterDataPanel&quot;</span>).ForEach(OnSelectedMultipleElements);</span><br><span class="line">        rtvElement.Query&lt;Label&gt;(<span class="string">&quot;NameLabel&quot;</span>).ForEach(OnSelectLabelElements);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnSelectLabelElements</span>(<span class="params">Label obj</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        obj.style.color = Color.red;</span><br><span class="line">        obj.text = <span class="string">&quot;冒险家&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnSelectedMultipleElements</span>(<span class="params">VisualElement obj</span>)</span></span><br><span class="line">    &#123;<span class="comment">//设定背景色为黄色</span></span><br><span class="line">        obj.style.backgroundColor = Color.yellow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="查找单个元素"><a href="#查找单个元素" class="headerlink" title="查找单个元素"></a>查找单个元素</h3><p>首先查找到索引1的个体,然后再通过q()单项设置</p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PartyDataScreen</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">SerializeField</span>] Texture2D cat;</span><br><span class="line">    [<span class="meta">SerializeField</span>] <span class="built_in">string</span> catName;</span><br><span class="line">    VisualElement rtvElement;<span class="comment">//根部视觉部分</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Awake</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        rtvElement = GetComponent&lt;UIDocument&gt;().rootVisualElement;</span><br><span class="line">        <span class="keyword">var</span> secondDataPanel = rtvElement.Query(<span class="string">&quot;CharacterDataPanel&quot;</span>).AtIndex(<span class="number">1</span>);</span><br><span class="line">        secondDataPanel.Q&lt;Label&gt;().text = catName;</span><br><span class="line">        secondDataPanel.Q(<span class="string">&quot;Avatar&quot;</span>).style.backgroundImage = cat;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>脚本中拖入图片素材,还有输入名字</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221128145220485.png" alt="image-20221128145220485"></p>
+<h4 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h4><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221128145309482.png" alt="image-20221128145309482"></p>
+<p>我们可以看到第二个框内部已更换为新的.</p>
+<hr>
+<h2 id="数据独立性"><a href="#数据独立性" class="headerlink" title="数据独立性"></a>数据独立性</h2><p>为了以后更好地维护和管理数据,我们有必要设计一个专门的类存放并处理这些数据,这也是从数据独立性方面来考虑.将游戏的逻辑和数据分开.</p>
+<blockquote>
+<p> 思路:创建一个继承于<strong>ScriptableObject</strong>的角色数据类:<strong>CharacterData</strong>,再创建四个实例分别存储四个角色数据.</p>
+<p>创建队伍数据类,管理角色数据</p>
+</blockquote>
+<h3 id="角色属性类"><a href="#角色属性类" class="headerlink" title="角色属性类"></a>角色属性类</h3><p>创建白板,角色属性类<strong>CharacterStats.cs</strong></p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line">[<span class="meta">System.Serializable</span>]<span class="comment">//可序列化</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CharacterStats</span></span><br><span class="line">&#123;<span class="comment">//角色属性,暂时用int</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> initiative;<span class="comment">//主动权\速度</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> maxHp;<span class="comment">//血量</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> manMp;<span class="comment">//魔法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> attack;<span class="comment">//攻击力</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> defense;<span class="comment">//防御力</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建角色数据类"><a href="#创建角色数据类" class="headerlink" title="创建角色数据类"></a>创建角色数据类</h3><p>创建角色数据类<strong>CharacterData.cs</strong></p>
+<p>详细可以看代码注释</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221128150254092.png" alt="image-20221128150254092"></p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line">[<span class="meta">CreateAssetMenu(menuName = (<span class="string">&quot;Data/CharacterData&quot;</span>), fileName = (<span class="string">&quot;CharacterData_&quot;</span>))</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CharacterData</span> : <span class="title">ScriptableObject</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">SerializeField</span>] Texture2D characterAvatarImage;<span class="comment">//角色头像</span></span><br><span class="line">    [<span class="meta">SerializeField</span>] <span class="built_in">string</span> characterName;<span class="comment">//角色名</span></span><br><span class="line">    [<span class="meta">SerializeField</span>] <span class="built_in">int</span> characterStartLevel = <span class="number">1</span>;<span class="comment">//角色初始等级</span></span><br><span class="line">    [<span class="meta">SerializeField</span>] CharacterStats characterStats;<span class="comment">//角色属性类</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//公有属性,防止数据被修改</span></span><br><span class="line">    <span class="keyword">public</span> Texture2D CharacterAvatarImage =&gt; characterAvatarImage;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> CharacterName =&gt; characterName;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> CharacterStartLevel1 =&gt; characterStartLevel;</span><br><span class="line">    <span class="keyword">public</span> CharacterStats ChStats =&gt; characterStats;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="资源文件夹中创建CharacterData实例"><a href="#资源文件夹中创建CharacterData实例" class="headerlink" title="资源文件夹中创建CharacterData实例"></a>资源文件夹中创建CharacterData实例</h4><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221128151552868.png" alt="image-20221128151552868"></p>
+<h4 id="所有角色实例"><a href="#所有角色实例" class="headerlink" title="所有角色实例"></a>所有角色实例</h4><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221128152033900.png" alt="image-20221128152033900"></p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221128152130857.png" alt="image-20221128152130857"></p>
+<h3 id="队伍数据类"><a href="#队伍数据类" class="headerlink" title="队伍数据类"></a>队伍数据类</h3><p>创建队伍数据类<strong>PartyData.cs</strong></p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 队伍数据类</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">[<span class="meta">CreateAssetMenu(menuName = (<span class="string">&quot;Data/PartyData&quot;</span>), fileName = (<span class="string">&quot;PartyData_&quot;</span>))</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PartyData</span> : <span class="title">ScriptableObject</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">SerializeField</span>] List&lt;CharacterData&gt; characterDataList;</span><br><span class="line">    <span class="keyword">public</span> List&lt;CharacterData&gt; CharacterDataList =&gt; characterDataList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>拖入角色实例,这样队伍里增加减少或角色更加方便.</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221128153719899.png" alt="image-20221128153719899"></p>
+<p>这样,就可以通过序列化PartyData对象获取整个队伍的数据.</p>
+<hr>
+<h2 id="CustomControls自定义控件"><a href="#CustomControls自定义控件" class="headerlink" title="CustomControls自定义控件"></a>CustomControls自定义控件</h2><blockquote>
+<p>CustomControls是ui Toolkit的一个高级功能,我们可以通过c#脚本创建拥有自定义逻辑的复杂ui元素,自定义控件的创建从相应的c#类开始</p>
+</blockquote>
+<h3 id="实时生成角色数据面板"><a href="#实时生成角色数据面板" class="headerlink" title="实时生成角色数据面板"></a>实时生成角色数据面板</h3><p>创建<strong>CharacterDataPanel</strong>角色数据面板类</p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine.UIElements;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CharacterDataPanel</span> : <span class="title">VisualElement</span></span><br><span class="line">&#123;<span class="comment">//继承VisualElement</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 使自定义控件曝露到uxml文件中,让它可以像其他默认UI元素一样,在UI Builder里使用.</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;para&gt;</span>|模板,不需要特地记<span class="doctag">&lt;/para&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">new</span> <span class="keyword">class</span> <span class="title">UxmlFactory</span> : <span class="title">UxmlFactory</span>&lt;<span class="title">CharacterDataPanel</span>&gt; &#123; &#125;</span><br><span class="line">    <span class="comment">//声明构造函数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CharacterDataPanel</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>保存后打开UI Builder,在下面project中可以找到该控件</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221128162642351.png" alt="image-20221128162642351"></p>
+<h3 id="给自定义控件添加内容"><a href="#给自定义控件添加内容" class="headerlink" title="给自定义控件添加内容"></a>给自定义控件添加内容</h3><p>使用UI Toolkit的Template模板功能.</p>
+<h4 id="创建模板"><a href="#创建模板" class="headerlink" title="创建模板"></a>创建模板</h4><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221128163144657.png" alt="image-20221128163144657"></p>
+<p>将模板存放到<code>Assets\Data\UIDocuments\Resources</code>中,注意<code>Resources</code>文件夹创建的时候不可以有任何大小写拼写错误.</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221128163426882.png" alt="image-20221128163426882"></p>
+<p>控件显示如下图</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221128163656419.png" alt="image-20221128163656419"></p>
+<p>显示成这个样子是因为创建的控件自动多了一个容器</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221128163752772.png" alt="image-20221128163752772"></p>
+<p>我们在存放目录这,右键从UIBuilder打开模板的uxml文件</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221128163913210.png" alt="image-20221128163913210"></p>
+<p>重置basis属性,grow设为1</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221128165002650.png" alt="image-20221128165002650"></p>
+<p>然后保存后回到主页面,将basis设为25%</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221128165032262.png" alt="image-20221128165032262"></p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221128165103409.png" alt="image-20221128165103409"></p>
+<p>全部替换掉,就得到了原来的样子</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221128165228905.png" alt="image-20221128165228905"></p>
+<blockquote>
+<p>现在,我们有了数据面板的模板,那么接下来实现用c#脚本生成模板</p>
+</blockquote>
+<p>打开<strong>CharacterDataPanel.cs</strong></p>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> UnityEngine.UIElements;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CharacterDataPanel</span> : <span class="title">VisualElement</span></span><br><span class="line">&#123;<span class="comment">//继承VisualElement</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">readonly</span> TemplateContainer templateContainer;</span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 使自定义控件曝露到uxml文件中,让它可以像其他默认UI元素一样,在UI Builder里使用.</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;para&gt;</span>|模板,不需要特地记<span class="doctag">&lt;/para&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">new</span> <span class="keyword">class</span> <span class="title">UxmlFactory</span> : <span class="title">UxmlFactory</span>&lt;<span class="title">CharacterDataPanel</span>&gt; &#123; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//声明构造函数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CharacterDataPanel</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//加载模板资产文件,这个模板是uxml文件,Instantiate:实例化ui</span></span><br><span class="line">        templateContainer = Resources.Load&lt;VisualTreeAsset&gt;(<span class="string">&quot;CharacterDataPanel&quot;</span>).Instantiate();</span><br><span class="line">        templateContainer.style.flexGrow = <span class="number">1.0f</span>;<span class="comment">//设grow为1</span></span><br><span class="line">        hierarchy.Add(templateContainer);<span class="comment">//添加到游戏操作界面</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>unity</category>
+      </categories>
+      <tags>
+        <tag>unity</tag>
+        <tag>UIToolkit</tag>
+        <tag>arpg</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>unity热更新</title>
+    <url>/Blog/2022/11/25/unity%E7%83%AD%E6%9B%B4%E6%96%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><blockquote class="blockquote-center">
+<p>尝试了解unity热更新时，总会看到ab包、Addressables、AssetBundle、xlua等关键字，但是没深入了解的话很难搞清楚这几个是啥关系。<br>今天我就尝试去缕一缕！</p>
+
+</blockquote>]]></content>
       <categories>
         <category>unity</category>
       </categories>
@@ -3250,6 +3320,8 @@
         <tag>unity</tag>
         <tag>Addressables</tag>
         <tag>AB包</tag>
+        <tag>热更新</tag>
+        <tag>AssetBundle</tag>
       </tags>
   </entry>
 </search>
