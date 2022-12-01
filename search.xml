@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>花了两天学习了像素画</title>
+    <url>/Blog/2022/12/01/%E8%8A%B1%E4%BA%86%E4%B8%A4%E5%A4%A9%E5%AD%A6%E4%B9%A0%E4%BA%86%E5%83%8F%E7%B4%A0%E7%94%BB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><p>前两天偶然刷到像素画的教程，抱着试一试的态度，边看边练习了一下。</p>
+<p>链接:只要看到11p就行</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMWhKNDExYzczaT9wPTEmdmRfc291cmNlPTdhYTViY2I1YTdjMzRiZWNiZjI2YjFkNzEyMjc5YmE4">https://www.bilibili.com/video/BV1hJ411c73i?p=1&amp;vd_source=7aa5bcb5a7c34becbf26b1d712279ba8<i class="fa fa-external-link-alt"></i></span></p>
+<ul>
+<li>我使用的软件是Aseprite，个人认为比ps好用10000倍！</li>
+<li>Aseprite快捷键少，并且没有那么多用不着的功能（我个人认为仅像素画来说使用Photoshop有点臃肿），且不会闪退。</li>
+</ul>
+<p>花了点时间熟悉快捷键操作（这步很重要），用快捷键是效率的基础。只要根据up的节奏一起做一遍差不多就会了，比较费时间的部分是最后画图，处理细节的地方，而这部分就是像素画的精髓。先晒一下我的成果~</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/2233.gif" alt="2233"></p>
+<p>这个表情包花了我差不多两天才完成，效果我还挺满意的<code>\^o^/</code>,最花时间的地方在于各种细节.</p>
+<p>比如光照我花了好多时间,一直在微调,如果有美术基础的童鞋应该会比较容易上手,我是一边调一边在看效果,怎么说呢感觉全靠个人审美在支撑着反复修改.当然作为第一个像素画临摹作品肯定有很多不足,不过在我这是过关了哈哈哈,下午又画了一张以我头像为摹本的像素画,效果不太理想.总结出问题是我初始定的像素太低,导致脸上很多细节没办法画出来,不过像素画的精华就是低像素抽象化表示复杂的元素,画成这样只能说明我功夫不到家,以后有时间再重新画吧.渣作在下面:</p>
+<p>原图</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221201184004797.png" alt="image-20221201184004797"></p>
+<p>像素图</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/wukong.png" alt="wukong"></p>
+<p>重新看一眼发现眼镜画得太圆了,我用椭圆工具直接拉得图没有特地修改过,画的时候还真的没注意到.</p>
+]]></content>
+      <categories>
+        <category>美术</category>
+      </categories>
+      <tags>
+        <tag>像素画</tag>
+        <tag>美术</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>unity热更新</title>
     <url>/Blog/2022/11/25/unity%E7%83%AD%E6%9B%B4%E6%96%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><blockquote class="blockquote-center">
