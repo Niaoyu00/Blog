@@ -54,6 +54,7 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><blockquote>
 <p>lua的注释符号用–</p>
 </blockquote>
+<p>Lua测试链接:<span class="exturl" data-url="aHR0cHM6Ly93aWtpLmx1YXRvcy5jb20vX3N0YXRpYy9sdWF0b3MtZW11bGF0b3IvbHVhLmh0bWw=">https://wiki.luatos.com/_static/luatos-emulator/lua.html<i class="fa fa-external-link-alt"></i></span></p>
 <h2 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h2><p>直接a&#x3D;1为全局声明,可在别的文件使用.</p>
 <p>要想限制就在变量前加local,<code>local a=1</code></p>
 <h2 id="多重赋值"><a href="#多重赋值" class="headerlink" title="多重赋值"></a>多重赋值</h2><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">a,b=<span class="number">1</span>,<span class="number">233</span></span><br><span class="line"><span class="built_in">print</span>(a,b)</span><br><span class="line"><span class="comment">--------运行结果</span></span><br><span class="line">[<span class="number">13</span>:<span class="number">32</span>:<span class="number">39</span>] <span class="number">1</span>	<span class="number">233</span></span><br></pre></td></tr></table></figure>
