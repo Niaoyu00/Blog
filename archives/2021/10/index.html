@@ -830,6 +830,71 @@ button {
     backdrop-filter: saturate(200%) blur(20px);
   }
 }
+.cover-wrapper #parallax-window {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+.parallax-mirror {
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-name: fadeIn;
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --color-mode: 'dark';
@@ -2273,7 +2338,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/Blog/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1670950232147),
+    lastupdate: new Date(1670953798628),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2627,7 +2692,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       <div class="cover-wrapper  dock" id='half'>
         
-  <div class='cover-bg lazyload placeholder' data-bg="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/45.jpg"></div>
+  <div id="parallax-window"></div>
 
 <div class='cover-body'>
   <div class='top'>
@@ -2754,6 +2819,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
+          
+          <a class='avatar' href='/'><img src='https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg">
+            <meta itemprop="name" content="Zhy">
+            <meta itemprop="url" content="/">
+          </span>
+        
         <time itemprop="dateCreated datePublished" datetime="2021-10-30T16:57:19+08:00">2021-10-30</time>
         
           <span class="dot"></span>
@@ -2820,6 +2893,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
+          
+          <a class='avatar' href='/'><img src='https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg">
+            <meta itemprop="name" content="Zhy">
+            <meta itemprop="url" content="/">
+          </span>
+        
         <time itemprop="dateCreated datePublished" datetime="2021-10-27T16:29:31+08:00">2021-10-27</time>
         
           <span class="dot"></span>
@@ -2881,6 +2962,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class='meta-v3' line_style='solid'>
       <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg">
+            <meta itemprop="name" content="Zhy">
+            <meta itemprop="url" content="/">
+          </span>
         
         <time itemprop="dateCreated datePublished" datetime="2021-10-25T12:36:18+08:00">2021-10-25</time>
         
@@ -2944,6 +3033,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class='meta-v3' line_style='solid'>
       <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg">
+            <meta itemprop="name" content="Zhy">
+            <meta itemprop="url" content="/">
+          </span>
         
         <time itemprop="dateCreated datePublished" datetime="2021-10-15T23:20:31+08:00">2021-10-15</time>
         
@@ -4056,6 +4153,55 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
+
+
+  <script>
+  let imgs = ["https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/26.jpg"];
+  let index = 0;
+  let IntervalParallax = null;
+
+  function parallax(){
+    let ParallaxWindow = document.querySelector("#parallax-window");
+    
+      ParallaxWindow = document.querySelector("html");
+    
+    Parallax.window = ParallaxWindow;
+    Parallax.options.fade = 1500;
+    Parallax.cache = 1;
+    next_parallax();
+    Parallax.init();
+    if (imgs.length>1) {
+      IntervalParallax = setInterval(function () {
+        next_parallax();
+      }, '10000');
+    }
+  }
+
+  function next_parallax() {
+    if (typeof Parallax == "undefined") {
+      return
+    }
+    
+    if (imgs.length>=1) {
+      Parallax.options.src = imgs[index % imgs.length];
+      Parallax.start();
+      index++;
+      if (Parallax.cache) {
+        fetch(imgs[index % imgs.length] +"?t=" + new Date().getTime());
+        if (index == imgs.length) {
+          Parallax.cache = 0;
+        }
+      }
+    }
+  }
+  var runningOnBrowser = typeof window !== "undefined";
+  var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+  if (!isBot) {
+    volantis.js('/Blog/js/plugins/parallax.js').then(()=>{
+      parallax()
+    })
+  }
+</script>
 
 
 

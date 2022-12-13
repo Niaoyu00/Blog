@@ -830,6 +830,71 @@ button {
     backdrop-filter: saturate(200%) blur(20px);
   }
 }
+.cover-wrapper #parallax-window {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+.parallax-mirror {
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-name: fadeIn;
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --color-mode: 'dark';
@@ -2273,7 +2338,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/Blog/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1670950232147),
+    lastupdate: new Date(1670953798628),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2337,7 +2402,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2624,6 +2689,75 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div id="l_body">
       <div id="l_cover">
   
+    
+      <div class="cover-wrapper  dock" id='half'>
+        
+  <div id="parallax-window"></div>
+
+<div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">Zhy</p>
+    
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="/Blog/"
+              
+              
+              active-action="action-Blog">
+              <i class='fa-solid fa-rss fa-fw'></i><p>博客</p>
+            </a>
+          
+            <a href="/Blog/category/"
+              
+              
+              active-action="action-Blogcategory">
+              <i class='fa-solid fa-folder-open fa-fw'></i><p>分类</p>
+            </a>
+          
+            <a href="/Blog/tag/"
+              
+              
+              active-action="action-Blogtag">
+              <i class='fa-solid fa-tags fa-fw'></i><p>标签</p>
+            </a>
+          
+            <a href="/Blog/archives/"
+              
+              
+              active-action="action-Blogarchives">
+              <i class='fa-solid fa-archive fa-fw'></i><p>归档</p>
+            </a>
+          
+            <a href="/Blog/friends/"
+              
+              
+              active-action="action-Blogfriends">
+              <i class='fa-solid fa-link fa-fw'></i><p>友链</p>
+            </a>
+          
+            <a href="/Blog/about/"
+              
+              
+              active-action="action-Blogabout">
+              <i class='fa-solid fa-info-circle fa-fw'></i><p>关于</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    
+  
 </div>
 
       <div id="safearea">
@@ -2701,6 +2835,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
+          
+          <a class='avatar' href='/'><img src='https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg">
+            <meta itemprop="name" content="Zhy">
+            <meta itemprop="url" content="/">
+          </span>
+        
         <time itemprop="dateCreated datePublished" datetime="2022-09-23T17:05:10+08:00">2022-09-23</time>
         
           <span class="dot"></span>
@@ -2765,6 +2907,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
+          
+          <a class='avatar' href='/'><img src='https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg">
+            <meta itemprop="name" content="Zhy">
+            <meta itemprop="url" content="/">
+          </span>
+        
         <time itemprop="dateCreated datePublished" datetime="2022-09-23T16:04:00+08:00">2022-09-23</time>
         
           <span class="dot"></span>
@@ -2828,6 +2978,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
+          
+          <a class='avatar' href='/'><img src='https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg">
+            <meta itemprop="name" content="Zhy">
+            <meta itemprop="url" content="/">
+          </span>
+        
         <time itemprop="dateCreated datePublished" datetime="2022-09-23T13:15:00+08:00">2022-09-23</time>
         
           <span class="dot"></span>
@@ -2889,6 +3047,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class='meta-v3' line_style='solid'>
       <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg">
+            <meta itemprop="name" content="Zhy">
+            <meta itemprop="url" content="/">
+          </span>
         
         <time itemprop="dateCreated datePublished" datetime="2022-09-21T17:50:20+08:00">2022-09-21</time>
         
@@ -2953,6 +3119,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class='meta-v3' line_style='solid'>
       <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg">
+            <meta itemprop="name" content="Zhy">
+            <meta itemprop="url" content="/">
+          </span>
         
         <time itemprop="dateCreated datePublished" datetime="2022-09-21T16:58:51+08:00">2022-09-21</time>
         
@@ -3021,6 +3195,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
+          
+          <a class='avatar' href='/'><img src='https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg">
+            <meta itemprop="name" content="Zhy">
+            <meta itemprop="url" content="/">
+          </span>
+        
         <time itemprop="dateCreated datePublished" datetime="2022-09-20T14:24:56+08:00">2022-09-20</time>
         
           <span class="dot"></span>
@@ -3084,6 +3266,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class='meta-v3' line_style='solid'>
       <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg">
+            <meta itemprop="name" content="Zhy">
+            <meta itemprop="url" content="/">
+          </span>
         
         <time itemprop="dateCreated datePublished" datetime="2022-09-15T15:32:56+08:00">2022-09-15</time>
         
@@ -3153,6 +3343,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
+          
+          <a class='avatar' href='/'><img src='https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg">
+            <meta itemprop="name" content="Zhy">
+            <meta itemprop="url" content="/">
+          </span>
+        
         <time itemprop="dateCreated datePublished" datetime="2022-09-14T17:27:07+08:00">2022-09-14</time>
         
           <span class="dot"></span>
@@ -3219,6 +3417,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class='meta-v3' line_style='solid'>
       <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg">
+            <meta itemprop="name" content="Zhy">
+            <meta itemprop="url" content="/">
+          </span>
         
         <time itemprop="dateCreated datePublished" datetime="2022-09-08T23:24:18+08:00">2022-09-08</time>
         
@@ -3294,6 +3500,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class='meta-v3' line_style='solid'>
       <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/Chongyun.jpg">
+            <meta itemprop="name" content="Zhy">
+            <meta itemprop="url" content="/">
+          </span>
         
         <time itemprop="dateCreated datePublished" datetime="2022-08-29T17:12:13+08:00">2022-08-29</time>
         
@@ -4422,6 +4636,55 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
+
+
+  <script>
+  let imgs = ["https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/26.jpg"];
+  let index = 0;
+  let IntervalParallax = null;
+
+  function parallax(){
+    let ParallaxWindow = document.querySelector("#parallax-window");
+    
+      ParallaxWindow = document.querySelector("html");
+    
+    Parallax.window = ParallaxWindow;
+    Parallax.options.fade = 1500;
+    Parallax.cache = 1;
+    next_parallax();
+    Parallax.init();
+    if (imgs.length>1) {
+      IntervalParallax = setInterval(function () {
+        next_parallax();
+      }, '10000');
+    }
+  }
+
+  function next_parallax() {
+    if (typeof Parallax == "undefined") {
+      return
+    }
+    
+    if (imgs.length>=1) {
+      Parallax.options.src = imgs[index % imgs.length];
+      Parallax.start();
+      index++;
+      if (Parallax.cache) {
+        fetch(imgs[index % imgs.length] +"?t=" + new Date().getTime());
+        if (index == imgs.length) {
+          Parallax.cache = 0;
+        }
+      }
+    }
+  }
+  var runningOnBrowser = typeof window !== "undefined";
+  var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+  if (!isBot) {
+    volantis.js('/Blog/js/plugins/parallax.js').then(()=>{
+      parallax()
+    })
+  }
+</script>
 
 
 
