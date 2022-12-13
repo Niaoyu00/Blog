@@ -939,7 +939,7 @@
 <p>接着就可以通过 <code>&#123;% meting ...%&#125;</code> 在文章中使用 MetingJS 播放器了：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 简单示例 (id, server, type)  --&gt;</span><br><span class="line">&#123;% meting &quot;60198&quot; &quot;netease&quot; &quot;playlist&quot; %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 进阶示例 --&gt;</span><br><span class="line">&#123;% meting &quot;60198&quot; &quot;netease&quot; &quot;playlist&quot; &quot;autoplay&quot; &quot;mutex:false&quot; &quot;listmaxheight:340px&quot; &quot;preload:none&quot; &quot;theme:#ad7a86&quot;%&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>有关 
-    <div id="aplayer-msLJLAlh" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-BpwIiFeZ" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="undefined" data-server="undefined" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div> 的选项列表如下:</strong></p>
 <table>
@@ -1261,8 +1261,8 @@
       </categories>
       <tags>
         <tag>Csharp</tag>
-        <tag>数据结构与算法</tag>
         <tag>栈</tag>
+        <tag>数据结构与算法</tag>
       </tags>
   </entry>
   <entry>
@@ -2879,7 +2879,7 @@
 <li>报告问题</li>
 <li>开放合并请求</li>
 <li>传播此文档</li>
-<li>直接和我联系 <a href="mailto:&#122;&#105;&#105;&#115;&#104;&#97;&#110;&#x65;&#100;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#122;&#105;&#105;&#115;&#104;&#97;&#110;&#x65;&#100;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a> 或 <a href="https://twitter.com/ziishaned"><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/ziishaned.svg" class="lazyload" data-srcset="https://raw.githubusercontent.com/Niaoyu00/pics/main/ziishaned.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Twitter URL"></a></li>
+<li>直接和我联系 <a href="mailto:&#122;&#x69;&#105;&#115;&#x68;&#x61;&#110;&#x65;&#100;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#109;">&#122;&#x69;&#105;&#115;&#x68;&#x61;&#110;&#x65;&#100;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#109;</a> 或 <a href="https://twitter.com/ziishaned"><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/ziishaned.svg" class="lazyload" data-srcset="https://raw.githubusercontent.com/Niaoyu00/pics/main/ziishaned.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Twitter URL"></a></li>
 </ul>
 <h2 id="许可证"><a href="#许可证" class="headerlink" title="许可证"></a>许可证</h2><p>MIT &amp;copy; <a href="https://twitter.com/ziishaned">Zeeshan Ahmad</a></p>
 ]]></content>
