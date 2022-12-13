@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>动作游戏制作</title>
+    <url>/Blog/2022/12/12/%E5%8A%A8%E4%BD%9C%E6%B8%B8%E6%88%8F%E5%88%B6%E4%BD%9C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><blockquote>
+<p>开个新坑,最近瓶颈期,我觉得需要多敲代码,让自己更熟悉unity.</p>
+</blockquote>
+<p>教程原链接:</p>
+<p><a href="https://www.udemy.com/course/project-little-adventurer-learn-to-create-a-3d-action-game/">https://www.udemy.com/course/project-little-adventurer-learn-to-create-a-3d-action-game/</a></p>
+<p>b站视频链接:</p>
+<p>【UNITY教程 | 学习使用高质量的游戏资产创建 3D 动作游戏（更新完毕）】<a href="https://www.bilibili.com/video/BV1B14y1E7SW?p=6&amp;vd_source=b702db14148b48ad87406aaf674e1744">https://www.bilibili.com/video/BV1B14y1E7SW?p=6&amp;vd_source=b702db14148b48ad87406aaf674e1744</a></p>
+<ul>
+<li>付费教程且看且珍惜,是生肉,但是勉强硬啃.</li>
+<li>下面内容是我边查资料,边尝试理解作者的操作意图,如有不对欢迎指出.</li>
+</ul>
+<h2 id="导入资源包"><a href="#导入资源包" class="headerlink" title="导入资源包"></a>导入资源包</h2><p>首先,项目设置里,设置渲染为线性渲染.以下内容为转载</p>
+<h3 id="线性渲染"><a href="#线性渲染" class="headerlink" title="线性渲染"></a>线性渲染</h3><h4 id="Linear-Rendering-和-Gamma-Rendering的区别"><a href="#Linear-Rendering-和-Gamma-Rendering的区别" class="headerlink" title="Linear Rendering 和 Gamma Rendering的区别"></a><strong>Linear Rendering 和 Gamma Rendering的区别</strong></h4><p>Linear Rendering就是在shader中所有计算会在线性空间下进行，Gamma Rendering就是在shader中不进行转换到线性空间下，直接计算。然就是计算方程式不同，也就意味例如光照表面会有不同的响应曲线和图片效果，表现不相同。</p>
+<p>1.Light Falloff</p>
+<p>光照表现一般受光源的距离和法线两个因素影响（在同等光强下）。首先当我们用Linear Rendering时，执行Gamma矫正将会使光照范围变大。第二种会使边缘模糊，分不清界限。这更准确的表现了表面光照强度下降。</p>
+<p><img src="https://img-blog.csdn.net/20160908105022555" alt="img"></p>
+<p>2.表面响应强度</p>
+<p>随着光强的增加，非线性方式计算的表面会更亮一些。这导致了光照在表面很多地方曝光过度，而且给场景模型一个褪色（变白色了）的感觉。当你用线性渲染时，表面颜色仍然随着光照强度线性增加的，这样就使表面材质和颜色更接近现实.</p>
+<p><img src="https://img-blog.csdn.net/20160908105612214" alt="img"></p>
+<p>3.混合</p>
+<p>混合是在帧缓冲区发生的，当使用Gamma Rendering，这表示颜色之间混合是在非线性空间下计算的。然而这是不正确的。</p>
+<p><img src="https://img-blog.csdn.net/20160908105705340" alt="img"></p>
+<p>上图是在Linear Space中混合结果，颜色之间过度不是很明显。</p>
+<p><img src="https://img-blog.csdn.net/20160908105734324" alt="img"></p>
+<p>上图是Gamma Space中混合结果，颜色交界处出现了明显的其它颜色，颜色更亮，出现褪色的现象。</p>
+<p>4.Mipmaps</p>
+<p>计算纹理Mipmap是种线性计算，需要对某个方形区域内像素取平均值，如果纹理存储在非线性空间，那么计算时也是在非线性空间里计算，这样就会得到错误的结果。正确的做法是先转换到线性空间在计算mipmap。</p>
+<p>5.Lightmapping</p>
+<p>切换linear 和gamma方式，需要重新烘焙相关的Lightmapping。</p>
+<blockquote>
+<p>关于渲染我了解的很少,具体资料可以参考:</p>
+<p>————————————————<br>版权声明：本文为CSDN博主「追风者t」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/k46023/article/details/52489363/">https://blog.csdn.net/k46023/article/details/52489363/</a></p>
+</blockquote>
+<hr>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221212180600417.png" alt="image-20221212180600417"></p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221212181110296.png" alt="image-20221212181110296"></p>
+]]></content>
+      <categories>
+        <category>unity</category>
+      </categories>
+      <tags>
+        <tag>unity</tag>
+        <tag>动作游戏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>花了两天学习了像素画</title>
     <url>/Blog/2022/12/01/%E8%8A%B1%E4%BA%86%E4%B8%A4%E5%A4%A9%E5%AD%A6%E4%B9%A0%E4%BA%86%E5%83%8F%E7%B4%A0%E7%94%BB/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><p>前两天偶然刷到像素画的教程，抱着试一试的态度，边看边练习了一下。</p>
@@ -33,10 +81,11 @@
   <entry>
     <title>unity热更新</title>
     <url>/Blog/2022/11/25/unity%E7%83%AD%E6%9B%B4%E6%96%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><blockquote class="blockquote-center">
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><blockquote>
 <p>尝试了解unity热更新时，总会看到ab包、Addressables、AssetBundle、xlua等关键字，但是没深入了解的话很难搞清楚这几个是啥关系。<br>今天我就尝试去缕一缕！</p>
-
-</blockquote>]]></content>
+</blockquote>
+<p>..待续</p>
+]]></content>
       <categories>
         <category>unity</category>
       </categories>
@@ -156,12 +205,12 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo文章内置标签</title>
-    <url>/Blog/2022/11/22/Hexo%E6%96%87%E7%AB%A0%E5%86%85%E7%BD%AE%E6%A0%87%E7%AD%BE/</url>
+    <title>Hexo-next文章内置标签</title>
+    <url>/Blog/2022/11/22/Hexo-next%E6%96%87%E7%AB%A0%E5%86%85%E7%BD%AE%E6%A0%87%E7%AD%BE/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><h2 id="文本居中引用"><a href="#文本居中引用" class="headerlink" title="文本居中引用"></a>文本居中引用</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 其中 class=&quot;blockquote-center&quot; 是必须的 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">blockquote</span> <span class="attr">class</span>=<span class="string">&quot;blockquote-center&quot;</span>&gt;</span>blah blah blah<span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 标签 方式，要求版本在0.4.5或以上 --&gt;</span></span><br><span class="line">&#123;% centerquote %&#125;blah blah blah&#123;% endcenterquote %&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 标签别名 --&gt;</span></span><br><span class="line">&#123;% cq %&#125; blah blah blah &#123;% endcq %&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="效果实例"><a href="#效果实例" class="headerlink" title="效果实例:"></a>效果实例:</h3><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221122235030538.png" alt="image-20221122235030538"></p>
-<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221122235042470.png" alt="image-20221122235042470"></p>
+<h3 id="效果实例"><a href="#效果实例" class="headerlink" title="效果实例:"></a>效果实例:</h3><p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221122235030538.png" class="lazyload" data-srcset="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221122235030538.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221122235030538"></p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221122235042470.png" class="lazyload" data-srcset="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221122235042470.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221122235042470"></p>
 <h2 id="突破容器宽度限制的图片"><a href="#突破容器宽度限制的图片" class="headerlink" title="突破容器宽度限制的图片"></a>突破容器宽度限制的图片</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 其中 class=&quot;full-image&quot; 是必须的 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/image-url&quot;</span> <span class="attr">class</span>=<span class="string">&quot;full-image&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 标签 方式，要求版本在0.4.5或以上 --&gt;</span></span><br><span class="line">&#123;% fullimage /image-url, alt, title %&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 别名 --&gt;</span></span><br><span class="line">&#123;% fi /image-url, alt, title %&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
