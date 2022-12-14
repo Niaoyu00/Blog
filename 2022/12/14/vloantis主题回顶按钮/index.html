@@ -24,7 +24,6 @@
   <meta content="telephone=no" name="format-detection">
   <!-- import head_begin begin -->
       <style>html{scroll-behavior:smooth;}</style>
-      <span id="topTarget"></span>
   <!-- import head_begin end -->
   <!-- Custom Files headBegin begin-->
   
@@ -38,19 +37,20 @@
   <!-- 页面元数据 -->
   <title>vloantis主题回顶按钮 - Niaoyu</title>
   <meta name="keywords" content="Hexo,vloantis,null">
-  <meta desc name="description" content="vloantis主题回顶按钮设置最近博客换了个新的主题:
+  <meta desc name="description" content="最近博客换了个新的主题:
 vloantis文档
-研究了半天发现找不到回顶按钮,通过对比f12发现是有这个按钮,但是官方文档中并没有找到相关配置. - ZHY - Niaoyu">
+研究了半天发现找不到回顶按钮,通过对比f12发现是有这个按钮,但是官方文档中并没有找到相关配置.
+于是我就打算自己加一个. - ZHY - Niaoyu">
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="vloantis主题回顶按钮">
 <meta property="og:url" content="https://niaoyu00.github.io/Blog/2022/12/14/vloantis%E4%B8%BB%E9%A2%98%E5%9B%9E%E9%A1%B6%E6%8C%89%E9%92%AE/index.html">
 <meta property="og:site_name" content="Niaoyu">
-<meta property="og:description" content="vloantis主题回顶按钮设置最近博客换了个新的主题: vloantis文档 研究了半天发现找不到回顶按钮,通过对比f12发现是有这个按钮,但是官方文档中并没有找到相关配置.">
+<meta property="og:description" content="最近博客换了个新的主题: vloantis文档 研究了半天发现找不到回顶按钮,通过对比f12发现是有这个按钮,但是官方文档中并没有找到相关配置. 于是我就打算自己加一个.">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-12-14T04:02:18.000Z">
-<meta property="article:modified_time" content="2022-12-14T04:19:34.619Z">
+<meta property="article:modified_time" content="2022-12-14T04:54:50.849Z">
 <meta property="article:author" content="ZHY">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="vloantis">
@@ -2133,7 +2133,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/Blog/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1670991757697),
+    lastupdate: new Date(1670993714898),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2588,12 +2588,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="vloantis主题回顶按钮设置"><a href="#vloantis主题回顶按钮设置" class="headerlink" title="vloantis主题回顶按钮设置"></a>vloantis主题回顶按钮设置</h2><p>最近博客换了个新的主题:</p>
+    <p>最近博客换了个新的主题:</p>
 <p><a target="_blank" rel="noopener" href="https://volantis.js.org/v6/getting-started">vloantis文档</a></p>
 <p>研究了半天发现找不到回顶按钮,通过对比f12发现是有这个按钮,但是官方文档中并没有找到相关配置.</p>
 <p>于是我就打算自己加一个.</p>
-<h3 id="设置回滚锚点"><a href="#设置回滚锚点" class="headerlink" title="设置回滚锚点"></a>设置回滚锚点</h3><blockquote>
-<p>Volantis 用户可以在不修改主题文件的情况下向 head 和 body 中添加各种标签。</p>
+<h3 id="设置回滚锚点"><a href="#设置回滚锚点" class="headerlink" title="设置回滚锚点"></a><del>设置回滚锚点</del></h3><blockquote>
+<p>Volantis 用户可以在不修改主题文件的情况下向 head 和 body 中添加各种标签</p>
 <p>代码片段注入的位置：</p>
 <ul>
 <li><p>head_begin: 注入在 <code>&lt;head&gt;</code> 之后</p>
@@ -2608,14 +2608,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
  <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">import:</span></span><br><span class="line">  <span class="attr">head_begin:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;meta</span> <span class="string">name=&quot;theme-color&quot;</span> <span class="string">content=&quot;#ffffff&quot;&gt;</span></span><br><span class="line">  <span class="attr">head_end:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;meta</span> <span class="string">name=&quot;hello&quot;</span> <span class="string">content=&quot;world&quot;&gt;</span></span><br><span class="line">  <span class="attr">body_begin:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script&gt;&lt;/script&gt;</span></span><br><span class="line">  <span class="attr">body_end:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
 </blockquote>
 <hr>
-<p>首先打开<code>blog/_config.yml</code>,最下面添加如下代码</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">import:</span></span><br><span class="line">    <span class="attr">head_begin:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&lt;style&gt;html&#123;scroll-behavior:smooth;&#125;&lt;/style&gt;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&lt;span</span> <span class="string">id=&quot;topTarget&quot;&gt;&lt;/span&gt;</span></span><br></pre></td></tr></table></figure>
-
+<p><del>首先打开<code>blog/_config.yml</code>,最下面添加如下代码</del></p>
 <p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221214120904550.png" class="lazyload" data-srcset="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221214120904550.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221214120904550"></p>
 <p>第一行代码是css平滑滚动样式</p>
 <p>第二行代码是设立锚点方便跳转</p>
-<p>然后打开主题文件夹下的<code>layout/layout.ejs</code>,搜索<code>s-top</code>,并且添加下图内容即可.</p>
+<p><del>然后打开主题文件夹下的<code>layout/layout.ejs</code>,搜索<code>s-top</code>,并且添加下图内容即可.</del></p>
 <p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221214121911152.png" class="lazyload" data-srcset="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221214121911152.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221214121911152"></p>
+<hr>
+<p>以上内容作废,因为我发现切换到tag和category页面,<code>&lt;span&gt;</code>就不显示了导致没法回顶.</p>
+<p>然后又f12看了一番,发现有现成的锚点(笑死</p>
+<h3 id="回到顶部功能重写"><a href="#回到顶部功能重写" class="headerlink" title="回到顶部功能重写"></a>回到顶部功能重写</h3><p>首先打开<code>blog/_config.yml</code>,最下面添加如下代码</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">import:</span></span><br><span class="line">    <span class="attr">head_begin:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&lt;style&gt;html&#123;scroll-behavior:smooth;&#125;&lt;/style&gt;</span></span><br><span class="line">      <span class="comment"># - &lt;span id=&quot;topTarget&quot;&gt;&lt;/span&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>其次打开主题文件夹下的<code>layout/layout.ejs</code>,搜索<code>s-top</code>,并且添加下图内容</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221214125224588.png" class="lazyload" data-srcset="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221214125224588.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221214125224588"></p>
+<p>到此就完成了,是不是非常简单!</p>
 
   </div>
   
@@ -2657,7 +2664,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-14T12:19:34+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-12-14T12:54:50+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2022年12月14日</p>
@@ -2686,9 +2693,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://niaoyu00.github.io/Blog/2022/12/14/vloantis%E4%B8%BB%E9%A2%98%E5%9B%9E%E9%A1%B6%E6%8C%89%E9%92%AE/&title=vloantis主题回顶按钮 - Niaoyu&summary=vloantis主题回顶按钮设置最近博客换了个新的主题:
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://niaoyu00.github.io/Blog/2022/12/14/vloantis%E4%B8%BB%E9%A2%98%E5%9B%9E%E9%A1%B6%E6%8C%89%E9%92%AE/&title=vloantis主题回顶按钮 - Niaoyu&summary=最近博客换了个新的主题:
 vloantis文档
-研究了半天发现找不到回顶按钮,通过对比f12发现是有这个按钮,但是官方文档中并没有找到相关配置."
+研究了半天发现找不到回顶按钮,通过对比f12发现是有这个按钮,但是官方文档中并没有找到相关配置.
+于是我就打算自己加一个."
           
           >
           
@@ -2700,9 +2708,10 @@ vloantis文档
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://niaoyu00.github.io/Blog/2022/12/14/vloantis%E4%B8%BB%E9%A2%98%E5%9B%9E%E9%A1%B6%E6%8C%89%E9%92%AE/&title=vloantis主题回顶按钮 - Niaoyu&summary=vloantis主题回顶按钮设置最近博客换了个新的主题:
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://niaoyu00.github.io/Blog/2022/12/14/vloantis%E4%B8%BB%E9%A2%98%E5%9B%9E%E9%A1%B6%E6%8C%89%E9%92%AE/&title=vloantis主题回顶按钮 - Niaoyu&summary=最近博客换了个新的主题:
 vloantis文档
-研究了半天发现找不到回顶按钮,通过对比f12发现是有这个按钮,但是官方文档中并没有找到相关配置."
+研究了半天发现找不到回顶按钮,通过对比f12发现是有这个按钮,但是官方文档中并没有找到相关配置.
+于是我就打算自己加一个."
           
           >
           
@@ -2714,9 +2723,10 @@ vloantis文档
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://niaoyu00.github.io/Blog/2022/12/14/vloantis%E4%B8%BB%E9%A2%98%E5%9B%9E%E9%A1%B6%E6%8C%89%E9%92%AE/&title=vloantis主题回顶按钮 - Niaoyu&summary=vloantis主题回顶按钮设置最近博客换了个新的主题:
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://niaoyu00.github.io/Blog/2022/12/14/vloantis%E4%B8%BB%E9%A2%98%E5%9B%9E%E9%A1%B6%E6%8C%89%E9%92%AE/&title=vloantis主题回顶按钮 - Niaoyu&summary=最近博客换了个新的主题:
 vloantis文档
-研究了半天发现找不到回顶按钮,通过对比f12发现是有这个按钮,但是官方文档中并没有找到相关配置."
+研究了半天发现找不到回顶按钮,通过对比f12发现是有这个按钮,但是官方文档中并没有找到相关配置.
+于是我就打算自己加一个."
           
           >
           
@@ -2817,7 +2827,7 @@ https://www.udemy.com/course/project-little-adventurer...</p>
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vloantis%E4%B8%BB%E9%A2%98%E5%9B%9E%E9%A1%B6%E6%8C%89%E9%92%AE%E8%AE%BE%E7%BD%AE"><span class="toc-text">vloantis主题回顶按钮设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%9B%9E%E6%BB%9A%E9%94%9A%E7%82%B9"><span class="toc-text">设置回滚锚点</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%9B%9E%E6%BB%9A%E9%94%9A%E7%82%B9"><span class="toc-text">设置回滚锚点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8%E5%8A%9F%E8%83%BD%E9%87%8D%E5%86%99"><span class="toc-text">回到顶部功能重写</span></a></li></ol>
   </div>
 </section>
 
@@ -2907,7 +2917,7 @@ https://www.udemy.com/course/project-little-adventurer...</p>
   </footer>
 
 
-        <a id="s-top" class="fa-solid fa-arrow-up fa-fw show h1" href="#topTarget" title="top"></a>
+        <a id="s-top" class="fa-solid fa-arrow-up fa-fw show h1" href="#l_body" title="top"></a>
       </div>
     </div>
     <div>
@@ -3908,7 +3918,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Niaoyu","url":"https://niaoyu00.github.io/Blog/Blog/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"ZHY","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://niaoyu00.github.io/Blog/Blog/","sameAs":["https://github.com/volantis-x"],"description":"Niaoyu"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://niaoyu00.github.io/Blog/Blog/","name":"Niaoyu"}},{"@type":"ListItem","position":2,"item":{"@id":"https://niaoyu00.github.io/Blog/Blog/categories/Hexo/","name":"Hexo"}},{"@type":"ListItem","position":3,"item":{"@id":"https://niaoyu00.github.io/Blog/Blog/2022/12/14/vloantis主题回顶按钮/","name":"vloantis主题回顶按钮"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Niaoyu","url":"https://niaoyu00.github.io/Blog/Blog/","keywords":null,"description":"Niaoyu","author":{"@type":"Person","name":"ZHY","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://niaoyu00.github.io/Blog/Blog/","description":"Niaoyu"},"publisher":{"@type":"Organization","name":"Niaoyu","url":"https://niaoyu00.github.io/Blog/Blog/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://niaoyu00.github.io/Blog?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"vloantis主题回顶按钮","description":"vloantis主题回顶按钮设置最近博客换了个新的主题:\nvloantis文档\n研究了半天发现找不到回顶按钮,通过对比f12发现是有这个按钮,但是官方文档中并没有找到相关配置.","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://niaoyu00.github.io/Blog/2022/12/14/vloantis%E4%B8%BB%E9%A2%98%E5%9B%9E%E9%A1%B6%E6%8C%89%E9%92%AE/"},"author":{"@type":"Person","name":"ZHY","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://niaoyu00.github.io/Blog/Blog/"},"publisher":{"@type":"Organization","name":"Niaoyu","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://niaoyu00.github.io/Blog/2022/12/14/vloantis%E4%B8%BB%E9%A2%98%E5%9B%9E%E9%A1%B6%E6%8C%89%E9%92%AE/","wordCount":88,"datePublished":"2022-12-14T04:02:18.000Z","dateModified":"2022-12-14T04:19:34.619Z","articleSection":"Hexo","keywords":"Hexo,vloantis","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Niaoyu","url":"https://niaoyu00.github.io/Blog/Blog/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"ZHY","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://niaoyu00.github.io/Blog/Blog/","sameAs":["https://github.com/volantis-x"],"description":"Niaoyu"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://niaoyu00.github.io/Blog/Blog/","name":"Niaoyu"}},{"@type":"ListItem","position":2,"item":{"@id":"https://niaoyu00.github.io/Blog/Blog/categories/Hexo/","name":"Hexo"}},{"@type":"ListItem","position":3,"item":{"@id":"https://niaoyu00.github.io/Blog/Blog/2022/12/14/vloantis主题回顶按钮/","name":"vloantis主题回顶按钮"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Niaoyu","url":"https://niaoyu00.github.io/Blog/Blog/","keywords":null,"description":"Niaoyu","author":{"@type":"Person","name":"ZHY","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://niaoyu00.github.io/Blog/Blog/","description":"Niaoyu"},"publisher":{"@type":"Organization","name":"Niaoyu","url":"https://niaoyu00.github.io/Blog/Blog/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://niaoyu00.github.io/Blog?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"vloantis主题回顶按钮","description":"最近博客换了个新的主题:\nvloantis文档\n研究了半天发现找不到回顶按钮,通过对比f12发现是有这个按钮,但是官方文档中并没有找到相关配置.\n于是我就打算自己加一个.","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://niaoyu00.github.io/Blog/2022/12/14/vloantis%E4%B8%BB%E9%A2%98%E5%9B%9E%E9%A1%B6%E6%8C%89%E9%92%AE/"},"author":{"@type":"Person","name":"ZHY","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://niaoyu00.github.io/Blog/Blog/"},"publisher":{"@type":"Organization","name":"Niaoyu","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://niaoyu00.github.io/Blog/2022/12/14/vloantis%E4%B8%BB%E9%A2%98%E5%9B%9E%E9%A1%B6%E6%8C%89%E9%92%AE/","wordCount":85,"datePublished":"2022-12-14T04:02:18.000Z","dateModified":"2022-12-14T04:54:50.849Z","articleSection":"Hexo","keywords":"Hexo,vloantis","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
