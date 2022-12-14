@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>vloantis主题回顶按钮</title>
+    <url>/Blog/2022/12/14/vloantis%E4%B8%BB%E9%A2%98%E5%9B%9E%E9%A1%B6%E6%8C%89%E9%92%AE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><h2 id="vloantis主题回顶按钮设置"><a href="#vloantis主题回顶按钮设置" class="headerlink" title="vloantis主题回顶按钮设置"></a>vloantis主题回顶按钮设置</h2><p>最近博客换了个新的主题:</p>
+<p><a href="https://volantis.js.org/v6/getting-started">vloantis文档</a></p>
+<p>研究了半天发现找不到回顶按钮,通过对比f12发现是有这个按钮,但是官方文档中并没有找到相关配置.</p>
+<p>于是我就打算自己加一个.</p>
+<h3 id="设置回滚锚点"><a href="#设置回滚锚点" class="headerlink" title="设置回滚锚点"></a>设置回滚锚点</h3><blockquote>
+<p>Volantis 用户可以在不修改主题文件的情况下向 head 和 body 中添加各种标签。</p>
+<p>代码片段注入的位置：</p>
+<ul>
+<li><p>head_begin: 注入在 <code>&lt;head&gt;</code> 之后</p>
+</li>
+<li><p>head_end: 注入在 <code>&lt;/head&gt;</code> 之前</p>
+</li>
+<li><p>body_begin: 注入在 <code>&lt;body&gt;</code> 之后</p>
+</li>
+<li><p>body_end: 注入在 <code>&lt;/body&gt;</code> 之前</p>
+</li>
+</ul>
+ <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">import:</span></span><br><span class="line">  <span class="attr">head_begin:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;meta</span> <span class="string">name=&quot;theme-color&quot;</span> <span class="string">content=&quot;#ffffff&quot;&gt;</span></span><br><span class="line">  <span class="attr">head_end:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;meta</span> <span class="string">name=&quot;hello&quot;</span> <span class="string">content=&quot;world&quot;&gt;</span></span><br><span class="line">  <span class="attr">body_begin:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script&gt;&lt;/script&gt;</span></span><br><span class="line">  <span class="attr">body_end:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<hr>
+<p>首先打开<code>blog/_config.yml</code>,最下面添加如下代码</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">import:</span></span><br><span class="line">    <span class="attr">head_begin:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&lt;style&gt;html&#123;scroll-behavior:smooth;&#125;&lt;/style&gt;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&lt;span</span> <span class="string">id=&quot;topTarget&quot;&gt;&lt;/span&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221214120904550.png" class="lazyload" data-srcset="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221214120904550.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221214120904550"></p>
+<p>第一行代码是css平滑滚动样式</p>
+<p>第二行代码是设立锚点方便跳转</p>
+<p>然后打开主题文件夹下的<code>layout/layout.ejs</code>,搜索<code>s-top</code>,并且添加下图内容即可.</p>
+<p><img src="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221214121911152.png" class="lazyload" data-srcset="https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/image-20221214121911152.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20221214121911152"></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>vloantis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>动作游戏制作</title>
     <url>/Blog/2022/12/12/%E5%8A%A8%E4%BD%9C%E6%B8%B8%E6%88%8F%E5%88%B6%E4%BD%9C/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\Blog\assets\css\APlayer.min.css"><script src="\Blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\Blog\assets\js\Meting.min.js"></script><blockquote>
@@ -939,7 +979,7 @@
 <p>接着就可以通过 <code>&#123;% meting ...%&#125;</code> 在文章中使用 MetingJS 播放器了：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 简单示例 (id, server, type)  --&gt;</span><br><span class="line">&#123;% meting &quot;60198&quot; &quot;netease&quot; &quot;playlist&quot; %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 进阶示例 --&gt;</span><br><span class="line">&#123;% meting &quot;60198&quot; &quot;netease&quot; &quot;playlist&quot; &quot;autoplay&quot; &quot;mutex:false&quot; &quot;listmaxheight:340px&quot; &quot;preload:none&quot; &quot;theme:#ad7a86&quot;%&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>有关 
-    <div id="aplayer-QYLZGkhP" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-DvfilskK" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="undefined" data-server="undefined" data-type="undefined" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"
     ></div> 的选项列表如下:</strong></p>
 <table>
@@ -1261,8 +1301,8 @@
       </categories>
       <tags>
         <tag>Csharp</tag>
-        <tag>栈</tag>
         <tag>数据结构与算法</tag>
+        <tag>栈</tag>
       </tags>
   </entry>
   <entry>
@@ -2879,7 +2919,7 @@
 <li>报告问题</li>
 <li>开放合并请求</li>
 <li>传播此文档</li>
-<li>直接和我联系 <a href="mailto:&#x7a;&#x69;&#105;&#x73;&#104;&#x61;&#x6e;&#x65;&#x64;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#109;">&#x7a;&#x69;&#105;&#x73;&#104;&#x61;&#x6e;&#x65;&#x64;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#109;</a> 或 <a href="https://twitter.com/ziishaned"><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/ziishaned.svg" class="lazyload" data-srcset="https://raw.githubusercontent.com/Niaoyu00/pics/main/ziishaned.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Twitter URL"></a></li>
+<li>直接和我联系 <a href="mailto:&#x7a;&#105;&#105;&#x73;&#x68;&#97;&#x6e;&#101;&#100;&#x40;&#x67;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;">&#x7a;&#105;&#105;&#x73;&#x68;&#97;&#x6e;&#101;&#100;&#x40;&#x67;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;</a> 或 <a href="https://twitter.com/ziishaned"><img src="https://raw.githubusercontent.com/Niaoyu00/pics/main/ziishaned.svg" class="lazyload" data-srcset="https://raw.githubusercontent.com/Niaoyu00/pics/main/ziishaned.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Twitter URL"></a></li>
 </ul>
 <h2 id="许可证"><a href="#许可证" class="headerlink" title="许可证"></a>许可证</h2><p>MIT &amp;copy; <a href="https://twitter.com/ziishaned">Zeeshan Ahmad</a></p>
 ]]></content>

@@ -23,6 +23,8 @@
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
   <!-- import head_begin begin -->
+      <style>html{scroll-behavior:smooth;}</style>
+      <span id="topTarget"></span>
   <!-- import head_begin end -->
   <!-- Custom Files headBegin begin-->
   
@@ -2134,7 +2136,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/Blog/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1670957383601),
+    lastupdate: new Date(1670991757697),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2767,6 +2769,14 @@ b站视频链接:"
   
     <div class="prev-next">
       
+        <a class='prev' href='/Blog/2022/12/14/vloantis%E4%B8%BB%E9%A2%98%E5%9B%9E%E9%A1%B6%E6%8C%89%E9%92%AE/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>vloantis主题回顶按钮</p>
+          <p class='content'>vloantis主题回顶按钮设置最近博客换了个新的主题:
+vloantis文档
+研究了半天发现找不到回顶按钮,通过对比f12发现是有这个按钮,但是官方文档中并没有找到相关配置.
+于是我就打算自己...</p>
+        </a>
+      
       
         <a class='next' href='/Blog/2022/12/01/%E8%8A%B1%E4%BA%86%E4%B8%A4%E5%A4%A9%E5%AD%A6%E4%B9%A0%E4%BA%86%E5%83%8F%E7%B4%A0%E7%94%BB/'>
           <p class='title'>花了两天学习了像素画<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
@@ -2923,7 +2933,7 @@ https://www.bilibili.com/video/BV1hJ411c73i?p=1&amp...</p>
   </footer>
 
 
-        <a id="s-top" class="fa-solid fa-arrow-up fa-fw show h1" title="top"></a>
+        <a id="s-top" class="fa-solid fa-arrow-up fa-fw show h1" href="#topTarget" title="top"></a>
       </div>
     </div>
     <div>
@@ -3691,7 +3701,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/bizhi/20211121916.png","https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/bizhi/20211121719.png","https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/bizhi/20211121530.png","https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/bizhi/20211121430.png","https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/bizhi/2021112165.png","https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/bizhi/20211121836.png"];
+  let imgs = ["https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/bizhi/2021112165.png","https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/bizhi/20211121530.png","https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/bizhi/20211121836.png","https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/bizhi/20211121916.png","https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/bizhi/20211121719.png","https://niaoyu.oss-cn-shenzhen.aliyuncs.com/img/bizhi/20211121430.png"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3701,14 +3711,14 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       ParallaxWindow = document.querySelector("html");
     
     Parallax.window = ParallaxWindow;
-    Parallax.options.fade = 1500;
+    Parallax.options.fade = 1000;
     Parallax.cache = 1;
     next_parallax();
     Parallax.init();
     if (imgs.length>1) {
       IntervalParallax = setInterval(function () {
         next_parallax();
-      }, '10000');
+      }, '30000');
     }
   }
 
